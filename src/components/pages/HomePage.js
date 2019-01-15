@@ -18,6 +18,7 @@ class HomePage extends Component {
                     <ButtonLink href="react.com" color={"red"} text="link3"/>
                     </>
                 </BrowserRouter>
+                
             </section>
         );
     }
