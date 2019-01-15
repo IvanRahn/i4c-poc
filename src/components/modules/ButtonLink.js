@@ -20,6 +20,7 @@ const ButtonLink = styled(Link)`
 
 class StyledLink extends Component {
     render() {
+        console.log(this.props)
         const {color, text, href} = this.props
         // const {ButtonText} = this.props; 
         return (
