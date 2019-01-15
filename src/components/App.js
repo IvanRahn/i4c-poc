@@ -7,11 +7,13 @@ import Button from "./modules/button";
 class App extends Component {
   render() {
     return (
+      <section>
       <BrowserRouter>
+      <Button/>
 
-        <section>Hello</section>
-        <Button/>
       </BrowserRouter>
+        </section>
+
       );
   }
 }
