@@ -1,12 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-<<<<<<< HEAD
 import MoreI4cCard from "./modules/moreI4cCard";
-import Button from "./modules/button";
-=======
 import ButtonLink from "./modules/ButtonLink";
->>>>>>> 80a05b73a60636cb74d72cc36b5c0866fb80ab4c
 
 
 class App extends Component {
