@@ -1,10 +1,9 @@
-import React, { Component, Fragment, lazy } from 'react';
+import React, { Component, Fragment } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 
 class App extends Component {
-
   render() {
     return (
       <BrowserRouter>
@@ -16,10 +15,4 @@ class App extends Component {
       );
   }
 }
-// const ReactGA = lazy(() => import("react-ga"));
-import("react-ga").then(ReactGA => {
-  ReactGA.initialize('UA-132415809-3')
-});
-
-
 export default connect()(App);
