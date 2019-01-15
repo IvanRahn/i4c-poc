@@ -25,11 +25,10 @@ class StyledLink extends Component {
         const {section, text, location} = this.props;
         ReactGA.event({
             category: 'ButtonLink',
-            action: `Location: ${section}, Button:${text}, Page: ${location.pathname}`,
+            action: `Section: ${section}, Button: ${text}, Page: ${location.pathname}`,
           });
     }
     render() {
-        console.log(this.props)
         const {color, text, href} = this.props
         return (
         <ButtonLink to={`${href}`} color={color} onClick={this.analytics}>{text}</ButtonLink>
