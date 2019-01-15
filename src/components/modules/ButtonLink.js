@@ -12,7 +12,7 @@ const ButtonLink = styled(Link)`
     text-decoration: none;	
     width: 128px;
     height: 32px;
-    font-size: 1.5em;
+    font-size: 1em;
     :hover {
         color: blue;
     }

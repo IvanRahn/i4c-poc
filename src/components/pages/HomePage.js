@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import MoreI4cCard from "./../modules/MoreI4cCard";
 import ButtonLink from "./../modules/ButtonLink";
+import NavBar from "./../modules/NavBar";
 
 class HomePage extends Component {
     
@@ -9,6 +10,7 @@ class HomePage extends Component {
         
         return (
             <section>
+                <NavBar />
                 <h1>Welcome To HomePage</h1>
                 <BrowserRouter>
                     <>
