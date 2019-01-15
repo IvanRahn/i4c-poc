@@ -17,15 +17,14 @@ const ButtonLink = styled(Link)`
         color: blue;
     }
     `
-
-
+    
 class StyledLink extends Component {
     analytics = () => {
         
         const {section, text, location} = this.props;
         ReactGA.event({
             category: 'ButtonLink',
-            action: `Location: ${section}, Button:${text}, Page: ${location.pathname}`,
+            action: `Location: ${section}, Button: ${text}, Page: ${location.pathname}`,
           });
     }
     render() {
