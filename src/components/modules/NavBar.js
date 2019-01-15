@@ -3,10 +3,12 @@ import ButtonLink from "./ButtonLink";
 import styled from "styled-components";
 
 const NavbarStyling = styled.nav`
-    position: sticky;
+    position: fixed;
+    width: 100%;
     display: flex;
     border-bottom: 1px solid grey;
     padding: 32px;
+    justify-content: space-around;
 `
 const LogoContainer = styled.img`
     height: 50px; 
@@ -39,7 +41,9 @@ class NavBar extends Component {
                         <li> <ButtonLink text="OUR IMPACT"/> </li>
                         <li> <ButtonLink text="CONTACT US"/> </li>
                     </UnorderedListStyling>
-                    
+                </DivStyling>
+
+                <DivStyling>
                     <UnorderedListStyling>
                         <li> <ButtonLink text="LOG IN" color={"green"}/> </li>
                         <li> <ButtonLink text="JOIN" color={"green"}/> </li>
