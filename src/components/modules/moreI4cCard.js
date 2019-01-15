@@ -1,30 +1,39 @@
 import React, {Component} from "react";
 import styled from "styled-components";
 
-const StyledCard = styled.div`
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-transition: 0.3s;
+const CardWrapper = styled.div`
+overflow: hidden;
+padding: 0 0 32px;
+margin: 48px auto 0;
+width: 200px;
+border-style: solid;
 border-radius: 5px;
-
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
 `
 
+const ImageContainer = styled.img`
+height: auto; 
+width: auto; 
+max-width: 200px; 
+max-height: 200px;
+`
 class MoreI4cCard extends Component {
     
     render(){
 
-        const {CardText, CardHeading} = this.props;
+        const {CardHeading, CardText, CardImage} = this.props;
 
         return(
             <div>
-                <StyledCard>
+                <CardWrapper>
+                    <ImageContainer src= {CardImage} />
                     <DivContainer>
                         <h3>{CardHeading}</h3>
                         <p>{CardText}</p>
                     </DivContainer>
-                </StyledCard>
+                </CardWrapper>
             </div>
         )
     }
