@@ -1,7 +1,7 @@
 import React, { Component, Fragment, lazy } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomePage from "./pages/HomePage";
+import HomePage from "./pages/HomePage/HomePage";
 
 class App extends Component {
 

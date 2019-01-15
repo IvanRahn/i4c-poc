@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import MoreI4cCard from "./../modules/MoreI4cCard";
-import ButtonLink from "./../modules/ButtonLink";
-
+import MoreI4cCard from "../../modules/MoreI4cCard";
+import ButtonLink from "../../modules/ButtonLink";
+import ImpactSection from './ImpactSection';
 class HomePage extends Component {
     
     render() {
@@ -10,6 +10,7 @@ class HomePage extends Component {
         return (
             <section>
                 <h1>Welcome To HomePage</h1>
+                <ImpactSection />
                 <BrowserRouter>
                     <>
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
