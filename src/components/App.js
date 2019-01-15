@@ -8,13 +8,16 @@ import Button from "./modules/button";
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <section>
+        <BrowserRouter>
+          <Button/>
 
-        <MoreI4cCard />
-        
-        <section>Hello</section>
-        <Button/>
-      </BrowserRouter>
+          <MoreI4cCard />
+          
+          <Button/>
+        </BrowserRouter>  
+      </section>
+
       );
   }
 }
