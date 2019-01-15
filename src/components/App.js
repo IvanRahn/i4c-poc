@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Button from "./modules/button";
+
 
 class App extends Component {
   render() {
@@ -8,7 +10,7 @@ class App extends Component {
       <BrowserRouter>
 
         <section>Hello</section>
-        
+        <Button/>
       </BrowserRouter>
       );
   }
