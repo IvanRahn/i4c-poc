@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import ReactGA from "react-ga";
 import MoreI4cCard from "./../modules/MoreI4cCard";
 import ButtonLink from "./../modules/ButtonLink";
+import NavBar from "./../modules/NavBar";
 
 class HomePage extends Component {
     
@@ -10,8 +11,8 @@ class HomePage extends Component {
         
         return (
             <section>
+                <NavBar />
                 <h1>Welcome To HomePage</h1>
-                {console.log(this.props)}
                 <BrowserRouter>
                     <>
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
