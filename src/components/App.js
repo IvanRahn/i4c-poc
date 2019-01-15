@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import More_i4c_card from './modules/More_i4c_card';
+import MoreI4cCard from "./modules/moreI4cCard";
+import Button from "./modules/button";
+
 
 class App extends Component {
   render() {
     return (
       <BrowserRouter>
 
-        <More_i4c_card />
+        <MoreI4cCard />
         
+        <section>Hello</section>
+        <Button/>
       </BrowserRouter>
       );
   }

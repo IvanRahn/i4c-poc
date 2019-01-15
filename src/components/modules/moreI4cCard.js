@@ -1,6 +1,9 @@
 import React, {Component} from "react";
+import styled from "styled-components";
 
-class More_i4c_card extends Component {
+
+
+class MoreI4cCard extends Component {
     
     render(){
         return(
@@ -11,4 +14,4 @@ class More_i4c_card extends Component {
     }
 }
 
-export default More_i4c_card;
+export default MoreI4cCard;
