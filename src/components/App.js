@@ -6,15 +6,16 @@ import Button from "./modules/button";
 
 
 class App extends Component {
+  
   render() {
     return (
       <section>
         <BrowserRouter>
+        <>
           <Button/>
 
-          <MoreI4cCard />
-          
-          <Button/>
+          <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" />
+        </>
         </BrowserRouter>  
       </section>
 
