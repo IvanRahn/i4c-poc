@@ -11,9 +11,9 @@ class App extends Component {
       <BrowserRouter>
         <>
 
-        <ButtonLink text={"link"}/>
-        <ButtonLink color={"green"} text="link2"/>
-        <ButtonLink color={"red"} text="link3"/>
+        <ButtonLink href="#" text={"link"}/>
+        <ButtonLink href="google.com" color={"green"} text="link2"/>
+        <ButtonLink href="react.com" color={"red"} text="link3"/>
 
         </>
       </BrowserRouter>
