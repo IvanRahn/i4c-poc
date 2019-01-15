@@ -12,7 +12,7 @@ const ButtonLink = styled(Link)`
     text-decoration: none;	
     width: 128px;
     height: 32px;
-    font-size: 1.5em;
+    font-size: 1em;
     :hover {
         color: blue;
     }
@@ -24,11 +24,10 @@ class StyledLink extends Component {
         const {section, text, location} = this.props;
         ReactGA.event({
             category: 'ButtonLink',
-            action: `Location: ${section}, Button: ${text}, Page: ${location.pathname}`,
+            action: `Section: ${section}, Button: ${text}, Page: ${location.pathname}`,
           });
     }
     render() {
-        console.log(this.props)
         const {color, text, href} = this.props
         return (
         <ButtonLink to={`${href}`} color={color} onClick={this.analytics}>{text}</ButtonLink>

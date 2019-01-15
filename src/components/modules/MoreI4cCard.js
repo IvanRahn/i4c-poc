@@ -5,9 +5,9 @@ const CardWrapper = styled.div`
 overflow: hidden;
 padding: 0 0 32px;
 margin: 48px auto 0;
-width: 200px;
+width: 250px;
 border-style: solid;
-border-radius: 5px;
+border-radius: 10px;
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
@@ -16,8 +16,8 @@ padding: 2px 16px;
 const ImageContainer = styled.img`
 height: auto; 
 width: auto; 
-max-width: 200px; 
-max-height: 200px;
+max-width: 250px; 
+max-height: 250px;
 `
 class MoreI4cCard extends Component {
     
