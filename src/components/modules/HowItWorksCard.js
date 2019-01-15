@@ -55,8 +55,8 @@ body {
 const ImageContainer = styled.img`
     display: flex;
     flex-direction: column;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     border-radius: 100%;
     margin: auto;
 `
@@ -75,7 +75,6 @@ class HowitWorksCard extends Component {
                         <ol>
                             <li>
                                 <h1>{cardHeading}</h1> 
-                                <h3>{cardText}</h3>
                                 <h3>{cardText}</h3>
                             </li>
                         </ol>
