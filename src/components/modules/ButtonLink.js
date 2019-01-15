@@ -17,8 +17,7 @@ const ButtonLink = styled(Link)`
         color: blue;
     }
     `
-
-
+    
 class StyledLink extends Component {
     analytics = () => {
         
