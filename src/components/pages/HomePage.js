@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import MoreI4cCard from "./../modules/MoreI4cCard";
 import ButtonLink from "./../modules/ButtonLink";
+import HowItWorksCard from "./../modules/HowItWorksCard"; 
+import image from "./../../img/cartoon.jpg"
 
 class HomePage extends Component {
     
