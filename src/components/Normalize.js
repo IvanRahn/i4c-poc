@@ -10,7 +10,9 @@ const GlobalStyle = createGlobalStyle`
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-
+* {
+  box-sizing: border-box;
+}
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */

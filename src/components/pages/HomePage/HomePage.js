@@ -22,16 +22,7 @@ class HomePage extends Component {
                 
                 <BrowserRouter>
                     <>
-                    <HowItWorksCard 
-                        cardHeading = "You choose your cause" 
-                        cardText = {
-                        <div>
-                        <p> With over 50,000 charities in Australia, how do you make the right choice? </p> 
-                        <p> Our team of analysts determine the best charities that serve the cause of your choice. </p>
-                        </div>
-                        }
-                        CardImage = {image}
-                        />        
+                   
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
                     
                     <Footer />
