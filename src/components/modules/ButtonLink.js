@@ -10,7 +10,7 @@ const ButtonLink = styled(Link)`
     margin: 8px 8px;
     text-align: center;
     text-decoration: none;	
-    width: 128px;
+    width: auto;
     height: 32px;
     font-size: 1.5em;
     :hover {

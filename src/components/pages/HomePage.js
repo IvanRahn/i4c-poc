@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import MoreI4cCard from "./../modules/MoreI4cCard";
 import ButtonLink from "./../modules/ButtonLink";
 import HowItWorksCard from "./../modules/HowItWorksCard"; 
-import image from "./../../img/cartoon.jpg"
+import image from "./../../img/cartoon.jpg";
+import Footer from "./../modules/Footer";;
 
 class HomePage extends Component {
     
@@ -27,7 +28,9 @@ class HomePage extends Component {
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
                     <ButtonLink href="#" text={"link"} {...this.props} section={"The only section"}/>
                     <ButtonLink href="google.com" color={"green"} text="link2"/>
-                    <ButtonLink href="react.com" color={"red"} text="link3"/>
+                    <ButtonLink href="react.com" color={"red"} text="link3"/> 
+
+                    <Footer />
                     </>
                 </BrowserRouter>
                 
