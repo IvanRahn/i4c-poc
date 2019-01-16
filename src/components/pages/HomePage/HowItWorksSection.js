@@ -8,6 +8,7 @@ import OrdList from '../../modules/HowItWorksList';
 const H = styled.h1`
 width: 100%;
 text-align: center;
+margin-top: 120px;
 `
 class HowitWorksSection extends Component {
     render() {

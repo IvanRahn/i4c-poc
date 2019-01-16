@@ -21,8 +21,18 @@ const Section = styled.section `
 width: 50%;
 `
 const Span = styled.span `
+width: auto;
+
 ::after {
-    /* content: attr(Span) " &or;"; */
+    content: "";
+    padding-left: 16px;
+    height: 16px;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    transform: rotate(-45deg);
+    position: absolute;
+    right: 50%;
+    margin-top: 20px;
 }
 `
 
@@ -43,7 +53,8 @@ class ImpactSection extends Component {
                     <h1>You invest your donation in sustainability, the dividends supports impactful charities &#8744;</h1>
                     <ButtonLink text="JOIN" color={"green"}/>
                 </Section>
-                <Span>Find Out How It Works</Span>
+                <Span >Find Out How It Works</Span>
+                
             </SectionWrapper>
         )
     }
