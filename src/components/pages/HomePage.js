@@ -30,7 +30,7 @@ class HomePage extends Component {
                     <FeaturedCauseCard CardText = "This is some text" CardHeading = "This is a featured cause card" CardImage = {image} />
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = {image} />
                     <ButtonLink href="#" text={"link"} {...this.props} section={"The only section"}/>
-                    <ButtonLink href="google.com" color={"green"} text="link2"/>
+                    <ButtonLink auto href="google.com" color={"green"} text="link2"/>
                     <ButtonLink href="react.com" color={"red"} text="link3"/>
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
