@@ -5,6 +5,12 @@ import SectionWrapper from "./SectionWrapper";
 import OrdList from '../../modules/HowItWorksList';
 import FeaturedCauseCard from '../../modules/FeaturedCauseCard';
 
+const FlexDiv = styled.div`
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+`
+
 
 class FeacturedCauseSection extends Component {
     render() {
@@ -12,10 +18,10 @@ class FeacturedCauseSection extends Component {
         return (
     
             <SectionWrapper color={color}>
-                <OrdList>
+                <FlexDiv>
                     <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
                     <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />    
-                </OrdList>
+                </FlexDiv>
             </SectionWrapper>
         )
     }
