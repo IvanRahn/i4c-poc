@@ -21,7 +21,7 @@ class HomePage extends Component {
                 <ImpactSection />
                 <HowitWorksSection color="green"/>
                 <FeaturedCauseSection />
-                <MoreI4cSection />
+                <MoreI4cSection color="green" />
                 <Footer />
                 
             </section>

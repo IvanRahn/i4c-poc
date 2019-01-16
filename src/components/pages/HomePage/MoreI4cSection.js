@@ -10,12 +10,16 @@ const FlexDiv = styled.div`
     width: 80%;
     justify-content: space-around;
 `
+const H = styled.h1`
+    color: white;
+`
 
 class MoreI4cSection extends Component {
     render() {
         const {color} = this.props;
         return (
             <SectionWrapper color={color}>
+                <H>More from I4C</H>
                 <FlexDiv>
                     <MoreI4cCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
                     <MoreI4cCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
