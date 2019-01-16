@@ -10,15 +10,22 @@ const H = styled.h1`
     text-align: center;
 `
 
+const StyleDiv = styled.div`
+    width: 100%;
+`
+
+
 class FeacturedCauseSection extends Component {
     render() {
         const {color} = this.props;
         return (
             <SectionWrapper color={color}>
                 <H>Featured Causes</H>
+
                 <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
                 <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />    
-                <ButtonLink />
+                
+
             </SectionWrapper>
         )
     }
