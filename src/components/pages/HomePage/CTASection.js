@@ -5,9 +5,18 @@ import SectionWrapper from "./SectionWrapper";
 
 class CTASection extends Component {
     render() { 
-        const {color} = this.props;
+        const {CTAText} = this.props;
         return (  
-            <SectionWrapper color= {color} />
+                <SectionWrapper>
+
+                    <CTASection>
+                        <h1>{CTAText}</h1>
+                            
+                
+            
+                    
+                    </CTASection>
+                </SectionWrapper>
         );
     }
 }
