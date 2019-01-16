@@ -12,7 +12,6 @@ class FeacturedCauseSection extends Component {
         return (
     
             <SectionWrapper color={color}>
-                <h2>Featured Causes</h2>
                 <OrdList>
                     <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
                     <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />    
