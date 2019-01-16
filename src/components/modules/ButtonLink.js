@@ -5,18 +5,20 @@ import ReactGA from "react-ga";
 
 const ButtonLink = styled(Link)`
     border-bottom: 3px solid ${props => props.color || "black"};
-    display: block;
+    display: inline-block;
     color: ${props => props.color || "black"};
-    margin: 8px 8px;
     text-align: center;
     text-decoration: none;	
-    width: 128px;
+    ${props => props.auto ? "" : "width: 128px;"}
+    /* width: auto; */
+    margin: 8px 8px;
     height: 32px;
     font-size: 1em;
     :hover {
         color: blue;
     }
     `
+
     
 class StyledLink extends Component {
     analytics = () => {
@@ -28,9 +30,9 @@ class StyledLink extends Component {
           });
     }
     render() {
-        const {color, text, href} = this.props
+        const {color, text, href, auto} = this.props
         return (
-        <ButtonLink to={`${href}`} color={color} onClick={this.analytics}>{text}</ButtonLink>
+        <ButtonLink auto={auto} to={`${href}`} color={color} onClick={this.analytics}>{text}</ButtonLink>
         )
     }
 }   
