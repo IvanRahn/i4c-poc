@@ -11,6 +11,8 @@ const FlexDiv = styled.div`
 `
 const H = styled.h1`
     color: white;
+    width:100%;
+    text-align: center;
 `
 
 class MoreI4cSection extends Component {
