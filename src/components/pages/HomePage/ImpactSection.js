@@ -6,9 +6,10 @@ import { EDEADLK } from 'constants';
 const SectionWrapper = styled.section`
 height: 100vh;
  display: flex;
+ justify-content: center;
  width: 80%;
  margin: 0 auto;
-/* align-items: space-around;  */
+align-items: center; 
 `
 const Figure = styled.figure `
 width: 50%;
