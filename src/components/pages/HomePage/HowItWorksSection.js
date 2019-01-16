@@ -5,11 +5,17 @@ import SectionWrapper from "./SectionWrapper";
 import HowItWorksCard from '../../modules/HowItWorksCard';
 import OrdList from '../../modules/HowItWorksList';
 
+const H = styled.h1`
+width: 100%;
+text-align: center;
+`
 class HowitWorksSection extends Component {
     render() {
         const {color} = this.props;
         return (
+            <>
             <SectionWrapper color={color}>
+            <H>Donate once, give forever</H>
                 <OrdList>
                 <HowItWorksCard
         cardHeading = "You choose your cause" 
@@ -43,6 +49,7 @@ class HowitWorksSection extends Component {
                 />     
                 </OrdList>
             </SectionWrapper>
+            </>
         )
     }
 }

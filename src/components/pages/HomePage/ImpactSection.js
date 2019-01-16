@@ -2,14 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import image from "./../../../img/cartoon.jpg"
 import SectionWrapper from "./SectionWrapper";
-// const SectionWrapper = styled.section`
-// height: 100vh;
-//  display: flex;
-//  justify-content: center;
-//  width: 80%;
-//  margin: 0 auto;
-// align-items: center; 
-// `
+import ButtonLink from "./../../modules/ButtonLink";
+
 const Figure = styled.figure `
 width: 50%;
 margin: 0 auto;
@@ -42,7 +36,9 @@ class ImpactSection extends Component {
                 </Section>
                 <Section>
                     <h1>You invest your donation in sustainability, the dividends supports impactful charities</h1>
+                    <ButtonLink text="JOIN" color={"green"}/>
                 </Section>
+                
             </SectionWrapper>
         )
     }
