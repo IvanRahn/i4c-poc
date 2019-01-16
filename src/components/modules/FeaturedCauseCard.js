@@ -9,6 +9,8 @@ height: 160px;
 background-color: #24c421;
 border-radius: 10px;
 display: flex;
+margin: -200px 40px;
+align-self: top;
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
