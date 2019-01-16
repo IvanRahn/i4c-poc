@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import image from "./../../../img/cartoon.jpg";
 import SectionWrapper from "./SectionWrapper";
-import OrdList from '../../modules/HowItWorksList';
 import MoreI4cCard from '../../modules/MoreI4cCard';
 
 const FlexDiv = styled.div`
