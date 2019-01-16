@@ -13,6 +13,9 @@ const FooterStyling = styled.footer`
     justify-content: space-evenly;
     text-align: center;
     font-size: 11px;
+    a {
+        align-self: flex-end;
+    }
 `
 
 const UnorderedListStyling = styled.ul`
