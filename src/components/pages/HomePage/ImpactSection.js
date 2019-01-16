@@ -20,6 +20,11 @@ margin: 0 auto;
 const Section = styled.section `
 width: 50%;
 `
+const Span = styled.span `
+::after {
+    /* content: attr(Span) " &or;"; */
+}
+`
 
 
 
@@ -35,10 +40,10 @@ class ImpactSection extends Component {
                 </Figure>
                 </Section>
                 <Section>
-                    <h1>You invest your donation in sustainability, the dividends supports impactful charities</h1>
+                    <h1>You invest your donation in sustainability, the dividends supports impactful charities &#8744;</h1>
                     <ButtonLink text="JOIN" color={"green"}/>
                 </Section>
-                
+                <Span>Find Out How It Works</Span>
             </SectionWrapper>
         )
     }
