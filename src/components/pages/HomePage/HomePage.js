@@ -3,14 +3,16 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import MoreI4cCard from "../../modules/MoreI4cCard";
 import ButtonLink from "../../modules/ButtonLink";
 import ImpactSection from './ImpactSection';
-import HowItWorksCard from './../../modules/HowItWorksCard'
-import image from './../../../img/cartoon.jpg'
+import HowItWorksCard from './../../modules/HowItWorksCard';
+import image from './../../../img/cartoon.jpg';
+import NavBar from './../../modules/NavBar'
 class HomePage extends Component {
     
     render() {
         
         return (
             <section>
+                <NavBar/>
                 <h1>Welcome To HomePage</h1>
                 <ImpactSection />
                 <HowItWorksCard
