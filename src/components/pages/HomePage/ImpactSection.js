@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import image from "./../../../img/cartoon.jpg"
-import { EDEADLK } from 'constants';
-
-const SectionWrapper = styled.section`
-height: 100vh;
- display: flex;
- justify-content: center;
- width: 80%;
- margin: 0 auto;
-align-items: center; 
-`
+import SectionWrapper from "./SectionWrapper";
+// const SectionWrapper = styled.section`
+// height: 100vh;
+//  display: flex;
+//  justify-content: center;
+//  width: 80%;
+//  margin: 0 auto;
+// align-items: center; 
+// `
 const Figure = styled.figure `
 width: 50%;
 margin: 0 auto;
@@ -32,9 +31,10 @@ width: 50%;
 
 class ImpactSection extends Component {
     render () {
+        const {color} = this.props;
         return (
-            <SectionWrapper>
-                <Section>
+            <SectionWrapper color={color}>
+                <Section >
                 <Figure>
                     <FigureImage src={image} alt="Cheering Man"/>
                     <figcaption>Cheering Man</figcaption>

@@ -7,6 +7,7 @@ import HowItWorksCard from './../../modules/HowItWorksCard';
 import image from './../../../img/cartoon.jpg';
 import NavBar from './../../modules/NavBar';
 import FeaturedCauseCard from '../../modules/FeaturedCauseCard';
+import HowitWorksSection from './HowItWorksSection';;
 class HomePage extends Component {
     
     render() {
@@ -15,16 +16,8 @@ class HomePage extends Component {
             <section>
                 <NavBar/>
                 <ImpactSection />
-                <HowItWorksCard
-        cardHeading = "You choose your cause" 
-        cardText = {
-        <div>
-          <p> With over 50,000 charities in Australia, how do you make the right choice? </p> 
-          <p> Our team of analysts determine the best charities that serve the cause of your choice. </p>
-        </div>
-        }
-        CardImage = {image}
-        />
+                <HowitWorksSection color="green"/>
+                
                 <BrowserRouter>
                     <>
                     <FeaturedCauseCard CardText = "This is some text" CardHeading = "This is a featured cause card" CardImage = {image} />
