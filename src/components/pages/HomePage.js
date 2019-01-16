@@ -2,7 +2,10 @@ import React, { Component } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import MoreI4cCard from "./../modules/MoreI4cCard";
 import ButtonLink from "./../modules/ButtonLink";
-import HowItWorksCard from "./../modules/HowItWorksCard"; 
+import HowItWorksCard from "./../modules/HowItWorksCard";
+import FeaturedCauseCard from "./../modules/FeaturedCauseCard";
+import NavBar from "./../modules/NavBar";
+
 import image from "./../../img/cartoon.jpg";
 import Footer from "./../modules/Footer";;
 
@@ -12,7 +15,18 @@ class HomePage extends Component {
         
         return (
             <section>
+                <NavBar />
                 <h1>Welcome To HomePage</h1>
+                <HowItWorksCard 
+        cardHeading = "You choose your cause" 
+        cardText = {
+        <div>
+          <p> With over 50,000 charities in Australia, how do you make the right choice? </p> 
+          <p> Our team of analysts determine the best charities that serve the cause of your choice. </p>
+        </div>
+        }
+        CardImage = {image}
+        />
                 <BrowserRouter>
                     <>
                     <HowItWorksCard 
@@ -31,6 +45,7 @@ class HomePage extends Component {
                     <ButtonLink href="react.com" color={"red"} text="link3"/> 
 
                     <Footer />
+                    
                     </>
                 </BrowserRouter>
                 

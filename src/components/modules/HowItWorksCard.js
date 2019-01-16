@@ -69,7 +69,7 @@ class HowitWorksCard extends Component {
         
         return (
             <div>
-                <CardWrapper>
+                <CardWrapper className="asf">
                 <ImageContainer src= {CardImage} />
                     <OrdList>
                         <ol>
