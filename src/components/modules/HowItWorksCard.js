@@ -77,6 +77,8 @@ class HowitWorksCard extends Component {
                                 <h1>{cardHeading}</h1> 
                                 <h3>{cardText}</h3>
                             </li>
+                            
+
                         </ol>
                     </OrdList>  
                 </CardWrapper>   
