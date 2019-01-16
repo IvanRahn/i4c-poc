@@ -7,7 +7,8 @@ import HowItWorksCard from './../../modules/HowItWorksCard';
 import image from './../../../img/cartoon.jpg';
 import NavBar from './../../modules/NavBar';
 import HowitWorksSection from './HowItWorksSection';
-import FeaturedCauseCard from "./../../modules/FeaturedCauseCard";
+import FeaturedCauseSection from "./../../pages/HomePage/FeaturedCauseSection";
+import MoreI4cSection from "./../../pages/HomePage/MoreI4cSection";
 import Footer from "./../../modules/Footer";
 
 class HomePage extends Component {
@@ -19,16 +20,9 @@ class HomePage extends Component {
                 <NavBar/>
                 <ImpactSection />
                 <HowitWorksSection color="green"/>
-                
-                <BrowserRouter>
-                    <>
-                   
-                    <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
-                    
-                    <Footer />
-                    
-                    </>
-                </BrowserRouter>
+                <FeaturedCauseSection />
+                <MoreI4cSection color="green" />
+                <Footer />
                 
             </section>
         );
