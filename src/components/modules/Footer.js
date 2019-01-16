@@ -73,7 +73,7 @@ class Footer extends Component {
                         </UnorderedListStyling>
                 </div>
 
-                                <ButtonLink text = "JOIN US" color= {"green"} />
+                                <ButtonLink text = "JOIN" color= {"green"} />
             
             </FooterStyling>
         );

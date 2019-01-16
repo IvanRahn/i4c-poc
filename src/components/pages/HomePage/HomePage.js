@@ -9,6 +9,7 @@ import NavBar from './../../modules/NavBar';
 import HowitWorksSection from './HowItWorksSection';
 import FeaturedCauseCard from "./../../modules/FeaturedCauseCard";
 import Footer from "./../../modules/Footer";
+import CTASection from "./CTASection";
 
 class HomePage extends Component {
     
@@ -31,7 +32,8 @@ class HomePage extends Component {
                         </div>
                         }
                         CardImage = {image}
-                        />        
+                        />   
+                    <CTASection />     
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
                     
                     <Footer />
