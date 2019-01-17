@@ -26,7 +26,7 @@ class HowitWorksSection extends Component {
         cardText = {
         <div>
           <p> We invest the donations in Australian equities to generate significantly greater returns.  </p> 
-          <p> This provides meaningful annual distributions to high impact charities that serve your cause </p>
+          <p> This provides meaningful annual distributions to high impact charities that serve your cause. </p>
         </div>
         }
         CardImage = {image}

@@ -23,16 +23,19 @@ class HomePage extends Component {
                 
                 
                 <BrowserRouter>
-                    <>
-                    <CTASection 
-                CTAText = "Our qualified team did the research, so you don't have to. The Australian charity sector holds over $30 billion dollars in cash reserves earning very low returns. A donation to I4C goes much further. Most charities rely on regular donations to sustain their programs. Join us to make an everlasting impact. Vetted by our Board of Trustees"
-                  />
-                   
+                    <div>
+
+                    <CTASection
+                        
+                    CardImage = {image} />
+
+                />
+                    
                     <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
                     
                     <Footer />
                     
-                    </>
+                    </div>
                 </BrowserRouter>
                 
             </section>
