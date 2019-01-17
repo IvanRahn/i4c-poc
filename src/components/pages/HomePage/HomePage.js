@@ -9,7 +9,6 @@ import Footer from "./../../modules/Footer";
 class HomePage extends Component {
     
     render() {
-        console.log(this.props)    
         return (
             <section>
                 <NavBar/>

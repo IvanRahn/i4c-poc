@@ -4,6 +4,8 @@ import image from "./../../../img/cartoon.jpg"
 import SectionWrapper from "./SectionWrapper";
 import ButtonLink from "./../../modules/ButtonLink";
 import HTMLContent from '../../modules/HTMLContent';
+import {connect} from "react-redux";
+import {getContent} from "./../../../actions"
 const Figure = styled.figure `
 width: 50%;
 margin: 0 auto;
@@ -19,6 +21,21 @@ margin: 0 auto;
 
 const Section = styled.section `
 width: 50%;
+a {
+    border-bottom: 3px solid ${props => props.color || "black"};
+    display: inline-block;
+    color: ${props => props.color || "black"};
+    text-align: center;
+    text-decoration: none;	
+    /* width: auto; */
+    ${props => props.auto ? "" : "width: 128px;"}
+    margin: 8px 8px;
+    height: 32px;
+    font-size: 1em;
+    :hover {
+        color: blue;
+    }
+    }
 `
 const Span = styled.span `
 width: auto;
@@ -39,12 +56,20 @@ width: auto;
 
 
 class ImpactSection extends Component {
-    render () {
+    constructor(props) {
+        super(props);
+        this.props.getContent()
+            const {content} = this.props;
+        console.log(content)
+    }
+    // componentDidMount() {
+        //     this.props.getContent();
+        // }
+        render () {
+            
+            // const {color, content} = this.props;
+            const {color, content} = this.props;
         console.log(this.props)
-
-        const {color} = this.props;
-        const content = "<p>test&nbsp;<a title=\"What title?\" href=\"http://www.google.com\">my sweet sweet link</a>&nbsp;test</p>\r\n<p>tsetset</p>\r\n<p>estest</p>\r\n<p>&nbsp;</p>"
-        
         return (
             <SectionWrapper color={color}>
                 <Section >
@@ -54,7 +79,8 @@ class ImpactSection extends Component {
                 </Figure>
                 </Section>
                 <Section>
-                   <HTMLContent {...this.props} content={content}/>
+                   {/* <HTMLContent content={`<h1>${content.title}</h1>`}/> */}
+                   {/* <HTMLContent content={content.extended}/> */}
                    
                     <ButtonLink text="JOIN" color={"green"}/>
                 </Section>
@@ -64,5 +90,11 @@ class ImpactSection extends Component {
         )
     }
 }
-
-export default ImpactSection;
+const mapStateToProps = (state) => {
+    return {
+        content: state.content.content
+    }
+}
+export default connect(mapStateToProps, {
+    getContent
+})(ImpactSection);

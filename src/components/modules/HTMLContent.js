@@ -1,8 +1,9 @@
 import React, {Component} from "react"
-
+import {withRouter}from "react-router"
 class HTMLContent extends Component {
     contentClickHandler = (e) => {
       const {history} = this.props
+      console.log(this.props)
       const targetLink = e.target.closest('a');
       if(!targetLink) return;
       if (targetLink.href.match(/localhost/)) {
@@ -22,4 +23,4 @@ class HTMLContent extends Component {
     }
   }
 
-  export default HTMLContent;
+  export default withRouter(HTMLContent);
