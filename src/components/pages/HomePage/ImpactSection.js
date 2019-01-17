@@ -31,7 +31,7 @@ width: auto;
     border-bottom: 1px solid black;
     transform: rotate(-45deg);
     position: absolute;
-    right: 50%;
+    right: 49.5%;
     margin-top: 20px;
 }
 `
