@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import image from "./../../../img/cartoon.jpg"
 import SectionWrapper from "./SectionWrapper";
 import ButtonLink from "./../../modules/ButtonLink";
-
+import HTMLContent from '../../modules/HTMLContent';
 const Figure = styled.figure `
 width: 50%;
 margin: 0 auto;
@@ -40,7 +40,11 @@ width: auto;
 
 class ImpactSection extends Component {
     render () {
+        console.log(this.props)
+
         const {color} = this.props;
+        const content = "<p>test&nbsp;<a title=\"What title?\" href=\"http://www.google.com\">my sweet sweet link</a>&nbsp;test</p>\r\n<p>tsetset</p>\r\n<p>estest</p>\r\n<p>&nbsp;</p>"
+        
         return (
             <SectionWrapper color={color}>
                 <Section >
@@ -50,7 +54,8 @@ class ImpactSection extends Component {
                 </Figure>
                 </Section>
                 <Section>
-                    <h1>You invest your donation in sustainability, the dividends supports impactful charities &#8744;</h1>
+                   <HTMLContent {...this.props} content={content}/>
+                   
                     <ButtonLink text="JOIN" color={"green"}/>
                 </Section>
                 <Span >Find Out How It Works</Span>

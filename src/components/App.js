@@ -11,7 +11,7 @@ class App extends Component {
 
       <BrowserRouter>
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Route exact path="/" render={props => <HomePage {...props}/>} />
         </Switch>
       </BrowserRouter>
 </>
