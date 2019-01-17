@@ -8,6 +8,7 @@ margin: 48px auto 0;
 width: 250px;
 border-style: solid;
 border-radius: 10px;
+margin: 0px 40px;
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
