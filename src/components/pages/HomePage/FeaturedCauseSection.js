@@ -3,20 +3,23 @@ import styled from 'styled-components';
 import image from "./../../../img/cartoon.jpg";
 import SectionWrapper from "./../HomePage/SectionWrapper";
 import FeaturedCauseCard from '../../modules/FeaturedCauseCard';
-import ButtonLink from './../../modules/ButtonLink';
+import { connect } from 'react-redux';
+import { getContent } from '../../../actions';
+
 
 const H = styled.h1`
     width:100%;
     text-align: center;
 `
 
-const StyleDiv = styled.div`
-    width: 100%;
-`
 
 
 class FeacturedCauseSection extends Component {
+    // constructor (props) {
+    //     super(props);
+    // }
     render() {
+        
         const {color} = this.props;
         return (
             <SectionWrapper color={color}>
@@ -30,5 +33,6 @@ class FeacturedCauseSection extends Component {
         )
     }
 }
+
 
 export default FeacturedCauseSection;

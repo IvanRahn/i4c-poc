@@ -1,17 +1,16 @@
 import KeystoneApi from '../apis/keystone_api';
 
-export const getContent = () => {
-    return async (dispatch, getState) => {
-        dispatch({
-            type: "GET_CONTENT",
-            isFetching: true,
-            error: null
-        })
-        return KeystoneApi.get("/blog").then(response => {
+export const getContent = () => dispatch => {
+    dispatch({
+        type: "GET_CONTENT",
+        isFetching: true,
+        error: null
+    })
+        return KeystoneApi.get(`/featured-cause-cards`).then(response => {
             dispatch({
                 type: "GET_CONTENT_SUCCESS",
                 isFetching: false,
-                payload: response.data[1]
+                payload: response
             })
         }).catch(err => {
             dispatch({
@@ -21,4 +20,4 @@ export const getContent = () => {
             })
         })
         }
-    }
+    
