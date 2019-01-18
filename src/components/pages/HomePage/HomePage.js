@@ -12,7 +12,7 @@ class HomePage extends Component {
         return (
             <section>
                 <NavBar/>
-                <ImpactSection {...this.props}/>
+                <ImpactSection />
                 <HowitWorksSection color="green"/>
                 <FeaturedCauseSection />
                 <MoreI4cSection color="green" />

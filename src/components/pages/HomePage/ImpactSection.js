@@ -59,17 +59,22 @@ class ImpactSection extends Component {
     constructor(props) {
         super(props);
         this.props.getContent()
-            const {content} = this.props;
-        console.log(content)
     }
-    // componentDidMount() {
-        //     this.props.getContent();
-        // }
-        render () {
-            
-            // const {color, content} = this.props;
-            const {color, content} = this.props;
+    render () {
+        const {color} = this.props;
         console.log(this.props)
+        let content;
+        if (this.props.content.isFetching) {
+            return (
+                <SectionWrapper>Loading</SectionWrapper>
+            )
+        // } else {
+        //     content = {content: {content: {content: {extended: ""}}}}
+        //     console.log("hit")
+        }
+        content = this.props.content.content.content.extended
+
+        // console.log(content)
         return (
             <SectionWrapper color={color}>
                 <Section >
@@ -80,7 +85,7 @@ class ImpactSection extends Component {
                 </Section>
                 <Section>
                    {/* <HTMLContent content={`<h1>${content.title}</h1>`}/> */}
-                   {/* <HTMLContent content={content.extended}/> */}
+                   <HTMLContent content={content}/>
                    
                     <ButtonLink text="JOIN" color={"green"}/>
                 </Section>
@@ -92,9 +97,14 @@ class ImpactSection extends Component {
 }
 const mapStateToProps = (state) => {
     return {
-        content: state.content.content
+        content: state.content,
+        isFetching: state.isFetching,
+        error: state.error
     }
 }
-export default connect(mapStateToProps, {
-    getContent
-})(ImpactSection);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getContent: () => dispatch(getContent())
+      }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(ImpactSection);
