@@ -18,21 +18,45 @@ class FeacturedCauseSection extends Component {
     // constructor (props) {
     //     super(props);
     // }
-    render() {
+    componentDidMount () {
+        this.props.getContent();
         
-        const {color} = this.props;
+    }
+    render() {
+        const {color, content, isFetching, error} = this.props
+        console.log(content)
+        if (!isFetching && content) {
+        
+        console.log(this.props)
         return (
             <SectionWrapper color={color}>
                 <H>Featured Causes</H>
-
-                <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-                <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />    
+                {content.map((content,i) => {
+                    if (i <= 1) {
+                        return (
+                        <FeaturedCauseCard key={content._id}CardHeading={content.content.heading} CardText={content.content.text} CardImage={content.image.secure_url}  />
+                        )
+                    }
+                })}
+                {/* 
+                <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />     */}
                 
 
             </SectionWrapper>
+
+        )
+    }   console.log(this.props)
+        return (
+            <div>loading</div>
         )
     }
 }
+const mapStateToProps = (state) => {
+    return {
+        content: state.content.content,
+        isFetching: state.content.isFetching,
+        error: state.content.error
+    }
+}
 
-
-export default FeacturedCauseSection;
+export default connect(mapStateToProps, {getContent})(FeacturedCauseSection);

@@ -58,18 +58,18 @@ width: auto;
 class ImpactSection extends Component {
     constructor(props) {
         super(props);
-        this.props.getContent()
+        // this.props.getContent()
     }
     render () {
         const {color} = this.props;
         // console.log(this.props)
         let content;
-        if (this.props.content.isFetching) {
-            return (
-                <SectionWrapper>Loading</SectionWrapper>
-            )
-        }
-        console.log(this.props)
+        // if (this.props.content.isFetching) {
+        //     return (
+        //         <SectionWrapper>Loading</SectionWrapper>
+        //     )
+        // }
+        // console.log(this.props)
         // content = this.props.content.content.content.extended
 
         return (
@@ -104,6 +104,4 @@ const mapDispatchToProps = (dispatch) => {
         getContent: () => dispatch(getContent())
       }
 }
-export default connect(mapStateToProps, {
-    getContent
-})(ImpactSection);
+export default ImpactSection;
