@@ -73,7 +73,7 @@ class ImpactSection extends Component {
                 <Section>
                    <HTMLContent content={`<h1>${impact[0].title}</h1>`}/>
                    
-                    <ButtonLink text="JOIN" color={"green"}/>
+                    <ButtonLink text="JOIN" color={"green"} href="#"/>
                 </Section>
                 <Span >Find Out How It Works</Span>
                 
