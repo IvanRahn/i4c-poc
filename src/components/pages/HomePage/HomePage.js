@@ -9,11 +9,10 @@ import Footer from "./../../modules/Footer";
 class HomePage extends Component {
     
     render() {
-        console.log(this.props)    
         return (
             <section>
                 <NavBar/>
-                <ImpactSection {...this.props}/>
+                <ImpactSection />
                 <HowitWorksSection color="green"/>
                 <FeaturedCauseSection />
                 <MoreI4cSection color="green" />
