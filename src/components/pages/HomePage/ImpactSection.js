@@ -56,10 +56,7 @@ width: auto;
 
 
 class ImpactSection extends Component {
-    constructor(props) {
-        super(props);
-        // this.props.getContent()
-    }
+   
     render () {
         const {color} = this.props;
         const content = "<h2>Ducimus id corporis quo fugiat occaecati tempora quia illum. Nihil repellat minima laudantium ut iure ullam. Nam incidunt et nostrum nobis porro quis ut ea. Ducimus voluptatem quis magni aspernatur ut.Possimus odit odio hic dolor architecto. Voluptate est doloribus earum dolor. Iusto qui consequatur molestias aut tenetur. Sint qui in et minima eius at.<h2>"
@@ -73,7 +70,6 @@ class ImpactSection extends Component {
                 </Figure>
                 </Section>
                 <Section>
-                   {/* <HTMLContent content={`<h1>${content.title}</h1>`}/> */}
                    <HTMLContent content={content}/>
                    
                     <ButtonLink text="JOIN" color={"green"} href="#"/>
@@ -84,16 +80,6 @@ class ImpactSection extends Component {
         )
     }
 }
-const mapStateToProps = (state) => {
-    return {
-        content: state.content,
-        isFetching: state.isFetching,
-        error: state.error
-    }
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getContent: () => dispatch(getContent())
-      }
-}
+
+
 export default ImpactSection;
