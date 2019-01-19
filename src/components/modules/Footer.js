@@ -37,43 +37,43 @@ class Footer extends Component {
                 <div>
                     <h1>ABOUT US</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "What is I4C" /> </li> 
-                            <li> <ButtonLink text= "Who is I4C" /> </li> 
+                            <li> <ButtonLink text= "What is I4C" href="#"/> </li> 
+                            <li> <ButtonLink text= "Who is I4C" href="#"/> </li> 
                         </UnorderedListStyling>
                 </div>
 
                 <div>
                     <h1>HOW IT WORKS</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "Your account and benefits" /> </li> 
-                            <li> <ButtonLink text= "How does I4C operate?" /> </li> 
-                            <li> <ButtonLink text= "Causes we care about" /> </li> 
+                            <li> <ButtonLink text= "Your account and benefits" href="#"/> </li> 
+                            <li> <ButtonLink text= "How does I4C operate?" href="#"/> </li> 
+                            <li> <ButtonLink text= "Causes we care about"href="#" /> </li> 
                         </UnorderedListStyling>
                 </div>
 
                 <div>
                     <h1>OUR IMPACT</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
-                            <li> <ButtonLink text= "Cuases Name" /> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
                         </UnorderedListStyling>
                 </div>
                 
                 <div>
                     <h1>MORE INFORMATION</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "Legal Stuff" /> </li> 
-                            <li> <ButtonLink text= "Privacy Policy" /> </li> 
-                            <li> <ButtonLink text= "Contact Us" /> </li> 
+                            <li> <ButtonLink text= "Legal Stuff" href="#"/> </li> 
+                            <li> <ButtonLink text= "Privacy Policy" href="#"/> </li> 
+                            <li> <ButtonLink text= "Contact Us" href="#"/> </li> 
                         </UnorderedListStyling>
                 </div>
 
-                                <ButtonLink text = "JOIN US" color= {"green"} />
+                                <ButtonLink text = "JOIN US" color= {"green"} href="#"/>
             
             </FooterStyling>
         );

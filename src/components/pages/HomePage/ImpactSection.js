@@ -43,7 +43,7 @@ class ImpactSection extends Component {
         console.log(this.props)
 
         const {color} = this.props;
-        const content = "<p>test&nbsp;<a title=\"What title?\" href=\"http://www.google.com\">my sweet sweet link</a>&nbsp;test</p>\r\n<p>tsetset</p>\r\n<p>estest</p>\r\n<p>&nbsp;</p>"
+        const content = "<h2>Ducimus id corporis quo fugiat occaecati tempora quia illum. Nihil repellat minima laudantium ut iure ullam. Nam incidunt et nostrum nobis porro quis ut ea. Ducimus voluptatem quis magni aspernatur ut.Possimus odit odio hic dolor architecto. Voluptate est doloribus earum dolor. Iusto qui consequatur molestias aut tenetur. Sint qui in et minima eius at.<h2>"
         
         return (
             <SectionWrapper color={color}>
@@ -56,7 +56,7 @@ class ImpactSection extends Component {
                 <Section>
                    <HTMLContent {...this.props} content={content}/>
                    
-                    <ButtonLink text="JOIN" color={"green"}/>
+                    <ButtonLink text="JOIN" color={"green"} href="#"/>
                 </Section>
                 <Span >Find Out How It Works</Span>
                 

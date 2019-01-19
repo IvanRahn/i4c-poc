@@ -1,8 +1,7 @@
 import React, {Component, lazy} from "react";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import styled from "styled-components";
 import ReactGA from "react-ga";
-
 const ButtonLink = styled(Link)`
     border-bottom: 3px solid ${props => props.color || "black"};
     display: inline-block;
@@ -36,7 +35,7 @@ class StyledLink extends Component {
         )
     }
 }   
-export default StyledLink;
+export default withRouter(StyledLink);
 
 
 

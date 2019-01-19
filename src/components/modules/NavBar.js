@@ -47,17 +47,17 @@ class NavBar extends Component {
 
                 <DivStyling>
                     <UnorderedListStyling>    
-                        <li> <ButtonLink text="ABOUT US"/> </li>
-                        <li> <ButtonLink text="HOW IT WORKS"/> </li>
-                        <li> <ButtonLink text="OUR IMPACT"/> </li>
-                        <li> <ButtonLink text="CONTACT US"/> </li>
+                        <li> <ButtonLink text="ABOUT US" href="#" section="nav" location="homepage"/> </li>
+                        <li> <ButtonLink text="HOW IT WORKS"href="#"section="nav" location="homepage"/> </li>
+                        <li> <ButtonLink text="OUR IMPACT"href="#"section="nav" location="homepage"/> </li>
+                        <li> <ButtonLink text="CONTACT US"href="#"section="nav" location="homepage"/> </li>
                     </UnorderedListStyling>
                 </DivStyling>
 
                 <DivStyling>
                     <UnorderedListStyling>
-                        <li> <ButtonLink text="LOG IN" color={"green"}/> </li>
-                        <li> <ButtonLink text="JOIN" color={"green"}/> </li>
+                        <li> <ButtonLink text="LOG IN" color={"green"} href="#"section="nav" location="homepage"/> </li>
+                        <li> <ButtonLink text="JOIN" color={"green"} href="#"section="nav" location="homepage"/> </li>
                     </UnorderedListStyling>
                 </DivStyling>
 
