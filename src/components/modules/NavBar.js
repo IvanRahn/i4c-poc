@@ -3,6 +3,7 @@ import ButtonLink from "./ButtonLink";
 import styled from "styled-components";
 
 const NavbarStyling = styled.nav`
+
     position: fixed;
     width: 100%;
     display: flex;
@@ -25,15 +26,15 @@ const LogoContainer = styled.img`
     width: 50px;
 `
 const DivStyling = styled.div`
-    display: flex;
 `
 const UnorderedListStyling = styled.ul`
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     overflow: hidden;
     display: flex; 
-    
+    flex-direction: column;
+    @media only screen and (min-width: 600px){
+    flex-direction: row;
+    }
 `
 
 class NavBar extends Component {
