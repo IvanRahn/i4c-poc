@@ -1,4 +1,4 @@
-import React, {Component, lazy} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import styled from "styled-components";
 import ReactGA from "react-ga";
@@ -20,22 +20,17 @@ const ButtonLink = styled(Link)`
     `
 
     
-class StyledLink extends Component {
-    analytics = () => {
-        
-        const {section, text, location} = this.props;
+function StyledLink({section, text, location, color, href, auto}) {
+    const analytics = () => {
         ReactGA.event({
             category: 'ButtonLink',
             action: `Section: ${section}, Button: ${text}, Page: ${location.pathname}`,
           });
     }
-    render() {
-        const {color, text, href, auto} = this.props
         return (
-        <ButtonLink auto={auto} to={`${href}`} color={color} onClick={this.analytics}>{text}</ButtonLink>
+        <ButtonLink auto={auto} to={`${href}`} color={color} onClick={analytics}>{text}</ButtonLink>
         )
     }
-}   
 export default StyledLink;
 
 

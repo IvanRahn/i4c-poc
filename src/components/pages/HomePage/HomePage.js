@@ -1,26 +1,30 @@
-import React, { Component } from "react";
+import React, { Suspense, lazy } from "react";
 import ImpactSection from './ImpactSection';
 import NavBar from './../../modules/NavBar';
-import HowitWorksSection from './HowItWorksSection';
-import FeaturedCauseSection from "./../../pages/HomePage/FeaturedCauseSection";
-import MoreI4cSection from "./../../pages/HomePage/MoreI4cSection";
-import Footer from "./../../modules/Footer";
+const HowitWorksSection = lazy(() => import('./HowItWorksSection')) ;
+const MoreI4cSection = lazy(() => import('././../../pages/HomePage/MoreI4cSection')) ;
+const FeaturedCauseSection = lazy(() => import('./../../pages/HomePage/FeaturedCauseSection')) ;
+const Footer = lazy(() => import('./../../modules/Footer')) ;
 
-class HomePage extends Component {
-    
-    render() {
+
+const HomePage = () => {
         return (
-            <section>
+            <>
                 <NavBar/>
-                <ImpactSection />
-                <HowitWorksSection color="green"/>
-                <FeaturedCauseSection />
-                <MoreI4cSection color="green" />
+                <main>
+                    <ImpactSection />
+                    <Suspense fallback="">
+                    <HowitWorksSection color="green"/>
+                    <FeaturedCauseSection />
+                    <MoreI4cSection color="green" />
+                    </Suspense>
+                </main>
+                <Suspense fallback="">
                 <Footer />
-                
-            </section>
+                </Suspense>
+            </>
         );
     }
-}
+
 
 export default HomePage

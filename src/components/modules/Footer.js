@@ -2,11 +2,6 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import ButtonLink from "./ButtonLink"; 
 
-
-// const DivStyling = styled.div`
-    
-// ` 
-
 const FooterStyling = styled.footer`
     display: flex;
     flex-direction: row;
