@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import image from "./../../../img/cartoon.jpg"
 import SectionWrapper from "./SectionWrapper";
 import ButtonLink from "./../../modules/ButtonLink";
 import HTMLContent from '../../modules/HTMLContent';
@@ -56,25 +55,23 @@ width: auto;
 
 
 class ImpactSection extends Component {
-    constructor(props) {
-        super(props);
-        // this.props.getContent()
+    componentDidMount() {
+        this.props.getContent("impactsection")
     }
     render () {
-        const {color} = this.props;
-        const content = "<h2>Ducimus id corporis quo fugiat occaecati tempora quia illum. Nihil repellat minima laudantium ut iure ullam. Nam incidunt et nostrum nobis porro quis ut ea. Ducimus voluptatem quis magni aspernatur ut.Possimus odit odio hic dolor architecto. Voluptate est doloribus earum dolor. Iusto qui consequatur molestias aut tenetur. Sint qui in et minima eius at.<h2>"
-        
+        const {color, impact, impactIsFetching, impactError} = this.props;
+        console.log("Impact: ", this.props)
+        if (!impactIsFetching && impact) {
         return (
             <SectionWrapper color={color}>
                 <Section >
                 <Figure>
-                    <FigureImage src={image} alt="Cheering Man"/>
+                    <FigureImage src={impact[0].image.secure_url} alt="Cheering Man"/>
                     <figcaption>Cheering Man</figcaption>
                 </Figure>
                 </Section>
                 <Section>
-                   {/* <HTMLContent content={`<h1>${content.title}</h1>`}/> */}
-                   <HTMLContent content={content}/>
+                   <HTMLContent content={`<h1>${impact[0].title}</h1>`}/>
                    
                     <ButtonLink text="JOIN" color={"green"} href="#"/>
                 </Section>
@@ -82,18 +79,19 @@ class ImpactSection extends Component {
                 
             </SectionWrapper>
         )
+    } else if (impactError) {
+        return <div> Error </div>
     }
+    return <div> loading</div>
+}
 }
 const mapStateToProps = (state) => {
+    const {impact, impactIsFetching, impactError} = state.impact
     return {
-        content: state.content,
-        isFetching: state.isFetching,
-        error: state.error
+        impact,
+        impactIsFetching,
+        impactError
     }
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-        getContent: () => dispatch(getContent())
-      }
-}
-export default ImpactSection;
+
+export default connect(mapStateToProps, {getContent})(ImpactSection);
