@@ -1,5 +1,7 @@
 import { combineReducers} from "redux";
-import contentReducer from "./content_reducer"
+import featuredCauseCardReducer from "./featured_cause_cards_reducer"
+import impact_reducer from "./impact_reducer"
 export default combineReducers({
-    content: contentReducer
+    causes: featuredCauseCardReducer,
+    impact: impact_reducer
 });
