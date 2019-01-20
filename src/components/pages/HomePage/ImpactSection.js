@@ -56,12 +56,12 @@ width: auto;
 
 class ImpactSection extends Component {
     componentDidMount() {
-        this.props.getContent("impactsection")
+        this.props.getContent("impactsectio")
     }
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;
         console.log("Impact: ", this.props)
-        if (!impactIsFetching && impact) {
+        if (impact) {
         return (
             <SectionWrapper color={color}>
                 <Section >

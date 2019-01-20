@@ -30,6 +30,7 @@ function StyledLink({section, text, location, color, href, auto}) {
         <ButtonLink auto={auto} to={`${href}`} color={color} onClick={analytics}>{text}</ButtonLink>
         )
     }
+  
 export default withRouter(StyledLink);
 
 
