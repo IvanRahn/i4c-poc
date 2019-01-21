@@ -1,17 +1,49 @@
-import React, { Suspense, lazy } from "react";
-
+import React, {Component} from "react";
 import NavBar from '../../modules/NavBar';
-const Footer = lazy(() => import('../../modules/Footer')) ;
+import { connect } from "react-redux";
+import {getContent} from "./../../../actions"
+import ButtonLink from "./../../modules/ButtonLink";
+import CausePage from "./CausePage";
 
-
-const HomePage = () => {
-        return (
-            <div>
-                <NavBar />
-                Hello this is the Cause Page
-            </div>
-        );
+class CauseHomePage extends Component {
+    
+    componentDidMount() {
+        this.props.getContent("causes")
+        
     }
 
+    render () {
+        console.log(this.props.cause)
+        if(this.props.cause) {
+            return (
+                <div>
+                    {this.props.cause.map(cause => {
+                        
+                        return(
+                        <ButtonLink key={cause._id} href={`cause/${cause.slug}`} text={cause.title}>
+                        
+                        </ButtonLink>)
+                    })}
 
-export default HomePage
+                </div>
+            );
+        } 
+        
+        return(
+            "Helloaskld"
+        )
+    }
+    
+}
+
+
+const mapStateToProps = (state) => {
+    const {cause, causeIsFetching, causeError} = state.cause
+    return {
+      cause,
+      causeIsFetching,
+      causeError
+    }
+  }
+
+export default connect(mapStateToProps, {getContent})(CauseHomePage);
