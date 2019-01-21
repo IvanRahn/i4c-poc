@@ -14,9 +14,9 @@ const HomePage = () => {
                 <main>
                     <ImpactSection />
                     <Suspense fallback="">
-                    <HowitWorksSection color="green"/>
-                    <FeaturedCauseSection />
-                    <MoreI4cSection color="green" />
+                        <HowitWorksSection color="green"/>
+                        <FeaturedCauseSection />
+                        <MoreI4cSection color="green" />
                     </Suspense>
                 </main>
                 <Suspense fallback="">
