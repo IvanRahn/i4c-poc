@@ -56,7 +56,7 @@ width: auto;
 
 class ImpactSection extends Component {
     componentDidMount() {
-        this.props.getContent("impactsectio")
+        this.props.getContent("impactsection")
     }
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;

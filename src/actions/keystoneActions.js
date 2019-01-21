@@ -16,7 +16,7 @@ const getContent = (route) => async dispatch => {
         })
     } catch(error) {
         return dispatch({
-            type: `GET_CONTENT_ERROR$_{route}`,
+            type: `GET_CONTENT_ERROR_${route}`,
             isFetching: false,
             error
         })
