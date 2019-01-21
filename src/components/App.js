@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-
 import CauseHomePage from "./pages/CausePage/CauseHomePage";
 import CausePage from "./pages/CausePage/CausePage";
 import GlobalStyle from "./Normalize";
-import BoardPage from "./pages/OurBoard/BoardPage"; 
+import BoardPage from "./pages/OurBoard/BoardPage";
+import AboutHomePage from "./pages/AboutPage/AboutHomePage"; 
 
 class App extends Component {
 
@@ -15,16 +15,17 @@ class App extends Component {
     return (
       <>
           <GlobalStyle />
-          <BrowserRouter>
-            <Switch>
+            <BrowserRouter>
+              <Switch>
 
-              <Route exact path="/" render={props => <HomePage {...props}/>} />
-              <Route exact path="/cause" render={props => <CauseHomePage {...props}/>} />
-              <Route exact path="/cause/:slug" render= {props =><CausePage {...props}/>} />
-              <Route exact path="/board-page" render={props => <BoardPage {...props}/>} />
+                <Route exact path="/" render={props => <HomePage {...props}/>} />
+                <Route exact path="/cause" render={props => <CauseHomePage {...props}/>} />
+                <Route exact path="/cause/:slug" render= {props =><CausePage {...props}/>} />
+                <Route exact path="/board-page" render={props => <BoardPage {...props}/>} />
+                <Route exact path="/about" render= {props =><AboutHomePage {...props}/>} />
 
-            </Switch>
-          </BrowserRouter>
+              </Switch>
+            </BrowserRouter>
       </>
       );
   }
