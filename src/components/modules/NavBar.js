@@ -43,31 +43,32 @@ const NavUl = styled.ul `
     top: 0px;
     width: auto;
     list-style: none;
-    right: -200px;
-    transition: right 1s ease;
+    transition: left 1s ease;
     top: 50px;
     flex-direction: column;
-    /* @media only screen and (min-width: 390px) and (max-width: 399px) {
-        right: -200px;
-        transition: none;
-    } */
+    @media only screen and (max-width: 399px) {
+    left: -200px;
+    }
     @media only screen and (min-width: 400px) {
+        /* transition: all 0s ease-in-out; */
         top: 0px;
         flex-direction: row;
         right: 0px;
-   li:nth-last-child(2) {
-       margin-left: 50px;
+        li:nth-last-child(2) {
+            margin-left: 50px;
        
    }
-    }
+}
 `
 const NavCheckbox = styled.input `
     display: none;
     :checked + ul {
-        right: 200px;
+        left: 200px;
         @media only screen and (min-width: 400px) {
-            flex-direction: row;
+            /* flex-direction: row; */
+            /* transition: right 1s ease; */
             /* width: 100%;        */
+
       }
     }
 
