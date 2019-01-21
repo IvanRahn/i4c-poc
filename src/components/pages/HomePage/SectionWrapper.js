@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 const SectionWrapper = styled.section`
 height: 100vh;
 display: flex;

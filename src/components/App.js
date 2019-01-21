@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
+
 import CauseHomePage from "./pages/CausePage/CauseHomePage";
 import CausePage from "./pages/CausePage/CausePage";
 import GlobalStyle from "./Normalize";
-
+import BoardPage from "./pages/OurBoard/BoardPage"; 
 
 class App extends Component {
 
@@ -16,9 +17,12 @@ class App extends Component {
           <GlobalStyle />
           <BrowserRouter>
             <Switch>
+
               <Route exact path="/" render={props => <HomePage {...props}/>} />
               <Route exact path="/cause" render={props => <CauseHomePage {...props}/>} />
               <Route exact path="/cause/:slug" render= {props =><CausePage {...props}/>} />
+              <Route exact path="/board-page" render={props => <BoardPage {...props}/>} />
+
             </Switch>
           </BrowserRouter>
       </>

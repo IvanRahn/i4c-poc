@@ -20,7 +20,7 @@ class FeacturedCauseSection extends Component {
     }
     render() {
         const {color, content, isFetching, error} = this.props
-        console.log("Causes: ", this.props)
+        // console.log("Causes: ", this.props)
         if (!isFetching && content) {
         return (
             <SectionWrapper color={color}>

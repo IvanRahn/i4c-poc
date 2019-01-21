@@ -7,20 +7,20 @@ const getContent = (route) => async dispatch => {
         isFetching: true,
         error: null
     })
-    try {
-    const response = await KeystoneApi.get(`/${route}`)
-    return  dispatch({
+    return  await KeystoneApi.get(`/${route}`).then(response => {
+        dispatch({
             type: `GET_CONTENT_SUCCESS_${route}`,
             isFetching: false,
             payload: response.data
         })
-    } catch(error) {
+    }).catch (error =>  {
+        
         return dispatch({
             type: `GET_CONTENT_ERROR_${route}`,
             isFetching: false,
-            error
+            error: error
         })
-    }
-    }
+    })
+}
 
 export default getContent
