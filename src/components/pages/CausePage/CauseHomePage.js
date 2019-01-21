@@ -20,9 +20,7 @@ class CauseHomePage extends Component {
                     {this.props.cause.map(cause => {
                         
                         return(
-                        <ButtonLink key={cause._id} href={`cause/${cause.slug}`} text={cause.title}>
-                        
-                        </ButtonLink>)
+                        <ButtonLink key={cause._id} href={`cause/${cause.slug}`} text={cause.title} />)
                     })}
 
                 </div>
