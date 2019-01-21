@@ -1,27 +1,27 @@
-const defaultState = {content: null, isFetching: false, error:null};
+const defaultState = {cause: null, causeIsFetching: false, causeError:null};
 
 export default (state = defaultState, action) => {
     switch (action.type) {
         case "GET_CONTENT_causes":
         return {
             ...state,
-            content: null,
-            isFetching: action.isFetching,
-            error: null,
+            cause: null,
+            causeIsFetching: action.isFetching,
+            causeError: null,
         }
         case "GET_CONTENT_SUCCESS_causes":
         return {
             ...state,
-            content: action.payload,
-            isFetching: action.isFetching,
-            error: null,
+            cause: action.payload,
+            causeIsFetching: action.isFetching,
+            causeError: null,
         }
         case "GET_CONTENT_ERROR_causes":
             return {
                 ...state,
-                content: null,
-                isFetching: action.isFetching, 
-                error: action.error
+                cause: null,
+                causeIsFetching: action.isFetching, 
+                causeError: action.error
             };
         default:
             return state;
