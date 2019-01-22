@@ -35,7 +35,7 @@ jobs:
     steps:
       - checkout:
           path: ~/root
-      -run:
+      - run:
           name: Install dependencies
           command: npm install
       - run:
