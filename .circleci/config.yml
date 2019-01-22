@@ -50,5 +50,5 @@ workflows:
             - build
           filters:
             branches:
-              only: development
+              only: CI
 
