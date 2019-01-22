@@ -1,8 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
 import SectionWrapper from "../HomePage/SectionWrapper";
-import image from "./../../../img/cartoon.jpg";
-import MoreI4cCard from '../../modules/MoreI4cCard';
 
 
  
@@ -21,23 +19,20 @@ const ImageContainer = styled.img`
 
 
 
-class BoardMembers extends Component {
-    
+class BoardMembers extends Component { 
     render() { 
-        const {memberName, memberText, memberImage} = this.props;
+        const {cardHeading, cardText, avatar} = this.props; 
 
         return (  
-
-            <SectionWrapper>
-                
-
-                <ImageContainer src= {memberImage} />
-                {memberName}
-                {memberText}
-
+            <SectionWrapper> 
+                <ImageContainer cardImage = {avatar} />
+                {cardHeading}
+                {cardText}
             </SectionWrapper> 
         );
     }
 }
  
+
+
 export default BoardMembers;

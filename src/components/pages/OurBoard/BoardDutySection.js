@@ -54,4 +54,4 @@ class BoardDutySection extends Component {
     }
 }
  
-export default BoardDutySection;
+export default BoardDutySection; 
