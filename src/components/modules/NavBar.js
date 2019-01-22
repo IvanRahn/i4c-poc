@@ -33,7 +33,7 @@ const ButtonSpan = styled.span`
       width: 25px;
       height: 10px;
       border-top: 2px solid #eee;
-      @media only screen and (min-width: 400px) {
+      @media only screen and (min-width: 420px) {
           display: none;
         
       }
@@ -52,10 +52,10 @@ align-items: center;
     transition: left 1s ease;
     top: 50px;
     flex-direction: column;
-    @media only screen and (max-width: 399px) {
+    @media only screen and (max-width: 419px) {
     left: -200px;
     }
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 420px) {
         /* transition: all 0s ease-in-out; */
         top: 0px;
         flex-direction: row;
@@ -70,7 +70,7 @@ const NavCheckbox = styled.input `
     display: none;
     :checked + ul {
         left: 200px;
-        @media only screen and (min-width: 400px) {
+        @media only screen and (min-width: 420px) {
             /* flex-direction: row; */
             /* transition: right 1s ease; */
             /* width: 100%;        */
