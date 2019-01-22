@@ -1,14 +1,8 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import SectionWrapper from "../HomePage/SectionWrapper";
 
 
-
-// const H = styled.h1`
-//     color: white;
-//     width:100%;
-//     text-align: center;
-// ` 
+ 
 
 const ImageContainer = styled.img`
     display: flex;
@@ -39,7 +33,7 @@ class BoardDutySection extends Component {
         const {dutyImage, boardQuote, boardRespons} = this.props;
 
         return (  
-            <SectionWrapper>
+           
                 <DivStyle>
                     <div>
                         <ImageContainer src= {dutyImage}/>
@@ -49,7 +43,7 @@ class BoardDutySection extends Component {
                         <h3> {boardRespons} </h3>
                     </TextStyle>
                 </DivStyle>
-            </SectionWrapper> 
+          
         );
     }
 }

@@ -1,6 +1,8 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import SectionWrapper from "../HomePage/SectionWrapper";
+import HTMLContent from '../../modules/HTMLContent';
+
+
 
 
  
@@ -16,19 +18,38 @@ const ImageContainer = styled.img`
 `
 
 
+const DivStyle = styled.div`
+    display: flex;
+    
+`
+
+const TextStyle = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    color: white;
+    
+`
 
 
 
 class BoardMembers extends Component { 
     render() { 
-        const {cardHeading, cardText, avatar} = this.props; 
+        const {memberName, memberHeading, memberText, memberImage} = this.props; 
 
         return (  
-            <SectionWrapper> 
-                <ImageContainer cardImage = {avatar} />
-                {cardHeading}
-                {cardText}
-            </SectionWrapper> 
+            
+                <DivStyle>
+                    <div>
+                        <ImageContainer src = {memberImage} /> 
+                        <TextStyle>
+                                {memberName}
+                                {memberHeading}
+                            <HTMLContent content={memberText} />
+                            
+                        </TextStyle>
+                    </div>
+                </DivStyle>
         );
     }
 }
