@@ -28,7 +28,7 @@ jobs:
   deploy:
     docker:
       - image: circleci/node:8
-    working_directory: ~/circleci-docs
+    working_directory: ~/root
     steps:
       - run:
           name: Install awscli
@@ -36,4 +36,15 @@ jobs:
       - run:
           name: Deploy to S3
           command: npm run build && aws s3 sync build/ s3://i4c-web-poc
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: development
 
