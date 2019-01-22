@@ -25,9 +25,15 @@ jobs:
             ./cc-test-reporter before-build
             npm test -- --coverage
             ./cc-test-reporter after-build --exit-code $?
-deployment:
-  staging:
-    branch: development
-    codedeploy:
-      i4c:
-        deployment_group: my-deployment-group
+  deploy:
+    docker:
+      - image: circleci/node:8
+    working_directory: ~/circleci-docs
+    steps:
+      - run:
+          name: Install awscli
+          command: sudo pip install awscli
+      - run:
+          name: Deploy to S3
+          command: npm run build && aws s3 sync build/ s3://i4c-web-poc
+
