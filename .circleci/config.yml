@@ -36,6 +36,7 @@ jobs:
       - run:
           name: Create build
           command: npm run build
+          working_directory: ~/root
       - run:
           name: Deploy to S3
           command: aws s3 sync build/ s3://i4c-web-poc
