@@ -1,46 +1,32 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route, Link } from "react-router-dom";
-import MoreI4cCard from "../../modules/MoreI4cCard";
-import ButtonLink from "../../modules/ButtonLink";
+import React, { Suspense, lazy } from "react";
 import ImpactSection from './ImpactSection';
-import HowItWorksCard from './../../modules/HowItWorksCard';
-import image from './../../../img/cartoon.jpg';
 import NavBar from './../../modules/NavBar';
-import HowitWorksSection from './HowItWorksSection';
-import FeaturedCauseCard from "./../../modules/FeaturedCauseCard";
-import Footer from "./../../modules/Footer";
-import CTASection from "./CTASection";
+import image from "./../../../img/cartoon.jpg";
+const HowitWorksSection = lazy(() => import('./HowItWorksSection')) ;
+const MoreI4cSection = lazy(() => import('././../../pages/HomePage/MoreI4cSection')) ;
+const FeaturedCauseSection = lazy(() => import('./../../pages/HomePage/FeaturedCauseSection')) ;
+const Footer = lazy(() => import('./../../modules/Footer')) ;
+const CTASection= lazy(() => import('./../HomePage/CTASection')) ;
 
-class HomePage extends Component {
-    
-    render() {
-        
+const HomePage = () => {
         return (
-            <section>
+            <>
                 <NavBar/>
-                <ImpactSection />
-                <HowitWorksSection color="green"/>
-                
-                
-                <BrowserRouter>
-                    <div>
-
-                    <CTASection
-                        
-                    CardImage = {image} />
-
-                />
-                    
-                    <MoreI4cCard CardText = "This is some text" CardHeading = "This is a heading" CardImage = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" />
-                    
-                    <Footer />
-                    
-                    </div>
-                </BrowserRouter>
-                
-            </section>
+                <main>
+                    <ImpactSection />
+                    <Suspense fallback="">
+                        <HowitWorksSection color="green"/>
+                        <CTASection CardImage={image} />
+                        <FeaturedCauseSection />
+                        <MoreI4cSection color="green" />
+                    </Suspense>
+                </main>
+                <Suspense fallback="">
+                <Footer />
+                </Suspense>
+            </>
         );
     }
-}
+
 
 export default HomePage

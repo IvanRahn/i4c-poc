@@ -1,34 +1,57 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import image from "./../../../img/cartoon.jpg";
 import SectionWrapper from "./../HomePage/SectionWrapper";
 import FeaturedCauseCard from '../../modules/FeaturedCauseCard';
-import ButtonLink from './../../modules/ButtonLink';
+import { connect } from 'react-redux';
+import {getContent} from "./../../../actions";
 
 const H = styled.h1`
     width:100%;
     text-align: center;
 `
 
-const StyleDiv = styled.div`
-    width: 100%;
-`
 
 
 class FeacturedCauseSection extends Component {
+    
+    componentDidMount () {
+        this.props.getContent("featured-cause-cards");
+        
+    }
     render() {
-        const {color} = this.props;
+        const {color, content, isFetching, error} = this.props
+        // console.log("Causes: ", this.props)
+        if (!isFetching && content) {
         return (
             <SectionWrapper color={color}>
                 <H>Featured Causes</H>
-
-                <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-                <FeaturedCauseCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />    
-                
-
+                {content.map((content,i) => {
+                    if (i <= 1) {
+                        return (
+                        <FeaturedCauseCard key={content._id}CardHeading={content.content.heading} CardText={content.content.text} CardImage={content.image?  content.image.secure_url : null}  />
+                        )
+                    }
+                    return null
+                })}
             </SectionWrapper>
+        )
+    } else if (error) {
+        return <div>Error</div>
+    }  
+        return (
+            <div>loading</div>
         )
     }
 }
+const mapStateToProps = (state) => {
+    const {content, isFetching, error} = state.causes
+    return {
+        content,
+        isFetching,
+        error
+    }
+}
 
-export default FeacturedCauseSection;
+export default connect(mapStateToProps, {
+    getContent
+})(FeacturedCauseSection);

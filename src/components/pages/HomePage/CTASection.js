@@ -4,11 +4,11 @@ import SectionWrapper from "./SectionWrapper";
 import ButtonLink from "./../../modules/ButtonLink"
 
 
-const ImageContainer = styled.img`
-height: 260px;
-width: 540px;
-margin: 0 auto;
-margin-bottom: 30em; 
+const ImageContainer = styled.iframe`
+width: 250px; 
+height: 250px;
+margin: -600px auto 0 auto; 
+
 `
 
 const Figure = styled.figure `
@@ -16,7 +16,7 @@ width: 80%;
 margin: 0 auto;
 `
 
-const Section = styled.section `
+const Section = styled.div `
 width: 50%;
 margin-right: 2em;
 text-align: left;
@@ -29,11 +29,7 @@ class CTASection extends Component {
         console.log(CTAText);
         return (  
                 <SectionWrapper>
-                    <Section> 
-                    <Figure>
-                            <ImageContainer src= {CardImage} />
-                    </Figure>
-                    </Section>
+                            <ImageContainer src= {"https://www.youtube.com/embed/tgbNymZ7vqY"} />
 
                     <Section>
                             <h1>"Our <ButtonLink text="qualified team"/> did the research, so you don't have to.</h1> 
