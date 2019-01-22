@@ -35,6 +35,9 @@ jobs:
     steps:
       - checkout:
           path: ~/root
+      -run:
+          name: Install dependencies
+          command: npm install
       - run:
           name: create build 
           command: npm run build
