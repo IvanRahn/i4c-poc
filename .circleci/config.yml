@@ -32,7 +32,7 @@ jobs:
     steps:
       - run:
           name: Install awscli
-          command: sudo pip install awscli
+          command: pip install awscli
       - run:
           name: Deploy to S3
           command: npm run build && aws s3 sync build/ s3://i4c-web-poc
