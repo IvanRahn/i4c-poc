@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
+import image from "./../../img/cartoon.jpg"
 
 const CardWrapper = styled.div`
 overflow: hidden;
@@ -9,6 +10,8 @@ height: 160px;
 background-color: #24c421;
 border-radius: 10px;
 display: flex;
+margin: -200px 40px;
+align-self: top;
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
@@ -34,7 +37,7 @@ class FeaturedCauseCard extends Component {
                         <h3>{CardHeading}</h3>
                         <p>{CardText}</p>
                     </DivContainer>
-                    <ImageContainer src= {CardImage} />
+                    <ImageContainer src={CardImage || image} />
                 </CardWrapper>
             </div>
         )
