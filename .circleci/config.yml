@@ -3,8 +3,11 @@ jobs:
   build:
     docker:
       - image: circleci/node:8
+    working_directory: ~/root
+
     steps:
-      - checkout
+      - checkout:
+          path: ~/root
       - restore_cache: # special step to restore the dependency cache
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -30,12 +33,17 @@ jobs:
       - image: circleci/node:8
     working_directory: ~/root
     steps:
+      - checkout:
+          path: ~/root
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: create build 
+          command: CI=false npm run build
       - run:
           name: Install awscli
           command: sudo apt-get install awscli
-      - run:
-          name: Create build
-          command: npm run build
       - run:
           name: Deploy to S3
           command: aws s3 sync build/ s3://i4c-web-poc
