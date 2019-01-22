@@ -40,7 +40,7 @@ jobs:
           command: npm install
       - run:
           name: create build 
-          command: npm run build
+          command: CI=false npm run build npm run build
       - run:
           name: Install awscli
           command: sudo apt-get install awscli
