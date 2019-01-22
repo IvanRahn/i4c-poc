@@ -1,21 +1,24 @@
 import React, {Component} from "react";
 import ButtonLink from "./ButtonLink";
 import styled from "styled-components";
+import logo from "./../../img/I4C.png"
 
 
 const Nav = styled.nav`
 width: 100%;
-height: 50px;
+height: 110px;
 display: flex;
 justify-content: space-between;
+padding: 8px;
+border-bottom: 2px solid grey;
+box-shadow: 0px 1px #888818;
 `
-const Logo = styled.svg `
-width: 50px;
-height: 50px;
+const Logo = styled.img `
+width: auto;
+height: 80px;
 background-color: black;
 `
 const NavLinks = styled.div `
-
 
 `
 const NavHamburger = styled.div `
@@ -37,6 +40,9 @@ const ButtonSpan = styled.span`
 
 `
 const NavUl = styled.ul `
+height: 110px;
+align-items: center;
+
     margin: 0px;
     display: flex;
     position: fixed;
@@ -78,8 +84,8 @@ const NavCheckbox = styled.input `
 class NavBar extends Component {
     render() {
         return(
-        <Nav>
-            <Logo />
+        <Nav aria-live="polite">
+            <Logo src={logo} />
             <NavLinks>
                 <label htmlFor="nav-checkbox">
                 <NavHamburger>

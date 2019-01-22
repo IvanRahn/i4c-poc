@@ -18,7 +18,9 @@ max-width: 250px;
 max-height: 250px;
 margin: 0 auto;
 `
-
+const ImpactSectionWrapper = styled(SectionWrapper)`
+height: calc(100vh - 110px);
+`
 const Section = styled.section `
 width: 50%;
 a {
@@ -69,7 +71,7 @@ class ImpactSection extends Component {
         }
         
         return (
-            <SectionWrapper color={color}>
+            <ImpactSectionWrapper aria-live="polite" color={color}>
                 <Section >
                 <Figure>
                     <FigureImage src={impact[0].image ? impact[0].image.secure_url : image} alt="Cheering Man"/>
@@ -83,7 +85,7 @@ class ImpactSection extends Component {
                 </Section>
                 <Span >Find Out How It Works</Span>
                 
-            </SectionWrapper>
+            </ImpactSectionWrapper>
         )
     } 
 }
