@@ -7,7 +7,7 @@ jobs:
 
     steps:
       - checkout:
-        path: ~/root
+          path: ~/root
       - restore_cache: # special step to restore the dependency cache
           key: dependency-cache-{{ checksum "package.json" }}
       - run:
@@ -34,7 +34,7 @@ jobs:
     working_directory: ~/root
     steps:
       - checkout:
-        path: ~/root
+          path: ~/root
       - run:
         name: create build 
         command: npm run build
