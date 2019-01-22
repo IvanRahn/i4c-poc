@@ -36,8 +36,8 @@ jobs:
       - checkout:
           path: ~/root
       - run:
-        name: create build 
-        command: npm run build
+          name: create build 
+          command: npm run build
       - run:
           name: Install awscli
           command: sudo apt-get install awscli
