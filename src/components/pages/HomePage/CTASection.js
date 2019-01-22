@@ -11,11 +11,6 @@ margin: -600px auto 0 auto;
 
 `
 
-const Figure = styled.figure `
-width: 80%;
-margin: 0 auto;
-`
-
 const Section = styled.div `
 width: 50%;
 margin-right: 2em;
