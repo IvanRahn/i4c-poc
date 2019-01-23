@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
-
 import CauseHomePage from "./pages/CausePage/CauseHomePage";
 import CausePage from "./pages/CausePage/CausePage";
 import GlobalStyle from "./Normalize";
