@@ -13,8 +13,8 @@ max-height: 600px;
 
 const Section = styled.div `
 width: 50%;
-/* margin-right: 2em; */
 text-align: center;
+/* Add media query to make width 100% for mobile */
 `
 const Wrapper = styled.div`
 text-align: left;
@@ -28,6 +28,7 @@ class FirstSection extends Component {
             <SectionWrapper color={color}>
                 <Section>
                     <ImageContainer src= {image} />
+                    <p>Make component here</p>
                 </Section>
 
                 <Section>
@@ -36,10 +37,10 @@ class FirstSection extends Component {
                         <h1>Donate once, give forever.</h1> 
                         <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                         <h2>Investing for Charity helps donors give more effectively</h2>
-                        <p></p> 
-                        <ButtonLink text="Vetted by our Board of Trustees" />
-                    </Wrapper>
-                
+                        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <p>For more of what we do....</p>
+                        <ButtonLink text="DOWNLOAD PDF" color="green" />
+                    </Wrapper>               
                 </Section>
             </SectionWrapper>
         )
