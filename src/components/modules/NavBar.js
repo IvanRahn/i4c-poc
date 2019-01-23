@@ -96,7 +96,7 @@ class NavBar extends Component {
                 </label>
                 <NavCheckbox type="checkbox" id="nav-checkbox"/>
                 <NavUl>
-                    <li> <ButtonLink text="ABOUT US" href="#" section="nav" location="homepage"/></li> 
+                    <li> <ButtonLink text="ABOUT US" href="/board-page" section="nav" location="homepage"/></li> 
                     <li> <ButtonLink text="HOW IT WORKS"href="#"section="nav" location="homepage"/> </li>
                     <li> <ButtonLink text="OUR IMPACT"href="#"section="nav" location="homepage"/> </li>
                     <li> <ButtonLink text="CONTACT US"href="#"section="nav" location="homepage"/> </li>
