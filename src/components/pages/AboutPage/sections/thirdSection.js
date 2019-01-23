@@ -12,7 +12,7 @@ max-height: 600px;
 margin: -70px auto 0 auto; 
 `
 const Section = styled.div `
-height: 100%;
+height: 50%;
 width: ${props => props.width || "50%"};
 text-align: center;
 /* Add media query to make width 100% for mobile */
