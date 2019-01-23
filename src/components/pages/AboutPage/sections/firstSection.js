@@ -25,6 +25,11 @@ const P = styled.p`
 margin-bottom: 70px;
 `
 
+const BorderP = styled.p`
+color: white;
+background-color: green;
+`
+
 class FirstSection extends Component {
     render () {
         const {color} = this.props;
@@ -38,7 +43,7 @@ class FirstSection extends Component {
 
                 <Section>
                     <Wrapper>
-                        <p>ABOUT INVESTING FOR CHARITY LTD</p>
+                        <BorderP>ABOUT INVESTING FOR CHARITY LTD</BorderP>
                         <h1>Donate once, give forever.</h1> 
                         <P>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
                         <h2>Investing for Charity helps donors give more effectively</h2>
