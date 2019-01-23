@@ -1,21 +1,25 @@
 import React, {Component} from "react";
 import ButtonLink from "./ButtonLink";
 import styled from "styled-components";
+import logo from "./../../img/I4C.png"
 
 
 const Nav = styled.nav`
 width: 100%;
-height: 50px;
+height: 110px;
 display: flex;
 justify-content: space-between;
+padding: 8px;
+border-bottom: 2px solid grey;
+box-shadow: 0px 1px #888818;
+position: fixed;
 `
-const Logo = styled.svg `
-width: 50px;
-height: 50px;
+const Logo = styled.img `
+width: auto;
+height: 80px;
 background-color: black;
 `
 const NavLinks = styled.div `
-
 
 `
 const NavHamburger = styled.div `
@@ -30,13 +34,16 @@ const ButtonSpan = styled.span`
       width: 25px;
       height: 10px;
       border-top: 2px solid #eee;
-      @media only screen and (min-width: 400px) {
+      @media only screen and (min-width: 420px) {
           display: none;
         
       }
 
 `
 const NavUl = styled.ul `
+height: 110px;
+align-items: center;
+
     margin: 0px;
     display: flex;
     position: fixed;
@@ -46,10 +53,10 @@ const NavUl = styled.ul `
     transition: left 1s ease;
     top: 50px;
     flex-direction: column;
-    @media only screen and (max-width: 399px) {
+    @media only screen and (max-width: 419px) {
     left: -200px;
     }
-    @media only screen and (min-width: 400px) {
+    @media only screen and (min-width: 420px) {
         /* transition: all 0s ease-in-out; */
         top: 0px;
         flex-direction: row;
@@ -64,7 +71,7 @@ const NavCheckbox = styled.input `
     display: none;
     :checked + ul {
         left: 200px;
-        @media only screen and (min-width: 400px) {
+        @media only screen and (min-width: 420px) {
             /* flex-direction: row; */
             /* transition: right 1s ease; */
             /* width: 100%;        */
@@ -78,8 +85,8 @@ const NavCheckbox = styled.input `
 class NavBar extends Component {
     render() {
         return(
-        <Nav>
-            <Logo />
+        <Nav aria-live="polite">
+            <Logo src={logo} />
             <NavLinks>
                 <label htmlFor="nav-checkbox">
                 <NavHamburger>

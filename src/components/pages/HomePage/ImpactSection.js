@@ -19,7 +19,9 @@ max-width: 250px;
 max-height: 250px;
 margin: 0 auto;
 `
-
+const ImpactSectionWrapper = styled(SectionWrapper)`
+height: calc(100vh - 110px);
+`
 const Section = styled.section `
 width: 50%;
 a {
@@ -62,7 +64,7 @@ class ImpactSection extends Component {
     }
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;
-        console.log("Impact: ", this.props.impact)
+
         if (impactIsFetching ) {
         return (<div> loading</div>)
         } else if (impactError || !impact || !impact[0]){
@@ -70,7 +72,7 @@ class ImpactSection extends Component {
         }
         
         return (
-            <SectionWrapper color={color}>
+            <ImpactSectionWrapper aria-live="polite" color={color}>
                 <Section >
                 <Figure>
                     <FigureImage src={impact[0].image ? impact[0].image.secure_url : image} alt="Cheering Man"/>
@@ -78,13 +80,13 @@ class ImpactSection extends Component {
                 </Figure>
                 </Section>
                 <Section>
-                   <HTMLContent content={`<h1>${impact[0].title}</h1>`}/>
+                   <HTMLContent content={impact[0].content.text}/>
                    
                     <ButtonLink text="JOIN" color={"green"} href="#"/>
                 </Section>
                 <Span >Find Out How It Works</Span>
                 
-            </SectionWrapper>
+            </ImpactSectionWrapper>
         )
     } 
 }
