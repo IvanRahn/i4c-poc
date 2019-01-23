@@ -19,13 +19,6 @@ class App extends Component {
             <BrowserRouter>
               <Switch>
 
-                {/* <Route exact path="/" render={props => <HomePage {...props}/>} />
-                <Route exact path="/cause" render={props => <CauseHomePage {...props}/>} />
-                <Route exact path="/cause/:slug" render= {props =><CausePage {...props}/>} />
-                <Route exact path="/board-page" render={props => <BoardPage {...props}/>} />
-                <Route exact path="/about" render= {props =><AboutHomePage {...props}/>} /> */}
-
-
                 <Route exact path="/" component={withTracker(HomePage)} />
                 <Route exact path="/cause" component={withTracker(CauseHomePage)} />
                 <Route exact path="/cause/:slug" component={withTracker(CausePage)} />
