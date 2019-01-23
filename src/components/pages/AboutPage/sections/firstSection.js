@@ -22,7 +22,9 @@ text-align: left;
 padding-right: 180px;
 `
 const P = styled.p`
-margin-bottom: 70px;
+margin-bottom: ${props => props.margin || "0px"};;
+
+
 `
 
 const BorderP = styled.p`
@@ -45,9 +47,9 @@ class FirstSection extends Component {
                     <Wrapper>
                         <BorderP>ABOUT INVESTING FOR CHARITY LTD</BorderP>
                         <h1>Donate once, give forever.</h1> 
-                        <P>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
+                        <P margin="70px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
                         <h2>Investing for Charity helps donors give more effectively</h2>
-                        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <P margin="20px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
                         <p>For more of what we do....</p>
                         <ButtonLink text="DOWNLOAD PDF" color="green" />
                     </Wrapper>               

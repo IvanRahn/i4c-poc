@@ -23,7 +23,7 @@ text-align: left;
 padding-right: 180px;
 `
 const P = styled.p`
-margin-bottom: 70px;
+margin-bottom: ${props => props.margin || "0px"};
 `
 
 
