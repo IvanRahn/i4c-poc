@@ -24,7 +24,6 @@ padding-right: 180px;
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};;
 
-
 `
 
 const BorderP = styled.p`
