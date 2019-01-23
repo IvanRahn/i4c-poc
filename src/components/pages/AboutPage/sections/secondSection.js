@@ -18,10 +18,12 @@ const BrandContainer = styled.div`
 `
 
 const Section = styled.div `
-width: ${props => props.width || "50%"};
+width: ${props => props.width || "100%"};
 text-align: center;
 height: 100%;
-/* Add media query to make width 100% for mobile */
+@media (min-width: 768px){
+    width: 50%;
+}
 `
 const Wrapper = styled.div`
 text-align: left;

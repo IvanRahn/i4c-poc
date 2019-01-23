@@ -13,9 +13,11 @@ margin: -34px auto 0 auto;
 `
 const Section = styled.div `
 height: 50%;
-width: ${props => props.width || "50%"};
+width: ${props => props.width || "100%"};
 text-align: center;
-/* Add media query to make width 100% for mobile */
+@media (min-width: 768px){
+    width: 50%;
+}
 `
 const Wrapper = styled.div`
 text-align: left;
