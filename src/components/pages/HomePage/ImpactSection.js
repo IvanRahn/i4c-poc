@@ -63,7 +63,7 @@ class ImpactSection extends Component {
     }
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;
-        // console.log("Impact: ", this.props)
+        console.log("Impact: ", impact)
         if (impactIsFetching ) {
         return (<div> loading</div>)
         } else if (impactError || !impact || !impact[0]){
@@ -79,7 +79,7 @@ class ImpactSection extends Component {
                 </Figure>
                 </Section>
                 <Section>
-                   <HTMLContent content={`<h1>${impact[0].title}</h1>`}/>
+                   <HTMLContent content={impact[0].content.text}/>
                    
                     <ButtonLink text="JOIN" color={"green"} href="#"/>
                 </Section>
