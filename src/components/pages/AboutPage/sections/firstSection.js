@@ -13,7 +13,7 @@ margin: -200px auto 0 auto;
 `
 
 const Section = styled.div `
-width: 50%;
+width: ${props => props.width || "50%"};
 text-align: center;
 /* Add media query to make width 100% for mobile */
 `
@@ -22,7 +22,7 @@ text-align: left;
 padding-right: 180px;
 `
 const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};;
+margin-bottom: ${props => props.margin || "0px"};
 
 `
 

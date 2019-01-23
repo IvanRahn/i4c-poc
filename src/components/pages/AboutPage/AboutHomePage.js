@@ -1,8 +1,9 @@
-import React, {Component} from "react";
+import React, {Component, lazy} from "react";
 import NavBar from '../../modules/NavBar';
 import FirstSection from "./sections/firstSection";
 import SecondSection from "./sections/secondSection";
 import ThirdSection from "./sections/thirdSection";
+import Footer from "./../../modules/Footer"
 
 class AboutHomePage extends Component {
     
@@ -17,6 +18,7 @@ class AboutHomePage extends Component {
                 <FirstSection />
                 <SecondSection />
                 <ThirdSection />
+                <Footer />
             </div>
         );
     }

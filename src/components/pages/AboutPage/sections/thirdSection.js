@@ -12,7 +12,7 @@ max-height: 600px;
 margin: -400px auto 0 auto; 
 `
 const Section = styled.div `
-width: 50%;
+width: ${props => props.width || "50%"};
 text-align: center;
 /* Add media query to make width 100% for mobile */
 `
@@ -29,7 +29,7 @@ class ThirdSection extends Component {
         const {color} = this.props;
         return (
         <SectionWrapper color={color}>
-            <Section>
+            <Section >
                 <ImageContainer src= {image} />
             </Section>
 
@@ -41,6 +41,12 @@ class ThirdSection extends Component {
                     <ButtonLink text="GET TO KNOW OUR BOARD" />
                     
                 </Wrapper>               
+            </Section>
+
+            <Section width="100%">
+                <h2>All this works because of our Donors.</h2>
+                <ButtonLink text="LEARN HOW IT WORKS" color="green" />
+
             </Section>
         </SectionWrapper>
         )

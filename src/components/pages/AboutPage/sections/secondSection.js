@@ -18,7 +18,7 @@ const BrandContainer = styled.div`
 `
 
 const Section = styled.div `
-width: 50%;
+width: ${props => props.width || "50%"};
 text-align: center;
 /* Add media query to make width 100% for mobile */
 `
