@@ -9,6 +9,7 @@ height: auto;
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
+margin: -200px auto 0 auto; 
 `
 
 const Section = styled.div `
@@ -18,8 +19,12 @@ text-align: center;
 `
 const Wrapper = styled.div`
 text-align: left;
-padding-right: 140px;
+padding-right: 180px;
 `
+const P = styled.p`
+margin-bottom: 70px;
+`
+
 class FirstSection extends Component {
     render () {
         const {color} = this.props;
@@ -35,7 +40,7 @@ class FirstSection extends Component {
                     <Wrapper>
                         <p>ABOUT INVESTING FOR CHARITY LTD</p>
                         <h1>Donate once, give forever.</h1> 
-                        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <P>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
                         <h2>Investing for Charity helps donors give more effectively</h2>
                         <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                         <p>For more of what we do....</p>
