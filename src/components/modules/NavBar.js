@@ -13,6 +13,8 @@ padding: 8px;
 border-bottom: 2px solid grey;
 box-shadow: 0px 1px #888818;
 position: fixed;
+background-color: white;
+z-index: 1;
 `
 const Logo = styled.img `
 width: auto;
