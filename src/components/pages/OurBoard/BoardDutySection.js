@@ -1,5 +1,6 @@
 import React, {Component} from "react"; 
-import styled from 'styled-components';
+import styled from 'styled-components'; 
+
 
 
  
@@ -7,13 +8,21 @@ import styled from 'styled-components';
 const ImageContainer = styled.img`
     display: flex;
     flex-direction: column;
-    height: 240px;
-    width: 400px;
-    border-radius: 100%;
+    height: 265px;
+    width: 430px;
+    
     margin: auto; 
-    margin-right: 7em;
+    margin-right: 10em;
 `
-
+const BreadCrumb = styled.text`
+  display: inline-block;
+  padding: 0.5rem 0;
+  margin: 0.5rem 0rem;
+  width: 32rem;
+  background: green;
+  color: white;
+  border: 2px solid white;
+`
 const DivStyle = styled.div`
     display: flex;
     
@@ -34,11 +43,12 @@ class BoardDutySection extends Component {
 
         return (  
            
-                <DivStyle>
+                <DivStyle> 
                     <div>
                         <ImageContainer src= {dutyImage}/>
-                    </div> 
+                    </div>  
                     <TextStyle>
+                    <BreadCrumb> "ABOUT INVESTING FOR CHARITY LTD > BOARD OF TRUSTEES" </BreadCrumb>
                         <h3> {boardQuote} </h3> 
                         <h3> {boardRespons} </h3>
                     </TextStyle>

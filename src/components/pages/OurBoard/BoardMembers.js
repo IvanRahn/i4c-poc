@@ -10,8 +10,8 @@ import HTMLContent from '../../modules/HTMLContent';
 const ImageContainer = styled.img`
     display: flex;
     flex-direction: column;
-    height: 150px;
-    width: 150px;
+    height: 220px;
+    width: 220px;
     border-radius: 100%;
     margin: auto; 
     margin-right: 7em;
@@ -20,14 +20,16 @@ const ImageContainer = styled.img`
 
 const DivStyle = styled.div`
     display: flex;
+    margin: 1.5em 0 1.5em 0; 
     
 `
 
 const TextStyle = styled.div`
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
     width: 500px;
-    color: white;
+    
     
 `
 
@@ -40,7 +42,7 @@ class BoardMembers extends Component {
         return (  
             
                 <DivStyle>
-                    <div>
+                    
                         <ImageContainer src = {memberImage} /> 
                         <TextStyle>
                                 {memberName}
@@ -48,7 +50,7 @@ class BoardMembers extends Component {
                             <HTMLContent content={memberText} />
                             
                         </TextStyle>
-                    </div>
+            
                 </DivStyle>
         );
     }
