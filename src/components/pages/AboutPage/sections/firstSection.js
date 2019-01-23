@@ -7,14 +7,18 @@ import ButtonLink from './../../../modules/ButtonLink';
 const ImageContainer = styled.img`
 height: auto; 
 width: auto; 
-max-width: 500px; 
+max-width: 600px; 
 max-height: 600px;
 `
 
 const Section = styled.div `
 width: 50%;
-margin-right: 2em;
+/* margin-right: 2em; */
+text-align: center;
+`
+const Wrapper = styled.div`
 text-align: left;
+padding-right: 140px;
 `
 class FirstSection extends Component {
     render () {
@@ -22,13 +26,19 @@ class FirstSection extends Component {
         
         return (
             <SectionWrapper color={color}>
-                <ImageContainer src= {image} />
+                <Section>
+                    <ImageContainer src= {image} />
+                </Section>
 
                 <Section>
-                    <h1>"Our <ButtonLink text="qualified team"/> did the research, so you don't have to.</h1> 
-                    <h3>The Australian charity sector holds over $30 billion dollars in cash reserves earning very low returns. A donation to I4C goes much further.</h3>
-                    <h3>Most charities rely on regular donations to sustain their programs. <ButtonLink text="Join us" /> to make an everlasting impact.</h3> 
-                    <ButtonLink text="Vetted by our Board of Trustees" />
+                    <Wrapper>
+                        <p>ABOUT INVESTING FOR CHARITY LTD</p>
+                        <h1>Donate once, give forever.</h1> 
+                        <p>orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                        <h2>Investing for Charity helps donors give more effectively</h2>
+                        <p></p> 
+                        <ButtonLink text="Vetted by our Board of Trustees" />
+                    </Wrapper>
                 
                 </Section>
             </SectionWrapper>
