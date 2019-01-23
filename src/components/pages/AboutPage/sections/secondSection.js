@@ -11,7 +11,7 @@ height: auto;
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
-margin: -400px auto 0 auto; 
+margin: -80px auto 0 auto; 
 `
 const BrandContainer = styled.div`
 
@@ -20,6 +20,7 @@ const BrandContainer = styled.div`
 const Section = styled.div `
 width: ${props => props.width || "50%"};
 text-align: center;
+height: 100%;
 /* Add media query to make width 100% for mobile */
 `
 const Wrapper = styled.div`

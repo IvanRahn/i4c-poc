@@ -9,9 +9,10 @@ height: auto;
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
-margin: -400px auto 0 auto; 
+margin: -70px auto 0 auto; 
 `
 const Section = styled.div `
+height: 100%;
 width: ${props => props.width || "50%"};
 text-align: center;
 /* Add media query to make width 100% for mobile */
