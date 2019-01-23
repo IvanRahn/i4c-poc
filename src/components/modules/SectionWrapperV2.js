@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 const SectionWrapper = styled.section`
-height: 100vh;
+height: ${props => props.height || "100vh"};
 display: flex;
 flex-wrap: wrap;
 justify-content: center;

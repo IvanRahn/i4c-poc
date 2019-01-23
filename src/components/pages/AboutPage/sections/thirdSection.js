@@ -9,7 +9,7 @@ height: auto;
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
-margin: -70px auto 0 auto; 
+margin: -34px auto 0 auto; 
 `
 const Section = styled.div `
 height: 50%;
