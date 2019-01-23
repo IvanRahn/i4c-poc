@@ -6,6 +6,7 @@ import HTMLContent from '../../modules/HTMLContent';
 import {connect} from "react-redux";
 import {getContent} from "./../../../actions";
 import image from "./../../../img/cartoon.jpg"
+
 const Figure = styled.figure `
 width: 50%;
 margin: 0 auto;
@@ -63,7 +64,7 @@ class ImpactSection extends Component {
     }
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;
-        console.log("Impact: ", impact)
+
         if (impactIsFetching ) {
         return (<div> loading</div>)
         } else if (impactError || !impact || !impact[0]){
