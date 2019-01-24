@@ -42,7 +42,7 @@ a {
 `
 const Span = styled.span `
 width: auto;
-
+margin: 0 auto;
 ::after {
     content: "";
     padding-left: 16px;
