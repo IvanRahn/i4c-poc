@@ -37,8 +37,18 @@ margin-bottom: ${props => props.margin || "0px"};
 
 
 class SecondSection extends Component {
+    componentDidMount () {
+        this.props.getContent("about/second-section");    
+    }
+
     render () {
-        const {color} = this.props;
+        const { color, content, isFetching, error} = this.props;        
+        // console.log(content)
+        if (isFetching) {
+            return (<div> loading</div>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
         
         return (
             <SectionWrapper color={color} height="auto">
@@ -71,6 +81,7 @@ class SecondSection extends Component {
 
 const mapStateToProps = (state) => {
     const {content, isFetching, error} = state.aboutSecond
+    console.log(state.aboutSecond)
     return {
         content,
         isFetching,
