@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import SectionWrapper from "./SectionWrapper"; 
+import SectionWrapper from "./../../modules/SectionWrapperV2"; 
 import ButtonLink from "./../../modules/ButtonLink"
 
 
@@ -21,7 +21,6 @@ text-align: left;
 class CTASection extends Component {
     render() { 
         const {CTAText, CardImage} = this.props;
-        console.log(CTAText);
         return (  
                 <SectionWrapper>
                             <ImageContainer src= {"https://www.youtube.com/embed/tgbNymZ7vqY"} />

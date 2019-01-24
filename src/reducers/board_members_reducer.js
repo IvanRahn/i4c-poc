@@ -4,13 +4,15 @@ export default (state = defaultState, action) => {
     switch (action.type) {
         case "GET_CONTENT_our-team":
         return {
-            
+            ...state,
+            member: null,
             memberIsFetching: action.isFetching,
+            memberError: null,
             
         }
         case "GET_CONTENT_SUCCESS_our-team":
         return {
-            
+            ...state,
             member: action.payload,
             memberIsFetching: action.isFetching,
             
@@ -18,7 +20,8 @@ export default (state = defaultState, action) => {
         case "GET_CONTENT_ERROR_our-team":
    
             return {
-                
+                ...state,
+                member: null,
                 memberIsFetching: action.isFetching, 
                 memberError: action.error
             };

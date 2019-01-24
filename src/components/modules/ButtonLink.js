@@ -11,7 +11,6 @@ const ButtonLink = styled(Link)`
     text-align: center;
     text-decoration: none;	
     ${props => props.auto ? "" : "width: 128px;"}
-    /* width: auto; */
     margin: 8px 8px;
     height: 32px;
     font-size: 1em;
@@ -21,7 +20,7 @@ const ButtonLink = styled(Link)`
     `
 
     
-function StyledLink({section, text, location, color, href, auto}) {
+function StyledLink({className, section, text, location, color, href, auto}) {
     const analytics = () => {
         ReactGA.event({
             category: 'ButtonLink',
@@ -29,7 +28,14 @@ function StyledLink({section, text, location, color, href, auto}) {
           });
     }
         return (
-        <ButtonLink auto={auto} to={`${href}`} color={color} onClick={analytics}>{text}</ButtonLink>
+        <ButtonLink 
+            className={className}
+            auto={auto} 
+            to={`${href}`} 
+            color={color} 
+            onClick={analytics}>
+                {text}
+        </ButtonLink>
         )
     }
   
