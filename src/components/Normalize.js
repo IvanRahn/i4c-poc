@@ -35,12 +35,14 @@ html,body
 
 body {
   margin: 0;
+  scroll-behavior: smooth;
 }
 
 
 
 main {
   display: block;
+  margin-top: 110px;
 }
 
 
@@ -74,7 +76,8 @@ pre {
 
 
 a {
-  background-color: transparent;
+  text-decoration: none;
+  
 }
 
 
