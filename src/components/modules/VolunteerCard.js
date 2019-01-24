@@ -31,7 +31,7 @@ class VolunteerCard extends Component {
                     <ImageContainer src= {CardImage} />
                     <DivContainer>
                         <h3>{CardHeading}</h3>
-                        <p>{CardText}</p>
+                        {CardText}
                     </DivContainer>
                 </CardWrapper>
             </div>

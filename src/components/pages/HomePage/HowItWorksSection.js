@@ -4,6 +4,8 @@ import image from "./../../../img/cartoon.jpg";
 import SectionWrapper from "./../../modules/SectionWrapperV2";
 import OrdList from '../../modules/HowItWorksList';
 import VolunteerCard from '../../modules/VolunteerCard';
+import { connect } from 'react-redux';
+import getContent from '../../../actions/keystoneActions';
 
 const H = styled.h1`
 width: 100%;
@@ -11,54 +13,48 @@ text-align: center;
 margin-top: 120px;
 `
 class HowItWorksSection extends Component {
+    componentDidMount() {
+        this.props.getContent("HOWITWORKSSTEPS")
+    }
     render() {
-        const {color} = this.props;
+        const {color, steps, stepsIsFetching, stepsError} = this.props;
+		console.log('​HowItWorksSection -> render -> this.props', this.props)
+        if (stepsIsFetching) {
+            return <div>Loading</div>
+        } else if (stepsError || !steps || !steps[0]) {
+            return <div>error</div>
+        }
+
         return (
             <>
             <SectionWrapper color={color} height="auto">
             <H>Donate once, give forever</H>
                 <OrdList>
-                    <li>
-                <VolunteerCard
-        CardHeading = "You Choose Your Cause" 
-        CardText = {
-        <div>
-          <p> With over 50,000 charities in Australia, how do you make the right choice? </p> 
-          <p> Our team of analysts determine the best charities that serve the cause of your choice. </p>
-        </div>
-        }
-        CardImage = {image}
-                />    
-                </li>
-                <li>
-                <VolunteerCard
-        CardHeading = "We Invest Responsibly" 
-        CardText = {
-        <div>
-          <p> We invest the donations in Australian equities to generate significantly greater returns.  </p> 
-          <p> This provides meaningful annual distributions to high impact charities that serve your cause. </p>
-        </div>
-        }
-        CardImage = {image}
-                />     
-                </li>       
-                <li>
-                <VolunteerCard
-        CardHeading = "Charities Benefit Forever" 
-        CardText = {
-        <div>
-          <p> The impact of a single donation is only temporary. </p> 
-          <p> I4C runs with zero operational costs and donations are grown through investments given to high impact charities every year into the future. </p>
-        </div>
-        }
-        CardImage = {image}
-                />     
-                </li>
+                {steps.map(step => {
+                    return (
+                        <li>
+                        <VolunteerCard 
+                        CardText={step.content.text}
+                        CardImage={"image"}
+                        CardHeading={"title"}
+                        />
+                        </li>
+                    )
+                }) }
                 </OrdList>
             </SectionWrapper>
             </>
         )
     }
 }
-
-export default HowItWorksSection;
+const mapStateToProps = (state) => {
+    const {steps, stepsIsFetching, stepsError} = state.steps
+   return {
+        steps: steps,
+        stepsIsFetching: stepsIsFetching,
+        stepsError: stepsError,
+   }
+}
+export default connect(mapStateToProps, {
+    getContent
+})(HowItWorksSection);
