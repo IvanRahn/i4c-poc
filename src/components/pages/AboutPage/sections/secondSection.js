@@ -39,7 +39,7 @@ class SecondSection extends Component {
         const {color} = this.props;
         
         return (
-            <SectionWrapper color={color}>
+            <SectionWrapper color={color} height="auto">
                 <Section>
                     <ImageContainer src= {image} />
                     <BrandContainer>

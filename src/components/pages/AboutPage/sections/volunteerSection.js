@@ -19,7 +19,7 @@ class VolunteerSection extends Component {
     render() {
         const {color} = this.props;
         return (
-           <SectionWrapper height="550px">
+           <SectionWrapper height="auto">
                 <H>Now we have volunteers</H>
                 <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} />
                 <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} />

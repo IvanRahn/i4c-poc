@@ -38,7 +38,7 @@ class FirstSection extends Component {
         const {color} = this.props;
         
         return (
-            <SectionWrapper color={color}>
+            <SectionWrapper color={color} height="calc(100% - 110px)">
                 <Section>
                     <ImageContainer src= {image} />
                     <p>Make component here</p>
