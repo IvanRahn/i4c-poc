@@ -7,6 +7,7 @@ padding: 0 0 32px;
 margin: 48px auto 0;
 width: 250px;
 margin: 0px 24px;
+display: ${props => props.display || "block"};
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
@@ -15,8 +16,8 @@ padding: 2px 16px;
 const ImageContainer = styled.img`
 height: auto; 
 width: auto; 
-max-width: 250px; 
-max-height: 250px;
+max-width: 100px; 
+max-height: 100px;
 border-radius: 100%;
 `
 class VolunteerCard extends Component {
@@ -27,7 +28,7 @@ class VolunteerCard extends Component {
 
         return(
             <div>
-                <CardWrapper>
+                <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
                     <DivContainer>
                         <h3>{CardHeading}</h3>

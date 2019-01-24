@@ -8,5 +8,5 @@ export default combineReducers({
     causes: featuredCauseCardReducer,
     impact: impact_reducer,
     cause: cause_reducer,
-    member: board_members_reducer,
+    member: board_members_reducer, 
 });

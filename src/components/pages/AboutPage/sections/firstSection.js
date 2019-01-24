@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import SectionWrapper from '../../../modules/SectionWrapperV2';
 import image from '../../../../img/handshake.jpg';
 import ButtonLink from './../../../modules/ButtonLink';
+import VolunteerCard from '../../../modules/VolunteerCard';
+import { getContent } from '../../../../actions';
+import { connect } from 'react-redux';
 
 const ImageContainer = styled.img`
 height: auto; 
@@ -34,14 +37,20 @@ background-color: green;
 `
 
 class FirstSection extends Component {
+
+    componentDidMount () {
+        this.props.getContent("about/first-section");    
+    }
+
     render () {
+        console.log(this.props)
         const {color} = this.props;
         
         return (
-            <SectionWrapper color={color} height="calc(100% - 110px)">
+            <SectionWrapper color={color}>
                 <Section>
                     <ImageContainer src= {image} />
-                    <p>Make component here</p>
+                    <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} display="flex" />
                 </Section>
 
                 <Section>
@@ -60,5 +69,16 @@ class FirstSection extends Component {
     } 
 }
 
+const mapStateToProps = (state) => {
+    console.log(state)
+    const {content, isFetching, error} = state
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
 
-export default FirstSection;
+export default connect(mapStateToProps, {
+    getContent
+})(FirstSection);
