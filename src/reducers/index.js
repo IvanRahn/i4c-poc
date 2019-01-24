@@ -14,8 +14,8 @@ export default combineReducers({
     impact: impact_reducer,
     cause: cause_reducer,
     member: board_members_reducer,
-    aboutfirst: aboutFirstSection,
-    aboutsecond: aboutSecondSection,
-    aboutthird: aboutThirdSection,
-    aboutvolunteer: aboutVolunteerSection,
+    aboutFirst: aboutFirstSection,
+    aboutSecond: aboutSecondSection,
+    aboutThird: aboutThirdSection,
+    aboutVolunteer: aboutVolunteerSection,
 });

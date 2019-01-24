@@ -4,6 +4,8 @@ import SectionWrapper from '../../../modules/SectionWrapperV2';
 import image from '../../../../img/handshake.jpg';
 import ButtonLink from './../../../modules/ButtonLink';
 import brand from '../../../../img/paremium.png'
+import { getContent } from '../../../../actions';
+import { connect } from 'react-redux';
 
 
 const ImageContainer = styled.img`
@@ -67,5 +69,16 @@ class SecondSection extends Component {
     } 
 }
 
+const mapStateToProps = (state) => {
+    const {content, isFetching, error} = state.aboutSecond
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
 
-export default SecondSection;
+export default connect(mapStateToProps, {
+    getContent
+})(SecondSection);
+

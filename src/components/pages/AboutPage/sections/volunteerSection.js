@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import SectionWrapper from '../../../modules/SectionWrapperV2';
 import image from '../../../../img/handshake.jpg';
 import VolunteerCard from '../../../modules/VolunteerCard';
+import { getContent } from '../../../../actions';
+import { connect } from 'react-redux';
 
 const Section = styled.div `
 width: ${props => props.width || "50%"};
@@ -31,4 +33,16 @@ class VolunteerSection extends Component {
     }
 }
 
-export default VolunteerSection;
+const mapStateToProps = (state) => {
+    const {content, isFetching, error} = state.aboutVolunteer
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
+
+export default connect(mapStateToProps, {
+    getContent
+})(VolunteerSection);
+

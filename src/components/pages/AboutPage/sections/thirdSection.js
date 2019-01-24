@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import SectionWrapper from '../../../modules/SectionWrapperV2';
 import image from '../../../../img/handshake.jpg';
 import ButtonLink from './../../../modules/ButtonLink';
+import { getContent } from '../../../../actions';
+import { connect } from 'react-redux';
 
 const ImageContainer = styled.img`
 height: auto; 
@@ -56,5 +58,16 @@ class ThirdSection extends Component {
     } 
 }
 
+const mapStateToProps = (state) => {
+    const {content, isFetching, error} = state.aboutThird
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
 
-export default ThirdSection;
+export default connect(mapStateToProps, {
+    getContent
+})(ThirdSection);
+
