@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
+import HTMLContent from "./../modules/HTMLContent"
 
 const CardWrapper = styled.div`
 overflow: hidden;
@@ -31,7 +32,7 @@ class VolunteerCard extends Component {
                     <ImageContainer src= {CardImage} />
                     <DivContainer>
                         <h3>{CardHeading}</h3>
-                        <p>{CardText}</p>
+                        <HTMLContent content={CardText}/>
                     </DivContainer>
                 </CardWrapper>
             </div>

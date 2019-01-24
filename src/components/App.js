@@ -12,7 +12,6 @@ class App extends Component {
 
 
   render() {
-    console.log("Cause: ", this.props)
     return (
       <>
           <GlobalStyle />
