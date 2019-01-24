@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import image from "./../../../img/cartoon.jpg";
 import SectionWrapper from "./../../modules/SectionWrapperV2";
 import OrdList from '../../modules/HowItWorksList';
 import VolunteerCard from '../../modules/VolunteerCard';
@@ -18,28 +17,29 @@ class HowItWorksSection extends Component {
     }
     render() {
         const {color, steps, stepsIsFetching, stepsError} = this.props;
-		console.log('​HowItWorksSection -> render -> this.props', this.props)
         if (stepsIsFetching) {
             return <div>Loading</div>
         } else if (stepsError || !steps || !steps[0]) {
             return <div>error</div>
         }
-
+        
         return (
             <>
             <SectionWrapper color={color} height="auto">
             <H>Donate once, give forever</H>
                 <OrdList>
-                {steps.map(step => {
-                    return (
-                        <li>
-                        <VolunteerCard 
-                        CardText={step.content.text}
-                        CardImage={"image"}
-                        CardHeading={"title"}
-                        />
-                        </li>
-                    )
+                {steps.map((step, i) => {
+                    if (i < 3) {
+                        return (
+                            <li key={step._id} >
+                                <VolunteerCard 
+                                CardText={step.Content.text}
+                                CardImage={step.Image ? step.Image.secure_url : null}
+                                CardHeading={step.title}
+                                />
+                            </li>
+                        )
+                        } else return null
                 }) }
                 </OrdList>
             </SectionWrapper>
