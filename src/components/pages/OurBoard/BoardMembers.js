@@ -1,59 +1,122 @@
-import React, {Component} from "react"; 
+import React, {Component} from 'react';
 import styled from 'styled-components';
-import HTMLContent from '../../modules/HTMLContent'; 
+import VolunteerCard from './../../modules/VolunteerCard'; 
+import {connect} from "react-redux"; 
+import {getContent} from "./../../../actions"
 
 
- 
-
-const ImageContainer = styled.img`
-    display: flex;
-    flex-direction: column;
-    height: 220px;
-    width: 220px;
-    border-radius: 100%;
-    margin: auto; 
-    margin-right: 7em;
-`
 
 
-const DivStyle = styled.div`
-    display: flex;
-    margin: 1.5em 0 1.5em 0; 
+
+class BoardMembers extends Component {
+    componentDidMount() {
+        this.props.getContent("our-team/team-members")
+    }
     
-`
-
-const TextStyle = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 500px;
-    
-    
-`
-
-
-
-class BoardMembers extends Component { 
     render() { 
-        const {memberName, memberHeading, memberText, memberImage} = this.props; 
+        const {member, memberError, memberIsFetching} = this.props; 
+        if (!memberIsFetching && member ) { 
+            return ( 
+            <>
+            {member.map((member) => {
+                
+                    return (
+                        
+                        <VolunteerCard 
+                        key={member._id}
+                        CardName = {member.title}
+                        CardHeading = {member.content.heading} 
+                        CardText= {member.content.text}
+                        CardImage={member.image} 
+                /> 
+                    )
+                    return null 
+                
+            })}
 
-        return (  
-            
-                <DivStyle>
-                    
-                        <ImageContainer src = {memberImage} /> 
-                        <TextStyle>
-                                {memberName}
-                                {memberHeading}
-                            <HTMLContent content={memberText} />
-                            
-                        </TextStyle>
-            
-                </DivStyle>
-        );
+            </> 
+            )
+                } else if (memberError || !member|| !member[0]){
+                    return <div>error</div>
+                }      
+                return null
+    } 
+}
+
+const mapStateToProps = (state) => {
+    const {member, memberIsFetching, memberError} = state.member
+    return {
+        member, 
+        memberIsFetching,
+        memberError
+
     }
 }
+
+export default connect(mapStateToProps, {getContent})(BoardMembers);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, {Component} from "react"; 
+// import styled from 'styled-components';
+// import HTMLContent from '../../modules/HTMLContent'; 
+// import VolunteerCard from './../../modules/VolunteerCard'; 
  
 
 
-export default BoardMembers;
+
+
+
+
+
+
+
+// class BoardMembers extends Component { 
+//     render() { 
+//         const {memberName, memberHeading, memberText, memberImage} = this.props; 
+
+//         return (  
+            
+//                 <VolunteerCard 
+//                 CardName = {memberName}
+//                 CardHeading = {memberHeading} 
+//                 CardText= {memberText}
+//                 CardImage={memberImage}
+
+//                 />
+
+//         );
+//     }
+// }
+ 
+
+
+// export default BoardMembers;
