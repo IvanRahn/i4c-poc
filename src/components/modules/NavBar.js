@@ -1,49 +1,49 @@
 import React, {Component} from "react";
 import ButtonLink from "./ButtonLink";
 import styled from "styled-components";
-import logo from "./../../img/I4C.png"
-
+import LogoFull from "./../../img/I4C.png";
+import LogoSquare from "./../../img/I4C_Square.png"; 
 
 const Nav = styled.nav`
 width: 100%;
-height: 110px;
+height: 60px;
 display: flex;
-justify-content: space-between;
+flex-direction: row-reverse;
+align-items: center;
+justify-content: space-around;
 padding: 8px;
 border-bottom: 2px solid grey;
 box-shadow: 0px 1px #888818;
-position: fixed;
+position: absolute;
+background-color: white;
+z-index: 1;
+top: 0;
+ @media only screen and (min-width: 500px) {
+    justify-content: space-between;
+    flex-direction: row;
+    height: 110px;
+ }
 `
-const Logo = styled.img `
-width: auto;
-height: 80px;
-background-color: black;
-`
+
+
 const NavLinks = styled.div `
 
 `
-const NavHamburger = styled.div `
-:hover {
-    span {
-        border-top: 2px solid blue;
+
+const MenuButton = styled.span` 
+    display: block;
+    width: auto;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    @media only screen and (min-width: 500px) {
+        display: none;
+    
     }
-}
-`
-const ButtonSpan = styled.span` 
-      display: block;
-      width: 25px;
-      height: 10px;
-      border-top: 2px solid #eee;
-      @media only screen and (min-width: 420px) {
-          display: none;
-        
-      }
 
 `
 const NavUl = styled.ul `
-height: 110px;
-align-items: center;
-
+    height: 110px;
+    align-items: center;
     margin: 0px;
     display: flex;
     position: fixed;
@@ -53,10 +53,11 @@ align-items: center;
     transition: left 1s ease;
     top: 50px;
     flex-direction: column;
-    @media only screen and (max-width: 419px) {
-    left: -200px;
+    
+    @media only screen and (max-width: 499px) {
+        left: -200px;
     }
-    @media only screen and (min-width: 420px) {
+    @media only screen and (min-width: 500px) {
         /* transition: all 0s ease-in-out; */
         top: 0px;
         flex-direction: row;
@@ -78,22 +79,55 @@ const NavCheckbox = styled.input `
 
       }
     }
+`
+const LoginLink = styled(ButtonLink)`
+display: block;
+      width: auto;
+      border-top: 2px solid;
+      border-bottom: 2px solid;
+      height: auto;
+      @media only screen and (min-width: 500px) {
+          display: none;
+        
+      }
+`
+const Logo = styled(ButtonLink)`
+height: 58px;
+width: 60px;
+background-image: url(${LogoSquare});
+background-position: center;
+background-size: contain;
+background-repeat: no-repeat;
+border-bottom: 0px;
+ @media only screen and (min-width: 500px) {
+    background-image: url(${LogoFull});
+    width: 240px;
+    height: 80px;
+    background-color: black;
+    margin-left: 64px;
+
+ }
 
 `
+
 
 
 class NavBar extends Component {
     render() {
         return(
         <Nav aria-live="polite">
-            <Logo src={logo} />
+        <LoginLink 
+            text="LOGIN" 
+            href="#"
+            section="nav" 
+            location="homepage"
+            color="green" 
+            auto="auto"/>
+        <Logo to="/" color="grey"/>
+            
             <NavLinks>
                 <label htmlFor="nav-checkbox">
-                <NavHamburger>
-                    <ButtonSpan></ButtonSpan>
-                    <ButtonSpan></ButtonSpan>
-                    <ButtonSpan></ButtonSpan>
-                </NavHamburger>
+                    <MenuButton>MENU</MenuButton>
                 </label>
                 <NavCheckbox type="checkbox" id="nav-checkbox"/>
                 <NavUl>
@@ -105,6 +139,7 @@ class NavBar extends Component {
                     <li> <ButtonLink text="JOIN"href="#"section="nav" location="homepage"/> </li>
                 </NavUl>
             </NavLinks>
+                
         </Nav>
         )
     }

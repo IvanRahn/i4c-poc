@@ -8,6 +8,7 @@ import aboutSecondSection from "./about_second_section";
 import aboutThirdSection from "./about_third_section";
 import aboutVolunteerSection from "./about_volunteer_section";
 
+import how_it_works_steps_reducer from "./how_it_works_steps_reducer"
 
 export default combineReducers({
     causes: featuredCauseCardReducer,
@@ -18,4 +19,5 @@ export default combineReducers({
     aboutSecond: aboutSecondSection,
     aboutThird: aboutThirdSection,
     aboutVolunteer: aboutVolunteerSection,
+    steps: how_it_works_steps_reducer,
 });

@@ -43,25 +43,31 @@ class FirstSection extends Component {
     }
 
     render () {
-        console.log(this.props)
-        const {color} = this.props;
+        const { color, content, isFetching, error} = this.props;        
+        console.log(content)
+        if (isFetching) {
+            return (<div> loading</div>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
         
         return (
+            
             <SectionWrapper color={color}>
                 <Section>
-                    <ImageContainer src= {image} />
-                    <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} display="flex" />
+                    <ImageContainer src= {content[0].image? content[0].image.secure_url : image} alt="Cherring man" />
+
+                    <VolunteerCard CardHeading={content[0].card.heading} CardText={content[0].card.text} CardImage={content[0].card.pageImage? content[0].card.pageImage.secure_url: image} display="flex" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        <BorderP>ABOUT INVESTING FOR CHARITY LTD</BorderP>
-                        <h1>Donate once, give forever.</h1> 
-                        <P margin="70px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
-                        <h2>Investing for Charity helps donors give more effectively</h2>
-                        <P margin="20px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
-                        <p>For more of what we do....</p>
-                        <ButtonLink text="DOWNLOAD PDF" color="green" />
+                        <BorderP>{content[0].linkTop.text}</BorderP>
+                        <h1>{content[0].contentTop.heading}</h1> 
+                        <P margin="70px">{content[0].contentTop.text}</P>
+                        <h2>{content[0].contentBottom.heading}</h2>
+                        <P margin="20px">{content[0].contentBottom.text}</P>
+                        <ButtonLink text={content[0].contentBottom.link.text} color={content[0].contentBottom.link.color} href={content[0].contentBottom.link.href} />
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
@@ -81,3 +87,4 @@ const mapStateToProps = (state) => {
 export default connect(mapStateToProps, {
     getContent
 })(FirstSection);
+
