@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import SectionWrapper from "./SectionWrapper"; 
+import SectionWrapper from "./../../modules/SectionWrapperV2"; 
 import ButtonLink from "./../../modules/ButtonLink"
 
 

@@ -8,10 +8,11 @@ const FeaturedCauseSection = lazy(() => import('./../../pages/HomePage/FeaturedC
 const Footer = lazy(() => import('./../../modules/Footer')) ;
 const CTASection= lazy(() => import('./../HomePage/CTASection')) ;
 
+
+
 const HomePage = () => {
         return (
             <>
-                <NavBar/>
                 <main>
                     <ImpactSection />
                     <Suspense fallback="">
@@ -21,9 +22,7 @@ const HomePage = () => {
                         <MoreI4cSection color="green" />
                     </Suspense>
                 </main>
-                <Suspense fallback="">
-                <Footer />
-                </Suspense>
+                
             </>
         );
     }

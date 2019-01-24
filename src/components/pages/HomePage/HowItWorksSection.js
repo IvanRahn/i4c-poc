@@ -25,7 +25,7 @@ class HowItWorksSection extends Component {
         
         return (
             <>
-            <SectionWrapper color={color} height="auto">
+            <SectionWrapper id="HowItWorks" color={color}>
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {
