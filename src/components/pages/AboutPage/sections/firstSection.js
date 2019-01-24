@@ -70,8 +70,7 @@ class FirstSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
-    const {content, isFetching, error} = state
+    const {content, isFetching, error} = state.about
     return {
         content,
         isFetching,
