@@ -1,10 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-<<<<<<< HEAD
-import HTMLContent from "./HTMLContent";
-=======
 import HTMLContent from "./../modules/HTMLContent"
->>>>>>> f1fbbe3e0cd2257e14ec7213257266bfecc88d79
 
 const Name = styled.h2`
 
@@ -41,11 +37,7 @@ class VolunteerCard extends Component {
                     {CardName ? <Name>{CardName}</Name>  : null}
                     <DivContainer>
                         <h3>{CardHeading}</h3>
-<<<<<<< HEAD
-                        <HTMLContent content = {CardText} />
-=======
                         <HTMLContent content={CardText}/>
->>>>>>> f1fbbe3e0cd2257e14ec7213257266bfecc88d79
                     </DivContainer>
                 </CardWrapper>
             </div>
