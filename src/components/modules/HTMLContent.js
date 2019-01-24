@@ -1,5 +1,22 @@
 import React, {Component} from "react"
 import {withRouter}from "react-router"
+import styled from "styled-components";
+const Div = styled.div `
+   a {
+    border-bottom: 3px solid ${props => props.color || "black"};
+    display: inline;
+    color: ${props => props.color || "black"};
+    text-align: center;
+    text-decoration: none;	
+    ${props => props.auto ? "" : "width: 128px;"}
+    margin: 8px 8px;
+    font-size: 1em;
+    color: red;
+    :hover {
+        color: blue;
+    }
+  }
+`
 class HTMLContent extends Component {
     contentClickHandler = (e) => {
       const {history} = this.props
@@ -15,7 +32,7 @@ class HTMLContent extends Component {
     render() {
 
       return (
-        <div 
+        <Div 
           onClick={this.contentClickHandler}
           dangerouslySetInnerHTML={{__html: this.props.content}} 
         />

@@ -24,35 +24,21 @@ height: calc(100vh - 110px);
 `
 const Section = styled.section `
 width: 50%;
-a {
-    border-bottom: 3px solid ${props => props.color || "black"};
-    display: inline-block;
-    color: ${props => props.color || "black"};
-    text-align: center;
-    text-decoration: none;	
-    /* width: auto; */
-    ${props => props.auto ? "" : "width: 128px;"}
-    margin: 8px 8px;
-    height: 32px;
-    font-size: 1em;
-    :hover {
-        color: blue;
-    }
-    }
+
 `
 const Span = styled.span `
 width: auto;
 margin: 0 auto;
 ::after {
     content: "";
-    padding-left: 16px;
-    height: 16px;
+    display: block;
     border-left: 1px solid black;
     border-bottom: 1px solid black;
     transform: rotate(-45deg);
-    position: absolute;
-    right: 49.5%;
-    margin-top: 20px;
+    height: 12px;
+    width: 12px;
+    margin: 8px auto;
+    left: 49.5%;
 }
 `
 

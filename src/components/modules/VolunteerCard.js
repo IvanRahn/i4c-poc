@@ -14,10 +14,10 @@ padding: 2px 16px;
 `
 
 const ImageContainer = styled.img`
-height: auto; 
-width: auto; 
-max-width: 250px; 
-max-height: 250px;
+height: 200px; 
+width: 200px; 
+/* max-width: 250px;  */
+/* max-height: 250px; */
 border-radius: 100%;
 `
 class VolunteerCard extends Component {
