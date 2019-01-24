@@ -88,7 +88,6 @@ display: block;
       height: auto;
       @media only screen and (min-width: 500px) {
           display: none;
-        
       }
 `
 const Logo = styled(ButtonLink)`
@@ -122,7 +121,7 @@ class NavBar extends Component {
             section="nav" 
             location="homepage"
             color="green" 
-            auto/>
+            auto="auto"/>
         <Logo to="/" color="grey"/>
             
             <NavLinks>
