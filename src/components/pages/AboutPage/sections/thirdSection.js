@@ -36,7 +36,6 @@ class ThirdSection extends Component {
 
     render () {
         const { color, content, isFetching, error} = this.props;        
-        console.log(content)
         if (isFetching) {
             return (<div> loading</div>)
             } else if (error || !content || !content[0]){

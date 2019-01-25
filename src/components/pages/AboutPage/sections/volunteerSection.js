@@ -18,16 +18,37 @@ const H = styled.h1`
 `
 
 class VolunteerSection extends Component {
+
+    componentDidMount () {
+        this.props.getContent("about/volunteer-section");    
+    }
+
     render() {
-        const {color} = this.props;
+        const { color, content, isFetching, error} = this.props;
+        console.log(content)
+
+        if (isFetching) {
+            return (<div> loading</div>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
+
         return (
            <SectionWrapper height="auto">
                 <H>Now we have volunteers</H>
-                <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} />
-                <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} />
-                <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} />
-                <VolunteerCard CardHeading="Volunteer group." CardText="A little but about what they do. Lorem Ipsum is simply dummy text of the printing and typesetting industry." CardImage={image} />
-        
+
+                {content.map((content) => {
+                        return (
+                            <VolunteerCard
+                            key={content._id} 
+                            CardText={content.card.text}
+                            CardImage={content.card.pageImage ? content.card.pageImage.secure_url : null}
+                            CardHeading={content.card.heading}
+                            />
+                        )
+                }) }
+
+
            </SectionWrapper>
         )
     }
