@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import styled from 'styled-components';
-import ButtonLink from "./../../modules/ButtonLink";
+import {InternalLink} from "./../../modules";
 
 
 const DivTextStyle = styled.div`
@@ -22,7 +22,7 @@ class FindOutMore extends Component {
         return (  
             <DivTextStyle>
                 {message}
-                <ButtonLink text="FIND OUT MORE" color={"green"} href="#" />                
+                <InternalLink text="FIND OUT MORE" color={"green"} href="#" />                
             </DivTextStyle>
         );
     }

@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import BoardMembers from "./BoardMembers";
 import {connect} from "react-redux";
 import {getContent} from "./../../../actions";
-import SectionWrapper from "../HomePage/SectionWrapper"; 
+import {SectionWrapper} from "../../modules"; 
 import FindOutMore from "./FindOutMore";
 
 

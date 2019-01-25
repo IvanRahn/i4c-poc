@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from "./../../modules/SectionWrapperV2";
-import OrdList from '../../modules/HowItWorksList';
-import VolunteerCard from '../../modules/VolunteerCard';
+import {SectionWrapper, OrdList, Card} from "../../../modules";
 import { connect } from 'react-redux';
-import getContent from '../../../actions/keystoneActions';
+import getContent from '../../../../actions/keystoneActions';
 
 const H = styled.h1`
 width: 100%;
@@ -16,6 +14,7 @@ class HowItWorksSection extends Component {
         this.props.getContent("HOWITWORKSSTEPS")
     }
     render() {
+
         const {color, steps, stepsIsFetching, stepsError} = this.props;
         if (stepsIsFetching) {
             return <div>Loading</div>
@@ -25,14 +24,14 @@ class HowItWorksSection extends Component {
         
         return (
             <>
-            <SectionWrapper id="HowItWorks" color={color}>
+            <SectionWrapper id="HowItWorks" color={color} height="auto">
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {
                     if (i < 3) {
                         return (
                             <li key={step._id} >
-                                <VolunteerCard 
+                                <Card 
                                 CardText={step.Content.text}
                                 CardImage={step.Image ? step.Image.secure_url : null}
                                 CardHeading={step.title}

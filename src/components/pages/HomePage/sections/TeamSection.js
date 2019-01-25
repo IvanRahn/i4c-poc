@@ -1,8 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import SectionWrapper from "./../../modules/SectionWrapperV2"; 
-import ButtonLink from "./../../modules/ButtonLink"
-
+import {SectionWrapper, InternalLink, HTMLContent} from "./../../../modules"
 
 const ImageContainer = styled.iframe`
 width: 250px; 
@@ -20,18 +18,17 @@ text-align: left;
 
 class CTASection extends Component {
     render() { 
-        const {CTAText, CardImage} = this.props;
         return (  
                 <SectionWrapper>
                             <ImageContainer src= {"https://www.youtube.com/embed/tgbNymZ7vqY"} />
 
                     <Section>
-                            <h1>"Our <ButtonLink text="qualified team"/> did the research, so you don't have to.</h1> 
+                            <h1>"Our <InternalLink text="qualified team"/> did the research, so you don't have to.</h1> 
                             <h3>The Australian charity sector holds over $30 billion dollars in cash reserves earning very low returns. A donation to I4C goes much further.</h3>
 
-                            <h3>Most charities rely on regular donations to sustain their programs. <ButtonLink text="Join us" /> to make an everlasting impact.</h3> 
+                            <h3>Most charities rely on regular donations to sustain their programs. <InternalLink text="Join us" /> to make an everlasting impact.</h3> 
 
-                            <ButtonLink text="Vetted by our Board of Trustees" />
+                            <InternalLink text="Vetted by our Board of Trustees" />
                         
                     </Section>
                     

@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from "./../../modules/SectionWrapperV2";
-import FeaturedCauseCard from '../../modules/FeaturedCauseCard';
+import {SectionWrapper, CauseCard} from "./../../../modules"
 import { connect } from 'react-redux';
-import {getContent} from "./../../../actions";
+import {getContent} from "../../../../actions";
 
 const H = styled.h1`
     width:100%;
@@ -28,7 +27,7 @@ class FeacturedCauseSection extends Component {
                 {content.map((content,i) => {
                     if (i <= 1) {
                         return (
-                        <FeaturedCauseCard key={content._id}CardHeading={content.content.heading} CardText={content.content.text} CardImage={content.image?  content.image.secure_url : null}  />
+                        <CauseCard key={content._id}CardHeading={content.content.heading} CardText={content.content.text} CardImage={content.image?  content.image.secure_url : null}  />
                         )
                     }
                     return null
