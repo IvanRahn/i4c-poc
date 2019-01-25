@@ -14,7 +14,6 @@ margin: -34px auto 0 auto;
 const Section = styled.div `
 height: 50%;
 width: ${props => props.width || "100%"};
-text-align: center;
 @media (min-width: 768px){
     width: 50%;
 }
