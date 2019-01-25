@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink, HTMLContent} from "./../../../modules"
+import {SectionWrapper, InternalLink, HTMLContent} from "../../../modules"
 
 const ImageContainer = styled.iframe`
 width: 250px; 
