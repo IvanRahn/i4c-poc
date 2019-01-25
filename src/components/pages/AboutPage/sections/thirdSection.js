@@ -30,20 +30,31 @@ margin-bottom: ${props => props.margin || "0px"};
 `
 
 class ThirdSection extends Component {
+    componentDidMount () {
+        this.props.getContent("about/third-section");    
+    }
+
     render () {
-        const {color} = this.props;
+        const { color, content, isFetching, error} = this.props;        
+        console.log(content)
+        if (isFetching) {
+            return (<div> loading</div>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
+
         return (
         <SectionWrapper color={color}>
             <Section >
-                <ImageContainer src= {image} />
+                <ImageContainer src= {content[0].image.secure_url} />
             </Section>
 
             <Section>
                 <Wrapper>
                     
-                    <h2>The people who make the hard decisions for us, out Board of Trustees.</h2> 
-                    <P margin="50px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</P>
-                    <ButtonLink text="GET TO KNOW OUR BOARD" />
+                    <h2>{content[0].contentTop.heading}</h2> 
+                    <P margin="50px">{content[0].contentTop.text}</P>
+                    <ButtonLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
                     
                 </Wrapper>               
             </Section>

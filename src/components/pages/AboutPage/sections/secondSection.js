@@ -53,22 +53,22 @@ class SecondSection extends Component {
         return (
             <SectionWrapper color={color} height="auto">
                 <Section>
-                    <ImageContainer src= {image} />
+                    <ImageContainer src= {content[0].image? content[0].image.secure_url: image} />
                     <BrandContainer>
-                        <img src={brand} />
-                        <img src={brand} />
+                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url} />
+                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} />
                     </BrandContainer>
                 </Section>
 
                 <Section>
                     <Wrapper>
                         
-                        <h2>We started with just us two..</h2> 
-                        <P margin="50px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
-                        <h2>Then we grew...</h2>
-                        <P margin="50px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
-                        <h2>For more of what we do....</h2>
-                        <P margin="30px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</P>
+                        <h2>{content[0].contentTop.heading}</h2> 
+                        <P margin="50px">{content[0].contentTop.text}</P>
+                        <h2>{content[0].contentMiddle.heading}</h2>
+                        <P margin="50px">{content[0].contentMiddle.text}.</P>
+                        <h2>{content[0].contentBottom.heading}</h2>
+                        <P margin="30px">{content[0].contentBottom.text}</P>
                         <ButtonLink text="SHOUT OUT" />
                         <ButtonLink text="SHOUT OUT" />
                         
@@ -81,7 +81,6 @@ class SecondSection extends Component {
 
 const mapStateToProps = (state) => {
     const {content, isFetching, error} = state.aboutSecond
-    console.log(state.aboutSecond)
     return {
         content,
         isFetching,
