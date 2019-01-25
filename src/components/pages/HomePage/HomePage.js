@@ -3,7 +3,7 @@ import ImpactSection from './sections/ImpactSection';
 const HowitWorksSection = lazy(() => import('./sections/HowItWorksSection')) ;
 const MoreI4cSection = lazy(() => import('./sections/MoreI4cSection')) ;
 const FeaturedCauseSection = lazy(() => import('./sections/FeaturedCauseSection')) ;
-const CTASection= lazy(() => import('./sections/CTASection')) ;
+const TeamSection= lazy(() => import('./sections/TeamSection')) ;
 
 
 
@@ -13,7 +13,7 @@ const HomePage = () => {
                     <ImpactSection />
                     <Suspense fallback="">
                         <HowitWorksSection color="green"/>
-                        <CTASection />
+                        <TeamSection />
                         <FeaturedCauseSection />
                         <MoreI4cSection color="green" />
                     </Suspense>
