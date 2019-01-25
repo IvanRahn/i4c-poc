@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from "styled-components";
-import ButtonLink from "./ButtonLink"; 
+import InternalLink from "./InternalLink"; 
 
 const FooterStyling = styled.footer`
     display: flex;
@@ -32,43 +32,43 @@ class Footer extends Component {
                 <div>
                     <h1>ABOUT US</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "What is I4C" href="#"/> </li> 
-                            <li> <ButtonLink text= "Who is I4C" href="#"/> </li> 
+                            <li> <InternalLink text= "What is I4C" href="#"/> </li> 
+                            <li> <InternalLink text= "Who is I4C" href="#"/> </li> 
                         </UnorderedListStyling>
                 </div>
 
                 <div>
                     <h1>HOW IT WORKS</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "Your account and benefits" href="#"/> </li> 
-                            <li> <ButtonLink text= "How does I4C operate?" href="#"/> </li> 
-                            <li> <ButtonLink text= "Causes we care about"href="#" /> </li> 
+                            <li> <InternalLink text= "Your account and benefits" href="#"/> </li> 
+                            <li> <InternalLink text= "How does I4C operate?" href="#"/> </li> 
+                            <li> <InternalLink text= "Causes we care about"href="#" /> </li> 
                         </UnorderedListStyling>
                 </div>
 
                 <div>
                     <h1>OUR IMPACT</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <ButtonLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
+                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
                         </UnorderedListStyling>
                 </div>
                 
                 <div>
                     <h1>MORE INFORMATION</h1>
                         <UnorderedListStyling>
-                            <li> <ButtonLink text= "Legal Stuff" href="#"/> </li> 
-                            <li> <ButtonLink text= "Privacy Policy" href="#"/> </li> 
-                            <li> <ButtonLink text= "Contact Us" href="#"/> </li> 
+                            <li> <InternalLink text= "Legal Stuff" href="#"/> </li> 
+                            <li> <InternalLink text= "Privacy Policy" href="#"/> </li> 
+                            <li> <InternalLink text= "Contact Us" href="#"/> </li> 
                         </UnorderedListStyling>
                 </div>
 
-                                <ButtonLink text = "JOIN US" color= {"green"} href="#"/>
+                                <InternalLink text = "JOIN US" color= {"green"} href="#"/>
             
             </FooterStyling>
         );

@@ -1,9 +1,8 @@
 import React, {Component} from "react";
-import ButtonLink from "./ButtonLink";
+import {InternalLink} from "./index";
 import styled from "styled-components";
 import LogoFull from "./../../img/I4C.png";
 import LogoSquare from "./../../img/I4C_Square.png"; 
-
 const Nav = styled.nav`
 width: 100%;
 height: 60px;
@@ -25,11 +24,6 @@ top: 0;
  }
 `
 
-
-const NavLinks = styled.div `
-
-`
-
 const MenuButton = styled.span` 
     display: block;
     width: auto;
@@ -39,7 +33,6 @@ const MenuButton = styled.span`
         display: none;
     
     }
-
 `
 const NavUl = styled.ul `
     height: 110px;
@@ -70,17 +63,17 @@ const NavUl = styled.ul `
 `
 const NavCheckbox = styled.input `
     display: none;
-    :checked + ul {
+    @media only screen and (max-width: 499px) {
+    :checked {
+        + ul {
         left: 200px;
-        @media only screen and (min-width: 420px) {
-            /* flex-direction: row; */
-            /* transition: right 1s ease; */
-            /* width: 100%;        */
-
-      }
+        }
+        
+    };
+    
     }
 `
-const LoginLink = styled(ButtonLink)`
+const LoginLink = styled(InternalLink)`
 display: block;
       width: auto;
       border-top: 2px solid;
@@ -90,7 +83,7 @@ display: block;
           display: none;
       }
 `
-const Logo = styled(ButtonLink)`
+const Logo = styled(InternalLink)`
 height: 58px;
 width: 60px;
 background-image: url(${LogoSquare});
@@ -104,13 +97,8 @@ border-bottom: 0px;
     height: 80px;
     background-color: black;
     margin-left: 64px;
-
  }
-
 `
-
-
-
 class NavBar extends Component {
     render() {
         return(
@@ -124,26 +112,23 @@ class NavBar extends Component {
             auto="auto"/>
         <Logo to="/" color="grey"/>
             
-            <NavLinks>
+            {/* <NavLinks> */}
                 <label htmlFor="nav-checkbox">
                     <MenuButton>MENU</MenuButton>
                 </label>
                 <NavCheckbox type="checkbox" id="nav-checkbox"/>
                 <NavUl>
-                    <li> <ButtonLink text="ABOUT US" href="/board-page" section="nav" location="homepage"/></li> 
-                    <li> <ButtonLink text="HOW IT WORKS"href="#"section="nav" location="homepage"/> </li>
-                    <li> <ButtonLink text="OUR IMPACT"href="#"section="nav" location="homepage"/> </li>
-                    <li> <ButtonLink text="CONTACT US"href="#"section="nav" location="homepage"/> </li>
-                    <li> <ButtonLink text="Login"href="#"section="nav" location="homepage"/> </li>
-                    <li> <ButtonLink text="JOIN"href="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="ABOUT US" href="/board-page" section="nav" location="homepage"/></li> 
+                    <li> <InternalLink text="HOW IT WORKS"href="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="OUR IMPACT"href="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="CONTACT US"href="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="Login"href="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="JOIN"href="#"section="nav" location="homepage"/> </li>
                 </NavUl>
-            </NavLinks>
+            {/* </NavLinks> */}
                 
         </Nav>
         )
     }
 }
-
 export default NavBar 
-
-

@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from '../../../modules/SectionWrapperV2';
-import image from '../../../../img/handshake.jpg';
-import ButtonLink from './../../../modules/ButtonLink';
+import {SectionWrapper, InternalLink} from '../../../modules';
+import { getContent } from '../../../../actions';
+import { connect } from 'react-redux';
 
 const ImageContainer = styled.img`
 height: auto; 
@@ -28,27 +28,37 @@ margin-bottom: ${props => props.margin || "0px"};
 `
 
 class ThirdSection extends Component {
+    componentDidMount () {
+        this.props.getContent("about/third-section");    
+    }
+
     render () {
-        const {color} = this.props;
+        const { color, content, isFetching, error} = this.props;        
+        if (isFetching) {
+            return (<div> loading</div>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
+
         return (
         <SectionWrapper color={color}>
             <Section >
-                <ImageContainer src= {image} />
+                <ImageContainer src= {content[0].image.secure_url} />
             </Section>
 
             <Section>
                 <Wrapper>
                     
-                    <h2>The people who make the hard decisions for us, out Board of Trustees.</h2> 
-                    <P margin="50px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</P>
-                    <ButtonLink text="GET TO KNOW OUR BOARD" />
+                    <h2>{content[0].contentTop.heading}</h2> 
+                    <P margin="50px">{content[0].contentTop.text}</P>
+                    <InternalLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
                     
                 </Wrapper>               
             </Section>
 
             <Section width="100%">
-                <h2>All this works because of our Donors.</h2>
-                <ButtonLink text="LEARN HOW IT WORKS" color="green" />
+                <h2>{content[0].contentBottom.heading}</h2>
+                <InternalLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
 
             </Section>
         </SectionWrapper>
@@ -56,5 +66,16 @@ class ThirdSection extends Component {
     } 
 }
 
+const mapStateToProps = (state) => {
+    const {content, isFetching, error} = state.aboutThird
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
 
-export default ThirdSection;
+export default connect(mapStateToProps, {
+    getContent
+})(ThirdSection);
+

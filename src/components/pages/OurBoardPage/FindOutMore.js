@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from '../../modules/SectionWrapperV2';
-import ButtonLink from './../../modules/ButtonLink';
+import {InternalLink, SectionWrapper} from './../../modules';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
 
@@ -29,7 +28,7 @@ class FindOutMore extends Component {
                 <SectionWrapper>
                     <Section width="100%">
                         <h2>All this works because of our Donors.</h2>
-                        <ButtonLink text="FIND OUT MORE" color="green" />
+                        <InternalLink text="FIND OUT MORE" color="green" />
                     </Section>
                 </SectionWrapper>
             )

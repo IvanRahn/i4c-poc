@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import React from "react"
-import VolunteerCard from "./VolunteerCard";
 
 const OrdList = styled.ol`
 color: white;

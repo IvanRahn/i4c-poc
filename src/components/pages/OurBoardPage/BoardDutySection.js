@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components'; 
-import SectionWrapper from '../../modules/SectionWrapperV2';
+import {SectionWrapper} from '../../modules';
 import image from './../../../img/handshake.jpg';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"

@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import VolunteerCard from './../../modules/VolunteerCard'; 
+import {Card, SectionWrapper} from './../../modules'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
-import SectionWrapper from '../../modules/SectionWrapperV2';
 
 
 
@@ -25,7 +24,7 @@ class BoardMembers extends Component {
                     return (
 
                         <SectionWrapper height="550px">                        
-                            <VolunteerCard 
+                            <Card 
                             key={member._id}
                             CardName = {member.title}
                             CardHeading = {member.content.heading} 

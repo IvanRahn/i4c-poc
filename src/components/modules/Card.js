@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import HTMLContent from "./../modules/HTMLContent"
+import {HTMLContent} from "./index"
 
 const Name = styled.h2`
 
@@ -11,6 +11,7 @@ padding: 0 0 32px;
 margin: 48px auto 0;
 width: 250px;
 margin: 0px 24px;
+display: ${props => props.display || "block"};
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
@@ -31,7 +32,7 @@ class VolunteerCard extends Component {
 
         return(
             <div>
-                <CardWrapper>
+                <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
                     {CardName ? <Name>{CardName}</Name>  : null}
                     <DivContainer>
