@@ -1,21 +1,23 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink, Card} from '../../../modules';
+import {SectionWrapper, InternalLink} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 
+
 const ImageContainer = styled.img`
-height: auto; 
+height: 480px; 
 width: auto; 
-max-width: 600px; 
-max-height: 600px;
-margin: -200px auto 0 auto; 
+`
+const BrandContainer = styled.div`
+
 `
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 text-align: center;
+height: 100%;
 @media (min-width: 768px){
     width: 50%;
 }
@@ -26,22 +28,17 @@ padding-right: 180px;
 `
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
-
 `
 
-const BorderP = styled.p`
-color: white;
-background-color: green;
-`
 
-class FirstSection extends Component {
-
+class SecondSection extends Component {
     componentDidMount () {
-        this.props.getContent("about/first-section");    
+        this.props.getContent("about/second-section");    
     }
 
     render () {
         const { color, content, isFetching, error} = this.props;        
+        // console.log(content)
         if (isFetching) {
             return (<div> loading</div>)
             } else if (error || !content || !content[0]){
@@ -49,22 +46,27 @@ class FirstSection extends Component {
             }
         
         return (
-            
-            <SectionWrapper color={color}>
+            <SectionWrapper color={color} height="auto">
                 <Section>
-                    <ImageContainer src= {content[0].image? content[0].image.secure_url : image} alt="Cherring man" />
-
-                    <Card CardHeading={content[0].card.heading} CardText={content[0].card.text} CardImage={content[0].card.pageImage? content[0].card.pageImage.secure_url: image} display="flex" />
+                    <ImageContainer src= {content[0].image? content[0].image.secure_url: image} />
+                    <BrandContainer>
+                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url} />
+                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} />
+                    </BrandContainer>
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        <BorderP>{content[0].linkTop.text}</BorderP>
-                        <h1>{content[0].contentTop.heading}</h1> 
-                        <P margin="70px">{content[0].contentTop.text}</P>
+                        
+                        <h2>{content[0].contentTop.heading}</h2> 
+                        <P margin="50px">{content[0].contentTop.text}</P>
+                        <h2>{content[0].contentMiddle.heading}</h2>
+                        <P margin="50px">{content[0].contentMiddle.text}.</P>
                         <h2>{content[0].contentBottom.heading}</h2>
-                        <P margin="20px">{content[0].contentBottom.text}</P>
-                        <InternalLink text={content[0].contentBottom.link.text} color={content[0].contentBottom.link.color} href={content[0].contentBottom.link.href} />
+                        <P margin="30px">{content[0].contentBottom.text}</P>
+                        <InternalLink text="SHOUT OUT" />
+                        <InternalLink text="SHOUT OUT" />
+                        
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
@@ -73,7 +75,7 @@ class FirstSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.aboutSecond
     return {
         content,
         isFetching,
@@ -83,5 +85,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(FirstSection);
+})(SecondSection);
 
