@@ -1,8 +1,8 @@
-import React, {Component, lazy} from "react";
-import FirstSection from "./sections/firstSection";
-import SecondSection from "./sections/secondSection";
-import ThirdSection from "./sections/thirdSection";
-import VolunteerSection from "./sections/volunteerSection"
+import React, {Component} from "react";
+import FirstSection from "./sections/FirstSection";
+import SecondSection from "./sections/SecondSection";
+import ThirdSection from "./sections/ThirdSection";
+import VolunteerSection from "./sections/VolunteerSection"
 
 class AboutHomePage extends Component {
     

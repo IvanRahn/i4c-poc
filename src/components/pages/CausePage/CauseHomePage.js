@@ -1,9 +1,7 @@
 import React, {Component} from "react";
-import NavBar from '../../modules/NavBar';
 import { connect } from "react-redux";
 import {getContent} from "./../../../actions"
-import ButtonLink from "./../../modules/ButtonLink";
-import CausePage from "./CausePage";
+import {InternalLink} from "./../../modules";
 
 class CauseHomePage extends Component {
     
@@ -20,7 +18,7 @@ class CauseHomePage extends Component {
                     {this.props.cause.map(cause => {
                         
                         return(
-                        <ButtonLink key={cause._id} href={`cause/${cause.slug}`} text={cause.title} />)
+                        <InternalLink key={cause._id} href={`cause/${cause.slug}`} text={cause.title} />)
                     })}
 
                 </div>

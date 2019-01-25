@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from "../../../modules/SectionWrapper";
-import OrdList from '../../../modules/OrdList';
-import VolunteerCard from '../../../modules/VolunteerCard';
+import {SectionWrapper, OrdList, Card} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 
@@ -18,7 +16,6 @@ class HowItWorksSection extends Component {
     render() {
 
         const {color, steps, stepsIsFetching, stepsError} = this.props;
-        console.log(steps)
         if (stepsIsFetching) {
             return <div>Loading</div>
         } else if (stepsError || !steps || !steps[0]) {
@@ -34,7 +31,7 @@ class HowItWorksSection extends Component {
                     if (i < 3) {
                         return (
                             <li key={step._id} >
-                                <VolunteerCard 
+                                <Card 
                                 CardText={step.Content.text}
                                 CardImage={step.Image ? step.Image.secure_url : null}
                                 CardHeading={step.title}

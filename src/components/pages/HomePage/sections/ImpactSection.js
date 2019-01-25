@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from "../../../modules/SectionWrapper";
-import ButtonLink from "../../../modules/InternalLink";
-import HTMLContent from '../../../modules/HTMLContent';
+import {SectionWrapper, ScrollButton} from "../../../modules";
 import {connect} from "react-redux";
 import {getContent} from "../../../../actions";
-import ScrollButton from "../../../modules/ScrollButton"
 
 
 const ImpactSectionWrapper = styled(SectionWrapper)`
@@ -28,7 +25,6 @@ class ImpactSection extends Component {
     
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;
-		console.log('​ImpactSection -> render -> impact', impact)
 
         if (impactIsFetching ) {
         return (<div> loading</div>)

@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper, CauseCard} from "./../../../modules"
-import SectionWrapper from "../../../modules/SectionWrapper";
-import FeaturedCauseCard from '../../../modules/CauseCard';
 import { connect } from 'react-redux';
 import {getContent} from "../../../../actions";
 

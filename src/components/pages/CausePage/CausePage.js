@@ -8,8 +8,6 @@ class CausePage extends Component {
 
     render() {
         console.log('test', this.props)
-        // console.log('store', store.getState())
-        const {color} = this.props;
         const {slug} = this.props.match.params
         const cause = this.props.cause.cause.filter(cause => cause.slug === slug)[0]
         console.log("Cause: ", cause)

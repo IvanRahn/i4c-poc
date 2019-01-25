@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import image from "./../../../../img/cartoon.jpg";
-import SectionWrapper from "../../../modules/SectionWrapper";
-import MoreI4cCard from '../../../modules/MoreI4cCard';
-import VolunteerCard from '../../../modules/VolunteerCard';
+import {SectionWrapper, Card} from "../../../modules";
 
 const H = styled.h1`
     color: white;
@@ -17,9 +15,9 @@ class MoreI4cSection extends Component {
         return (
             <SectionWrapper color={color}>
                 <H>More from I4C</H>
-                    <VolunteerCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-                    <VolunteerCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-                    <VolunteerCard CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
+                    <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
+                    <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
+                    <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
 
             </SectionWrapper>
         )

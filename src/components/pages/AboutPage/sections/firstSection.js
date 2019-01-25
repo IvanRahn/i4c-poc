@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from '../../../modules/SectionWrapperV2';
+import {SectionWrapper, InternalLink, Card} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
-import ButtonLink from './../../../modules/ButtonLink';
-import VolunteerCard from '../../../modules/VolunteerCard';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 
@@ -56,7 +54,7 @@ class FirstSection extends Component {
                 <Section>
                     <ImageContainer src= {content[0].image? content[0].image.secure_url : image} alt="Cherring man" />
 
-                    <VolunteerCard CardHeading={content[0].card.heading} CardText={content[0].card.text} CardImage={content[0].card.pageImage? content[0].card.pageImage.secure_url: image} display="flex" />
+                    <Card CardHeading={content[0].card.heading} CardText={content[0].card.text} CardImage={content[0].card.pageImage? content[0].card.pageImage.secure_url: image} display="flex" />
                 </Section>
 
                 <Section>
@@ -66,7 +64,7 @@ class FirstSection extends Component {
                         <P margin="70px">{content[0].contentTop.text}</P>
                         <h2>{content[0].contentBottom.heading}</h2>
                         <P margin="20px">{content[0].contentBottom.text}</P>
-                        <ButtonLink text={content[0].contentBottom.link.text} color={content[0].contentBottom.link.color} href={content[0].contentBottom.link.href} />
+                        <InternalLink text={content[0].contentBottom.link.text} color={content[0].contentBottom.link.color} href={content[0].contentBottom.link.href} />
                     </Wrapper>               
                 </Section>
             </SectionWrapper>

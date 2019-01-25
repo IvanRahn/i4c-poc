@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from '../../../modules/SectionWrapperV2';
+import {SectionWrapper, InternalLink} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
-import ButtonLink from './../../../modules/ButtonLink';
-import brand from '../../../../img/paremium.png'
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 
@@ -69,8 +67,8 @@ class SecondSection extends Component {
                         <P margin="50px">{content[0].contentMiddle.text}.</P>
                         <h2>{content[0].contentBottom.heading}</h2>
                         <P margin="30px">{content[0].contentBottom.text}</P>
-                        <ButtonLink text="SHOUT OUT" />
-                        <ButtonLink text="SHOUT OUT" />
+                        <InternalLink text="SHOUT OUT" />
+                        <InternalLink text="SHOUT OUT" />
                         
                     </Wrapper>               
                 </Section>

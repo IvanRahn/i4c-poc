@@ -23,8 +23,7 @@ top: 0;
     height: 110px;
  }
 `
-const NavLinks = styled.div `
-`
+
 const MenuButton = styled.span` 
     display: block;
     width: auto;

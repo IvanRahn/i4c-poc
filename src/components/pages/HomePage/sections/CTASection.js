@@ -18,7 +18,6 @@ text-align: left;
 
 class CTASection extends Component {
     render() { 
-        const {CTAText, CardImage} = this.props;
         return (  
                 <SectionWrapper>
                             <ImageContainer src= {"https://www.youtube.com/embed/tgbNymZ7vqY"} />

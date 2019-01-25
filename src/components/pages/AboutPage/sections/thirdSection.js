@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from '../../../modules/SectionWrapperV2';
-import image from '../../../../img/handshake.jpg';
-import ButtonLink from './../../../modules/ButtonLink';
+import {SectionWrapper, InternalLink} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 
@@ -53,14 +51,14 @@ class ThirdSection extends Component {
                     
                     <h2>{content[0].contentTop.heading}</h2> 
                     <P margin="50px">{content[0].contentTop.text}</P>
-                    <ButtonLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
+                    <InternalLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
                     
                 </Wrapper>               
             </Section>
 
             <Section width="100%">
                 <h2>{content[0].contentBottom.heading}</h2>
-                <ButtonLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
+                <InternalLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
 
             </Section>
         </SectionWrapper>
