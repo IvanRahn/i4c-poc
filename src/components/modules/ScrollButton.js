@@ -7,6 +7,7 @@ margin: 0 auto;
 background: none;
 color: inherit;
 border: none;
+margin-top: auto;
 :hover {
     cursor: pointer;
 }
@@ -27,7 +28,6 @@ const ScrollButton = ({target, text}) => {
 
     const scrollAndGa = (event) => {
         const element = document.getElementById(target)
-		console.log('​ImpactSection -> scrollAndGa -> element', element)
         element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
     }
 

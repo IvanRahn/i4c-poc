@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import image from "./../../../img/cartoon.jpg";
-import SectionWrapper from "./../../modules/SectionWrapperV2";
-import MoreI4cCard from '../../modules/MoreI4cCard';
-import VolunteerCard from '../../modules/VolunteerCard';
+import image from "./../../../../img/cartoon.jpg";
+import SectionWrapper from "../../../modules/SectionWrapper";
+import MoreI4cCard from '../../../modules/MoreI4cCard';
+import VolunteerCard from '../../../modules/VolunteerCard';
 
 const H = styled.h1`
     color: white;

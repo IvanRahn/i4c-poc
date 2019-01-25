@@ -36,6 +36,7 @@ html,body
 body {
   margin: 0;
   scroll-behavior: smooth;
+  font-family: Helvetica;
 }
 
 
@@ -43,6 +44,9 @@ body {
 main {
   display: block;
   margin-top: 110px;
+  section:first-child {
+    height: calc(100vh - 110px);
+  }
 }
 
 

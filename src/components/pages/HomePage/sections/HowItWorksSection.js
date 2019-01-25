@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from "./../../modules/SectionWrapperV2";
-import OrdList from '../../modules/HowItWorksList';
-import VolunteerCard from '../../modules/VolunteerCard';
+import SectionWrapper from "../../../modules/SectionWrapper";
+import OrdList from '../../../modules/OrdList';
+import VolunteerCard from '../../../modules/VolunteerCard';
 import { connect } from 'react-redux';
-import getContent from '../../../actions/keystoneActions';
+import getContent from '../../../../actions/keystoneActions';
 
 const H = styled.h1`
 width: 100%;
@@ -25,7 +25,7 @@ class HowItWorksSection extends Component {
         
         return (
             <>
-            <SectionWrapper id="HowItWorks" color={color}>
+            <SectionWrapper id="HowItWorks" color={color} height="auto">
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {
