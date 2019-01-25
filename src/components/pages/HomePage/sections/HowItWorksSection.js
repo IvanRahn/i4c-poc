@@ -16,7 +16,9 @@ class HowItWorksSection extends Component {
         this.props.getContent("HOWITWORKSSTEPS")
     }
     render() {
+
         const {color, steps, stepsIsFetching, stepsError} = this.props;
+        console.log(steps)
         if (stepsIsFetching) {
             return <div>Loading</div>
         } else if (stepsError || !steps || !steps[0]) {
