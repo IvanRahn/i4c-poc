@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import VolunteerCard from './../../modules/VolunteerCard'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
+import SectionWrapper from '../../modules/SectionWrapperV2';
 
 
 
@@ -22,16 +23,17 @@ class BoardMembers extends Component {
             {member.map((member) => {
                 
                     return (
-                        
-                        <VolunteerCard 
-                        key={member._id}
-                        CardName = {member.title}
-                        CardHeading = {member.content.heading} 
-                        CardText= {member.content.text}
-                        CardImage={member.image ? member.image.secure_url : null} 
-                /> 
+
+                        <SectionWrapper height="550px">                        
+                            <VolunteerCard 
+                            key={member._id}
+                            CardName = {member.title}
+                            CardHeading = {member.content.heading} 
+                            CardText= {member.content.text}
+                            CardImage={member.image ? member.image.secure_url : null} 
+                            /> 
+                        </SectionWrapper>
                     )
-                    return null 
                 
             })}
 
