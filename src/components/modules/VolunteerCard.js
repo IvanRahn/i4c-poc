@@ -27,13 +27,12 @@ class VolunteerCard extends Component {
     
     render(){
 
-        const {CardHeading, CardText, CardImage, CardName, key} = this.props;
+        const {CardHeading, CardText, CardImage, CardName} = this.props;
 
         return(
             <div>
                 <CardWrapper>
                     <ImageContainer src= {CardImage} />
-                    {key}
                     {CardName ? <Name>{CardName}</Name>  : null}
                     <DivContainer>
                         <h3>{CardHeading}</h3>

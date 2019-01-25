@@ -5,7 +5,7 @@ import CauseHomePage from "./pages/CausePage/CauseHomePage";
 import CausePage from "./pages/CausePage/CausePage";
 import NavBar from './modules/NavBar';
 import GlobalStyle from "./Normalize";
-import BoardPage from "./pages/OurBoard/BoardPage";
+import BoardPage from "./pages/OurBoardPage/BoardPage";
 import AboutHomePage from "./pages/AboutPage/AboutHomePage";
 import withTracker from "./../components/google_analytics/withTracker";
 import Footer from './modules/Footer';

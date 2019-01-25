@@ -1,9 +1,7 @@
 import React, {Component} from "react";
-import NavBar from '../../modules/NavBar';
 import BoardDutySection from "./BoardDutySection";
 import BoardMembers from "./BoardMembers";
 import FindOutMore from "./FindOutMore";
-import Footer from "../../modules/Footer"
 
 
 

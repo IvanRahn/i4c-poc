@@ -9,8 +9,8 @@ import {getContent} from "./../../../actions"
 const ImageContainer = styled.img`
 height: auto; 
 width: auto; 
-max-width: 600px; 
-max-height: 600px;
+max-width: 200px; 
+max-height: 200px;
 margin: -200px auto 0 auto; 
 `
 
@@ -43,8 +43,8 @@ class BoardDutySection extends Component {
     }
     
     render() { 
-        const {member, memberError, memberIsFetching} = this.props; 
-        if (!memberIsFetching && member ) {
+        const {promise, promiseError, promiseIsFetching} = this.props; 
+        if (!promiseIsFetching && promise ) {
             return ( 
                 <SectionWrapper>
                 <Section>
@@ -60,7 +60,7 @@ class BoardDutySection extends Component {
                 </Section>
             </SectionWrapper>
         )
-            } else if (memberError || !member|| !member[0]){
+            } else if (promiseError || !promise|| !promise[0]){
                 return <div>error</div>
             }      
             return null
@@ -68,11 +68,11 @@ class BoardDutySection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {member, memberIsFetching, memberError} = state.member
+    const {promise, promiseIsFetching, promiseError} = state.promise
     return {
-        member, 
-        memberIsFetching,
-        memberError
+        promise, 
+        promiseIsFetching,
+        promiseError
 
     }
 }

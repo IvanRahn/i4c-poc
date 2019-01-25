@@ -22,8 +22,8 @@ class FindOutMore extends Component {
     }
     
     render() { 
-        const {member, memberError, memberIsFetching} = this.props; 
-        if (!memberIsFetching && member ) {
+        const {findout, findoutError, findoutIsFetching} = this.props; 
+        if (!findoutIsFetching && findout ) {
 
             return ( 
                 <SectionWrapper>
@@ -33,7 +33,7 @@ class FindOutMore extends Component {
                     </Section>
                 </SectionWrapper>
             )
-                } else if (memberError || !member|| !member[0]){
+                } else if (findoutError || !findout|| !findout[0]){
                     return <div>error</div>
                 }      
                 return null
@@ -41,11 +41,11 @@ class FindOutMore extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {member, memberIsFetching, memberError} = state.member
+    const {findout, findoutIsFetching, findoutError} = state.findout
     return {
-        member, 
-        memberIsFetching,
-        memberError
+        findout, 
+        findoutIsFetching,
+        findoutError
 
     }
 }

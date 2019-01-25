@@ -10,12 +10,13 @@ import {getContent} from "./../../../actions"
 
 class BoardMembers extends Component {
     componentDidMount() {
-        this.props.getContent("our-team/team-members")
+
+        this.props.getContent("our-team/members")
     }
     
     render() { 
-        const {member, memberError, memberIsFetching} = this.props; 
-        if (!memberIsFetching && member ) { 
+        const {member, memberError, memberIsFetching} = this.props;  
+        if (!memberIsFetching && member ) {       
             return ( 
             <>
             {member.map((member) => {
@@ -27,7 +28,7 @@ class BoardMembers extends Component {
                         CardName = {member.title}
                         CardHeading = {member.content.heading} 
                         CardText= {member.content.text}
-                        CardImage={member.image} 
+                        CardImage={member.image ? member.image.secure_url : null} 
                 /> 
                     )
                     return null 
