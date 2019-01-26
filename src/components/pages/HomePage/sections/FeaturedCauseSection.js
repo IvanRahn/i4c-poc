@@ -27,8 +27,10 @@ class FeacturedCauseSection extends Component {
                 {causes.map((cause,i) => {
                     if (i <= 1 && cause.featuredAsCard === "Yes") {
                         return (
-                        <Link to={`cause/${cause.slug}`}><CauseCard 
+                        <Link 
                         key={cause._id}
+                        to={`cause/${cause.slug}`}>
+                        <CauseCard 
                         CardHeading={cause.cardContent.heading} 
                         CardText={cause.cardContent.text} 
                         CardImage={cause.cardImage?  

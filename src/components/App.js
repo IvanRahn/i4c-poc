@@ -41,10 +41,10 @@ class App extends Component {
               <Switch  >
                 <Route exact path="/" component={HomePage} />
                 <Suspense fallback="">
-                <Route exact path="/cause" component={CauseHomePage} />
-                <Route exact path="/cause/:slug" component={CausePage} />
-                <Route exact path="/board-page" component={BoardPage} />
-                <Route exact path="/about" component={AboutHomePage} />
+                <Route exact path="/cause" render={(props) => <CauseHomePage/>} />
+                <Route exact path="/cause/:slug" render={(props) => <CausePage/>} />
+                <Route exact path="/board-page" render={(props) => <BoardPage/>} />
+                <Route exact path="/about" render={(props) => <AboutHomePage/>} />
                 </Suspense>
               </Switch>
               </main>
