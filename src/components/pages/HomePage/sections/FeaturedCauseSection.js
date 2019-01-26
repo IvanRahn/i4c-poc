@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, CauseCard} from "./../../../modules"
 import { connect } from 'react-redux';
 import {getContent} from "../../../../actions";
-import {Link} from "react-router-dom"
+import {Link} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
@@ -20,7 +20,6 @@ class FeacturedCauseSection extends Component {
     }
     render() {
         const {color, causes, causesIsFetching, causesError} = this.props
-        console.log("Causes: ", this.props)
         if (!causesIsFetching && causes) {
         return (
             <SectionWrapper color={color}>

@@ -24,7 +24,6 @@ class ImpactSection extends Component {
     
     render () {
         const {color, impact, impactIsFetching, impactError} = this.props;
-		console.log('​ImpactSection -> render -> this.props', this.props)
 
         if (impactIsFetching ) {
         return (<div> loading</div>)

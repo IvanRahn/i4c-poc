@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import store from "./../../../store";
 import getContent from '../../../actions/keystoneActions';
-
+import withTracker from '../../google_analytics/withTracker';
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -20,7 +19,7 @@ class CausePage extends Component {
             return <div>Error</div>
         }
         const cause = causes.filter(cause => cause.slug === slug)[0]
-        
+        console.log(this.props)
         return (
            <>
                <h1>{cause.pageContent.heading}</h1>
@@ -42,4 +41,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(CausePage);
+})(withTracker(CausePage));
