@@ -1,17 +1,25 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import store from "./../../../store";
-
+import getContent from '../../../actions/keystoneActions';
+import withTracker from '../../google_analytics/withTracker';
 class CausePage extends Component {
     componentDidMount() {
+        const {causes, getContent} = this.props;
+        if (!causes) {
+            getContent("causes")
+        }
     }
 
     render() {
-        console.log('test', this.props)
         const {slug} = this.props.match.params
-        const cause = this.props.cause.cause.filter(cause => cause.slug === slug)[0]
-        console.log("Cause: ", cause)
-        console.log("Slug", slug)
+        const {causes, causesError, causesIsFetching} = this.props
+        if (causesIsFetching) {
+            return <div>Loading</div>
+        } else if (causesError || !causes || !causes[0]) {
+            return <div>Error</div>
+        }
+        const cause = causes.filter(cause => cause.slug === slug)[0]
+        console.log(this.props)
         return (
            <>
                <h1>{cause.pageContent.heading}</h1>
@@ -19,17 +27,18 @@ class CausePage extends Component {
                <p>{cause.pageContent.text}</p>
            </>
         )
+            }
     }
-}
-
-const mapStateToProps = () => {
-    //Add in an function to check if the state is in the store if not fire an action and using the slug to filter down.
-    const {cause, causeIsFetching, causeError} = store.getState()
+const mapStateToProps = (state) => {
+   
+    const {causes, causesIsFetching, causesError} = state.causes
     return {
-      cause,
-      causeIsFetching,
-      causeError
+      causes,
+      causesIsFetching,
+      causesError
     }
 }
 
-export default connect(mapStateToProps)(CausePage);
+export default connect(mapStateToProps, {
+    getContent
+})(withTracker(CausePage));

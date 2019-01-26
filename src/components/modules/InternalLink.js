@@ -1,7 +1,5 @@
-import React from "react";
-import {Link, withRouter} from "react-router-dom";
 import styled from "styled-components";
-import ReactGA from "react-ga";
+import Link from "./Link"
 
 
 const ButtonLink = styled(Link)`
@@ -21,26 +19,23 @@ const ButtonLink = styled(Link)`
     `
 
     
-function StyledLink({className, section, text, location, color, href, auto}) {
-    const analytics = () => {
-        ReactGA.event({
-            category: 'ButtonLink',
-            action: `Section: ${section}, Button: ${text}, Page: ${location.pathname}`,
-          });
-    }
-        return (
-        <ButtonLink 
-            className={className}
-            auto={auto} 
-            to={`${href}`} 
-            color={color} 
-            onClick={analytics}>
-                {text}
-        </ButtonLink>
-        )
-    }
+// function StyledLink({className, section, text, location, color, to, auto}) {
+    
+//         return (
+//         <ButtonLink 
+//             className={className}
+//             auto={auto} 
+//             to={`${to}`} 
+//             color={color}
+//             location={location}
+//             section={section}
+//             >
+//                 {text}
+//         </ButtonLink>
+//         )
+//     }
   
-export default withRouter(StyledLink);
+export default ButtonLink;
 
 
 

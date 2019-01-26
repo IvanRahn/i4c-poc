@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, CauseCard} from "./../../../modules"
 import { connect } from 'react-redux';
 import {getContent} from "../../../../actions";
+import {Link} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
@@ -14,27 +15,35 @@ const H = styled.h1`
 class FeacturedCauseSection extends Component {
     
     componentDidMount () {
-        this.props.getContent("featured-cause-cards");
+        this.props.getContent("causes");
         
     }
     render() {
-        const {color, content, isFetching, error} = this.props
-        // console.log("Causes: ", this.props)
-        if (!isFetching && content) {
+        const {color, causes, causesIsFetching, causesError} = this.props
+        if (!causesIsFetching && causes) {
         return (
             <SectionWrapper color={color}>
                 <H>Featured Causes</H>
-                {content.map((content,i) => {
-                    if (i <= 1) {
+                {causes.map((cause,i) => {
+                    if (i <= 1 && cause.featuredAsCard === "Yes") {
                         return (
-                        <CauseCard key={content._id}CardHeading={content.content.heading} CardText={content.content.text} CardImage={content.image?  content.image.secure_url : null}  />
+                        <Link to={`cause/${cause.slug}`}><CauseCard 
+                        key={cause._id}
+                        CardHeading={cause.cardContent.heading} 
+                        CardText={cause.cardContent.text} 
+                        CardImage={cause.cardImage?  
+                            cause.cardImage.secure_url 
+                            : 
+                            null}  
+                            />
+                        </Link>
                         )
                     }
                     return null
                 })}
             </SectionWrapper>
         )
-    } else if (error) {
+    } else if (causesError) {
         return <div>Error</div>
     }  
         return (
@@ -43,11 +52,11 @@ class FeacturedCauseSection extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causes
+    const {causes, causesIsFetching, causesError} = state.causes
     return {
-        content,
-        isFetching,
-        error
+        causes,
+        causesIsFetching,
+        causesError
     }
 }
 

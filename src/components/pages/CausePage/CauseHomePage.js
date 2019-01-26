@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import {getContent} from "./../../../actions"
 import {InternalLink} from "./../../modules";
 
-class CauseHomePage extends Component {
+class causesHomePage extends Component {
     
     componentDidMount() {
         this.props.getContent("causes")
@@ -11,14 +11,14 @@ class CauseHomePage extends Component {
     }
 
     render () {
-        console.log(this.props.cause)
-        if(this.props.cause) {
+        console.log(this.props.causes)
+        if(this.props.causes) {
             return (
                 <div>
-                    {this.props.cause.map(cause => {
+                    {this.props.causes.map(causes => {
                         
                         return(
-                        <InternalLink key={cause._id} href={`cause/${cause.slug}`} text={cause.title} />)
+                        <InternalLink key={causes._id} href={`cause/${causes.slug}`} text={causes.title} />)
                     })}
 
                 </div>
@@ -34,12 +34,12 @@ class CauseHomePage extends Component {
 
 
 const mapStateToProps = (state) => {
-    const {cause, causeIsFetching, causeError} = state.cause
+    const {causes, causesIsFetching, causesError} = state.causes
     return {
-      cause,
-      causeIsFetching,
-      causeError
+      causes,
+      causesIsFetching,
+      causesError
     }
   }
 
-export default connect(mapStateToProps, {getContent})(CauseHomePage);
+export default connect(mapStateToProps, {getContent})(causesHomePage);
