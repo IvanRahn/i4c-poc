@@ -8,11 +8,26 @@ import GlobalStyle from "./Normalize";
 import BoardPage from "./pages/OurBoard/BoardPage";
 import AboutHomePage from "./pages/AboutPage/AboutHomePage";
 import withTracker from "./../components/google_analytics/withTracker";
+import {detect } from "detect-browser";
 
+const browser = detect();
+const browsers = {
+    'chrome' : 68,
+    'firefox' : 52,
+    'safari': 10,
+    'edge': 16,
+    'ie' : 10,
+}
 class App extends Component {
 
 
   render() {
+    
+    console.log(Number(browser.version.split('.')[0]) === browsers[`${browser.name}`])
+    if (browser && browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) {
+      alert("Your browser is too old")
+
+    }
     return (
       <>
           <GlobalStyle />

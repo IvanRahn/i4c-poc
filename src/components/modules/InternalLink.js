@@ -12,7 +12,8 @@ const ButtonLink = styled(Link)`
     text-decoration: none;	
     ${props => props.auto ? "" : "width: 128px;"}
     margin: 8px 8px;
-    height: 32px;
+    /* height: 32px; */
+    padding-bottom: 8px;
     font-size: 1em;
     :hover {
         color: blue;
