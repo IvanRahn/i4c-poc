@@ -12,7 +12,6 @@ const Div = styled.div `
     ${props => props.auto ? "" : "width: 128px;"}
     margin: 8px 8px;
     font-size: 1em;
-    color: red;
     :hover {
         color: blue;
     }

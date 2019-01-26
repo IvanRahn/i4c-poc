@@ -8,11 +8,23 @@ import GlobalStyle from "./Normalize";
 import BoardPage from "./pages/OurBoard/BoardPage";
 import AboutHomePage from "./pages/AboutPage/AboutHomePage";
 import withTracker from "./../components/google_analytics/withTracker";
+import {detect } from "detect-browser";
 
+const browser = detect();
+const browsers = {
+    'chrome' : 68,
+    'firefox' : 52,
+    'safari': 10,
+    'edge': 16,
+    'ie' : 10,
+}
 class App extends Component {
 
 
   render() {
+    if (browser && browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) {
+      alert("It seems like the browser you are using is out of date and some of the features of our website might not be supproted. Please consider upgrading to a newer version.")
+    }
     return (
       <>
           <GlobalStyle />

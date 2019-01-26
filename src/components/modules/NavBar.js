@@ -64,14 +64,11 @@ const NavUl = styled.ul `
 const NavCheckbox = styled.input `
     display: none;
     @media only screen and (max-width: 499px) {
-    :checked {
-        + ul {
+    :checked + ul {
         left: 200px;
         }
         
     };
-    
-    }
 `
 const LoginLink = styled(InternalLink)`
 display: block;
