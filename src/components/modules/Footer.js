@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from "styled-components";
-import InternalLink from "./InternalLink"; 
+import {InternalLink} from "./index"; 
 
 const FooterStyling = styled.footer`
     display: flex;
