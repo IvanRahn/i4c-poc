@@ -27,7 +27,7 @@ class App extends Component {
 
 
   render() {
-    if (browser && browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) {
+    if (browser && (browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) ||!browsers.hasOwnProperty(browser.name))  {
       alert("It seems like the browser you are using is out of date and some of the features of our website might not be supproted. Please consider upgrading to a newer version.")
     }
     return (
