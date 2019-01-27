@@ -7,32 +7,32 @@ import HomePage from "./pages/HomePage/HomePage";
 import GlobalStyle from "./Normalize";
 // import BoardPage from "./pages/OurBoard/BoardPage";
 // import AboutHomePage from "./pages/AboutPage/AboutHomePage";
-import {detect } from "detect-browser";
+// import {detect } from "detect-browser";
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/CausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoard/BoardPage"))
 const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage"))
 
 
-
-const browser = detect();
-const browsers = {
-    'chrome' : 68,
-    'firefox' : 52,
-    'safari': 10,
-    'edge': 16,
-    'ie' : 10,
-}
+// DON'T DELETE THE FOLLOWING LINES< THEY ARE USED TO CHECK BROWSER-COMPATIBILITY LATER ON
+// const browser = detect();
+// const browsers = {
+//     // 'chrome' : 68,
+//     'firefox' : 52,
+//     'safari': 10,
+//     'edge': 16,
+//     'ie' : 10,
+// }
 class App extends Component {
 
-
+  browserIsNotSupported = () => {
+    // return (browser && 
+    //   ((browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) || 
+    //   !browsers.hasOwnProperty(browser.name))) 
+  }
   render() {
-
-    if (browser && 
-      ((browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) || 
-      !browsers.hasOwnProperty(browser.name)))  {
-      alert("It seems like the browser you are using is out of date and some of the features of our website might not be supproted. Please consider upgrading to a newer version.")
-    }
+    
+    
     return (
       <>
           <GlobalStyle />
@@ -41,6 +41,7 @@ class App extends Component {
             <>
               <NavBar />
               <main id="main">
+              {/* {this.browserIsNotSupported() ? <div>Not Supported</div> : null} */}
               <Switch  >
                 <Route exact path="/" component={HomePage} />
                 <Suspense fallback="">
