@@ -18,7 +18,7 @@ class causesHomePage extends Component {
                     {this.props.causes.map(causes => {
                         
                         return(
-                        <InternalLink key={causes._id} href={`cause/${causes.slug}`} text={causes.title} />)
+                        <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />)
                     })}
 
                 </div>

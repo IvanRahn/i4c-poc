@@ -8,6 +8,7 @@ import {getContent} from "./../../../actions";
 import {SectionWrapper} from "../../modules"; 
 import FindOutMore from "./FindOutMore";
 import withTracker from '../../google_analytics/withTracker';
+import { withRouter } from 'react-router-dom';
 
 const H = styled.h1`
     width:100%;
@@ -86,4 +87,4 @@ class BoardPage extends Component {
         }
     }
     
-    export default connect(mapStateToProps, {getContent})(withTracker(BoardPage)); 
+    export default connect(mapStateToProps, {getContent})(withRouter(withTracker(BoardPage))); 
