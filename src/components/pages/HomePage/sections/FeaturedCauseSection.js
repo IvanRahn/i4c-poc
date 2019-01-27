@@ -18,14 +18,19 @@ class FeacturedCauseSection extends Component {
         this.props.getContent("causes");
         
     }
+    renderFeaturedCards (causes) {
+        
+            
+        
+    }
     render() {
         const {color, causes, causesIsFetching, causesError} = this.props
         if (!causesIsFetching && causes) {
         return (
             <SectionWrapper color={color}>
                 <H>Featured Causes</H>
-                {causes.map((cause,i) => {
-                    if (i <= 1 && cause.featuredAsCard === "Yes") {
+                {causes.filter(cause => cause.featuredAsCard).map((cause, i) => {
+                    if (i <= 1) {
                         return (
                         <Link 
                         key={cause._id}

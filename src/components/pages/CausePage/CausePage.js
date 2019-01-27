@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
+import { withRouter } from 'react-router-dom';
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -41,4 +42,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(withTracker(CausePage));
+})(withRouter(withTracker(CausePage)));
