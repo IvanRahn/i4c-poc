@@ -35,6 +35,7 @@ class ImpactSection extends Component {
             <ImpactSectionWrapper aria-live="polite" color={color}>
                 <h1>{impact[0].heading}</h1>
                 <h2>{impact[0].subtext}</h2>
+                
                 <ScrollButton target="HowItWorks" text="Learn More" />
             </ImpactSectionWrapper>
         )
