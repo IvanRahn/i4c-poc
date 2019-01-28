@@ -49,7 +49,7 @@ class ImpactSection extends Component {
                 
                 <ScrollButton target="HowItWorks" text="Learn More" />
                 </Div>
-            <Img src={Background} alt =""/>
+            {/* <Img src={Background} alt =""/> */}
             </ImpactSectionWrapper>
             </>
         )
