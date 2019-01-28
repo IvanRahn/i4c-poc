@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from "../../../modules";
+import {SectionWrapper} from '../modules';
+import InternalLink from './InternalLink';
 
 const ImpactSectionWrapper = styled(SectionWrapper)`
 flex-direction: column;
@@ -31,7 +32,12 @@ class CenteredContent extends Component {
         return (
             <ImpactSectionWrapper aria-live="polite" color={color}>
                 <Div>
-                  
+                    <h1>Ready to invest for this cause?</h1>
+                    <h2>All of this works for ajdkjsahksahsa</h2>
+                    <h3>we slkdja dsk d jkas oq  nmsd nsdk jd a opdpoqdwdowdqpodk kdksad masmdnnm ,sand</h3>
+                </Div>
+                <Div>
+                    <InternalLink text="Join" />
                 </Div>
             </ImpactSectionWrapper>
 
