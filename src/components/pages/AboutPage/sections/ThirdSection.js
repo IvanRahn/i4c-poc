@@ -5,11 +5,8 @@ import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 
 const ImageContainer = styled.img`
-height: auto; 
+height: 480px; 
 width: auto; 
-max-width: 600px; 
-max-height: 600px;
-margin: -34px auto 0 auto; 
 `
 const Section = styled.div `
 height: 50%;

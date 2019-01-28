@@ -15,6 +15,9 @@ const BrandContainer = styled.div`
 `
 
 const Section = styled.div `
+/* display: flex;
+flex-direction: column;
+justify-content: space-between; */
 width: ${props => props.width || "100%"};
 height: 100%;
 @media (min-width: 768px){
