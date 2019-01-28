@@ -64,14 +64,11 @@ const NavUl = styled.ul `
 const NavCheckbox = styled.input `
     display: none;
     @media only screen and (max-width: 499px) {
-    :checked {
-        + ul {
+    :checked + ul {
         left: 200px;
         }
         
     };
-    
-    }
 `
 const LoginLink = styled(InternalLink)`
 display: block;
@@ -105,7 +102,7 @@ class NavBar extends Component {
         <Nav aria-live="polite">
         <LoginLink 
             text="LOGIN" 
-            href="#"
+            to="#"
             section="nav" 
             location="homepage"
             color="green" 
@@ -118,12 +115,12 @@ class NavBar extends Component {
                 </label>
                 <NavCheckbox type="checkbox" id="nav-checkbox"/>
                 <NavUl>
-                    <li> <InternalLink text="ABOUT US" href="/board-page" section="nav" location="homepage"/></li> 
-                    <li> <InternalLink text="HOW IT WORKS"href="#"section="nav" location="homepage"/> </li>
-                    <li> <InternalLink text="OUR IMPACT"href="#"section="nav" location="homepage"/> </li>
-                    <li> <InternalLink text="CONTACT US"href="#"section="nav" location="homepage"/> </li>
-                    <li> <InternalLink text="Login"href="#"section="nav" location="homepage"/> </li>
-                    <li> <InternalLink text="JOIN"href="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="ABOUT US" to="/board-page" section="nav" location="homepage"/></li> 
+                    <li> <InternalLink text="HOW IT WORKS"to="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="OUR IMPACT"to="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="CONTACT US"to="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="Login"to="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="JOIN"to="#"section="nav" location="homepage"/> </li>
                 </NavUl>
             {/* </NavLinks> */}
                 

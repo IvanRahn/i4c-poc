@@ -1,10 +1,10 @@
 import React, { Suspense, lazy } from "react";
 import ImpactSection from './sections/ImpactSection';
+import withTracker from '../../google_analytics/withTracker';
 const HowitWorksSection = lazy(() => import('./sections/HowItWorksSection')) ;
 const MoreI4cSection = lazy(() => import('./sections/MoreI4cSection')) ;
 const FeaturedCauseSection = lazy(() => import('./sections/FeaturedCauseSection')) ;
 const TeamSection= lazy(() => import('./sections/TeamSection')) ;
-
 
 
 const HomePage = () => {
@@ -23,4 +23,4 @@ const HomePage = () => {
     }
 
 
-export default HomePage
+export default withTracker(HomePage)

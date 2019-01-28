@@ -11,7 +11,6 @@ text-align: center;
 width: 50%;
 h1 {
     margin-top: auto;
-
 }
 :last-of-type(button) {
     margin-top: auto;

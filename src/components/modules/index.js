@@ -8,6 +8,7 @@ import MoreI4cCard from './MoreI4cCard';
 import ScrollButton from './ScrollButton';
 import SectionWrapper from './SectionWrapper';
 import OrdList from "./OrdList";
+import Link from "./Link"
 export  {
     Footer,
     InternalLink,
@@ -19,4 +20,5 @@ export  {
     ScrollButton,
     SectionWrapper,
     OrdList,
+    Link,
 }
