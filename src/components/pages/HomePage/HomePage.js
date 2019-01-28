@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import ImpactSection from './sections/ImpactSection';
 import withTracker from '../../google_analytics/withTracker';
+import {darkGreen} from "./../../modules/BrandStyle"
+
 const HowitWorksSection = lazy(() => import('./sections/HowItWorksSection')) ;
 const MoreI4cSection = lazy(() => import('./sections/MoreI4cSection')) ;
 const FeaturedCauseSection = lazy(() => import('./sections/FeaturedCauseSection')) ;
@@ -12,10 +14,10 @@ const HomePage = () => {
             <>
                     <ImpactSection />
                     <Suspense fallback="">
-                        <HowitWorksSection color="green"/>
+                        <HowitWorksSection color={darkGreen}/>
                         <TeamSection />
                         <FeaturedCauseSection />
-                        <MoreI4cSection color="green" />
+                        <MoreI4cSection color={darkGreen} />
                     </Suspense>
                 
             </>

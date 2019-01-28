@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {SectionWrapper, OrdList, Card} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
-
 const H = styled.h1`
 width: 100%;
 text-align: center;
@@ -24,7 +23,8 @@ class HowItWorksSection extends Component {
         
         return (
             <>
-            <SectionWrapper id="HowItWorks" color={color} height="auto">
+
+            <SectionWrapper id="HowItWorks" color={color} >
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {

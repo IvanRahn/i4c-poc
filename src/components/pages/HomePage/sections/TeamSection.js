@@ -7,7 +7,11 @@ import getContent from '../../../../actions/keystoneActions';
 const ImageContainer = styled.iframe`
 width: 250px; 
 height: 250px;
+margin: -50px auto 0 auto;
+@media only screen and (min-width: 500px){
+
 margin: -600px auto 0 auto; 
+}
 
 `
 
@@ -30,7 +34,7 @@ class TeamSection extends Component {
             return <div>error</div>
         }
         return (  
-                <SectionWrapper>
+                <SectionWrapper height="50vh">
                             <ImageContainer src={teamSection[0].media} />
 
                     <Section>
