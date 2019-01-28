@@ -28,7 +28,7 @@ const ScrollButton = ({target, text}) => {
 
     const scrollAndGa = (event) => {
         const element = document.getElementById(target)
-        element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+        element.scrollIntoView(true, {behavior: "smooth", block: "end", inline: "nearest"});
     }
 
     return (

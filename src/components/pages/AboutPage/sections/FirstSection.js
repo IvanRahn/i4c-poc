@@ -41,6 +41,7 @@ class FirstSection extends Component {
 
     render () {
         const { color, content, isFetching, error} = this.props;        
+		console.log('TCL: FirstSection -> render -> content', content)
         if (isFetching) {
             return (<div> loading</div>)
             } else if (error || !content || !content[0]){

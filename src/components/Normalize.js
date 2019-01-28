@@ -52,8 +52,14 @@ main {
 
 
 h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
+  font-size: 32px;
+  @media only screen and (min-width: 500px) {
+    font-size: 48px
+  }
+}
+p {
+  font-size: 18px;
+
 }
 
 /* Grouping content
