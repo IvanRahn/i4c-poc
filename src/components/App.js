@@ -7,7 +7,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import GlobalStyle from "./Normalize";
 // import BoardPage from "./pages/OurBoard/BoardPage";
 // import AboutHomePage from "./pages/AboutPage/AboutHomePage";
-import {detect } from "detect-browser";
+// import {detect } from "detect-browser";
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/CausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoard/BoardPage"))
@@ -15,24 +15,24 @@ const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage"))
 
 
 
-const browser = detect();
-const browsers = {
-    'chrome' : 68,
-    'firefox' : 52,
-    'safari': 10,
-    'edge': 16,
-    'ie' : 10,
-}
+// const browser = detect();
+// const browsers = {
+//     'chrome' : 68,
+//     'firefox' : 52,
+//     'safari': 10,
+//     'edge': 16,
+//     'ie' : 10,
+// }
 class App extends Component {
 
 
   render() {
 
-    if (browser && 
-      ((browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) || 
-      !browsers.hasOwnProperty(browser.name)))  {
-      alert("It seems like the browser you are using is out of date and some of the features of our website might not be supproted. Please consider upgrading to a newer version.")
-    }
+    // if (browser && 
+    //   ((browsers.hasOwnProperty(browser.name) && Number(browser.version.split('.')[0]) <= browsers[`${browser.name}`]) || 
+    //   !browsers.hasOwnProperty(browser.name)))  {
+    //   alert("It seems like the browser you are using is out of date and some of the features of our website might not be supproted. Please consider upgrading to a newer version.")
+    // }
     return (
       <>
           <GlobalStyle />
@@ -44,10 +44,10 @@ class App extends Component {
               <Switch  >
                 <Route exact path="/" component={HomePage} />
                 <Suspense fallback="">
-                <Route exact path="/cause" render={(props) => <CauseHomePage/>} />
-                <Route exact path="/cause/:slug" render={(props) => <CausePage/>} />
-                <Route exact path="/board-page" render={(props) => <BoardPage/>} />
-                <Route exact path="/about" render={(props) => <AboutHomePage/>} />
+                <Route exact path="/cause" render={(props) => <CauseHomePage {...props}/>} />
+                <Route exact path="/cause/:slug" render={(props) => <CausePage {...props}/>} />
+                <Route exact path="/board-page" render={(props) => <BoardPage {...props}/>} />
+                <Route exact path="/about" render={(props) => <AboutHomePage {...props}/>} />
                 </Suspense>
               </Switch>
               </main>

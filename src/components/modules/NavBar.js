@@ -85,6 +85,7 @@ display: block;
       border-top: 2px solid;
       border-bottom: 2px solid;
       height: auto;
+      padding-bottom: 0;
       @media only screen and (min-width: 500px) {
           display: none;
       }

@@ -4,13 +4,14 @@ import SecondSection from "./sections/SecondSection";
 import ThirdSection from "./sections/ThirdSection";
 import VolunteerSection from "./sections/VolunteerSection"
 import withTracker from '../../google_analytics/withTracker';
-class AboutHomePage extends Component {
-    
-    componentDidMount() {
-        
-    }
+import { withRouter } from 'react-router-dom';
 
-    render () {
+const AboutHomePage = (props) =>  {
+    // componentDidMount() {
+        
+        // }
+        
+        console.log(props)
         return (
             <div>
                 <FirstSection />
@@ -21,10 +22,9 @@ class AboutHomePage extends Component {
             </div>
         );
     }
-    
-}
+// }
 
 
 
 
-export default withTracker(AboutHomePage);
+export default withTracker(withRouter(AboutHomePage));
