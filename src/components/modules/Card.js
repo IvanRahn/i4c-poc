@@ -2,6 +2,9 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {HTMLContent} from "./index"
 
+const Name = styled.h2`
+
+`
 const CardWrapper = styled.div`
 overflow: hidden;
 /* padding: 0 0 32px; */
@@ -32,7 +35,7 @@ class VolunteerCard extends Component {
     
     render(){
 
-        const {CardHeading, CardText, CardImage} = this.props;
+        const {CardHeading, CardText, CardImage, CardName} = this.props;
 
         return(
             // <div>
