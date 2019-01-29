@@ -34,7 +34,7 @@ class TeamSection extends Component {
             return <div>error</div>
         }
         return (  
-                <SectionWrapper height="50vh">
+                <SectionWrapper height="auto">
                             <ImageContainer src={teamSection[0].media} />
 
                     <Section>

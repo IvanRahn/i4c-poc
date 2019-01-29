@@ -7,7 +7,7 @@ display: flex;
 flex-wrap: wrap;
 /* align-content: center; */
 justify-content:center;
-width: 80%;
+width: 100%;
 margin: 0 auto;
 counter-reset: my-awesome-counter;
 list-style: none;
