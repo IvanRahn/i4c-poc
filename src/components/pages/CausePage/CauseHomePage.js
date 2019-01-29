@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { connect } from "react-redux";
 import {getContent} from "./../../../actions"
 import {InternalLink} from "./../../modules";
+import FirstSection from "./sections/FirstSection";
 
 class causesHomePage extends Component {
     
@@ -15,10 +16,12 @@ class causesHomePage extends Component {
         if(this.props.causes) {
             return (
                 <div>
+                    <FirstSection />
                     {this.props.causes.map(causes => {
                         
                         return(
-                        <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />)
+                        <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />
+                        )
                     })}
 
                 </div>
@@ -26,7 +29,7 @@ class causesHomePage extends Component {
         } 
         
         return(
-            "Helloaskld"
+            <FirstSection />
         )
     }
     

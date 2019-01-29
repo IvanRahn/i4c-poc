@@ -6,10 +6,8 @@ import styled from 'styled-components';
  
 
 const ImageContainer = styled.img`
-    display: flex;
-    flex-direction: column;
-    height: 220px;
-    width: 220px;
+    height: 100%;
+    width: 100%;
     border-radius: 100%;
     margin: auto; 
     margin-right: 7em;
@@ -18,17 +16,16 @@ const ImageContainer = styled.img`
 
 const DivStyle = styled.div`
     display: flex;
-    margin: 1.5em 0 1.5em 0; 
-    
+    height: 400px;
+    width: 400px;
+    /* margin: 1.5em 0 1.5em 0;  */
 `
 
 const TextStyle = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 500px;
-    
-    
+    width: 500px;        
 `
 
 
@@ -43,8 +40,8 @@ class HorizontalCard extends Component {
                     
                         <ImageContainer src = "http://writingexercises.co.uk/images2/randomimage/pipe-sculpture.jpg" /> 
                         <TextStyle>
-                            <h1>Surname</h1>
-                            <h2>position</h2>
+                            {/* <h1>Surname</h1>
+                            <h2>position</h2> */}
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
                             {/* <HTMLContent content={memberText} /> */}
                         </TextStyle>
