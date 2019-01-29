@@ -59,6 +59,11 @@ h1 {
 }
 p {
   font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0px;
 }
 
 /* Grouping content

@@ -4,9 +4,22 @@ import {SectionWrapper, InternalLink, HTMLContent} from "../../../modules"
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 
-const ImageContainer = styled.iframe`
+const VideoContainer = styled.iframe`
+margin: -128px auto 0 auto;
+width: 100%;
+height: auto;
+
+@media only screen and (min-width: 500px){
+
 width: 250px; 
 height: 250px;
+margin: -300px auto 0 auto; 
+}
+
+`
+const ImageContainer = styled.img`
+width: 250px; 
+height: auto;
 margin: -128px auto 0 auto;
 @media only screen and (min-width: 500px){
 
@@ -32,6 +45,7 @@ class TeamSection extends Component {
     }
     render() { 
         const {teamSection, teamSectionError, teamSectionIsFetching} = this.props;
+		console.log('TCL: TeamSection -> render -> teamSection', teamSection)
         if (teamSectionIsFetching) {
             return <div>Loading</div> 
         } else if (teamSectionError || !teamSection || !teamSection[0]) {
@@ -39,10 +53,11 @@ class TeamSection extends Component {
         }
         return (  
                 <SectionWrapper height="auto">
-                            <ImageContainer src={teamSection[0].media} />
+                            {teamSection[0].media ? <VideoContainer src={teamSection[0].media} /> : <ImageContainer src={teamSection[0].image.secure_url} /> }
+                            
 
                     <Section>
-                            <HTMLContent content={teamSection[0].heading}/>
+                            <h2>{teamSection[0].heading}</h2>
                             <HTMLContent content={teamSection[0].text}/>
                             <InternalLink text="Vetted by our \n Board of Trustees" />
                         
