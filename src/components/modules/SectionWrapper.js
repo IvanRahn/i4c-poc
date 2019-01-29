@@ -8,6 +8,7 @@ const SectionWrapper = styled.section`
     width: 100%;
     margin: 0 auto;
     align-items: center; 
+    padding: 52px 24px;
     background-color: ${props => props.color};
     height: ${props => props.height || "auto"};
     @media only screen and (min-width: 500px) {

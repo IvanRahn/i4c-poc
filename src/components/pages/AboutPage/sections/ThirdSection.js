@@ -55,12 +55,6 @@ class ThirdSection extends Component {
                     
                 </Wrapper>               
             </Section>
-
-            <Section width="100%">
-                <h2>{content[0].contentBottom.heading}</h2>
-                <InternalLink text={content[0].contentTop.link.text} color={content[0].contentTop.link.color} href={content[0].contentTop.link.href} />
-
-            </Section>
         </SectionWrapper>
         )
     } 

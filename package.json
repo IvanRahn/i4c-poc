@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "detect-browser": "^4.0.4",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "react-ga": "^2.5.6",

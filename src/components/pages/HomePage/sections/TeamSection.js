@@ -1,11 +1,17 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink, HTMLContent} from "./../../../modules"
+import {SectionWrapper, InternalLink, HTMLContent} from "../../../modules"
+import { connect } from 'react-redux';
+import getContent from '../../../../actions/keystoneActions';
 
 const ImageContainer = styled.iframe`
 width: 250px; 
 height: 250px;
+margin: -50px auto 0 auto;
+@media only screen and (min-width: 500px){
+
 margin: -600px auto 0 auto; 
+}
 
 `
 
@@ -16,19 +22,25 @@ text-align: left;
 `
 
 
-class CTASection extends Component {
+class TeamSection extends Component {
+    componentDidMount() {
+        this.props.getContent("teamSection")
+    }
     render() { 
+        const {teamSection, teamSectionError, teamSectionIsFetching} = this.props;
+        if (teamSectionIsFetching) {
+            return <div>Loading</div> 
+        } else if (teamSectionError || !teamSection || !teamSection[0]) {
+            return <div>error</div>
+        }
         return (  
-                <SectionWrapper>
-                            <ImageContainer src= {"https://www.youtube.com/embed/tgbNymZ7vqY"} />
+                <SectionWrapper height="auto">
+                            <ImageContainer src={teamSection[0].media} />
 
                     <Section>
-                            <h1>"Our <InternalLink text="qualified team"/> did the research, so you don't have to.</h1> 
-                            <h3>The Australian charity sector holds over $30 billion dollars in cash reserves earning very low returns. A donation to I4C goes much further.</h3>
-
-                            <h3>Most charities rely on regular donations to sustain their programs. <InternalLink text="Join us" /> to make an everlasting impact.</h3> 
-
-                            <InternalLink text="Vetted by our Board of Trustees" />
+                            <HTMLContent content={teamSection[0].heading}/>
+                            <HTMLContent content={teamSection[0].text}/>
+                            <InternalLink text="Vetted by our \n Board of Trustees" />
                         
                     </Section>
                     
@@ -36,6 +48,15 @@ class CTASection extends Component {
         );
     }
 }
- 
-export default CTASection;
+const mapStateToProps = (state) => {
+    const {teamSection, teamSectionIsFetching, teamSectionError} = state.teamSection
+    return {
+        teamSection,
+        teamSectionIsFetching,
+        teamSectionError,
+    }
+}
+export default connect(mapStateToProps, {
+    getContent
+})(TeamSection);
 

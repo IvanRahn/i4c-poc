@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component} from "react";
 import BoardDutySection from "./BoardDutySection";
 import image from "./../../../img/cartoon.jpg";
 import styled from 'styled-components';
@@ -7,7 +7,8 @@ import {connect} from "react-redux";
 import {getContent} from "./../../../actions";
 import {SectionWrapper} from "../../modules"; 
 import FindOutMore from "./FindOutMore";
-
+import withTracker from '../../google_analytics/withTracker';
+import { withRouter } from 'react-router-dom';
 
 const H = styled.h1`
     width:100%;
@@ -86,4 +87,4 @@ class BoardPage extends Component {
         }
     }
     
-    export default connect(mapStateToProps, {getContent})(BoardPage); 
+    export default connect(mapStateToProps, {getContent})(withRouter(withTracker(BoardPage))); 

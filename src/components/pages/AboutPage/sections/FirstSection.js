@@ -1,26 +1,20 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink} from '../../../modules';
+import {SectionWrapper, InternalLink, Card} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
-
 
 const ImageContainer = styled.img`
 height: auto; 
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
-margin: -80px auto 0 auto; 
-`
-const BrandContainer = styled.div`
-
 `
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
-text-align: center;
-height: 100%;
+/* text-align: center; */
 @media (min-width: 768px){
     width: 50%;
 }
@@ -31,17 +25,23 @@ padding-right: 180px;
 `
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
+
 `
 
+const BorderP = styled.p`
+color: white;
+background-color: green;
+`
 
-class SecondSection extends Component {
+class FirstSection extends Component {
+
     componentDidMount () {
-        this.props.getContent("about/second-section");    
+        this.props.getContent("about/first-section");    
     }
 
     render () {
         const { color, content, isFetching, error} = this.props;        
-        // console.log(content)
+		console.log('TCL: FirstSection -> render -> content', content)
         if (isFetching) {
             return (<div> loading</div>)
             } else if (error || !content || !content[0]){
@@ -49,27 +49,22 @@ class SecondSection extends Component {
             }
         
         return (
-            <SectionWrapper color={color} height="auto">
+            
+            <SectionWrapper color={color}>
                 <Section>
-                    <ImageContainer src= {content[0].image? content[0].image.secure_url: image} />
-                    <BrandContainer>
-                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url} />
-                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} />
-                    </BrandContainer>
+                    <ImageContainer src= {content[0].image? content[0].image.secure_url : image} alt="Cherring man" />
+
+                    <Card CardHeading={content[0].card.heading} CardText={content[0].card.text} CardImage={content[0].card.pageImage? content[0].card.pageImage.secure_url: image} display="flex" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        
-                        <h2>{content[0].contentTop.heading}</h2> 
-                        <P margin="50px">{content[0].contentTop.text}</P>
-                        <h2>{content[0].contentMiddle.heading}</h2>
-                        <P margin="50px">{content[0].contentMiddle.text}.</P>
+                        <BorderP>{content[0].linkTop.text}</BorderP>
+                        <h1>{content[0].contentTop.heading}</h1> 
+                        <P margin="70px">{content[0].contentTop.text}</P>
                         <h2>{content[0].contentBottom.heading}</h2>
-                        <P margin="30px">{content[0].contentBottom.text}</P>
-                        <InternalLink text="SHOUT OUT" />
-                        <InternalLink text="SHOUT OUT" />
-                        
+                        <P margin="20px">{content[0].contentBottom.text}</P>
+                        <InternalLink text={content[0].contentBottom.link.text} color={content[0].contentBottom.link.color} href={content[0].contentBottom.link.href} />
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
@@ -78,7 +73,7 @@ class SecondSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutSecond
+    const {content, isFetching, error} = state.aboutFirst
     return {
         content,
         isFetching,
@@ -88,5 +83,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(SecondSection);
+})(FirstSection);
 

@@ -1,30 +1,31 @@
-import React, {Component} from "react";
-import FirstSection from "./sections/FirstSection";
-import SecondSection from "./sections/SecondSection";
-import ThirdSection from "./sections/ThirdSection";
-import VolunteerSection from "./sections/VolunteerSection"
+import React, {Component} from 'react';
+import FirstSection from './sections/FirstSection';
+import SecondSection from './sections/SecondSection';
+import ThirdSection from './sections/ThirdSection';
+import CenteredContent from '../../modules/CenteredContent';
+import VolunteerSection from './sections/VolunteerSection'
+import withTracker from '../../google_analytics/withTracker';
+import { withRouter } from 'react-router-dom';
 
-class AboutHomePage extends Component {
-    
-    componentDidMount() {
+const AboutHomePage = (props) =>  {
+    // componentDidMount() {
         
-    }
-
-    render () {
+        // }
+        
+        console.log(props)
         return (
             <div>
                 <FirstSection />
                 <SecondSection />
                 <VolunteerSection />
                 <ThirdSection />
-                
+                <CenteredContent />
             </div>
         );
     }
-    
-}
+// }
 
 
 
 
-export default AboutHomePage;
+export default withTracker(withRouter(AboutHomePage));

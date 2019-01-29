@@ -3,19 +3,31 @@ import styled from 'styled-components';
 import {SectionWrapper, ScrollButton} from "../../../modules";
 import {connect} from "react-redux";
 import {getContent} from "../../../../actions";
+import Background from "./../../../../img/placeholder_background_wave.png"
 
 
 const ImpactSectionWrapper = styled(SectionWrapper)`
 flex-direction: column;
 text-align: center;
-width: 50%;
-h1 {
-    margin-top: auto;
+padding: 0;
+position: relative;
 
+button {
+    margin: auto auto 0;
+    @media only screen and (max-width: 500px) {
+    position: absolute;
+    left: 16px;
+    /* bottom: 24vh; */
+    }
 }
-:last-of-type(button) {
-    margin-top: auto;
-}
+`
+const Div = styled.div `
+    padding: 52px 24px;
+    /* margin: auto auto; */
+`
+const Img = styled.img `
+    width: 100%;
+    margin: auto auto 0;
 `
 
 class ImpactSection extends Component {
@@ -33,11 +45,19 @@ class ImpactSection extends Component {
         }
         
         return (
-            <ImpactSectionWrapper aria-live="polite" color={color}>
+            <>
+            <ImpactSectionWrapper height="100vh" aria-live="polite" color={color}>
+            <Div>
                 <h1>{impact[0].heading}</h1>
-                <h2>{impact[0].subtext}</h2>
+                <p>{impact[0].subtext}</p>
+                
+                </Div>
+                <Div>
                 <ScrollButton target="HowItWorks" text="Learn More" />
+                </Div>
+            {/* <Img src={Background} alt =""/> */}
             </ImpactSectionWrapper>
+            </>
         )
     } 
 }
