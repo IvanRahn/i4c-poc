@@ -7,18 +7,22 @@ import getContent from '../../../../actions/keystoneActions';
 const ImageContainer = styled.iframe`
 width: 250px; 
 height: 250px;
-margin: -50px auto 0 auto;
+margin: -128px auto 0 auto;
 @media only screen and (min-width: 500px){
 
-margin: -600px auto 0 auto; 
+margin: -300px auto 0 auto; 
 }
 
 `
 
 const Section = styled.div `
-width: 50%;
+width: 100%;
 margin-right: 2em;
 text-align: left;
+@media only screen and (min-width: 500px) {
+    width: 50%;
+
+}
 `
 
 

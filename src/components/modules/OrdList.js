@@ -9,30 +9,42 @@ flex-wrap: wrap;
 justify-content:center;
 width: 100%;
 margin: 0 auto;
+padding: 0 0 128px;
 counter-reset: my-awesome-counter;
 list-style: none;
+@media only screen and (min-width: 500px) {
+
+}
     li {
         /* margin: 0 0 0.5rem 0; */
-        padding: 32px;
         counter-increment: my-awesome-counter;
         position: relative;
+        width: 100%;
+        @media only screen and (min-width: 500px) {
+            width: auto;
+            margin: 0 24px;
+        }
+
+        /* padding: 32px; */
         ::before {
             position: absolute;
-            top: 50px;
+            top: 200px;
             background: transparent;
             border-radius: 50%;
             text-align: center;
             content: counter(my-awesome-counter);
-            @media only screen and (min-width: 500px) {
-            font-size: 2.5rem;
-            font-weight: bold;
-            /* margin: auto; */
-            --size: 50px;
-            left: calc(-1 * var(--size) + 12px);
+            border-style: solid;
+            --size: 40px;
             width: var(--size);
             height: var(--size);
-            top: 200px;
-            border-style: solid;
+            font-size: 2rem;
+            vertical-align: middle;
+            /* left: 16px; */
+            font-weight: bold;
+            margin: auto;
+            @media only screen and (min-width: 500px) {
+            left: calc(-1 * var(--size) - 12px);
+            top: 250px;
             }
         }
     }
