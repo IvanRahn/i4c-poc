@@ -6,8 +6,8 @@ import styled from 'styled-components';
  
 
 const ImageContainer = styled.img`
-    height: 100%;
-    width: 100%;
+    height: 200px;
+    width: 200px;
     border-radius: 100%;
     margin: auto; 
     margin-right: 7em;
