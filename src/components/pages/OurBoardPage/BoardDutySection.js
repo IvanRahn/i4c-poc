@@ -44,7 +44,14 @@ class BoardDutySection extends Component {
     
     render() { 
         const {promise, promiseError, promiseIsFetching} = this.props; 
-        if (!promiseIsFetching && promise ) {
+		console.log('​BoardDutySection -> render -> promise', promise)
+        if (promiseIsFetching) {
+            return <div>Loading</div>
+
+        } else if (promiseError || !promise|| !promise[0]){
+            return <div>error</div>
+        }     
+        
             return ( 
                 <SectionWrapper>
                 <Section>
@@ -60,10 +67,7 @@ class BoardDutySection extends Component {
                 </Section>
             </SectionWrapper>
         )
-            } else if (promiseError || !promise|| !promise[0]){
-                return <div>error</div>
-            }      
-            return null
+            
     } 
 }
 

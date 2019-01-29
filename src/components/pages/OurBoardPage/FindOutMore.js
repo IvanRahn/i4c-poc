@@ -22,7 +22,12 @@ class FindOutMore extends Component {
     
     render() { 
         const {findout, findoutError, findoutIsFetching} = this.props; 
-        if (!findoutIsFetching && findout ) {
+        if (findoutIsFetching) {
+            return <div>Loading</div>
+
+        } else if (findoutError || !findout|| !findout[0]){
+            return <div>error</div>
+        }     
 
             return ( 
                 <SectionWrapper>
@@ -32,10 +37,7 @@ class FindOutMore extends Component {
                     </Section>
                 </SectionWrapper>
             )
-                } else if (findoutError || !findout|| !findout[0]){
-                    return <div>error</div>
-                }      
-                return null
+                
     } 
 }
 
