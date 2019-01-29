@@ -59,7 +59,6 @@ h1 {
 }
 p {
   font-size: 18px;
-
 }
 
 /* Grouping content
