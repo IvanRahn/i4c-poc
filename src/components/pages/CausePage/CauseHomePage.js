@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import {getContent} from "./../../../actions"
 import {InternalLink} from "./../../modules";
 import FirstSection from "./sections/FirstSection";
+import DonateSection from "./sections/DonateSection";
 
 class causesHomePage extends Component {
     
@@ -17,6 +18,8 @@ class causesHomePage extends Component {
             return (
                 <div>
                     <FirstSection />
+                    <DonateSection />
+
                     {this.props.causes.map(causes => {
                         
                         return(

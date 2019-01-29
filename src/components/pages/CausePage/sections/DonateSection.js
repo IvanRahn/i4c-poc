@@ -28,7 +28,12 @@ class DonateSection extends Component {
 
             <SectionWrapper id="HowItWorks" color={color} >
                 <H>Donate once, give forever</H>
-                <Card Cardheading="This is a heading" CardText="This is some text"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
             
             </SectionWrapper>
             </>
