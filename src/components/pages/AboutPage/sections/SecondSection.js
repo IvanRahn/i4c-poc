@@ -7,11 +7,8 @@ import { connect } from 'react-redux';
 
 
 const ImageContainer = styled.img`
-height: auto; 
+height: 480px; 
 width: auto; 
-max-width: 600px; 
-max-height: 600px;
-margin: -80px auto 0 auto; 
 `
 const BrandContainer = styled.div`
 

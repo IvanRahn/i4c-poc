@@ -10,12 +10,11 @@ height: auto;
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
-margin: -200px auto 0 auto; 
 `
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
-text-align: center;
+/* text-align: center; */
 @media (min-width: 768px){
     width: 50%;
 }
