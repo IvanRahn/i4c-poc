@@ -18,10 +18,6 @@ h1 {
 const Div = styled.div `
     padding: 52px 24px;
 `
-const Img = styled.img `
-    width: 100%;
-    margin: auto auto 0;
-`
 
 class CenteredContent extends Component {
 
@@ -30,14 +26,14 @@ class CenteredContent extends Component {
         const {color} = this.props;
         
         return (
-            <ImpactSectionWrapper aria-live="polite" color={color}>
+            <ImpactSectionWrapper aria-live="polite" color={color} height="auto">
                 <Div>
                     <h1>Ready to invest for this cause?</h1>
                     <h2>All of this works for ajdkjsahksahsa</h2>
                     <h3>we slkdja dsk d jkas oq  nmsd nsdk jd a opdpoqdwdowdqpodk kdksad masmdnnm ,sand</h3>
                 </Div>
                 <Div>
-                    <InternalLink text="Join" />
+                    <InternalLink text="Join" color="green" />
                 </Div>
             </ImpactSectionWrapper>
 
