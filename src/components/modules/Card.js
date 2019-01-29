@@ -2,13 +2,19 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {HTMLContent} from "./index"
 
+const Name = styled.h2`
+
+`
 const CardWrapper = styled.div`
 overflow: hidden;
-padding: 0 0 32px;
+/* padding: 0 0 32px; */
 margin: 48px auto 0;
-width: 250px;
-margin: 0px 24px;
-display: ${props => props.display || "block"};
+width: 100%;
+display: flex;
+flex-direction: column;
+@media only screen and (min-width: 500px) {
+    width: 250px;
+}
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
@@ -20,23 +26,27 @@ width: 200px;
 /* max-width: 250px;  */
 /* max-height: 250px; */
 border-radius: 100%;
+align-self: flex-end;
+@media only screen and (min-width: 500px) {
+    align-self: inherit;
+}
 `
 class VolunteerCard extends Component {
     
     render(){
 
-        const {CardHeading, CardText, CardImage} = this.props;
+        const {CardHeading, CardText, CardImage, CardName} = this.props;
 
         return(
-            <div>
+            // <div>
                 <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
-                    <DivContainer>
+                    {/* <DivContainer> */}
                         <h3>{CardHeading}</h3>
                         <HTMLContent content={CardText}/>
-                    </DivContainer>
+                    {/* </DivContainer> */}
                 </CardWrapper>
-            </div>
+            // </div>
         )
     }
 }
