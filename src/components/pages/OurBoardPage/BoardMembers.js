@@ -15,15 +15,21 @@ class BoardMembers extends Component {
     }
     
     render() { 
-        const {member, memberError, memberIsFetching} = this.props;  
-        if (!memberIsFetching && member ) {       
+        const {member, memberError, memberIsFetching} = this.props; 
+        if (memberIsFetching) {
+            return <div>Loading</div>
+
+        } else if (memberError || !member|| !member[0]){
+            return <div>error</div>
+        }       
+             
             return ( 
             <>
             {member.map((member) => {
                 
                     return (
 
-                        <SectionWrapper height="550px">                        
+                        <SectionWrapper key={member._id} height="550px">                        
                             <Card 
                             key={member._id}
                             CardName = {member.title}
@@ -38,10 +44,8 @@ class BoardMembers extends Component {
 
             </> 
             )
-                } else if (memberError || !member|| !member[0]){
-                    return <div>error</div>
-                }      
-                return null
+                
+                
     } 
 }
 
