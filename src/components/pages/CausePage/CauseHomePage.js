@@ -18,7 +18,7 @@ class causesHomePage extends Component {
             return (
                 <div>
                     <FirstSection />
-                    <DonateSection />
+                    <DonateSection  color="green"/>
 
                     {this.props.causes.map(causes => {
                         

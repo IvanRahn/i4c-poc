@@ -26,7 +26,7 @@ class DonateSection extends Component {
         return (
             <>
 
-            <SectionWrapper id="HowItWorks" color={color} >
+            <SectionWrapper id="HowItWorks" color={color} height="auto" >
                 <H>Donate once, give forever</H>
                 <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
                 <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
