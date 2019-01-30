@@ -27,10 +27,24 @@ const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
 
 `
-
-const BorderP = styled.p`
+const BorderPMobile= styled.p`
 color: white;
 background-color: green;
+
+@media (min-width: 500px){
+    display: none;
+}
+`
+
+const BorderP = styled.p`
+display: none;
+
+@media (min-width: 500px){
+    display: block;
+    color: white;
+    background-color: green;
+}
+
 `
 
 class FirstSection extends Component {
@@ -41,7 +55,6 @@ class FirstSection extends Component {
 
     render () {
         const { color, content, isFetching, error} = this.props;        
-		console.log('TCL: FirstSection -> render -> content', content)
         if (isFetching) {
             return (<div> loading</div>)
             } else if (error || !content || !content[0]){
@@ -52,6 +65,7 @@ class FirstSection extends Component {
             
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section>
+                    <BorderPMobile>Cause we care</BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 
