@@ -5,6 +5,7 @@ import {InternalLink} from "./../../modules";
 import FirstSection from "./sections/FirstSection";
 import DonateSection from "./sections/DonateSection";
 import OurDonorSection from "./sections/OurDonorSection";
+import JoinSection from "./sections/JoinSection";
 
 class causesHomePage extends Component {
     
@@ -21,6 +22,8 @@ class causesHomePage extends Component {
                     <FirstSection />
                     <DonateSection  color="green"/>
                     <OurDonorSection />
+                    <JoinSection />
+                    
 
                     {/* {this.props.causes.map(causes => {
                         
