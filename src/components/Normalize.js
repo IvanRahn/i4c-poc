@@ -45,7 +45,9 @@ main {
   display: block;
   margin-top: 110px;
   section:first-child {
+    @media only screen and (min-width: 500px) {
     height: calc(100vh - 110px);
+  }
   }
 }
 
