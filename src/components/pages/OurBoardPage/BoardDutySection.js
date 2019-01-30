@@ -1,9 +1,9 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components'; 
-import {SectionWrapper, InternalLink} from '../../modules';
-import image from './../../../img/handshake.jpg';
+import {SectionWrapper, InternalLink, HTMLContent} from '../../modules';
 import {connect} from "react-redux"; 
-import {getContent} from "./../../../actions"
+import {getContent} from "./../../../actions"; 
+
 
 
 const ImageContainer = styled.img`
@@ -25,13 +25,12 @@ const Wrapper = styled.div`
 text-align: left;
 padding-right: 180px;
 `
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
-
-`
 
 const BorderP = styled.p`
+a{
 color: white;
+width: 450px;
+}
 background-color: green;
 `
 
@@ -44,7 +43,6 @@ class BoardDutySection extends Component {
     
     render() { 
         const {promise, promiseError, promiseIsFetching} = this.props; 
-		console.log(promise)
         if (promiseIsFetching) {
             return <div>Loading</div>
 
@@ -55,15 +53,16 @@ class BoardDutySection extends Component {
             return ( 
                 <SectionWrapper>
                 <Section>
-                    <ImageContainer src= {promise[0].image? promise[0].image.secure_url : image} alt="Cherring man" />
+                    <ImageContainer src= {promise[0].image ? promise[0].image.secure_url : null} alt="Cherring man" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        <BorderP>{promise[0].link}</BorderP>
+                        <BorderP>
+                        <InternalLink text={promise[0].link.text} />
+                        </BorderP>
                         <h1>{promise[0].content.heading}</h1> 
-                        <InternalLink text={promise[0].content.link.text} />
-                        <P margin="70px"> {promise[0].content.text} </P>
+                        <HTMLContent margin="70px" content={promise[0].content.text} />
                     </Wrapper>               
                 </Section>
             </SectionWrapper>

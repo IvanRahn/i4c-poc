@@ -9,7 +9,9 @@ import ScrollButton from './ScrollButton';
 import SectionWrapper from './SectionWrapper';
 import OrdList from "./OrdList";
 import Link from "./Link";
-import CenteredContent from "./CenteredContent"
+import CenteredContent from "./CenteredContent"; 
+import HorizontalCard from './../modules/HorizontalCard';
+
 
 export  {
     Footer,
@@ -24,4 +26,5 @@ export  {
     OrdList,
     Link,
     CenteredContent,
+    HorizontalCard,
 }

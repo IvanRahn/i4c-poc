@@ -54,26 +54,22 @@ border-radius: 100%;
     border-radius: 100%;
  }
 `
-class HorizontalCard extends Component {
+const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName}) => {
     
-    render(){
-
-        const {CardHeading, CardText, CardImage} = this.props;
-
         return(
-            <CardWrapper>
+            <CardWrapper className={className}>
                 <DivImageContainer>
-                    <ImageContainer src= "http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg" />
+                    <ImageContainer  src= {CardImage} />
                 </DivImageContainer>
                 <DivContainer>
-                    <h2>Surname</h2>
-                    <h2>position</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                    <h2>{CardName}</h2>
+                    <h2>{CardHeading}</h2>
+                <HTMLContent content= {CardText} />
+                
                 </DivContainer>
             </CardWrapper>
 
         )
-    }
 }
 
 export default HorizontalCard;
