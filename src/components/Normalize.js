@@ -43,8 +43,9 @@ body {
 
 main {
   display: block;
-  margin-top: 110px;
+  margin-top: 60px;
   section:first-child {
+    margin-top: 110px;
     @media only screen and (min-width: 500px) {
     height: calc(100vh - 110px);
   }
