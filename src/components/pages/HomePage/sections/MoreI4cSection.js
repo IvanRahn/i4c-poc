@@ -21,7 +21,7 @@ class MoreI4cSection extends Component {
         }
         return (
             <>
-            <SectionWrapper color={color}>
+            <SectionWrapper height="auto" color={color}>
                 <H>More from I4C</H>
                 {causes.map(cause => {
                     return (

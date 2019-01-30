@@ -45,7 +45,7 @@ main {
   display: block;
   margin-top: 60px;
   @media only screen and (min-width: 500px) {
-  margin-top: 110px;
+    margin-top: 110px;
   }
   section:first-child {
     height: calc(100vh - 60px);
@@ -53,6 +53,10 @@ main {
     height: calc(100vh - 110px);
   }
   }
+}
+
+small {
+  font-size: 13px;
 }
 
 

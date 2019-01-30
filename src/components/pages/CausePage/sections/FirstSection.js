@@ -20,7 +20,8 @@ width: ${props => props.width || "100%"};
 `
 const Wrapper = styled.div`
 text-align: left;
-padding-right: 180px;
+/* padding-right: 180px; */
+padding: 48px;
 `
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
@@ -49,7 +50,7 @@ class FirstSection extends Component {
         
         return (
             
-            <SectionWrapper color={color} height= "auto">
+            <SectionWrapper color={color} height= "auto" padding="0">
                 <Section>
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>

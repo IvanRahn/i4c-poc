@@ -14,7 +14,7 @@ margin: 15px 40px;
     overflow: hidden;
     padding: 0 0 32px;
     margin: 48px auto 0;
-    width: 400px;
+    width: 380px;
     background-color: white;
     border-radius: 10px;
     margin: 15px 40px;

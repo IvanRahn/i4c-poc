@@ -1,7 +1,7 @@
 import React, {Component} from "react"; 
 import styled from "styled-components";
 import {InternalLink} from "./index"; 
-
+import Disclaimer from "./Disclaimer";
 const FooterStyling = styled.footer`
     display: flex;
     flex-direction: column;
@@ -14,6 +14,8 @@ const FooterStyling = styled.footer`
     div {
         display: inherit;
         flex-direction: column;
+       
+
 
     }
     a {
@@ -32,7 +34,8 @@ const UnorderedListStyling = styled.ul`
     align-items: flex-start;
     padding: 0;
     @media only screen and (min-width:500px) {
-    }
+            flex-direction: row;
+        }
 `
 
 // "JOIN US" button style : 
@@ -42,6 +45,7 @@ class Footer extends Component {
     render() { 
         
         return (  
+            <>
             <FooterStyling>
                 
                 <div>
@@ -86,6 +90,8 @@ class Footer extends Component {
                                 <InternalLink text = "JOIN US" color= {"green"} href="#"/>
             
             </FooterStyling>
+            <Disclaimer/>
+            </>
         );
     }
 }

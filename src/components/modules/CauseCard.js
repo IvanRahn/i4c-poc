@@ -15,7 +15,6 @@ border-radius: 4px;
     flex-direction: row-reverse;
     padding: 24px 12px;
     border-radius: 16px;
-
     width: 460px;
 }
 `
