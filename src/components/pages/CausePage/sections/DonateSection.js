@@ -1,11 +1,10 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from "../../../modules";
+import {SectionWrapper, Loading} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 import Card from '../../../modules/MoreI4cCard';
 import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
-import {Loading} from "./../../../modules"
 
 const H = styled.h1`
 width: 100%;
