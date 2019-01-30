@@ -16,6 +16,7 @@ class BoardMembers extends Component {
     
     render() { 
         const {member, memberError, memberIsFetching} = this.props; 
+        console.log(member)
         if (memberIsFetching) {
             return <div>Loading</div>
 
