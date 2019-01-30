@@ -4,6 +4,8 @@ import {SectionWrapper} from "../../../modules";
 import { connect } from 'react-redux';
 import HorizontalCard from '../../../modules/HorizontalCard';
 import getContent from '../../../../actions/keystoneActions';
+import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
+
 
 
 const H = styled.h1`

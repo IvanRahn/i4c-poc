@@ -4,6 +4,7 @@ import {SectionWrapper} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 import Card from '../../../modules/MoreI4cCard';
+import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
 
 const H = styled.h1`
 width: 100%;
@@ -28,12 +29,15 @@ class DonateSection extends Component {
 
             <SectionWrapper id="HowItWorks" color={color} height="auto" >
                 <H>Donate once, give forever</H>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage="http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg"/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+
+                
             
             </SectionWrapper>
             </>
