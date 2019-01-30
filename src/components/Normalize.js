@@ -57,6 +57,15 @@ h1 {
     font-size: 48px
   }
 }
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0px;
+  margin: 0;
+}
 p {
   font-size: 18px;
   font-weight: normal;
@@ -64,6 +73,7 @@ p {
   font-stretch: normal;
   line-height: 1.33;
   letter-spacing: 0px;
+  margin: 0;
 }
 
 /* Grouping content

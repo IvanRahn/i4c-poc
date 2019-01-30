@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {SectionWrapper, CauseCard} from "./../../../modules"
 import { connect } from 'react-redux';
 import {getContent} from "../../../../actions";
-import {Link} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
@@ -42,10 +41,10 @@ class FeacturedCauseSection extends Component {
                 {causes.filter(cause => cause.featuredAsCard).map((cause, i) => {
                     if (i <= 1) {
                         return (
-                        <Link 
-                        key={cause._id}
-                        to={`cause/${cause.slug}`}>
+                        
                         <CauseCard 
+                        key={cause._id}
+                        to={`cause/${cause.slug}`}
                         CardHeading={cause.cardContent.heading} 
                         CardText={cause.cardContent.text} 
                         CardImage={cause.cardImage?  
@@ -53,7 +52,6 @@ class FeacturedCauseSection extends Component {
                             : 
                             null}  
                             />
-                        </Link>
                         )
                     }
                     return null

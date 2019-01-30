@@ -15,14 +15,17 @@ flex-direction: column;
 @media only screen and (min-width: 500px) {
     width: 250px;
 }
+h3 {
+    margin: 24px 0;
+}
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
 `
 
 const ImageContainer = styled.img`
-height: 200px; 
-width: 200px; 
+height: 180px; 
+width: 180px; 
 /* max-width: 250px;  */
 /* max-height: 250px; */
 border-radius: 100%;
