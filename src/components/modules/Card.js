@@ -15,8 +15,11 @@ flex-direction: column;
 @media only screen and (min-width: 500px) {
     width: 250px;
 }
-h3 {
+h2 {
     margin: 24px 0;
+}
+p {
+    margin-bottom: 12px;
 }
 `
 const DivContainer = styled.div`
@@ -45,7 +48,7 @@ class VolunteerCard extends Component {
                 <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
                     {/* <DivContainer> */}
-                        <h3>{CardHeading}</h3>
+                        <h2>{CardHeading}</h2>
                         <HTMLContent content={CardText}/>
                     {/* </DivContainer> */}
                 </CardWrapper>
