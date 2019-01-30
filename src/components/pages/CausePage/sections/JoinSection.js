@@ -5,6 +5,7 @@ import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 
 
+
 const ImageContainer = styled.img`
 height: 100px; 
 width: 100px; 
