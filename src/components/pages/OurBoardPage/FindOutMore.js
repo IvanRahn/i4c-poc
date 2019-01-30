@@ -22,6 +22,7 @@ class FindOutMore extends Component {
     
     render() { 
         const {findout, findoutError, findoutIsFetching} = this.props; 
+        console.log("thisone", findout)
         if (findoutIsFetching) {
             return <div>Loading</div>
 
@@ -32,8 +33,11 @@ class FindOutMore extends Component {
             return ( 
                 <SectionWrapper>
                     <Section width="100%">
-                        <h2>All this works because of our Donors.</h2>
-                        <InternalLink text="FIND OUT MORE" color="green" />
+                        <h2>{findout[0].content.heading}</h2>
+                        <InternalLink 
+                        text={findout[0].content.link.text} 
+                        to={findout[0].content.url} 
+                        />
                     </Section>
                 </SectionWrapper>
             )
@@ -73,34 +77,3 @@ export default connect(mapStateToProps, {getContent})(FindOutMore);
 
 
 
-// import React, { Component } from "react";
-// import styled from 'styled-components';
-// import ButtonLink from "./../../modules/ButtonLink";
-
-
-// const DivTextStyle = styled.div`
-//     display:flex;
-//     flex-direction:column;
-//     justify-content:center;
-//     align-items: center; 
-//     font-size:20px;
-// ` 
-
-
-
-
-
-// class FindOutMore extends Component {
-    
-//     render() { 
-//         const {message} = this.props;
-//         return (  
-//             <DivTextStyle>
-//                 {message}
-//                 <ButtonLink text="FIND OUT MORE" color={"green"} href="#" />                
-//             </DivTextStyle>
-//         );
-//     }
-// }
- 
-// export default FindOutMore;
