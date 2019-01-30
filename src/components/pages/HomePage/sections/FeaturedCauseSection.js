@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, CauseCard, InternalLink} from "./../../../modules"
 import { connect } from 'react-redux';
 import {getContent} from "../../../../actions";
+import {Loading} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
@@ -38,7 +39,7 @@ class FeacturedCauseSection extends Component {
     render() {
         const {color, causes, causesIsFetching, causesError} = this.props
         if (causesIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
         } else if (causesError || !causes) {
             return <div>Error</div>
         }

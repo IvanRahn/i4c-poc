@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, InternalLink} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
+import {Loading} from "./../../../modules"
 
 
 
@@ -47,7 +48,7 @@ class JoinSection extends Component {
     render () {
         const { color, content, isFetching, error} = this.props;        
         if (isFetching) {
-            return (<div> loading</div>)
+            return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }

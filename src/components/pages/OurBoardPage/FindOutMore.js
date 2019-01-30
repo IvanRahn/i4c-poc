@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {InternalLink, SectionWrapper} from './../../modules';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
+import {Loading} from "./../../modules"
 
 
 const Section = styled.div `
@@ -24,7 +25,7 @@ class FindOutMore extends Component {
         const {findout, findoutError, findoutIsFetching} = this.props; 
         console.log("thisone", findout)
         if (findoutIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
 
         } else if (findoutError || !findout|| !findout[0]){
             return <div>error</div>

@@ -84,10 +84,7 @@ const NavCheckbox = styled.input `
     @media only screen and (max-width: 499px) {
     :checked + ul {
         left: 0px;
-        
-    
         }
-        
     };
 `
 const LoginLink = styled(InternalLink)`
@@ -118,9 +115,28 @@ border-bottom: 0px;
  }
 `
 class NavBar extends Component {
+    state = {width: 0}
+    componentDidMount() {
+        this.updateDimensions()
+        window.addEventListener('resize', this.updateDimensions)
+    }
+    updateDimensions = () => {
+        return this.setState({width: window.innerWidth});
+    }
+    componentDidUpdate () {
+        if (this.state.width > "500" && this.main && this.footer) {
+            console.log('TCL: NavBar -> moveContent -> this.state.width', this.state)
+            this.main.style.left = "";
+            this.footer.style.left = "";
+        } 
+    }
     moveContent =(event) => {
-        const main = document.getElementById("main")
-        main.style.left = main.style.left ? "" : "200px"
+        this.main = document.querySelector("main")
+        this.footer = document.querySelector("footer")
+        this.main.style.left = this.main.style.left ? "" : "200px"
+        this.footer.style.left = this.footer.style.left ? "" : "200px"
+        
+        
     }
     render() {
         return(

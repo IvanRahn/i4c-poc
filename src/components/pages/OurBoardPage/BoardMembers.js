@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {Card, SectionWrapper} from './../../modules'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
+import {Loading} from "./../../modules"
 
 
 
@@ -18,7 +19,7 @@ class BoardMembers extends Component {
         const {member, memberError, memberIsFetching} = this.props; 
         console.log(member)
         if (memberIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
 
         } else if (memberError || !member|| !member[0]){
             return <div>error</div>

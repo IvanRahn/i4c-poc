@@ -4,6 +4,7 @@ import {SectionWrapper, InternalLink} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
+import {Loading} from "./../../../modules"
 
 
 const ImageContainer = styled.img`
@@ -41,7 +42,7 @@ class SecondSection extends Component {
 		console.log('TCL: SecondSection -> render -> content', content)
         // console.log(content)
         if (isFetching) {
-            return (<div> loading</div>)
+            return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }

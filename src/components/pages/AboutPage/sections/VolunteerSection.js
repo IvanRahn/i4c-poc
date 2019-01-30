@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, Card} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
+import {Loading} from "./../../../modules"
 
 const Section = styled.div `
 width: ${props => props.width || "50%"};
@@ -26,7 +27,7 @@ class VolunteerSection extends Component {
         console.log(content)
 
         if (isFetching) {
-            return (<div> loading</div>)
+            return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
