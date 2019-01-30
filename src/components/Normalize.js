@@ -44,6 +44,9 @@ body {
 main {
   display: block;
   margin-top: 60px;
+  position: relative;
+  transition: 1s;
+  left: 0;
   @media only screen and (min-width: 500px) {
     margin-top: 110px;
   }

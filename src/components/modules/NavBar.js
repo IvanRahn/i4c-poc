@@ -3,6 +3,7 @@ import {InternalLink} from "./index";
 import styled from "styled-components";
 import LogoFull from "./../../img/I4C.png";
 import LogoSquare from "./../../img/I4C_Square.png"; 
+
 const Nav = styled.nav`
 width: 100%;
 height: 60px;
@@ -43,26 +44,34 @@ const MenuButton = styled.span`
     }
 `
 const NavUl = styled.ul `
-    height: 110px;
+    /* height: 110px; */
     align-items: center;
+    padding-left: 0;
+    margin-top: 10px;
     margin: 0px;
     display: flex;
     position: fixed;
     top: 0px;
-    width: auto;
     list-style: none;
     transition: left 1s ease;
     top: 50px;
     flex-direction: column;
-    
+    height: calc(100vh - 50px);
+    background-color: white;
+    justify-content: space-around;
+    /* width: 100%; */
+
     @media only screen and (max-width: 499px) {
         left: -200px;
     }
     @media only screen and (min-width: 500px) {
         /* transition: all 0s ease-in-out; */
+        height: 100px;
         top: 0px;
         flex-direction: row;
         right: 0px;
+    width: auto;
+
         li:nth-last-child(2) {
             margin-left: 50px;
             display: flex;
@@ -74,7 +83,9 @@ const NavCheckbox = styled.input `
     display: none;
     @media only screen and (max-width: 499px) {
     :checked + ul {
-        left: 200px;
+        left: 0px;
+        
+    
         }
         
     };
@@ -107,6 +118,10 @@ border-bottom: 0px;
  }
 `
 class NavBar extends Component {
+    moveContent =(event) => {
+        const main = document.getElementById("main")
+        main.style.left = main.style.left ? "" : "200px"
+    }
     render() {
         return(
         <Nav aria-live="polite">
@@ -123,7 +138,7 @@ class NavBar extends Component {
                 <label htmlFor="nav-checkbox">
                     <MenuButton>MENU</MenuButton>
                 </label>
-                <NavCheckbox type="checkbox" id="nav-checkbox"/>
+                <NavCheckbox type="checkbox" onChange={this.moveContent}id="nav-checkbox"/>
                 <NavUl>
                     <li> <InternalLink text="ABOUT US" to="/board-page" section="nav" location="homepage"/></li> 
                     <li> <InternalLink text="HOW IT WORKS"to="#"section="nav" location="homepage"/> </li>
