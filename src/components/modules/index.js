@@ -11,6 +11,8 @@ import OrdList from "./OrdList";
 import Link from "./Link";
 import CenteredContent from "./CenteredContent";
 import Loading from "./Loading";
+import HorizontalCard from './../modules/HorizontalCard';
+
 
 export  {
     Footer,
@@ -26,4 +28,5 @@ export  {
     Link,
     CenteredContent,
     Loading,
+    HorizontalCard,
 }

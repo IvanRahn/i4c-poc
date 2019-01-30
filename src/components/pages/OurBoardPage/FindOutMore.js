@@ -23,7 +23,6 @@ class FindOutMore extends Component {
     
     render() { 
         const {findout, findoutError, findoutIsFetching} = this.props; 
-        console.log("thisone", findout)
         if (findoutIsFetching) {
             return <Loading/>
 
@@ -37,7 +36,7 @@ class FindOutMore extends Component {
                         <h2>{findout[0].content.heading}</h2>
                         <InternalLink 
                         text={findout[0].content.link.text} 
-                        to={findout[0].content.url} 
+                        to={findout[0].url} 
                         />
                     </Section>
                 </SectionWrapper>

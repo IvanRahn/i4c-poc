@@ -1,12 +1,18 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {Card, SectionWrapper} from './../../modules'; 
+import {HorizontalCard, SectionWrapper} from './../../modules/'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
 import {Loading} from "./../../modules"
 
 
-
+const SmallHorizontalCard = styled(HorizontalCard)`
+img {
+    border-radius: 50%;
+    height: 250px;
+    width: 250px;
+}
+`
 
 
 class BoardMembers extends Component {
@@ -27,22 +33,23 @@ class BoardMembers extends Component {
              
             return ( 
             <>
+                        <SectionWrapper key={member._id} height="auto">                        
+
             {member.map((member) => {
                 
                     return (
 
-                        <SectionWrapper key={member._id} height="550px">                        
-                            <Card 
+                            <SmallHorizontalCard 
                             key={member._id}
                             CardName = {member.title}
                             CardHeading = {member.content.heading} 
                             CardText= {member.content.text}
                             CardImage={member.image ? member.image.secure_url : null} 
                             /> 
+                            )
+                            
+                        })}
                         </SectionWrapper>
-                    )
-                
-            })}
 
             </> 
             )
@@ -69,62 +76,3 @@ export default connect(mapStateToProps, {getContent})(BoardMembers);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// import React, {Component} from "react"; 
-// import styled from 'styled-components';
-// import HTMLContent from '../../modules/HTMLContent'; 
-// import VolunteerCard from './../../modules/VolunteerCard'; 
- 
-
-
-
-
-
-
-
-
-
-// class BoardMembers extends Component { 
-//     render() { 
-//         const {memberName, memberHeading, memberText, memberImage} = this.props; 
-
-//         return (  
-            
-//                 <VolunteerCard 
-//                 CardName = {memberName}
-//                 CardHeading = {memberHeading} 
-//                 CardText= {memberText}
-//                 CardImage={memberImage}
-
-//                 />
-
-//         );
-//     }
-// }
- 
-
-
-// export default BoardMembers;
