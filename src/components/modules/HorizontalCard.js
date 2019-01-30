@@ -23,11 +23,11 @@ margin: 0px 24px;
 `
 const DivContainer = styled.div`
 width: 100%;
-padding: 2px 80px;
+padding: 2px 20px;
 
 @media only screen and (min-width: 500px) {
     width: 50%;
-    padding: 2px 16px;
+    padding: 40px 80px 0px 0px;
  }
 `
 const DivImageContainer = styled.div`
@@ -44,9 +44,15 @@ align-items: center;
 `
 
 const ImageContainer = styled.img`
-height: 450px; 
-width: 450px; 
+height: 250px; 
+width: 250px; 
 border-radius: 100%;
+
+@media only screen and (min-width: 500px) {
+    height: 450px; 
+    width: 450px; 
+    border-radius: 100%;
+ }
 `
 class HorizontalCard extends Component {
     

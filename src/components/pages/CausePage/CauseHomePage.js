@@ -42,7 +42,8 @@ class causesHomePage extends Component {
 
 
 const mapStateToProps = (state) => {
-    const {causes, causesIsFetching, causesError} = state.causes
+    console.log(state);
+    const {causes, causesIsFetching, causesError} = state.cause
     return {
       causes,
       causesIsFetching,
