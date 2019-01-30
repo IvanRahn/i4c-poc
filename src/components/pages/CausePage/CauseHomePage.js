@@ -4,6 +4,7 @@ import {getContent} from "./../../../actions"
 import {InternalLink} from "./../../modules";
 import FirstSection from "./sections/FirstSection";
 import DonateSection from "./sections/DonateSection";
+import OurDonorSection from "./sections/OurDonorSection";
 
 class causesHomePage extends Component {
     
@@ -19,13 +20,14 @@ class causesHomePage extends Component {
                 <div>
                     <FirstSection />
                     <DonateSection  color="green"/>
+                    <OurDonorSection />
 
-                    {this.props.causes.map(causes => {
+                    {/* {this.props.causes.map(causes => {
                         
                         return(
                         <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />
                         )
-                    })}
+                    })} */}
 
                 </div>
             );
