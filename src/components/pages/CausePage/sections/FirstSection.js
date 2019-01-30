@@ -7,14 +7,13 @@ import { connect } from 'react-redux';
 
 const ImageContainer = styled.img`
 height: auto; 
-width: auto; 
-max-width: 600px; 
-max-height: 600px;
+position: relative;
+top: 0;
+width: 100%; 
 `
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
-/* text-align: center; */
 @media (min-width: 768px){
     width: 50%;
 }
@@ -50,7 +49,7 @@ class FirstSection extends Component {
         
         return (
             
-            <SectionWrapper color={color}>
+            <SectionWrapper color={color} height= "auto">
                 <Section>
                     <ImageContainer src= "http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg" alt="Cherring man" />
                 </Section>
