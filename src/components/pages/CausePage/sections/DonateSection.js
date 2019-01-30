@@ -8,7 +8,7 @@ import Card from '../../../modules/MoreI4cCard';
 const H = styled.h1`
 width: 100%;
 text-align: center;
-margin-top: 120px;
+/* margin-top: 120px; */
 `
 class DonateSection extends Component {
     componentDidMount() {
