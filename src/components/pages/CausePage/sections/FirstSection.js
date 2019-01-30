@@ -49,7 +49,7 @@ class FirstSection extends Component {
         
         return (
             
-            <SectionWrapper color={color} height= "auto">
+            <SectionWrapper color={color} height= "auto" padding="0">
                 <Section>
                     <ImageContainer src= "http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg" alt="Cherring man" />
                 </Section>
