@@ -32,11 +32,12 @@ class BoardMembers extends Component {
              
             return ( 
             <>
+                        <SectionWrapper key={member._id} height="auto">                        
+
             {member.map((member) => {
                 
                     return (
 
-                        <SectionWrapper key={member._id} height="550px">                        
                             <SmallHorizontalCard 
                             key={member._id}
                             CardName = {member.title}
@@ -44,10 +45,10 @@ class BoardMembers extends Component {
                             CardText= {member.content.text}
                             CardImage={member.image ? member.image.secure_url : null} 
                             /> 
+                            )
+                            
+                        })}
                         </SectionWrapper>
-                    )
-                
-            })}
 
             </> 
             )

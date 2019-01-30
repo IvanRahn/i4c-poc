@@ -16,7 +16,6 @@ margin: -140px auto 0 auto;
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
-text-align: center;
 @media (min-width: 768px){
     width: 50%;
 }
@@ -27,11 +26,13 @@ padding-right: 180px;
 `
 
 const BorderP = styled.p`
+
 a{
 color: white;
 width: 450px;
 }
 background-color: green;
+
 `
 
 
