@@ -12,8 +12,8 @@ const ButtonLink = styled(Link)`
     margin: 8px 8px;
     /* height: 32px; */
     padding-bottom: 8px;
-    font-size: 1em;
-    :hover {
+    font-size: 16px;
+    :hover, :focus {
         color: blue;
     }
     `

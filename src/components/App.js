@@ -10,7 +10,7 @@ import GlobalStyle from "./Normalize";
 // import {detect } from "detect-browser";
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/CausePage/CausePage"))
-const BoardPage = lazy(() => import("./pages/OurBoard/BoardPage"))
+const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
 const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage"))
 
 

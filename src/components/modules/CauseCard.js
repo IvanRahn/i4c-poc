@@ -2,17 +2,19 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import image from "./../../img/cartoon.jpg"
 import {HTMLContent} from "./../modules"
+
 const CardWrapper = styled.div`
 overflow: hidden;
 padding: 8px;
-max-width: 80%;
-height: 160px;
 background-color: #24c421;
 border-radius: 10px;
 display: flex;
-margin: 8px 40px;
+width: 100%;
+height: 160px;
 @media only screen and (min-width: 500px) {
+    margin: 8px 40px;
     width: 460px;
+    max-width: 80%;
 
 }
 `
@@ -35,7 +37,7 @@ class FeaturedCauseCard extends Component {
         const {CardHeading, CardText, CardImage} = this.props;
 
         return(
-            <div>
+            // <div>
                 <CardWrapper>
                     <DivContainer>
                         <h3>{CardHeading}</h3>
@@ -43,7 +45,7 @@ class FeaturedCauseCard extends Component {
                     </DivContainer>
                     <ImageContainer src={CardImage || image} />
                 </CardWrapper>
-            </div>
+            // </div>
         )
     }
 }
