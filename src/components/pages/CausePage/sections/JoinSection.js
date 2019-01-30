@@ -14,23 +14,24 @@ top: 0;
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
+color: white;
 @media (min-width: 768px){
     width: 50%;
 }
 `
-const Wrapper = styled.div`
-text-align: left;
-/* padding-right: 180px; */
-padding: 48px;
-`
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
+const Svg = styled.svg`
+    display: none;
 
-`
+    @media only screen and (min-width: 500px) {
+        display: block;
+        height: 60px;
+        width: 52px;
+    }
 
-const BorderP = styled.p`
-color: white;
-background-color: green;
+
+    path{
+        fill: white;
+    }
 `
 
 class JoinSection extends Component {
@@ -49,9 +50,9 @@ class JoinSection extends Component {
         
         return (
             
-            <SectionWrapper color={color} height= "auto" padding="0" color="green">
+            <SectionWrapper color={color} height= "auto" padding="28px 16px 64px 16px" color="green">
                 <Section>
-                <svg>
+                <Svg>
                 <path d="M30.5,24.1c0.1-2.8-2.2-9.8-2.2-9.8c0.7,0.1,5.2,6.8,4.7,9.6l0,0c4.3-1,7.3-5.1,6.7-9.5l-0.1-0.6
                     c-1-7.4-9.3-12.2-9.7-12.4l-0.9-0.5l-0.8,0.7c-0.3,0.2-5.7,5.5-6.3,11.8c-0.1,0.8-0.1,1.7,0,2.5l0.1,0.6c0.1,0.7,0.3,1.3,0.5,1.9
                     c-5.9-3.5-13.6-2.4-14-2.3l-1.1,0.2l-0.1,1.1c0,0.4-0.5,8.6,3.5,14.4c0.5,0.8,1.1,1.5,1.8,2.1l0.5,0.5c2.8,2.6,6.5,3.3,9.7,2.2
@@ -61,9 +62,8 @@ class JoinSection extends Component {
                     c0,0,0.1-0.1,0.1-0.1l0,0c0,0,0,0,0,0c-3.2-2-6.6-3.1-10.1-3.8c-1.9-0.4-3.9-0.4-5.8-0.7l-2.8,0.1l0.1-7.4c1.1,2.4,3.3,4.3,6.1,4.8
                     l0.6,0.1c0.8,0.2,1.7,0.2,2.5,0.2c6.3-0.1,12-5.1,12.3-5.3l0.8-0.7l-0.4-1c-0.2-0.4-4.3-9.1-11.6-10.6l-0.6-0.1
                     c-2.7-0.6-5.5,0.3-7.4,2c3.1,0.9,7.3,4.1,7.4,4.7c0,0-6.4-2.8-9.3-2.3c0,0,0,0.1-0.1,0.1L30.5,24.1z"/>
-                </svg>
-                <h1>
-                    Investing for charity</h1>
+                </Svg>
+                <h1>Investing for charity</h1>
                 </Section>
 
                 <Section>
