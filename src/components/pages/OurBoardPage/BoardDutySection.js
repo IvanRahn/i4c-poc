@@ -1,6 +1,6 @@
 import React, {Component} from "react"; 
 import styled from 'styled-components'; 
-import {SectionWrapper} from '../../modules';
+import {SectionWrapper, InternalLink} from '../../modules';
 import image from './../../../img/handshake.jpg';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
@@ -44,7 +44,7 @@ class BoardDutySection extends Component {
     
     render() { 
         const {promise, promiseError, promiseIsFetching} = this.props; 
-		console.log('​BoardDutySection -> render -> promise', promise)
+		console.log(promise)
         if (promiseIsFetching) {
             return <div>Loading</div>
 
@@ -55,14 +55,15 @@ class BoardDutySection extends Component {
             return ( 
                 <SectionWrapper>
                 <Section>
-                    <ImageContainer src= {image} />
+                    <ImageContainer src= {promise[0].image? promise[0].image.secure_url : image} alt="Cherring man" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        <BorderP>ABOUT INVESTING FOR CHARITY LTD>BOARD OF TRUSTEES</BorderP>
-                        <h1>"Our Promise To You Quote"</h1> 
-                        <P margin="70px">orem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
+                        <BorderP>{promise[0].link}</BorderP>
+                        <h1>{promise[0].content.heading}</h1> 
+                        <InternalLink text={promise[0].content.link.text} />
+                        <P margin="70px"> {promise[0].content.text} </P>
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
