@@ -60,11 +60,7 @@ const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName})
         return(
             <CardWrapper className={className}>
                 <DivImageContainer>
-<<<<<<< HEAD
-                    <ImageContainer src= {image} />
-=======
                     <ImageContainer  src= {CardImage} />
->>>>>>> origin/Board-Members
                 </DivImageContainer>
                 <DivContainer>
                     <h2>{CardName}</h2>
