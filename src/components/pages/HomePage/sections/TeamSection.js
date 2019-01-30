@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import {SectionWrapper, InternalLink, HTMLContent} from "../../../modules"
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
+import {Loading} from "./../../../modules"
+
 
 const VideoContainer = styled.iframe`
 margin: -128px auto 0 auto;
@@ -47,7 +49,7 @@ class TeamSection extends Component {
         const {teamSection, teamSectionError, teamSectionIsFetching} = this.props;
 		console.log('TCL: TeamSection -> render -> teamSection', teamSection)
         if (teamSectionIsFetching) {
-            return <div>Loading</div> 
+            return <Loading/>
         } else if (teamSectionError || !teamSection || !teamSection[0]) {
             return <div>error</div>
         }

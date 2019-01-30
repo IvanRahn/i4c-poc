@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import logo from "./../../img/I4C.png"
 const Section = styled.section`
-    /* border-top: 2px solid grey; */
     box-shadow: inset 0px 2px 2px 0px grey;
     padding: 24px;
     div {

@@ -57,7 +57,9 @@ main {
   }
   }
 }
-
+.left {
+  left:0;
+}
 small {
   font-size: 13px;
 }

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 import Card from '../../../modules/MoreI4cCard';
 import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
+import {Loading} from "./../../../modules"
 
 const H = styled.h1`
 width: 100%;
@@ -19,7 +20,7 @@ class DonateSection extends Component {
 
         const {color, steps, stepsIsFetching, stepsError} = this.props;
         if (stepsIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
         } else if (stepsError || !steps || !steps[0]) {
             return <div>error</div>
         }

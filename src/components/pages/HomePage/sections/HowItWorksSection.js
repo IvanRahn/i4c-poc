@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, OrdList, Card, InternalLink} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
+import {Loading} from "./../../../modules"
 
 const H = styled.h1`
 margin: 0;
@@ -17,7 +18,7 @@ class HowItWorksSection extends Component {
         const {color, steps, stepsIsFetching, stepsError} = this.props;
 		console.log('TCL: HowItWorksSection -> render -> this.props', this.props)
         if (stepsIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
         } else if (stepsError || !steps || !steps[0]) {
             return <div>error</div>
         }

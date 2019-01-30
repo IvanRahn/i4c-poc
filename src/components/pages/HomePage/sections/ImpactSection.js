@@ -4,7 +4,7 @@ import {SectionWrapper, ScrollButton} from "../../../modules";
 import {connect} from "react-redux";
 import {getContent} from "../../../../actions";
 import Background from "./../../../../img/placeholder_background_wave.png"
-
+import {Loading} from "./../../../modules"
 
 const ImpactSectionWrapper = styled(SectionWrapper)`
 flex-direction: column;
@@ -39,7 +39,7 @@ class ImpactSection extends Component {
         const {color, impact, impactIsFetching, impactError} = this.props;
 
         if (impactIsFetching ) {
-        return (<div> loading</div>)
+        return (<Loading/>)
         } else if (impactError || !impact || !impact[0]){
             return <div>error</div>
         }

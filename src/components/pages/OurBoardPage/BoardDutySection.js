@@ -4,6 +4,7 @@ import {SectionWrapper, InternalLink} from '../../modules';
 import image from './../../../img/handshake.jpg';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
+import {Loading} from "./../../modules"
 
 
 const ImageContainer = styled.img`
@@ -46,7 +47,7 @@ class BoardDutySection extends Component {
         const {promise, promiseError, promiseIsFetching} = this.props; 
 		console.log(promise)
         if (promiseIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
 
         } else if (promiseError || !promise|| !promise[0]){
             return <div>error</div>

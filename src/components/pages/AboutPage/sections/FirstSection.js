@@ -4,6 +4,7 @@ import {SectionWrapper, InternalLink, Card} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
+import {Loading} from "./../../../modules"
 
 const ImageContainer = styled.img`
 height: auto; 
@@ -43,7 +44,7 @@ class FirstSection extends Component {
         const { color, content, isFetching, error} = this.props;        
 		console.log('TCL: FirstSection -> render -> content', content)
         if (isFetching) {
-            return (<div> loading</div>)
+            return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
