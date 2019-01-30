@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import {NavBar, Footer} from "./modules"
+import {NavBar} from "./modules"
 import HomePage from "./pages/HomePage/HomePage";
 // import CauseHomePage from "./pages/CausePage/CauseHomePage";
 // import CausePage from "./pages/CausePage/CausePage";
@@ -12,7 +12,7 @@ const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/CausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
 const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage"))
-
+const Footer = lazy(() => import("./modules/Footer"))
 
 
 // const browser = detect();
@@ -44,14 +44,16 @@ class App extends Component {
               <Switch  >
                 <Route exact path="/" component={HomePage} />
                 <Suspense fallback="">
-                <Route exact path="/cause" render={(props) => <CauseHomePage {...props}/>} />
-                <Route exact path="/cause/:slug" render={(props) => <CausePage {...props}/>} />
-                <Route exact path="/board-page" render={(props) => <BoardPage {...props}/>} />
-                <Route exact path="/about" render={(props) => <AboutHomePage {...props}/>} />
+                  <Route exact path="/cause" render={(props) => <CauseHomePage {...props}/>} />
+                  <Route exact path="/cause/:slug" render={(props) => <CausePage {...props}/>} />
+                  <Route exact path="/board-page" render={(props) => <BoardPage {...props}/>} />
+                  <Route exact path="/about" render={(props) => <AboutHomePage {...props}/>} />
                 </Suspense>
               </Switch>
               </main>
-              <Footer />
+              <Suspense fallback="">
+                <Footer />
+              </Suspense>
               </>
             </BrowserRouter>
       </>

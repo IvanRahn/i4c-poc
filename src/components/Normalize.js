@@ -43,9 +43,15 @@ body {
 
 main {
   display: block;
+  margin-top: 60px;
+  @media only screen and (min-width: 500px) {
   margin-top: 110px;
+  }
   section:first-child {
+    height: calc(100vh - 60px);
+    @media only screen and (min-width: 500px) {
     height: calc(100vh - 110px);
+  }
   }
 }
 
@@ -57,6 +63,15 @@ h1 {
     font-size: 48px
   }
 }
+h3 {
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.33;
+  letter-spacing: 0px;
+  margin: 0;
+}
 p {
   font-size: 18px;
   font-weight: normal;
@@ -64,6 +79,7 @@ p {
   font-stretch: normal;
   line-height: 1.33;
   letter-spacing: 0px;
+  margin: 0;
 }
 
 /* Grouping content

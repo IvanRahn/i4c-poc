@@ -3,6 +3,8 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
+import MoreI4cCard from '../../modules/MoreI4cCard';
+
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;

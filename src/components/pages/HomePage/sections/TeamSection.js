@@ -11,18 +11,18 @@ height: auto;
 
 @media only screen and (min-width: 500px){
 
-width: 250px; 
-height: 250px;
+width: 360px; 
+/* height: 250px; */
 margin: -300px auto 0 auto; 
 }
 
 `
 const ImageContainer = styled.img`
-width: 250px; 
+width: 100%; 
 height: auto;
 margin: -128px auto 0 auto;
 @media only screen and (min-width: 500px){
-
+width: 360px;
 margin: -300px auto 0 auto; 
 }
 

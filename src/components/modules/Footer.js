@@ -30,7 +30,7 @@ class Footer extends Component {
             <FooterStyling>
                 
                 <div>
-                    <h1>ABOUT US</h1>
+                    <h3>ABOUT US</h3>
                         <UnorderedListStyling>
                             <li> <InternalLink text= "What is I4C" href="#"/> </li> 
                             <li> <InternalLink text= "Who is I4C" href="#"/> </li> 
@@ -38,7 +38,7 @@ class Footer extends Component {
                 </div>
 
                 <div>
-                    <h1>HOW IT WORKS</h1>
+                    <h3>HOW IT WORKS</h3>
                         <UnorderedListStyling>
                             <li> <InternalLink text= "Your account and benefits" href="#"/> </li> 
                             <li> <InternalLink text= "How does I4C operate?" href="#"/> </li> 
@@ -47,7 +47,7 @@ class Footer extends Component {
                 </div>
 
                 <div>
-                    <h1>OUR IMPACT</h1>
+                    <h3>OUR IMPACT</h3>
                         <UnorderedListStyling>
                             <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
                             <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
@@ -60,7 +60,7 @@ class Footer extends Component {
                 </div>
                 
                 <div>
-                    <h1>MORE INFORMATION</h1>
+                    <h3>MORE INFORMATION</h3>
                         <UnorderedListStyling>
                             <li> <InternalLink text= "Legal Stuff" href="#"/> </li> 
                             <li> <InternalLink text= "Privacy Policy" href="#"/> </li> 

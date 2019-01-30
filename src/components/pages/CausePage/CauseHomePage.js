@@ -2,6 +2,9 @@ import React, {Component} from "react";
 import { connect } from "react-redux";
 import {getContent} from "./../../../actions"
 import {InternalLink} from "./../../modules";
+import FirstSection from "./sections/FirstSection";
+import DonateSection from "./sections/DonateSection";
+import OurDonorSection from "./sections/OurDonorSection";
 
 class causesHomePage extends Component {
     
@@ -15,18 +18,23 @@ class causesHomePage extends Component {
         if(this.props.causes) {
             return (
                 <div>
-                    {this.props.causes.map(causes => {
+                    <FirstSection />
+                    <DonateSection  color="green"/>
+                    <OurDonorSection />
+
+                    {/* {this.props.causes.map(causes => {
                         
                         return(
-                        <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />)
-                    })}
+                        <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />
+                        )
+                    })} */}
 
                 </div>
             );
         } 
         
         return(
-            "Helloaskld"
+            <FirstSection />
         )
     }
     
@@ -34,7 +42,8 @@ class causesHomePage extends Component {
 
 
 const mapStateToProps = (state) => {
-    const {causes, causesIsFetching, causesError} = state.causes
+    console.log(state);
+    const {causes, causesIsFetching, causesError} = state.cause
     return {
       causes,
       causesIsFetching,
