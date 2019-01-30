@@ -15,14 +15,20 @@ flex-direction: column;
 @media only screen and (min-width: 500px) {
     width: 250px;
 }
+h2 {
+    margin: 24px 0;
+}
+p {
+    margin-bottom: 12px;
+}
 `
 const DivContainer = styled.div`
 padding: 2px 16px;
 `
 
 const ImageContainer = styled.img`
-height: 200px; 
-width: 200px; 
+height: 180px; 
+width: 180px; 
 /* max-width: 250px;  */
 /* max-height: 250px; */
 border-radius: 100%;
@@ -42,7 +48,7 @@ class VolunteerCard extends Component {
                 <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
                     {/* <DivContainer> */}
-                        <h3>{CardHeading}</h3>
+                        <h2>{CardHeading}</h2>
                         <HTMLContent content={CardText}/>
                     {/* </DivContainer> */}
                 </CardWrapper>
