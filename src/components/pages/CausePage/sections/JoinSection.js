@@ -14,9 +14,12 @@ top: 0;
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
+align-items: center;
 color: white;
 @media (min-width: 768px){
     width: 50%;
+    display: flex;
+    flex-direction: ${props => props.direction || "row"};
 }
 `
 const Svg = styled.svg`
@@ -66,7 +69,7 @@ class JoinSection extends Component {
                 <h1>Investing for charity</h1>
                 </Section>
 
-                <Section>
+                <Section direction="column">
                     <h2>All this works because of our Donors.</h2>
                     <InternalLink text="Join the cause" color="white" />
                                
