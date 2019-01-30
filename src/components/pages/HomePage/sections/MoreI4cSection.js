@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import image from "./../../../../img/cartoon.jpg";
-import {SectionWrapper, Card} from "../../../modules";
+import {SectionWrapper, MoreI4cCard} from "../../../modules";
+import {connect} from "react-redux";
+
 const H = styled.h1`
     color: white;
     width:100%;
@@ -10,19 +12,38 @@ const H = styled.h1`
 
 class MoreI4cSection extends Component {
     render() {
-        const {color} = this.props;
+        const {color, causes, causesError, causesIsFetching} = this.props;
+		console.log('TCL: MoreI4cSection -> render -> causes', causes)
+        if (causesIsFetching) {
+            return <div>Loading</div>
+        } else if (causesError || !causes) {
+            return <div>Error</div>
+        }
         return (
             <>
             <SectionWrapper color={color}>
                 <H>More from I4C</H>
-                    <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-                    <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-                    <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}  />
-
+                {causes.map(cause => {
+                    return (
+                    <MoreI4cCard 
+                    key={cause._id}
+                    CardHeading={cause.cardContent.heading}
+                    CardText={cause.text} 
+                    CardImage={cause.cardImage.secure_url}  />
+                    )
+                })}
+                    
             </SectionWrapper>
             </>
         )
     }
 }
-
-export default MoreI4cSection;
+const mapStateToProps = (state) => {
+    const {causes, causesIsFetching, causesError} = state.cause
+    return {
+        causes,
+        causesIsFetching,
+        causesError
+    }
+}
+export default connect(mapStateToProps)(MoreI4cSection);

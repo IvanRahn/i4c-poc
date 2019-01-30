@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import styled from "styled-components";
 import {HTMLContent} from "./index"
+import image from "./../../img/placeholder_circle_profile_520x520.jpg"
 
 const CardWrapper = styled.div`
 display: flex;
@@ -63,7 +64,7 @@ class HorizontalCard extends Component {
         return(
             <CardWrapper>
                 <DivImageContainer>
-                    <ImageContainer src= "http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg" />
+                    <ImageContainer src= {image} />
                 </DivImageContainer>
                 <DivContainer>
                     <h2>Surname</h2>

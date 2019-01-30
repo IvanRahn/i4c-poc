@@ -33,7 +33,11 @@ class FeacturedCauseSection extends Component {
     }
     render() {
         const {color, causes, causesIsFetching, causesError} = this.props
-        if (!causesIsFetching && causes) {
+        if (causesIsFetching) {
+            return <div>Loading</div>
+        } else if (causesError || !causes) {
+            return <div>Error</div>
+        }
         return (
             <>
             <SectionWrapper color={color} height="auto">
@@ -64,16 +68,10 @@ class FeacturedCauseSection extends Component {
             
             </>
         )
-    } else if (causesError) {
-        return <div>Error</div>
     }  
-        return (
-            <div>loading</div>
-        )
+        
     }
-}
 const mapStateToProps = (state) => {
-	console.log('TCL: mapStateToProps -> state', state)
     const {causes, causesIsFetching, causesError} = state.cause
     return {
         causes,

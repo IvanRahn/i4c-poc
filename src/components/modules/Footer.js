@@ -4,12 +4,23 @@ import {InternalLink} from "./index";
 
 const FooterStyling = styled.footer`
     display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 24px;
+    @media only screen and (min-width:500px) {
     flex-direction: row;
     justify-content: space-evenly;
-    text-align: center;
-    font-size: 11px;
+    }
+    div {
+        display: inherit;
+        flex-direction: column;
+
+    }
     a {
         align-self: flex-end;
+    }
+    h3 {
+        text-align: left;
     }
 `
 
@@ -17,7 +28,11 @@ const UnorderedListStyling = styled.ul`
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    @media only screen and (min-width:500px) {
+    }
 `
 
 // "JOIN US" button style : 

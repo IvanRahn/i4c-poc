@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper, InternalLink, Card} from '../../../modules';
-import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
+import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
 
 const ImageContainer = styled.img`
 height: auto; 
@@ -51,7 +51,7 @@ class FirstSection extends Component {
             
             <SectionWrapper color={color} height= "auto">
                 <Section>
-                    <ImageContainer src= "http://writingexercises.co.uk/images2/randomimage/sandy-boots.jpg" alt="Cherring man" />
+                    <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 
                 <Section>

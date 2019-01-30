@@ -15,6 +15,7 @@ class HowItWorksSection extends Component {
     render() {
 
         const {color, steps, stepsIsFetching, stepsError} = this.props;
+		console.log('TCL: HowItWorksSection -> render -> this.props', this.props)
         if (stepsIsFetching) {
             return <div>Loading</div>
         } else if (stepsError || !steps || !steps[0]) {
@@ -32,8 +33,8 @@ class HowItWorksSection extends Component {
                         return (
                             <li key={step._id} >
                                 <Card 
-                                CardText={step.Content.text}
-                                CardImage={step.Image ? step.Image.secure_url : null}
+                                CardText={step.text}
+                                CardImage={step.image ? step.image.secure_url : null}
                                 CardHeading={step.title}
                                 />
                                 <InternalLink to="/" text="placeholder" color="white"/>
