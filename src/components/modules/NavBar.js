@@ -3,7 +3,7 @@ import {InternalLink} from "./index";
 import styled from "styled-components";
 import LogoFull from "./../../img/I4C.png";
 import LogoSquare from "./../../img/I4C_Square.png"; 
-
+import Headroom from "react-headroom";
 const Nav = styled.nav`
 width: 100%;
 height: 60px;
