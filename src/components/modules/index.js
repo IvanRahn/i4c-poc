@@ -12,6 +12,9 @@ import Link from "./Link";
 import CenteredContent from "./CenteredContent";
 import Loading from "./Loading";
 import LinkWrapper from './LinkWrapper';
+import HorizontalCard from './../modules/HorizontalCard';
+import Breadcrumb from './Breacrumb';
+
 export  {
     Footer,
     InternalLink,
@@ -26,5 +29,7 @@ export  {
     Link,
     CenteredContent,
     Loading,
-    LinkWrapper
+    LinkWrapper,
+    HorizontalCard,
+    Breadcrumb,
 }

@@ -34,9 +34,9 @@ class HowItWorksSection extends Component {
                         return (
                             <li key={step._id} >
                                 <Card 
-                                CardText={step.text}
-                                CardImage={step.image ? step.image.secure_url : null}
-                                CardHeading={step.title}
+                                    CardText={step.text}
+                                    CardImage={step.image ? step.image.secure_url : null}
+                                    CardHeading={step.title}
                                 />
                                 <InternalLink to="/" text="placeholder" color="white"/>
                             </li>

@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {InternalLink, SectionWrapper} from './../../modules';
 import {connect} from "react-redux"; 
-import {getContent} from "./../../../actions"
-import {Loading} from "./../../modules"
-
+import {getContent} from "./../../../actions";
+import {Loading} from "./../../modules";
 
 const Section = styled.div `
 height: 50%;
@@ -23,7 +22,6 @@ class FindOutMore extends Component {
     
     render() { 
         const {findout, findoutError, findoutIsFetching} = this.props; 
-        console.log("thisone", findout)
         if (findoutIsFetching) {
             return <Loading/>
 
@@ -37,10 +35,11 @@ class FindOutMore extends Component {
                         <h2>{findout[0].content.heading}</h2>
                         <InternalLink 
                         text={findout[0].content.link.text} 
-                        to={findout[0].content.url} 
+                        to={findout[0].url} 
                         />
-                    </Section>
+                    </Section> 
                 </SectionWrapper>
+                
             )
                 
     } 
