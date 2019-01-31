@@ -1,7 +1,6 @@
-import React, {Component} from "react";
+import React  from "react";
 import styled from "styled-components";
 import {HTMLContent} from "./index"
-import image from "./../../img/placeholder_circle_profile_520x520.jpg"
 
 const CardWrapper = styled.div`
 display: flex;

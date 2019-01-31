@@ -14,7 +14,7 @@ class HowItWorksSection extends Component {
     }
     render() {
 
-        const {color, steps, stepsIsFetching, stepsError} = this.props;
+        const {color, steps, stepsIsFetching, stepsError, cardCount} = this.props;
         if (stepsIsFetching) {
             return <Loading/>
         } else if (stepsError || !steps || !steps[0]) {
@@ -28,7 +28,7 @@ class HowItWorksSection extends Component {
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {
-                    if (i < 3) {
+                    if (i < cardCount) {
                         return (
                             <li key={step._id} >
                                 <Card 

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Loading, InternalLink, Card, Link} from '../../../modules';
+import {SectionWrapper, Breadcrumb, Loading, Link} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
