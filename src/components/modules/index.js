@@ -12,10 +12,13 @@ import Link from "./Link";
 import CenteredContent from "./CenteredContent";
 import Loading from "./Loading";
 import LinkWrapper from './LinkWrapper';
-import HorizontalCard from './../modules/HorizontalCard';
+import HorizontalCard from './../modules/HorizontalCard'; 
+import SmallHorizontalCard from './../modules/SmallHorizontalCard';
 import Breadcrumb from './Breacrumb';
 import SectionWithWave from './SectionWithWave';
-import HowItWorksSection from "./HowItWorksSection"
+import HowItWorksSection from "./HowItWorksSection"; 
+import FeaturedCauseSection from "./FeaturedCauseSection"; 
+import StoryCause from "./StoryCause"; 
 export  {
     Footer,
     InternalLink,
@@ -32,7 +35,10 @@ export  {
     Loading,
     LinkWrapper,
     HorizontalCard,
+    SmallHorizontalCard,
     Breadcrumb,
     SectionWithWave,
     HowItWorksSection,
+    FeaturedCauseSection, 
+    StoryCause,
 }

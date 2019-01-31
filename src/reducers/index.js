@@ -8,8 +8,9 @@ import aboutFirstSection from "./about_first_section";
 import aboutSecondSection from "./about_second_section";
 import aboutThirdSection from "./about_third_section";
 import aboutVolunteerSection from "./about_volunteer_section";
-import homePageTeamSectionReducer from "./home_page_team_section"
-import howItWorksStepsReducer from "./how_it_works_steps_reducer"
+import homePageTeamSectionReducer from "./home_page_team_section"; 
+import howItWorksStepsReducer from "./how_it_works_steps_reducer"; 
+import story_cause_reducer from "./story_cause_reducer";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -22,5 +23,6 @@ export default combineReducers({
     aboutThird: aboutThirdSection,
     aboutVolunteer: aboutVolunteerSection,
     steps: howItWorksStepsReducer,
-    teamSection: homePageTeamSectionReducer,
+    teamSection: homePageTeamSectionReducer, 
+    storycause: story_cause_reducer, 
 });
