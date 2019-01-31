@@ -3,13 +3,17 @@ import styled from 'styled-components';
 import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
 import {SectionWrapper} from '../../modules';
 import image from '../../../img/placeholder_circle_profile_520x520.jpg';
-
+import { getContent } from '../../../../actions';
+import { connect } from 'react-redux';
 
 const Wrapper = styled.div`
     width: 390px;
 `
 
 class CardSection extends Component {
+    componentDidMount () {
+        this.props.getContent("causes/homepage-card");    
+    }
 
     render() { 
         if(false){
@@ -30,5 +34,16 @@ class CardSection extends Component {
             return(null);
     }
 }
- 
-export default CardSection;
+
+const mapStateToProps = (state) => {
+    const {content, isFetching, error} = state.aboutFirst
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
+
+export default connect(mapStateToProps, {
+    getContent
+})(CardSection);
