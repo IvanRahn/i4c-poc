@@ -9,6 +9,7 @@ import JoinSection from "./sections/JoinSection";
 import PageOpener from "../../modules/pageLayout/PageOpener";
 import image from '../../../img/placeholder_circle_profile_520x520.jpg';
 
+
 class causesHomePage extends Component {
     
     componentDidMount() {

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper} from './../../modules';
+import CardSection from './CardSection';
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -60,7 +61,7 @@ class PageOpener extends Component {
         const { color, image, heading, text, link } = this.props;        
         
         return (
-            
+            <>
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section height="100%">
                     <BorderPMobile>{link}</BorderPMobile>
@@ -75,6 +76,11 @@ class PageOpener extends Component {
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
+            <CardSection />
+            </>
+
+            
+        
         )
     } 
 }
