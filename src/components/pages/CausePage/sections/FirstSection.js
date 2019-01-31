@@ -28,22 +28,35 @@ const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
 
 `
-const BorderPMobile= styled.p`
-color: white;
-background-color: green;
 
+const BorderPMobile= styled.span`
+color: white;
+width: 100%;
+display: flex;
+justify-content: center;
+position: absolute;
+z-index: 1;
+a {
+background-color: green;
+text-align: center;
+margin: 0 auto;
+}
 @media (min-width: 500px){
     display: none;
 }
 `
 
-const BorderP = styled.p`
+const BorderP = styled.span`
 display: none;
 
 @media (min-width: 500px){
-    display: block;
+    display: inline;
     color: white;
     background-color: green;
+    width: auto;
+    a:hover, a:focus {
+        cursor: pointer;
+    }
 }
 
 `
@@ -66,7 +79,7 @@ class FirstSection extends Component {
             
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section>
-                    <BorderPMobile>Cause we care</BorderPMobile>
+                    <BorderPMobile><a>Cause we care</a></BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 

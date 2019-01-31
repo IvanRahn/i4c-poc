@@ -11,7 +11,7 @@ import OrdList from "./OrdList";
 import Link from "./Link";
 import CenteredContent from "./CenteredContent";
 import Loading from "./Loading";
-
+import LinkWrapper from './LinkWrapper';
 export  {
     Footer,
     InternalLink,
@@ -26,4 +26,5 @@ export  {
     Link,
     CenteredContent,
     Loading,
+    LinkWrapper
 }
