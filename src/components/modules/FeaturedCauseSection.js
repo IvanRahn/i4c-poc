@@ -29,7 +29,7 @@ class FeacturedCauseSection extends Component {
         this.props.getContent("causes");
     }
     render() {
-        const {color, causes, causesIsFetching, causesError} = this.props
+        const {color, causes, causesIsFetching, causesError, cardCount} = this.props
         if (causesIsFetching) {
             return <Loading/>
         } else if (causesError || !causes) {
@@ -42,7 +42,7 @@ class FeacturedCauseSection extends Component {
                 {this.props.children}
                 {causes.filter(cause => cause.featuredAsCard).map((cause, i) => {
                     
-                    if (i <= 1) {
+                    if (i < cardCount) {
                         return (
                         
                         <CauseCard 
