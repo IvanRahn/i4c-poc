@@ -3,9 +3,10 @@ import ImpactSection from './sections/ImpactSection';
 import withTracker from '../../google_analytics/withTracker';
 import {darkGreen} from "./../../modules/BrandStyle"
 
-const HowitWorksSection = lazy(() => import('./sections/HowItWorksSection')) ;
+const HowItWorksSection = lazy(() => import('./../../modules/HowItWorksSection')) ;
+console.log('TCL: HowitWorksSection', HowItWorksSection)
 const MoreI4cSection = lazy(() => import('./sections/MoreI4cSection')) ;
-const FeaturedCauseSection = lazy(() => import('./sections/FeaturedCauseSection')) ;
+const FeaturedCauseSection = lazy(() => import('./../../modules/FeaturedCauseSection')) ;
 const TeamSection= lazy(() => import('./sections/TeamSection')) ;
 
 
@@ -14,9 +15,10 @@ const HomePage = () => {
             <>
                     <ImpactSection />
                     <Suspense fallback="">
-                        <HowitWorksSection color={darkGreen}/>
+                        <HowItWorksSection color={darkGreen}/>
                         <TeamSection />
-                        <FeaturedCauseSection />
+                        <FeaturedCauseSection/>
+                            
                         <MoreI4cSection color={darkGreen} />
                     </Suspense>
                 
