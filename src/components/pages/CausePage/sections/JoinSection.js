@@ -5,15 +5,6 @@ import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
 
-
-
-const ImageContainer = styled.img`
-height: 100px; 
-width: 100px; 
-position: relative;
-top: 0;
-`
-
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 align-items: center;
@@ -22,6 +13,7 @@ color: white;
     width: 50%;
     display: flex;
     flex-direction: ${props => props.direction || "row"};
+    justify-content: ${props => props.justify || null};
 }
 `
 const Svg = styled.svg`
@@ -30,7 +22,7 @@ const Svg = styled.svg`
     @media only screen and (min-width: 500px) {
         display: block;
         height: 60px;
-        width: 52px;
+        width: 70px;
     }
 
 
@@ -56,7 +48,7 @@ class JoinSection extends Component {
         return (
             
             <SectionWrapper color={color} height= "auto" padding="28px 16px 64px 16px" color="green">
-                <Section>
+                <Section justify="flex-end">
                 <Svg>
                 <path d="M30.5,24.1c0.1-2.8-2.2-9.8-2.2-9.8c0.7,0.1,5.2,6.8,4.7,9.6l0,0c4.3-1,7.3-5.1,6.7-9.5l-0.1-0.6
                     c-1-7.4-9.3-12.2-9.7-12.4l-0.9-0.5l-0.8,0.7c-0.3,0.2-5.7,5.5-6.3,11.8c-0.1,0.8-0.1,1.7,0,2.5l0.1,0.6c0.1,0.7,0.3,1.3,0.5,1.9

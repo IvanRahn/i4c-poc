@@ -7,22 +7,32 @@ import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
 import {Loading} from "./../../../modules"
 
 const ImageContainer = styled.img`
+width: 100%;
 height: auto; 
 position: relative;
 top: 0;
-width: 100%; 
+
+@media (min-width: 500px){
+    width: 670px;
+    height: 500px; 
+    position: relative;
+    top: 0;
+}
+ 
 `
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
     width: 50%;
+    height: ${props => props.height || "auto"};
 }
 `
 const Wrapper = styled.div`
 text-align: left;
 /* padding-right: 180px; */
 padding: 48px;
+margin-top: 200px;
 `
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
@@ -65,7 +75,7 @@ class FirstSection extends Component {
         return (
             
             <SectionWrapper color={color} height= "auto" padding="0">
-                <Section>
+                <Section height="100%">
                     <BorderPMobile>Cause we care</BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
