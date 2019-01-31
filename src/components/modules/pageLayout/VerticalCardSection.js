@@ -4,8 +4,6 @@ import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
 import { getContent } from '../../../actions';
 import { connect } from 'react-redux';
 
-
-
 const Wrapper = styled.div`
     width: 470px;
 `
