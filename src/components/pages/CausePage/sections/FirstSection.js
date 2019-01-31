@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Loading, InternalLink, Card} from '../../../modules';
+import {SectionWrapper, Breadcrumb, Loading, InternalLink, Card, Link} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
-
 const ImageContainer = styled.img`
 height: auto; 
 position: relative;
@@ -50,14 +49,19 @@ class FirstSection extends Component {
             
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section>
-                    <Breadcrumb mobile to="/" text="Causes > HomePage"/>
+                    <Breadcrumb mobile> 
+                        <Link to="/" text="Causes" />
+                        <Link to="/" text="Homepage" />
+                    </Breadcrumb>
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                    <Breadcrumb to="/" text="Causes > HomePage"/>
-
+                    <Breadcrumb> 
+                        <Link to="/" text="Causes" />
+                        <Link to="/" text="Homepage" />
+                    </Breadcrumb>
                         <h1>We invest cause of blah</h1> 
                         <P margin="70px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
                     </Wrapper>               

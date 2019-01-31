@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import Link from "./Link"
+import {darkGreen} from "./BrandStyle"
 
 const StyledBreadcrumb = styled.span`
 display: ${props => props.mobile ? "flex" : "none"};
@@ -9,23 +9,34 @@ width: 100%;
 z-index: 1;
 justify-content: center;
 a {
-    padding: 4px 8px;
+background-color: ${darkGreen};
+border: 1px solid ${darkGreen};
+
+    padding: 4px 8px 4px 0;
     color: white;
-    background-color: green;
     :hover, :focus {
-    cursor: pointer;
+        cursor: pointer;
     }
 }
+    a:not(:last-of-type) {
+        padding-left: 8px;
+
+    ::after {
+        content: ">";
+        padding-left: 8px;
+    }
+}
+
 @media (min-width: 500px){
     display: ${props => props.mobile ? "none" : "inline"};
     color: white;
     width: auto;
 }
 `
-const Breadcrumb = ({text, to, mobile}) => {
+const Breadcrumb = ({text, to, mobile, children}) => {
     return (
         <StyledBreadcrumb mobile={mobile}>
-            <Link to={to}>{text}</Link>
+        {children}
         </StyledBreadcrumb>
     )
 }
