@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
 import {SectionWrapper} from '../../modules';
 import image from '../../../img/placeholder_circle_profile_520x520.jpg';
-import { getContent } from '../../../../actions';
+import { getContent } from '../../../actions';
 import { connect } from 'react-redux';
 
 const Wrapper = styled.div`
@@ -16,18 +16,28 @@ class CardSection extends Component {
     }
 
     render() { 
-        if(false){
+        const { content, isFetching, error} = this.props;
+
+        if (isFetching) {
+            return ("loading")
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
+
+        if(content){
             return (
                 <SectionWrapper height="auto" padding="0 0 60px 0">
-                    <Wrapper>
-                        <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} /> 
-                    </Wrapper>
-                    <Wrapper>
-                        <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} /> 
-                    </Wrapper>
-                    <Wrapper>
-                        <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} /> 
-                    </Wrapper>
+                    {content.map((content) => {
+                    return (
+                        <Wrapper>
+                            <SmallHorizontalCard
+                            key={content._id} 
+                            CardText={content.text}
+                            />
+                        </Wrapper>
+                    )
+                    }) }
+
                 </SectionWrapper>
              );
             }
@@ -36,7 +46,7 @@ class CardSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.causeHomeCard
     return {
         content,
         isFetching,

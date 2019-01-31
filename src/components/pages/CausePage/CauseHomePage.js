@@ -18,7 +18,6 @@ class causesHomePage extends Component {
     }
 
     render () {
-        console.log(this.props.causes)
         if(this.props.causes) {
             return (
                 <div>
