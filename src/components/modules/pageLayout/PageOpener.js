@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper} from './../../modules';
 import CardSection from './CardSection';
-import SmallHorizontalCard from '../SmallHorizontalCard';
 import VerticalCardSection from './VerticalCardSection';
+import Link from '../Link';
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -77,6 +77,10 @@ class PageOpener extends Component {
                         <BorderP>{link}</BorderP>
                         <h1>{heading}</h1> 
                         <P margin="70px">{text}</P>
+                        {/* <h2>The Dividends continously go to the blah blah blah blah blah</h2>
+                        <P margin="70px">Text</P>
+                        <P margin="70px">For more of what we do</P>
+                        <Link text="DOWNLOAD PDF" color="green" /> */}
                     </Wrapper>               
                 </Section>
             </SectionWrapper>

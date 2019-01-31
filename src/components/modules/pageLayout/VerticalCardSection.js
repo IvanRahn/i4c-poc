@@ -11,7 +11,7 @@ const Wrapper = styled.div`
 class VerticalCardSection extends Component {
 
     render() { 
-        if(true){
+        if(false){
             return (
                 <Wrapper>
                     <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} />
