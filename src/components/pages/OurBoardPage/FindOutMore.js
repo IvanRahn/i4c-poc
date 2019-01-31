@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {InternalLink, SectionWrapper} from './../../modules';
 import {connect} from "react-redux"; 
-import {getContent} from "./../../../actions"
-import {Loading} from "./../../modules"
-
+import {getContent} from "./../../../actions";
+import {Loading} from "./../../modules";
 
 const Section = styled.div `
 height: 50%;
@@ -38,8 +37,9 @@ class FindOutMore extends Component {
                         text={findout[0].content.link.text} 
                         to={findout[0].url} 
                         />
-                    </Section>
+                    </Section> 
                 </SectionWrapper>
+                
             )
                 
     } 
