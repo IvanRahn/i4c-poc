@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import { connect } from "react-redux";
 import {getContent} from "./../../../actions"
-import {InternalLink} from "./../../modules";
 import FirstSection from "./sections/FirstSection";
 import DonateSection from "./sections/DonateSection";
 import OurDonorSection from "./sections/OurDonorSection";

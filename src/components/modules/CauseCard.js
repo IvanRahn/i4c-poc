@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import styled from "styled-components";
 import image from "./../../img/cartoon.jpg"
-import {HTMLContent} from "./../modules"
-import Link from "./Link"
+import {HTMLContent, LinkWrapper} from "./../modules"
 
 const CardWrapper = styled.div`
 overflow: hidden;
@@ -30,20 +29,7 @@ const DivContainer = styled.div`
         margin: 8px 0;
     }
 `
-const LinkWrapper = styled(Link) `
-    width: 100%;
-margin: 24px 0;
 
-    :hover, :focus {
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    }
-    @media only screen and (min-width: 500px) {
-        width: auto;
-    margin: 8px 20px;
-    border-radius: 16px;
-
-    }
-`
 
 const ImageContainer = styled.img`
 height: 100px; 
