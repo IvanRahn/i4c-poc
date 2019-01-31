@@ -10,6 +10,7 @@ import aboutThirdSection from "./about_third_section";
 import aboutVolunteerSection from "./about_volunteer_section";
 import homePageTeamSectionReducer from "./home_page_team_section"
 import howItWorksStepsReducer from "./how_it_works_steps_reducer"
+import causeHomeCard from "./cause_home_card"
 
 export default combineReducers({
     impact: impact_reducer,
@@ -23,4 +24,5 @@ export default combineReducers({
     aboutVolunteer: aboutVolunteerSection,
     steps: howItWorksStepsReducer,
     teamSection: homePageTeamSectionReducer,
+    causeHomeCard: causeHomeCard,
 });
