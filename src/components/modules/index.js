@@ -11,9 +11,11 @@ import OrdList from "./OrdList";
 import Link from "./Link";
 import CenteredContent from "./CenteredContent";
 import Loading from "./Loading";
+import LinkWrapper from './LinkWrapper';
 import HorizontalCard from './../modules/HorizontalCard';
-
-
+import Breadcrumb from './Breacrumb';
+import SectionWithWave from './SectionWithWave';
+import HowItWorksSection from "./HowItWorksSection"
 export  {
     Footer,
     InternalLink,
@@ -28,5 +30,9 @@ export  {
     Link,
     CenteredContent,
     Loading,
+    LinkWrapper,
     HorizontalCard,
+    Breadcrumb,
+    SectionWithWave,
+    HowItWorksSection,
 }

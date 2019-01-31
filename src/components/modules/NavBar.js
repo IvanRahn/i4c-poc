@@ -120,8 +120,8 @@ class NavBar extends Component {
         this.updateDimensions()
         window.addEventListener('resize', this.updateDimensions)
     }
-    updateDimensions = () => {
-        return this.setState({width: window.innerWidth});
+    componentWillUnmount() {
+        window.removeEventListener('resize');
     }
     componentDidUpdate () {
         if (this.state.width > "500" && this.main && this.footer) {
@@ -130,14 +130,18 @@ class NavBar extends Component {
             this.footer.style.left = "";
         } 
     }
-    moveContent =(event) => {
+
+    updateDimensions = () => {
+        return this.setState({width: window.innerWidth});
+    }
+     
+    moveContent = (event) => {
         this.main = document.querySelector("main")
         this.footer = document.querySelector("footer")
         this.main.style.left = this.main.style.left ? "" : "200px"
         this.footer.style.left = this.footer.style.left ? "" : "200px"
-        
-        
     }
+    
     render() {
         return(
         <Nav aria-live="polite">
@@ -150,7 +154,6 @@ class NavBar extends Component {
             auto="auto"/>
         <Logo to="/" color="grey"/>
             
-            {/* <NavLinks> */}
                 <label htmlFor="nav-checkbox">
                     <MenuButton>MENU</MenuButton>
                 </label>
@@ -165,7 +168,6 @@ class NavBar extends Component {
 </svg></li>
                     <li> <InternalLink text="JOIN"to="#"section="nav" location="homepage"/> </li>
                 </NavUl>
-            {/* </NavLinks> */}
                 
         </Nav>
         )

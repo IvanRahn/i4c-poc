@@ -2,9 +2,6 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {HTMLContent} from "./index"
 
-const Name = styled.h2`
-
-`
 const CardWrapper = styled.div`
 overflow: hidden;
 /* padding: 0 0 32px; */
@@ -22,9 +19,6 @@ p {
     margin-bottom: 12px;
 }
 `
-const DivContainer = styled.div`
-padding: 2px 16px;
-`
 
 const ImageContainer = styled.img`
 height: 180px; 
@@ -41,7 +35,7 @@ class VolunteerCard extends Component {
     
     render(){
 
-        const {CardHeading, CardText, CardImage, CardName} = this.props;
+        const {CardHeading, CardText, CardImage} = this.props;
 
         return(
             // <div>

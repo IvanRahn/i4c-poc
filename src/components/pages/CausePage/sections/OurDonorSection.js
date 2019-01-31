@@ -4,7 +4,6 @@ import {SectionWrapper} from "../../../modules";
 import { connect } from 'react-redux';
 import HorizontalCard from '../../../modules/HorizontalCard';
 import getContent from '../../../../actions/keystoneActions';
-import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
 import {Loading} from "./../../../modules"
 
 
@@ -20,7 +19,7 @@ class OurDonorSection extends Component {
     }
     render() {
 
-        const {color, steps, stepsIsFetching, stepsError} = this.props;
+        const {steps, stepsIsFetching, stepsError} = this.props;
         if (stepsIsFetching) {
             return <Loading/>
         } else if (stepsError || !steps || !steps[0]) {

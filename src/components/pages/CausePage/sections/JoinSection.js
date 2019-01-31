@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink} from '../../../modules';
+import {SectionWrapper, InternalLink, Loading} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
-import {Loading} from "./../../../modules"
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
@@ -47,7 +46,7 @@ class JoinSection extends Component {
         
         return (
             
-            <SectionWrapper color={color} height= "auto" padding="28px 16px 64px 16px" color="green">
+            <SectionWrapper color={color} height= "auto" padding="28px 16px 64px 16px">
                 <Section justify="flex-end">
                 <Svg>
                 <path d="M30.5,24.1c0.1-2.8-2.2-9.8-2.2-9.8c0.7,0.1,5.2,6.8,4.7,9.6l0,0c4.3-1,7.3-5.1,6.7-9.5l-0.1-0.6
