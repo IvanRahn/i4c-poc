@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, CauseCard, InternalLink} from "./../../../modules"
+import {SectionWrapper, CauseCard, InternalLink, Loading} from "./"
 import { connect } from 'react-redux';
-import {getContent} from "../../../../actions";
-import {Loading} from "./../../../modules"
+import {getContent} from "./../../actions";
 
 const H = styled.h1`
     width:100%;
@@ -26,15 +25,8 @@ padding: 12px;
 
 
 class FeacturedCauseSection extends Component {
-    
     componentDidMount () {
         this.props.getContent("causes");
-        
-    }
-    renderFeaturedCards (causes) {
-        
-            
-        
     }
     render() {
         const {color, causes, causesIsFetching, causesError} = this.props
@@ -47,7 +39,9 @@ class FeacturedCauseSection extends Component {
             <>
             <SectionWrapper color={color} height="auto">
                 <H>Featured Causes</H>
+                {this.props.children}
                 {causes.filter(cause => cause.featuredAsCard).map((cause, i) => {
+                    
                     if (i <= 1) {
                         return (
                         

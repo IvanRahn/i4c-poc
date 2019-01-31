@@ -8,6 +8,7 @@ const SectionWrapper = styled.section`
     width: 100%;
     margin: 0 auto;
     align-items: center; 
+    position: relative;
     padding: ${props => props.padding || "52px 24px 0px"};
     :last-of-type(a) {
         width: 100%;
