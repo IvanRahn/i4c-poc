@@ -12,8 +12,8 @@ class VerticalCardSection extends Component {
 
     
     componentDidMount () {
-        const {verticalCard, getContent} = this.props; 
-        getContent(verticalCard);    
+        const {verticalCardApi, getContent} = this.props; 
+        getContent(verticalCardApi);    
     }
 
     render() { 
@@ -48,9 +48,8 @@ class VerticalCardSection extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causeHomeVerticalCard
-    console.log(state)
+const mapStateToProps = (state, props) => {
+    const {content, isFetching, error} = state.props.causeHomeVerticalCard
     return {
         content,
         isFetching,

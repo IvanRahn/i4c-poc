@@ -60,7 +60,7 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link, horizontalCardApi, horizontalCardStore, verticalCard } = this.props;        
+        const { color, image, heading, text, link, horizontalCardApi, horizontalCardStore, verticalCardApi, verticalCardStore } = this.props;        
         
         return (
             <>
@@ -71,7 +71,7 @@ class PageOpener extends Component {
                         </Breadcrumb>    {link}
                     </BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection verticalCard={verticalCard} /> 
+                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardStore={verticalCardStore}  /> 
  
                 </Section>
 
