@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
 import {SectionWrapper} from '../../modules';
-import image from '../../../img/placeholder_circle_profile_520x520.jpg';
 import { getContent } from '../../../actions';
 import { connect } from 'react-redux';
 

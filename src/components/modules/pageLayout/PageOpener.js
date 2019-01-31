@@ -60,7 +60,7 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link, horizontalCard } = this.props;        
+        const { color, image, heading, text, link, horizontalCard, verticalCard } = this.props;        
         
         return (
             <>
@@ -68,7 +68,7 @@ class PageOpener extends Component {
                 <Section height="100%">
                     <BorderPMobile>{link}</BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection /> 
+                    <VerticalCardSection verticalCard={verticalCard} /> 
  
                 </Section>
 
