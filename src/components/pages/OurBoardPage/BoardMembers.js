@@ -38,7 +38,6 @@ class BoardMembers extends Component {
             {member.map((member) => {
                 
                     return (
-
                             <SmallHorizontalCard 
                             key={member._id}
                             CardName = {member.title}

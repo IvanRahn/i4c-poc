@@ -5,22 +5,32 @@ import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
 const ImageContainer = styled.img`
+width: 100%;
 height: auto; 
 position: relative;
 top: 0;
-width: 100%; 
+
+@media (min-width: 500px){
+    width: 670px;
+    height: 500px; 
+    position: relative;
+    top: 0;
+}
+ 
 `
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
     width: 50%;
+    height: ${props => props.height || "auto"};
 }
 `
 const Wrapper = styled.div`
 text-align: left;
 /* padding-right: 180px; */
 padding: 48px;
+margin-top: 200px;
 `
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
@@ -53,6 +63,7 @@ class FirstSection extends Component {
                         <Link to="/" text="Causes" />
                         <Link to="/" text="Homepage" />
                     </Breadcrumb>
+
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 
