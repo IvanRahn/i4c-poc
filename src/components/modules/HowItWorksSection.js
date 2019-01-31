@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, OrdList, Card, InternalLink} from "../../../modules";
+import {OrdList, Card, InternalLink, Loading, SectionWithWave} from ".";
 import { connect } from 'react-redux';
-import getContent from '../../../../actions/keystoneActions';
-import {Loading} from "./../../../modules"
+import {getContent} from './../../actions';
 
 const H = styled.h1`
 margin: 0;
@@ -15,8 +14,7 @@ class HowItWorksSection extends Component {
     }
     render() {
 
-        const {color, steps, stepsIsFetching, stepsError} = this.props;
-		console.log('TCL: HowItWorksSection -> render -> this.props', this.props)
+        const {color, steps, stepsIsFetching, stepsError, cardCount} = this.props;
         if (stepsIsFetching) {
             return <Loading/>
         } else if (stepsError || !steps || !steps[0]) {
@@ -26,17 +24,17 @@ class HowItWorksSection extends Component {
         return (
             <>
 
-            <SectionWrapper height="auto" id="HowItWorks" color={color} >
+            <SectionWithWave height="auto" id="HowItWorks" color={color} >
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {
-                    if (i < 3) {
+                    if (i < cardCount) {
                         return (
                             <li key={step._id} >
                                 <Card 
-                                CardText={step.text}
-                                CardImage={step.image ? step.image.secure_url : null}
-                                CardHeading={step.title}
+                                    CardText={step.text}
+                                    CardImage={step.image ? step.image.secure_url : null}
+                                    CardHeading={step.title}
                                 />
                                 <InternalLink to="/" text="placeholder" color="white"/>
                             </li>
@@ -44,7 +42,7 @@ class HowItWorksSection extends Component {
                         } else return null
                 }) }
                 </OrdList>
-            </SectionWrapper>
+            </SectionWithWave>
             </>
         )
     }

@@ -4,7 +4,6 @@ import {SectionWrapper} from "../../../modules";
 import { connect } from 'react-redux';
 import HorizontalCard from '../../../modules/HorizontalCard';
 import getContent from '../../../../actions/keystoneActions';
-import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
 import {Loading} from "./../../../modules"
 
 
@@ -31,7 +30,7 @@ class OurDonorSection extends Component {
             <SectionWrapper height="auto">
                 <H>Our Donors/ Charity Stories</H>
 
-                <HorizontalCard CardImage={image}/>
+                <HorizontalCard />
             </SectionWrapper>
         )
     }

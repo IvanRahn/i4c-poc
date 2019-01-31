@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink, Card} from '../../../modules';
+import {SectionWrapper, Breadcrumb, Loading, Link} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
-import {Loading} from "./../../../modules"
-
 const ImageContainer = styled.img`
 width: 100%;
 height: auto; 
@@ -38,25 +36,10 @@ const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
 
 `
-const BorderPMobile= styled.p`
-color: white;
-background-color: green;
 
-@media (min-width: 500px){
-    display: none;
-}
-`
 
-const BorderP = styled.p`
-display: none;
 
-@media (min-width: 500px){
-    display: block;
-    color: white;
-    background-color: green;
-}
 
-`
 
 class FirstSection extends Component {
 
@@ -75,14 +58,21 @@ class FirstSection extends Component {
         return (
             
             <SectionWrapper color={color} height= "auto" padding="0">
-                <Section height="100%">
-                    <BorderPMobile>Cause we care</BorderPMobile>
+                <Section>
+                    <Breadcrumb mobile> 
+                        <Link to="/" text="Causes" />
+                        <Link to="/" text="Homepage" />
+                    </Breadcrumb>
+
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        <BorderP>Cause we care</BorderP>
+                    <Breadcrumb> 
+                        <Link to="/" text="Causes" />
+                        <Link to="/" text="Homepage" />
+                    </Breadcrumb>
                         <h1>We invest cause of blah</h1> 
                         <P margin="70px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
                     </Wrapper>               

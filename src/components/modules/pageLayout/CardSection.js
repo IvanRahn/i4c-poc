@@ -13,8 +13,8 @@ class CardSection extends Component {
 
     
     componentDidMount () {
-        const {horizontalCard, getContent} = this.props; 
-        getContent(horizontalCard);    
+        const {horizontalCardApi, getContent} = this.props; 
+        getContent(horizontalCardApi);    
     }
 
     render() { 
@@ -48,8 +48,9 @@ class CardSection extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
     const {content, isFetching, error} = state.causeHomeCard
+    console.log(props);
     return {
         content,
         isFetching,

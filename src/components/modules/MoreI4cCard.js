@@ -1,23 +1,18 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-
+import {LinkWrapper} from './';
 const CardWrapper = styled.div`
 overflow: hidden;
-padding: 0 0 32px;
-margin: 48px auto 0;
 width: 300px;
 background-color: white;
 border-radius: 10px;
-margin: 15px 40px;
 
 @media only screen and (min-width: 500px) {
     overflow: hidden;
     padding: 0 0 32px;
-    margin: 48px auto 0;
     width: 380px;
     background-color: white;
     border-radius: 10px;
-    margin: 15px 40px;
 }
 `
 const DivContainer = styled.div`
@@ -39,7 +34,7 @@ class MoreI4cCard extends Component {
         const {CardHeading, CardText, CardImage} = this.props;
 
         return(
-            <div>
+            <LinkWrapper>
                 <CardWrapper>
                     <ImageContainer src= {CardImage} />
                     <DivContainer>
@@ -47,7 +42,7 @@ class MoreI4cCard extends Component {
                         <p>{CardText}</p>
                     </DivContainer>
                 </CardWrapper>
-            </div>
+            </LinkWrapper>
         )
     }
 }

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import image from "./../../../../img/cartoon.jpg";
 import {SectionWrapper, MoreI4cCard} from "../../../modules";
 import {connect} from "react-redux";
 import {Loading} from "./../../../modules"
@@ -15,7 +14,6 @@ const H = styled.h1`
 class MoreI4cSection extends Component {
     render() {
         const {color, causes, causesError, causesIsFetching} = this.props;
-		console.log('TCL: MoreI4cSection -> render -> causes', causes)
         if (causesIsFetching) {
             return <Loading/>
         } else if (causesError || !causes) {

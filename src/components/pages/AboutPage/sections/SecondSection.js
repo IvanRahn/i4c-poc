@@ -52,8 +52,8 @@ class SecondSection extends Component {
                 <Section>
                     <ImageContainer src= {content[0].image? content[0].image.secure_url: image} />
                     <BrandContainer>
-                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url} />
-                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} />
+                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url}  alt=""/>
+                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} alt=""/>
                     </BrandContainer>
                 </Section>
 

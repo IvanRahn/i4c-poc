@@ -11,7 +11,8 @@ import GlobalStyle from "./Normalize";
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/CausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
-const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage"))
+const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage")) 
+const HowItWorksHomePage = lazy(() => import("./pages/HowItWorksPage/HowItWorksHomePage"))
 const Footer = lazy(() => import("./modules/Footer"))
 
 
@@ -47,7 +48,8 @@ class App extends Component {
                   <Route exact path="/cause" render={(props) => <CauseHomePage {...props}/>} />
                   <Route exact path="/cause/:slug" render={(props) => <CausePage {...props}/>} />
                   <Route exact path="/board-page" render={(props) => <BoardPage {...props}/>} />
-                  <Route exact path="/about" render={(props) => <AboutHomePage {...props}/>} />
+                  <Route exact path="/about" render={(props) => <AboutHomePage {...props}/>} /> 
+                  <Route exact path="/how-it-works" render={(props) => <HowItWorksHomePage {...props}/>} />
                 </Suspense>
               </Switch>
               </main>
