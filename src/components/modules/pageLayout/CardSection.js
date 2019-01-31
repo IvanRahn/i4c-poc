@@ -11,12 +11,16 @@ const Wrapper = styled.div`
 `
 
 class CardSection extends Component {
+
+    
     componentDidMount () {
-        this.props.getContent("causes/homepage-card");    
+        const {horizontalCard, getContent} = this.props; 
+        getContent(horizontalCard);    
     }
 
     render() { 
         const { content, isFetching, error} = this.props;
+        
 
         if (isFetching) {
             return ("loading")
@@ -29,9 +33,8 @@ class CardSection extends Component {
                 <SectionWrapper height="auto" padding="0 0 60px 0">
                     {content.map((content) => {
                     return (
-                        <Wrapper>
+                        <Wrapper key={content._id}>
                             <SmallHorizontalCard
-                            key={content._id} 
                             CardText={content.text}
                             />
                         </Wrapper>

@@ -60,7 +60,7 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link } = this.props;        
+        const { color, image, heading, text, link, horizontalCard } = this.props;        
         
         return (
             <>
@@ -84,7 +84,7 @@ class PageOpener extends Component {
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
-            <CardSection />
+            <CardSection horizontalCard={horizontalCard} />
             </>
 
             
