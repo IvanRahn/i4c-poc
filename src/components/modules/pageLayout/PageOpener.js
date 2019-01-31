@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper} from './../../modules';
-import image from '../../../img/placeholder_circle_profile_520x520.jpg';
-import { getContent } from '../../../actions';
-import { connect } from 'react-redux';
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -17,9 +14,7 @@ top: 0;
     position: relative;
     top: 0;
 }
- 
 `
-
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
@@ -29,9 +24,11 @@ width: ${props => props.width || "100%"};
 `
 const Wrapper = styled.div`
 text-align: left;
-/* padding-right: 180px; */
 padding: 48px;
-margin-top: 200px;
+
+@media (min-width: 768px){
+    margin-top: 200px;
+}
 `
 const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
@@ -57,33 +54,24 @@ display: none;
 
 `
 
-class FirstSection extends Component {
-
-    componentDidMount () {
-        this.props.getContent("about/first-section");    
-    }
+class PageOpener extends Component {
 
     render () {
-        const { color, content, isFetching, error} = this.props;        
-        if (isFetching) {
-            return (<div> loading</div>)
-            } else if (error || !content || !content[0]){
-                return <div>error</div>
-            }
+        const { color, image, heading, text, link } = this.props;        
         
         return (
             
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section height="100%">
-                    <BorderPMobile>Cause we care</BorderPMobile>
+                    <BorderPMobile>{link}</BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
                 </Section>
 
                 <Section>
                     <Wrapper>
-                        <BorderP>Cause we care</BorderP>
-                        <h1>We invest cause of blah</h1> 
-                        <P margin="70px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
+                        <BorderP>{link}</BorderP>
+                        <h1>{heading}</h1> 
+                        <P margin="70px">{text}</P>
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
@@ -91,16 +79,5 @@ class FirstSection extends Component {
     } 
 }
 
-const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
-    return {
-        content,
-        isFetching,
-        error,
-    }
-}
-
-export default connect(mapStateToProps, {
-    getContent
-})(FirstSection);
+export default PageOpener
 
