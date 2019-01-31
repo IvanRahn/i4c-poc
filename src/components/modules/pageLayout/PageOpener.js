@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper} from './../../modules';
 import CardSection from './CardSection';
+import SmallHorizontalCard from '../SmallHorizontalCard';
+import VerticalCardSection from './VerticalCardSection';
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -66,6 +68,8 @@ class PageOpener extends Component {
                 <Section height="100%">
                     <BorderPMobile>{link}</BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
+                    <VerticalCardSection /> 
+ 
                 </Section>
 
                 <Section>
