@@ -5,7 +5,7 @@ import image from '../../../img/placeholder_circle_profile_520x520.jpg';
 
 
 const Wrapper = styled.div`
-    width: 390px;
+    width: 470px;
 `
 
 class VerticalCardSection extends Component {
