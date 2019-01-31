@@ -14,7 +14,8 @@ import Loading from "./Loading";
 import LinkWrapper from './LinkWrapper';
 import HorizontalCard from './../modules/HorizontalCard';
 import Breadcrumb from './Breacrumb';
-
+import SectionWithWave from './SectionWithWave';
+import HowItWorksSection from "./HowItWorksSection"
 export  {
     Footer,
     InternalLink,
@@ -32,4 +33,6 @@ export  {
     LinkWrapper,
     HorizontalCard,
     Breadcrumb,
+    SectionWithWave,
+    HowItWorksSection,
 }

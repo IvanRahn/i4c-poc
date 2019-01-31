@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, CauseCard, InternalLink} from "./../../../modules"
+import {SectionWrapper, CauseCard, InternalLink, Loading} from "./"
 import { connect } from 'react-redux';
-import {getContent} from "../../../../actions";
-import {Loading} from "./../../../modules"
+import {getContent} from "./../../actions";
 
 const H = styled.h1`
     width:100%;
