@@ -24,15 +24,6 @@ class causesHomePage extends Component {
                     <DonateSection  color="green"/>
                     <OurDonorSection />
                     <JoinSection />
-                    
-
-                    {/* {this.props.causes.map(causes => {
-                        
-                        return(
-                        <InternalLink key={causes._id} to={`cause/${causes.slug}`} text={causes.title} />
-                        )
-                    })} */}
-
                 </div>
             );
         } 
