@@ -4,6 +4,11 @@ import {SectionWrapper, Breadcrumb, Link} from './../../modules';
 import CardSection from './CardSection';
 import VerticalCardSection from './VerticalCardSection';
 
+const SectionWrapper2 = styled(SectionWrapper)`
+overflow: hidden;
+position: relative;
+min-height: 100vh;
+`
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -18,13 +23,27 @@ top: 0;
     top: 0;
 }
 `
-const Section = styled.div `
+const SectionLeft = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
     width: 50%;
-    height: ${props => props.height || "auto"};
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 `
+const SectionRight = styled.div `
+width: ${props => props.width || "100%"};
+@media (min-width: 768px){
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+`
+
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px;
@@ -37,15 +56,6 @@ const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
 
 `
-const BorderPMobile= styled.p`
-color: white;
-background-color: green;
-
-@media (min-width: 500px){
-    display: none;
-}
-`
-
 const BorderP = styled.p`
 display: none;
 
@@ -64,26 +74,29 @@ class PageOpener extends Component {
         
         return (
             <>
-            <SectionWrapper color={color} height= "auto" padding="0">
-                <Section height="100%">
-                    <BorderPMobile>
-                        <Breadcrumb>
-                            {link}
-                        </Breadcrumb>    
-                    </BorderPMobile>
+            <SectionWrapper2 color={color} height= "auto" padding="0">       
+                <SectionLeft height="-webkit-fill-available">
+                    
+                    <Breadcrumb>
+                        {link}
+                    </Breadcrumb>    
                     <ImageContainer src= {image} alt="Cherring man" />
                     <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
  
-                </Section>
+                </SectionLeft>
 
-                <Section>
+                <SectionRight>
                     <Wrapper>
-                        <BorderP>{link}</BorderP>
+                        <Breadcrumb><Link to="/google" text={link} /></Breadcrumb>
                         <h1>{heading}</h1> 
                         <P margin="70px">{text}</P>
+                        {/* <h1>{heading}</h1> 
+                        <P margin="70px">{text}</P>
+                        <h1>{heading}</h1> 
+                        <P margin="70px">{text}</P> */}
                     </Wrapper>               
-                </Section>
-            </SectionWrapper>
+                </SectionRight>
+            </SectionWrapper2>
             <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
             </>
 

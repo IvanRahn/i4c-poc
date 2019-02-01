@@ -11,9 +11,9 @@ padding: 0;
 h1 {
     margin-top: auto;
 }
-:last-of-type(button) {
+/* :last-of-type(button) {
     margin-top: auto;
-}
+} */
 `
 const Div = styled.div `
     padding: 52px 24px;
