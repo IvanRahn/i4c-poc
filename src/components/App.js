@@ -26,7 +26,7 @@ const Footer = lazy(() => import("./modules/Footer"))
 // }
 class App extends Component {
 
-
+  componentDidMount() {}
   render() {
 
     // if (browser && 
