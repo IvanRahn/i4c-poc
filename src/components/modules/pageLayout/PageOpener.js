@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from './../../modules';
+import {SectionWrapper, Breadcrumb, Link} from './../../modules';
 import CardSection from './CardSection';
 import VerticalCardSection from './VerticalCardSection';
-import Link from '../Link';
+
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -60,15 +60,19 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link, horizontalCard, verticalCard } = this.props;        
+        const { color, image, heading, text, link, horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState } = this.props;        
         
         return (
             <>
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section height="100%">
-                    <BorderPMobile>{link}</BorderPMobile>
+                    <BorderPMobile>
+                        <Breadcrumb>
+                            {link}
+                        </Breadcrumb>    
+                    </BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection verticalCard={verticalCard} /> 
+                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
  
                 </Section>
 
@@ -77,14 +81,10 @@ class PageOpener extends Component {
                         <BorderP>{link}</BorderP>
                         <h1>{heading}</h1> 
                         <P margin="70px">{text}</P>
-                        {/* <h2>The Dividends continously go to the blah blah blah blah blah</h2>
-                        <P margin="70px">Text</P>
-                        <P margin="70px">For more of what we do</P>
-                        <Link text="DOWNLOAD PDF" color="green" /> */}
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
-            <CardSection horizontalCard={horizontalCard} />
+            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
             </>
 
             

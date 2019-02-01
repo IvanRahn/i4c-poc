@@ -19,12 +19,12 @@ class OurDonorSection extends Component {
     }
     render() {
 
-        const {steps, stepsIsFetching, stepsError} = this.props;
-        if (stepsIsFetching) {
-            return <Loading/>
-        } else if (stepsError || !steps || !steps[0]) {
-            return <div>error</div>
-        }
+        const { color, content, isFetching, error} = this.props;        
+        if (isFetching) {
+            return (<Loading/>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
         
         return (
             <SectionWrapper height="auto">
@@ -36,12 +36,12 @@ class OurDonorSection extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    const {steps, stepsIsFetching, stepsError} = state.steps
-   return {
-        steps: steps,
-        stepsIsFetching: stepsIsFetching,
-        stepsError: stepsError,
-   }
+    const {content, isFetching, error} = state.aboutFirst
+    return {
+        content,
+        isFetching,
+        error,
+    }
 }
 export default connect(mapStateToProps, {
     getContent
