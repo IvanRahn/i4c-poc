@@ -10,7 +10,8 @@ flex-direction: column;
 text-align: center;
 padding: 0;
 position: relative;
-
+flex-wrap: nowrap;
+/* width: 100%; */
 button {
     margin: auto auto 0;
     @media only screen and (max-width: 500px) {
