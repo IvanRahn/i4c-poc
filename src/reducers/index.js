@@ -11,7 +11,8 @@ import aboutVolunteerSection from "./about_volunteer_section";
 import homePageTeamSectionReducer from "./home_page_team_section"; 
 import howItWorksStepsReducer from "./how_it_works_steps_reducer"; 
 import story_cause_reducer from "./story_cause_reducer";
-import causeHomeCard from "./cause_home_card"
+import causeHomeCard from "./cause_home_card"; 
+import howItWorksHomePageCard from "./how_it_works_home_page_card_reducer";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -27,4 +28,5 @@ export default combineReducers({
     teamSection: homePageTeamSectionReducer, 
     storycause: story_cause_reducer, 
     causeHomeCard: causeHomeCard,
+    howItWorksHomePageCard: howItWorksHomePageCard,
 });

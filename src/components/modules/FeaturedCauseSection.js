@@ -50,8 +50,8 @@ class FeacturedCauseSection extends Component {
                         to={`cause/${cause.slug}`}
                         CardHeading={cause.cardContent.heading} 
                         CardText={cause.cardContent.text} 
-                        CardImage={cause.cardImage?  
-                            cause.cardImage.secure_url 
+                        CardImage={cause.cardContent.image?  
+                            cause.cardContent.image.secure_url 
                             : 
                             null}  
                             />

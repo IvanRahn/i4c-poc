@@ -49,7 +49,7 @@ class CardSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causeHomeCard
+    const {content, isFetching, error} = state.howItWorksHomePageCard
     return {
         content,
         isFetching,

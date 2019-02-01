@@ -29,7 +29,7 @@ class MoreI4cSection extends Component {
                     key={cause._id}
                     CardHeading={cause.cardContent.heading}
                     CardText={cause.text} 
-                    CardImage={cause.cardImage.secure_url}  />
+                    CardImage={cause.cardContent.image.secure_url}  />
                     )
                 })}
                     
