@@ -13,6 +13,7 @@ import howItWorksStepsReducer from "./how_it_works_steps_reducer";
 import story_cause_reducer from "./story_cause_reducer";
 import causeHomeCard from "./cause_home_card"; 
 import howItWorksHomePageCard from "./how_it_works_home_page_card_reducer";
+import causeHomeVerticalCard from "./cause_home_card_vertical";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -29,4 +30,5 @@ export default combineReducers({
     storycause: story_cause_reducer, 
     causeHomeCard: causeHomeCard,
     howItWorksHomePageCard: howItWorksHomePageCard,
+    causeHomeVerticalCard: causeHomeVerticalCard,
 });

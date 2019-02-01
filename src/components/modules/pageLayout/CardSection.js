@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import styled from 'styled-components';
 import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
 import {SectionWrapper} from '../../modules';
-import image from '../../../img/placeholder_circle_profile_520x520.jpg';
 import { getContent } from '../../../actions';
 import { connect } from 'react-redux';
 
@@ -25,7 +24,7 @@ class CardSection extends Component {
         if (isFetching) {
             return ("loading")
             } else if (error || !content || !content[0]){
-                return <div>error</div>
+                return null
             }
 
         if(content){
@@ -36,6 +35,7 @@ class CardSection extends Component {
                         <Wrapper key={content._id}>
                             <SmallHorizontalCard
                             CardText={content.text}
+                            CardImage={content.image.secure_url}
                             />
                         </Wrapper>
                     )
