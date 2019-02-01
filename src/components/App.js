@@ -53,7 +53,7 @@ class App extends Component {
                 </Suspense>
               </Switch>
               </main>
-              <Suspense fallback=""> */}
+              <Suspense fallback="">
                 <Footer />
               </Suspense>
               </>
