@@ -15,14 +15,15 @@
     "react-scripts": "2.1.3",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
-    "styled-components": "^4.1.3"
+    "styled-components": "^4.1.3",
+    "babel-plugin-styled-components": "^1.10.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy-production": "git checkout development && npm run build && aws s3 sync build/ s3://i4c-web-poc"
+    "deploy-production": "npm run build && aws s3 sync build/ s3://i4c-web-poc"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,7 +35,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.0",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "jest": "^23.6.0",

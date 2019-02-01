@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
-import image from '../../../img/placeholder_circle_profile_520x520.jpg';
-
+import { getContent } from '../../../actions';
+import { connect } from 'react-redux';
 
 const Wrapper = styled.div`
     width: 470px;
@@ -10,19 +10,55 @@ const Wrapper = styled.div`
 
 class VerticalCardSection extends Component {
 
+    
+    componentDidMount () {
+        const {verticalCardApi, getContent} = this.props; 
+        getContent(verticalCardApi);    
+    }
+
     render() { 
-        if(false){
+        
+        const { content, isFetching, error} = this.props;
+        
+
+        if (isFetching) {
+            return ("loading")
+            } else if (error || !content || !content[0]){
+                return null
+            }
+
+        if(content){
             return (
-                <Wrapper>
-                    <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} />
-                    <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} /> 
-                    <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} /> 
-                    <SmallHorizontalCard CardText="Invesint for charity will do this blah" CardImage={image} />
-                </Wrapper> 
+                <>
+                    {content.map((content) => {
+                    return (
+                        <Wrapper key={content._id}>
+                            <SmallHorizontalCard
+                            CardText={content.text}
+                            CardImage={content.image.secure_url}
+                            />
+                        </Wrapper>
+                    )
+                    }) }
+                </>
+                
              );
             }
             return(null);
     }
 }
- 
-export default VerticalCardSection;
+
+const mapStateToProps = (state, props) => {
+    const key = props.verticalCardState
+    const {content, isFetching, error} = state[key] ? state[key] : state;
+    console.log(state)
+    return {
+        content,
+        isFetching,
+        error,
+    }
+}
+
+export default connect(mapStateToProps, {
+    getContent
+})(VerticalCardSection);

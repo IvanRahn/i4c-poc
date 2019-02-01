@@ -33,7 +33,7 @@ class CausePage extends Component {
     }
 const mapStateToProps = (state) => {
    
-    const {causes, causesIsFetching, causesError} = state.causes
+    const {causes, causesIsFetching, causesError} = state.cause
     return {
       causes,
       causesIsFetching,
