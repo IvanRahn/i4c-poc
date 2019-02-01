@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {SectionWrapper} from './../../modules';
 import CardSection from './CardSection';
 import VerticalCardSection from './VerticalCardSection';
-import Link from '../Link';
 
 const ImageContainer = styled.img`
 width: 100%;

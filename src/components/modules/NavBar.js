@@ -128,11 +128,9 @@ class NavBar extends Component {
     }
     componentDidUpdate () {
         if (this.state.width > "500" && this.main && this.footer) {
-            console.log('TCL: NavBar -> moveContent -> this.state.width', this.state)
             this.main.style.left = "";
             this.footer.style.left = "";
         } 
-        console.log(this.state)
     }
 
     updateDimensions = () => {

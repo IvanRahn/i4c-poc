@@ -52,7 +52,7 @@ main {
   }
   section:first-child {
     /* height: calc(100vh - 60px); */
-    height: auto;
+    /* height: auto; */
     @media only screen and (min-width: 500px) {
     height: calc(100vh - 110px);
     

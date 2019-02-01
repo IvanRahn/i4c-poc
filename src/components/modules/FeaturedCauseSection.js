@@ -50,8 +50,8 @@ class FeacturedCauseSection extends Component {
                         to={`cause/${cause.slug}`}
                         CardHeading={cause.cardContent.heading} 
                         CardText={cause.cardContent.text} 
-                        CardImage={cause.cardImage?  
-                            cause.cardImage.secure_url 
+                        CardImage={cause.cardContent.image?  
+                            cause.cardContent.image.secure_url 
                             : 
                             null}  
                             />
@@ -60,7 +60,7 @@ class FeacturedCauseSection extends Component {
                     return null
                 })}
                 <Div>
-                <InternalLink auto="auto" text="view every cause we care about" color="grey"/>
+                <InternalLink auto="auto" to="/cause" text="view every cause we care about" color="grey"/>
                 </Div>
             </SectionWrapper>
                     <SVG viewBox="-20 -20 100 100">
