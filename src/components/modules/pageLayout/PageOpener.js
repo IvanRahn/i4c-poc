@@ -60,7 +60,7 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link, horizontalCardApi, horizontalCardStore, verticalCardApi, verticalCardStore } = this.props;        
+        const { color, image, heading, text, link, horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState } = this.props;        
         
         return (
             <>
@@ -68,10 +68,11 @@ class PageOpener extends Component {
                 <Section height="100%">
                     <BorderPMobile>
                         <Breadcrumb>
-                        </Breadcrumb>    {link}
+                            {link}
+                        </Breadcrumb>    
                     </BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardStore={verticalCardStore}  /> 
+                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
  
                 </Section>
 
@@ -80,14 +81,10 @@ class PageOpener extends Component {
                         <BorderP>{link}</BorderP>
                         <h1>{heading}</h1> 
                         <P margin="70px">{text}</P>
-                        {/* <h2>The Dividends continously go to the blah blah blah blah blah</h2>
-                        <P margin="70px">Text</P>
-                        <P margin="70px">For more of what we do</P>
-                        <Link text="DOWNLOAD PDF" color="green" /> */}
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
-            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardStore={horizontalCardStore} />
+            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
             </>
 
             

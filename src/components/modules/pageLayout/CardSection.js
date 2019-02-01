@@ -49,8 +49,8 @@ class CardSection extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-    const {content, isFetching, error} = state.causeHomeCard
-    console.log(props);
+    const key = props.horizontalCardState
+    const {content, isFetching, error} = state[key]
     return {
         content,
         isFetching,

@@ -49,7 +49,7 @@ class VerticalCardSection extends Component {
 }
 
 const mapStateToProps = (state, props) => {
-    const {content, isFetching, error} = state.props.causeHomeVerticalCard
+    const {content, isFetching, error} = state
     return {
         content,
         isFetching,
