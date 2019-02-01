@@ -131,6 +131,7 @@ class NavBar extends Component {
             this.main.style.left = "";
             this.footer.style.left = "";
         } 
+        console.log(this.state)
     }
 
     updateDimensions = () => {
