@@ -119,13 +119,15 @@ class NavBar extends Component {
     componentDidMount() {
         this.updateDimensions()
         window.addEventListener('resize', this.updateDimensions)
+        window.onscroll =()=>{
+            this.setState({currentScrollHeight: window.scrollY})
+       }
     }
     componentWillUnmount() {
         window.removeEventListener('resize');
     }
     componentDidUpdate () {
         if (this.state.width > "500" && this.main && this.footer) {
-            console.log('TCL: NavBar -> moveContent -> this.state.width', this.state)
             this.main.style.left = "";
             this.footer.style.left = "";
         } 
@@ -159,8 +161,8 @@ class NavBar extends Component {
                 </label>
                 <NavCheckbox type="checkbox" onChange={this.moveContent}id="nav-checkbox"/>
                 <NavUl>
-                    <li> <InternalLink text="ABOUT US" to="/board-page" section="nav" location="homepage"/></li> 
-                    <li> <InternalLink text="HOW IT WORKS"to="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="ABOUT US" to="/about" section="nav" location="homepage"/></li> 
+                    <li> <InternalLink text="HOW IT WORKS"to="/howitworks"section="nav" location="homepage"/> </li>
                     <li> <InternalLink text="OUR IMPACT"to="#"section="nav" location="homepage"/> </li>
                     <li> <InternalLink text="CONTACT US"to="#"section="nav" location="homepage"/> </li>
                     <li> <InternalLink text="Login"to="#"section="nav" location="homepage"/> <svg viewBox="-20 -20 100 100">
