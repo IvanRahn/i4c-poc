@@ -4,8 +4,6 @@ import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
 import { getContent } from '../../../actions';
 import { connect } from 'react-redux';
 
-
-
 const Wrapper = styled.div`
     width: 470px;
 `
@@ -14,8 +12,8 @@ class VerticalCardSection extends Component {
 
     
     componentDidMount () {
-        const {verticalCard, getContent} = this.props; 
-        getContent(verticalCard);    
+        const {verticalCardApi, getContent} = this.props; 
+        getContent(verticalCardApi);    
     }
 
     render() { 
@@ -50,8 +48,9 @@ class VerticalCardSection extends Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causeHomeVerticalCard
+const mapStateToProps = (state, props) => {
+    const key = props.verticalCardState
+    const {content, isFetching, error} = state[key] ? state[key] : state;
     console.log(state)
     return {
         content,

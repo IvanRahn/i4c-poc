@@ -14,11 +14,13 @@ const H = styled.h1`
 class MoreI4cSection extends Component {
     render() {
         const {color, causes, causesError, causesIsFetching} = this.props;
+		
         if (causesIsFetching) {
             return <Loading/>
-        } else if (causesError || !causes) {
+        } else if (causesError || !causes || !causes[0]) {
             return <div>Error</div>
         }
+        console.log('TCL: MoreI4cSection -> render -> causes', causes)
         return (
             <>
             <SectionWrapper height="auto" color={color}>
@@ -29,7 +31,7 @@ class MoreI4cSection extends Component {
                     key={cause._id}
                     CardHeading={cause.cardContent.heading}
                     CardText={cause.text} 
-                    CardImage={cause.cardImage.secure_url}  />
+                    CardImage={cause.cardContent.image.secure_url}  />
                     )
                 })}
                     
