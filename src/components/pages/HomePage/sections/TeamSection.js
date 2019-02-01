@@ -47,7 +47,6 @@ class TeamSection extends Component {
     }
     render() { 
         const {teamSection, teamSectionError, teamSectionIsFetching} = this.props;
-		console.log('TCL: TeamSection -> render -> teamSection', teamSection)
         if (teamSectionIsFetching) {
             return <Loading/>
         } else if (teamSectionError || !teamSection || !teamSection[0]) {

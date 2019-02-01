@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import {SectionWrapper, ScrollButton} from "../../../modules";
 import {connect} from "react-redux";
 import {getContent} from "../../../../actions";
-import Background from "./../../../../img/placeholder_background_wave.png"
 import {Loading} from "./../../../modules"
 
 const ImpactSectionWrapper = styled(SectionWrapper)`
@@ -11,7 +10,8 @@ flex-direction: column;
 text-align: center;
 padding: 0;
 position: relative;
-
+flex-wrap: nowrap;
+/* width: 100%; */
 button {
     margin: auto auto 0;
     @media only screen and (max-width: 500px) {
@@ -25,10 +25,7 @@ const Div = styled.div `
     padding: 52px 24px;
     /* margin: auto auto; */
 `
-const Img = styled.img `
-    width: 100%;
-    margin: auto auto 0;
-`
+
 
 class ImpactSection extends Component {
     componentDidMount() {
@@ -46,7 +43,8 @@ class ImpactSection extends Component {
         
         return (
             <>
-            <ImpactSectionWrapper height="100vh" aria-live="polite" color={color}>
+            
+            <ImpactSectionWrapper height="calc(100vh - 60px)" aria-live="polite" color={color}>
             <Div>
                 <h1>{impact[0].heading}</h1>
                 <p>{impact[0].subtext}</p>

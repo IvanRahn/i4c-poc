@@ -1,6 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from './../../modules';
+import {SectionWrapper, Breadcrumb, Link} from './../../modules';
+import CardSection from './CardSection';
+import VerticalCardSection from './VerticalCardSection';
+
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -57,14 +60,20 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link } = this.props;        
+        const { color, image, heading, text, link, horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState } = this.props;        
         
         return (
-            
+            <>
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section height="100%">
-                    <BorderPMobile>{link}</BorderPMobile>
+                    <BorderPMobile>
+                        <Breadcrumb>
+                            {link}
+                        </Breadcrumb>    
+                    </BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
+                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
+ 
                 </Section>
 
                 <Section>
@@ -75,6 +84,11 @@ class PageOpener extends Component {
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
+            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
+            </>
+
+            
+        
         )
     } 
 }

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PageOpener from '../../modules/pageLayout/PageOpener';
 
 
 class test extends Component {
@@ -6,7 +7,7 @@ class test extends Component {
     render() { 
         return ( 
             <>
-            <h2>Hello</h2>
+            <PageOpener/> 
             </>
          );
     }
