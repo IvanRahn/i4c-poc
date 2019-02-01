@@ -50,7 +50,7 @@ class CardSection extends Component {
 
 const mapStateToProps = (state, props) => {
     const key = props.horizontalCardState
-    const {content, isFetching, error} = state[key]
+    const {content, isFetching, error} = state[key] ? state[key] : state;
     return {
         content,
         isFetching,

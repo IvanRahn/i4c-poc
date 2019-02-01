@@ -50,7 +50,8 @@ class VerticalCardSection extends Component {
 
 const mapStateToProps = (state, props) => {
     const key = props.verticalCardState
-    const {content, isFetching, error} = state[key]
+    const {content, isFetching, error} = state[key] ? state[key] : state;
+    console.log(state)
     return {
         content,
         isFetching,
