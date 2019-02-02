@@ -30,7 +30,7 @@ class OurDonorSection extends Component {
             <SectionWrapper height="auto">
                 <H>Our Donors/ Charity Stories</H>
 
-                <HorizontalCard />
+                <HorizontalCard CardHeading="This is the heading" CardText="<p>This is some text</p>"/>
             </SectionWrapper>
         )
     }

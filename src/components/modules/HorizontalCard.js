@@ -11,7 +11,7 @@ margin: 48px auto 0;
 width: 100%;
 margin: 0px 24px;
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 1025px) {
     display: flex;
     flex-direction: row;
     overflow: hidden;
@@ -25,7 +25,7 @@ const DivContainer = styled.div`
 width: 100%;
 padding: 2px 20px;
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 1025px) {
     width: 50%;
     padding: 40px 80px 0px 0px;
  }
@@ -37,7 +37,7 @@ display: flex;
 justify-content: center;
 align-items: center;
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 1025px) {
     width: 50%;
     padding: 2px 16px;
  }
@@ -48,7 +48,7 @@ height: 250px;
 width: 250px; 
 border-radius: 100%;
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 1025px) {
     height: 450px; 
     width: 450px; 
     border-radius: 100%;
