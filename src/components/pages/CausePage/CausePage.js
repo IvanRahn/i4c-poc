@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
-
+import PageOpener from '../../modules/pageLayout/PageOpener';
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -21,12 +21,11 @@ class CausePage extends Component {
             return <div>Error</div>
         }
         const cause = causes.filter(cause => cause.slug === slug)[0]
-        console.log(this.props)
+		console.log('TCL: CausePage -> render -> cause', cause)
         return (
            <>
-               <h1>{cause.pageContent.heading}</h1>
+           <PageOpener/>
 
-               <p>{cause.pageContent.text}</p>
            </>
         )
             }
