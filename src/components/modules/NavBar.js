@@ -148,7 +148,7 @@ class NavBar extends Component {
     //     this.nav.style.opacity = 0;
     // }
     componentWillUnmount() {
-        window.removeEventListener('resize');
+        window.removeEventListener('resize', this.updateDimensions, true);
     }
     componentDidUpdate () {
         if (this.state.width > "900" && this.main && this.footer) {

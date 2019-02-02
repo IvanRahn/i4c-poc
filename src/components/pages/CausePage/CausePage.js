@@ -24,7 +24,15 @@ class CausePage extends Component {
 		console.log('TCL: CausePage -> render -> cause', cause)
         return (
            <>
-           <PageOpener/>
+           <PageOpener 
+           heading={cause.cardContent.heading}
+           image={cause.cardContent.image.secure_url}
+           link={[
+            {to: "/cause", text:"Causes we care about"}, 
+            {to: "#", text: cause.title}
+        ]}
+            
+           />
 
            </>
         )

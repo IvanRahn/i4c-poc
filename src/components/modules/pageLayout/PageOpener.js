@@ -60,17 +60,16 @@ display: none;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link, horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState } = this.props;        
+        const { color, image, heading, text, link,  horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState } = this.props;        
         
         return (
             <>
             <SectionWrapper color={color} height= "auto" padding="0">
                 <Section height="100%">
-                    <BorderPMobile>
                         <Breadcrumb>
-                            {link}
+                            <Link to={link[0].to} text={link[0].text} />
+                            <Link to={link[1].to} text={link[1].text} />  
                         </Breadcrumb>    
-                    </BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
                     <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
  
@@ -78,7 +77,9 @@ class PageOpener extends Component {
 
                 <Section>
                     <Wrapper>
-                        <BorderP>{link}</BorderP>
+                        <Breadcrumb>
+                            {/* <Link to={link} text={text} />  */}
+                        </Breadcrumb>  
                         <h1>{heading}</h1> 
                         <P margin="70px">{text}</P>
                     </Wrapper>               
