@@ -3,7 +3,9 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
-import PageOpener from '../../modules/pageLayout/PageOpener';
+import PageOpener from '../../modules/pageLayout/PageOpenerV2';
+import CardSection from "./../../modules/pageLayout/CardSectionV2"
+
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -21,18 +23,26 @@ class CausePage extends Component {
             return <div>Error</div>
         }
         const cause = causes.filter(cause => cause.slug === slug)[0]
-		console.log('TCL: CausePage -> render -> cause', cause)
+        console.log('TCL: CausePage -> render -> cause', cause)
+        const impactList = Object.values(cause.impact)
+		
         return (
            <>
            <PageOpener 
-           heading={cause.cardContent.heading}
-           image={cause.cardContent.image.secure_url}
-           link={[
+           heading={cause.topSection.heading}
+           image={cause.topSection.image.secure_url}
+           text={cause.topSection.text}
+           breadcrumbs={[
             {to: "/cause", text:"Causes we care about"}, 
             {to: "#", text: cause.title}
-        ]}
             
-           />
+        ]}
+            >
+            {/* always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment (<></>) */}
+           <CardSection display="desktop" content={impactList}/>
+           <CardSection content={impactList}/>
+           <CardSection display="mobile" content={[{image: {secure_url:"asdfasdf"}, text: "qrqwerqwer"}]}/>
+           </PageOpener>
 
            </>
         )

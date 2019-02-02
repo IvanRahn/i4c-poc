@@ -1,21 +1,19 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper, Breadcrumb, Link, HTMLContent} from './../../modules';
-import CardSection from './CardSection';
-import VerticalCardSection from './VerticalCardSection';
 
 
 const ImageContainer = styled.img`
 width: 100%;
 height: auto; 
 position: relative;
-top: -110px;
+top: 0;
 
 @media (min-width: 500px){
-    width: 670px;
-    height: 500px; 
+    width: 100%;
+    height: auto; 
     position: relative;
-    top: 0;
+    /* top: -110px; */
 }
 `
 const Section = styled.div `
@@ -28,65 +26,46 @@ width: ${props => props.width || "100%"};
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px;
-
 @media (min-width: 768px){
-    margin-top: 200px;
+    margin-top: 20%;
 }
 `
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
+// const Div = styled.div`
+// display: flex;
+// flex-wrap: wrap;
 
-`
-const BorderPMobile= styled.p`
-color: white;
-background-color: green;
-
-@media (min-width: 500px){
-    display: none;
-}
-`
-
-const BorderP = styled.p`
-display: none;
-
-@media (min-width: 500px){
-    display: block;
-    color: white;
-    background-color: green;
-}
-
-`
+// `
 
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs,  horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState, children } = this.props;        
-		console.log('TCL: PageOpener -> render -> children ', children )
-        
+        const { color, image, heading, text, breadcrumbs, children } = this.props;        
         return (
             <>
-            <SectionWrapper color={color} height= "auto" padding="0">
+            <SectionWrapper align_start color={color} height= "auto" padding="0">
                 <Section height="100%">
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 
                         </Breadcrumb>    
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
- 
+                    {/* first received child is a vertical list */}
+                    {children[0]}
                 </Section>
-
                 <Section>
                     <Wrapper>
                         <Breadcrumb>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null}             
                          </Breadcrumb>  
                         <h1>{heading}</h1> 
-                        {/* <P margin="70px">{text}</P> */}
-                        <HTMLContent content={text} />
+                        <HTMLContent content={text}/>
                     </Wrapper>               
                 </Section>
+                        {/* second received child is horizontal list*/}
+                        {children[1]}
+                        {/* third received child is  vertical list again, but for desktop view it is rendered here*/}
+                        {children[2]}
             </SectionWrapper>
-            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
+            
             </>  
         )
     } 
