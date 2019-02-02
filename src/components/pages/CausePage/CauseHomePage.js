@@ -13,7 +13,7 @@ import {Loading} from '../../modules';
 class causesHomePage extends Component {
     
     componentDidMount() {
-        this.props.getContent("causes")
+        this.props.getContent("causes/homepage")
         
     }
 
@@ -21,7 +21,7 @@ class causesHomePage extends Component {
         if(this.props.causes) {
             return (
                 <div>
-                    <PageOpener text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." image={image} heading="Blah" link="yo" horizontalCardApi="causes/homepage-card" horizontalCardState="causeHomeCard" />
+                    {/* <PageOpener text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." image={image} heading="Blah" link="yo" horizontalCardApi="causes/homepage-card" horizontalCardState="causeHomeCard" /> */}
                     <DonateSection  color="green"/>
                     <OurDonorSection />
                     <JoinSection />
@@ -30,7 +30,7 @@ class causesHomePage extends Component {
         } 
         
         return(
-            <Loading />
+            "hello"
         )
     }
     

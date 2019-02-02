@@ -12,6 +12,7 @@ import homePageTeamSectionReducer from "./home_page_team_section"
 import howItWorksStepsReducer from "./how_it_works_steps_reducer"
 import causeHomeCard from "./cause_home_card"
 import causeHomeVerticalCard from "./cause_home_card_vertical";
+import causeHomePageFirstSection from "./cause_homepage_first_section";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -27,4 +28,5 @@ export default combineReducers({
     teamSection: homePageTeamSectionReducer,
     causeHomeCard: causeHomeCard,
     causeHomeVerticalCard: causeHomeVerticalCard,
+    causeHomePageFirstSection: causeHomePageFirstSection,
 });

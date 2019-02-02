@@ -56,16 +56,6 @@ const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
 
 `
-const BorderP = styled.p`
-display: none;
-
-@media (min-width: 500px){
-    display: block;
-    color: white;
-    background-color: green;
-}
-
-`
 
 class PageOpener extends Component {
 
@@ -78,7 +68,7 @@ class PageOpener extends Component {
                 <SectionLeft height="-webkit-fill-available">
                     
                     <Breadcrumb>
-                        {link}
+                    <Link to="/google" text={link} />
                     </Breadcrumb>    
                     <ImageContainer src= {image} alt="Cherring man" />
                     <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
