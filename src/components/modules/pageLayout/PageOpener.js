@@ -17,11 +17,19 @@ position: relative;
 top: 0;
 
 @media (min-width: 500px){
+    width: 550px;
+    height: 400px; 
+    position: relative;
+    top: 0;
+}
+
+@media (min-width: 1025px){
     width: 670px;
     height: 500px; 
     position: relative;
     top: 0;
 }
+
 `
 const SectionLeft = styled.div `
 width: ${props => props.width || "100%"};

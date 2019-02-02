@@ -24,6 +24,7 @@ margin: 0px 24px;
 const DivContainer = styled.div`
 width: 100%;
 padding: 2px 20px;
+text-align: center;
 
 @media only screen and (min-width: 1025px) {
     width: 50%;
