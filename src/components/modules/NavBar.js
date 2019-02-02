@@ -155,8 +155,10 @@ class NavBar extends Component {
             this.main.style.left = "";
             this.footer.style.left = "";
         } 
+
         const checkbox = document.querySelector("#nav-checkbox")
         checkbox.checked = false; 
+
     }
     
     updateDimensions = () => {
