@@ -23,10 +23,9 @@ p {
 const ImageContainer = styled.img`
 height: 180px; 
 width: 180px; 
-/* max-width: 250px;  */
-/* max-height: 250px; */
 border-radius: 100%;
-align-self: flex-end;
+align-self: ${props => props.position || "flex-end"};
+
 @media only screen and (min-width: 500px) {
     align-self: inherit;
 }

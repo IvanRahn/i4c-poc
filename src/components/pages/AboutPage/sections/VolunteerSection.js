@@ -8,7 +8,6 @@ import {Loading} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
-    text-align: center;
 `
 
 class VolunteerSection extends Component {
@@ -29,7 +28,7 @@ class VolunteerSection extends Component {
 
         return (
            <SectionWrapper height="auto">
-                <H>Now we have volunteers</H>
+                <H>Now we have volunteers:</H>
 
                 {content.map((content) => {
                         return (
@@ -38,6 +37,7 @@ class VolunteerSection extends Component {
                             CardText={content.card.text}
                             CardImage={content.card.pageImage ? content.card.pageImage.secure_url : null}
                             CardHeading={content.card.heading}
+                            position="flex-start"
                             />
                         )
                 }) }
