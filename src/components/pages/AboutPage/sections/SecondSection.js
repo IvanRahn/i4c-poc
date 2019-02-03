@@ -17,24 +17,14 @@ class SecondSection extends Component {
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
-        
+            
+            const information = [{heading: `<h3>${heading}</h3>`, text: text}, {secondHeading: `<h2>${secondHeading}</h2>`, secondText= secondText}]
         return (
             <>
                 <PageOpenerV2
                 marginTop="0"
                 image={content[0].image.secure_url}
-                secondHeading={content[0].contentTop.heading}
-                secondText={content[0].contentTop.text}
-                thirdHeading={content[0].contentMiddle.heading}
-                thirdText={content[0].contentMiddle.text}
-                fourthHeading={content[0].contentBottom.heading}
-                fourthText={content[0].contentBottom.text}
-                firstLinkText={content[0].linksBottom.link.text}
-                firstLinkColor={content[0].linksBottom.link.color}
-                firstLinkLocation={content[0].linksBottom.link.href}
-                secondLinkText={content[0].linksBottom.link2.text}
-                secondLinkColor={content[0].linksBottom.link2.color}
-                secondLinkLocation={content[0].linksBottom.link2.href}
+                c
                 >
                     <></>
                 </PageOpenerV2>

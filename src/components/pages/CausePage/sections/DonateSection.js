@@ -9,20 +9,20 @@ import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
 const H = styled.h1`
 width: 100%;
 text-align: center;
-/* margin-top: 120px; */
 `
 class DonateSection extends Component {
     componentDidMount() {
-        this.props.getContent("HOWITWORKSSTEPS")
+        this.props.getContent("causes/homepage-card")
     }
     render() {
 
-        const {color, steps, stepsIsFetching, stepsError} = this.props;
-        if (stepsIsFetching) {
-            return <Loading/>
-        } else if (stepsError || !steps || !steps[0]) {
-            return <div>error</div>
-        }
+        const {color, content, isFetching, error} = this.props;        
+        if (isFetching) {
+            return (<Loading/>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
+        
         
         return (
             <>
@@ -30,23 +30,18 @@ class DonateSection extends Component {
             <SectionWrapper id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
                 <H>Donate once, give forever</H>
                 <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
             </SectionWrapper>
             </>
         )
     }
 }
 const mapStateToProps = (state) => {
-    const {steps, stepsIsFetching, stepsError} = state.steps
-   return {
-        steps: steps,
-        stepsIsFetching: stepsIsFetching,
-        stepsError: stepsError,
-   }
+    const {content, isFetching, error} = state.aboutFirst
+    return {
+        content,
+        isFetching,
+        error,
+    }
 }
 export default connect(mapStateToProps, {
     getContent

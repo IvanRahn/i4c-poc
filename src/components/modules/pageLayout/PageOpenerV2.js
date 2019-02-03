@@ -33,7 +33,6 @@ padding: 48px;
 `
 
 const H2 = styled.h2`
-margin-top: 80px;
 &:empty{
     display: none;
 }
@@ -52,8 +51,7 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs, children, secondHeading, secondText, thirdHeading, thirdText, fourthHeading, fourthText, firstLinkText, firstLinkColor, firstLinkLocation, secondLinkText, secondLinkColor,
-        secondLinkLocation  } = this.props;        
+        const { color, image, breadcrumbs, children, link, marginTop,   } = this.props;        
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -67,7 +65,7 @@ class PageOpener extends Component {
                     
                 </Section>
                 <Section>
-                    <Wrapper>
+                    <Wrapper marginTop={marginTop}>
                         <Breadcrumb>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null}             
                          </Breadcrumb>  
