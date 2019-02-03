@@ -12,7 +12,6 @@ class SecondSection extends Component {
 
     render () {
         const { color, content, isFetching, error} = this.props;        
-		console.log('TCL: SecondSection -> render -> content', content)
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

@@ -18,8 +18,6 @@ class VolunteerSection extends Component {
 
     render() {
         const {content, isFetching, error} = this.props;
-        console.log(content)
-
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

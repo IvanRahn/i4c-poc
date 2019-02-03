@@ -14,8 +14,8 @@ class FirstSection extends Component {
     }
 
     render () {
-        const { color, content, isFetching, error} = this.props;        
-		console.log('TCL: FirstSection -> render -> content', content)
+        const { content, isFetching, error} = this.props;
+        console.log(content)        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -25,9 +25,15 @@ class FirstSection extends Component {
         return (
             <>
                 <PageOpenerV2
-                heading="heading"
-                image={image}
-                text="always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment" 
+                heading={content[0].contentTop.heading}
+                image={content[0].image.secure_url}
+                text={content[0].contentTop.text}
+                secondHeading={content[0].contentBottom.heading}
+                secondText={content[0].contentBottom.text}
+                firstLinkText={content[0].link.text}
+                firstLinkColor={content[0].link.color} 
+                firstLinkLocation={content[0].link.location}
+
                 breadcrumbs={[
                 {to: "/cause", text:"Causes we care about"}, 
                 {to: "#", text: "Hello"}

@@ -12,8 +12,7 @@ class LastSection extends Component {
     }
 
     render () {
-        const { content, isFetching, error} = this.props;
-        console.log("Over here", content)        
+        const { content, isFetching, error} = this.props;       
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

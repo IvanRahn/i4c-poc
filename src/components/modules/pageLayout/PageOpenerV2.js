@@ -52,7 +52,8 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs, children, secondHeading, secondText, thirdHeading, thirdText, fourthHeading, fourthText } = this.props;        
+        const { color, image, heading, text, breadcrumbs, children, secondHeading, secondText, thirdHeading, thirdText, fourthHeading, fourthText, firstLinkText, firstLinkColor, firstLinkLocation, secondLinkText, secondLinkColor,
+        secondLinkLocation  } = this.props;        
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -83,8 +84,8 @@ class PageOpener extends Component {
                         <HTMLContent content={fourthText}/>
 
                         <LinkContainer>
-                            <InternalLink text="DOWNLOAD PDF" color="green" />
-                            <InternalLink text="DOWNLOAD PDF" color="green" />
+                            <InternalLink text={firstLinkText} color={firstLinkColor} location={firstLinkLocation}/>
+                            <InternalLink text={secondLinkText} color={secondLinkColor} location={secondLinkLocation}/>
                         </LinkContainer>
 
                     </Wrapper>               
