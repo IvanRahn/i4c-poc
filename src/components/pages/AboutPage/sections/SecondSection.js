@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
 import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
@@ -14,7 +13,6 @@ class SecondSection extends Component {
     render () {
         const { color, content, isFetching, error} = this.props;        
 		console.log('TCL: SecondSection -> render -> content', content)
-        // console.log(content)
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

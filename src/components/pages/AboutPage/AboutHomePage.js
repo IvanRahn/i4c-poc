@@ -23,9 +23,6 @@ const AboutHomePage = (props) =>  {
                 <VolunteerSection />
                 <LastSection />
                 <CenteredContent />
-                <div>
-                    <HorizontalCard />
-                </div>
             </div>
         );
     }

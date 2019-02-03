@@ -27,7 +27,7 @@ class VolunteerSection extends Component {
             }
 
         return (
-           <SectionWrapper height="auto">
+           <SectionWrapper height="auto" padding="52px 24px">
                 <H>Now we have volunteers:</H>
 
                 {content.map((content) => {
