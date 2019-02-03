@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from '../modules';
+import SectionWrapper from './SectionWrapper';
 import InternalLink from './InternalLink';
-
 const ImpactSectionWrapper = styled(SectionWrapper)`
+display: flex;
 flex-direction: column;
 text-align: center;
 width: 100%;
@@ -18,9 +18,7 @@ h1 {
 const Div = styled.div `
     padding: 52px 24px;
 `
-
 class CenteredContent extends Component {
-
     
     render () {
         const {color} = this.props;
@@ -36,10 +34,7 @@ class CenteredContent extends Component {
                     <InternalLink text="Join" color="green" />
                 </Div>
             </ImpactSectionWrapper>
-
         )
     } 
 }
-
-
 export default CenteredContent

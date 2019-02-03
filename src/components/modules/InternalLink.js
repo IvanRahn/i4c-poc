@@ -18,22 +18,6 @@ const ButtonLink = styled(Link)`
     }
     `
 
-    
-// function StyledLink({className, section, text, location, color, to, auto}) {
-    
-//         return (
-//         <ButtonLink 
-//             className={className}
-//             auto={auto} 
-//             to={`${to}`} 
-//             color={color}
-//             location={location}
-//             section={section}
-//             >
-//                 {text}
-//         </ButtonLink>
-//         )
-//     }
   
 export default ButtonLink;
 

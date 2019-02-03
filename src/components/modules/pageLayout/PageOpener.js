@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Link} from './../../modules';
+import {SectionWrapper, Breadcrumb, Link, HTMLContent} from './../../modules';
 import CardSection from './CardSection';
 import VerticalCardSection from './VerticalCardSection';
 
@@ -14,7 +14,7 @@ const ImageContainer = styled.img`
 width: 100%;
 height: auto; 
 position: relative;
-top: 0;
+top: -110px;
 
 @media (min-width: 500px){
     width: 550px;
@@ -68,16 +68,16 @@ margin-bottom: ${props => props.margin || "0px"};
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, link, horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState } = this.props;        
+        const { color, image, heading, text, breadcrumbs,  horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState, children } = this.props;        
+		console.log('TCL: PageOpener -> render -> children ', children )
         
         return (
             <>
-            <SectionWrapper2 color={color} height= "auto" padding="0">       
-                <SectionLeft height="-webkit-fill-available">
-                    
-                    <Breadcrumb>
-                    <Link to="/google" text={link} />
-                    </Breadcrumb>    
+            <SectionWrapper2 color={color} height= "auto" padding="0">
+                <SectionLeft height="100%">
+                        <Breadcrumb mobile>
+                            {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 
+                        </Breadcrumb>    
                     <ImageContainer src= {image} alt="Cherring man" />
                     <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
  
@@ -85,21 +85,17 @@ class PageOpener extends Component {
 
                 <SectionRight>
                     <Wrapper>
-                        <Breadcrumb><Link to="/google" text={link} /></Breadcrumb>
+                        <Breadcrumb>
+                            {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null}             
+                         </Breadcrumb>  
                         <h1>{heading}</h1> 
-                        <P margin="70px">{text}</P>
-                        {/* <h1>{heading}</h1> 
-                        <P margin="70px">{text}</P>
-                        <h1>{heading}</h1> 
-                        <P margin="70px">{text}</P> */}
+                        {/* <P margin="70px">{text}</P> */}
+                        <HTMLContent content={text} />
                     </Wrapper>               
                 </SectionRight>
             </SectionWrapper2>
             <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
-            </>
-
-            
-        
+            </>  
         )
     } 
 }

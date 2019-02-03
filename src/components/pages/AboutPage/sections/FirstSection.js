@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import {SectionWrapper, InternalLink, Card} from '../../../modules';
-import PageOpener from '../../../modules/pageLayout/PageOpener';
+import PageOpenerV2 from '../../../modules/pageLayout/PageOpenerV2';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
+import image from '../../../../img/handshake.jpg'
 
 
 class FirstSection extends Component {
@@ -22,25 +23,19 @@ class FirstSection extends Component {
             }
         
         return (
-            <PageOpener />
-            // <SectionWrapper color={color}>
-            //     <Section>
-            //         <ImageContainer src= {content[0].image? content[0].image.secure_url : image} alt="Cherring man" />
-
-            //         <Card CardHeading={content[0].card.heading} CardText={content[0].card.text} CardImage={content[0].card.pageImage? content[0].card.pageImage.secure_url: image} display="flex" />
-            //     </Section>
-
-            //     <Section>
-            //         <Wrapper>
-            //             <BorderP>{content[0].linkTop.text}</BorderP>
-            //             <h1>{content[0].contentTop.heading}</h1> 
-            //             <P margin="70px">{content[0].contentTop.text}</P>
-            //             <h2>{content[0].contentBottom.heading}</h2>
-            //             <P margin="20px">{content[0].contentBottom.text}</P>
-            //             <InternalLink text={content[0].contentBottom.link.text} color={content[0].contentBottom.link.color} href={content[0].contentBottom.link.href} />
-            //         </Wrapper>               
-            //     </Section>
-            // </SectionWrapper>
+            <>
+                <PageOpenerV2
+                heading="heading"
+                image={image}
+                text="always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment" 
+                breadcrumbs={[
+                {to: "/cause", text:"Causes we care about"}, 
+                {to: "#", text: "Hello"}
+                ]}
+                >
+                    <></>
+                </PageOpenerV2>
+            </>
         )
     } 
 }

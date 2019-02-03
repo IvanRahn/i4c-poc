@@ -8,7 +8,6 @@ class test extends Component {
         return ( 
             <>
             <PageOpener/> 
-            {/* <SmallHorizontalCard /> */}
             </>
          );
     }

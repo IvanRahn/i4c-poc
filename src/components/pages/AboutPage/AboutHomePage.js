@@ -8,6 +8,7 @@ import PageOpener from '../../modules/pageLayout/PageOpener';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
 
+
 import HorizontalCard from '../../modules/HorizontalCard';
 
 const AboutHomePage = (props) =>  {
