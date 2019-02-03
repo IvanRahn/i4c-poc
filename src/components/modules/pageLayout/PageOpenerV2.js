@@ -28,7 +28,7 @@ const Wrapper = styled.div`
 text-align: left;
 padding: 48px;
 @media (min-width: 768px){
-    margin-top: 20%;
+    margin-top: ${props => props.marginTop || "20%"};
 }
 `
 
@@ -37,8 +37,14 @@ margin-top: 80px;
 &:empty{
     display: none;
 }
-
 `
+const H2Bold = styled.h2`
+margin-top: 80px;
+&:empty{
+    display: none;
+}
+`
+
 const LinkContainer = styled.div`
 margin-top: 30px;
 `
@@ -46,7 +52,7 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs, children, apple } = this.props;        
+        const { color, image, heading, text, breadcrumbs, children, secondHeading, secondText, thirdHeading, thirdText } = this.props;        
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -66,15 +72,15 @@ class PageOpener extends Component {
                         <h1>{heading}</h1> 
                         <HTMLContent content={text}/>
 
-                        {/* <H2>{heading}</H2>
-                        <HTMLContent content={text}/> */}
+                        <H2>{secondHeading}</H2>
+                        <HTMLContent content={secondText}/>
 
-                        <H2>{apple}</H2>
-                        <HTMLContent content={null}/>
-                        
+                        <H2Bold>{thirdHeading}</H2Bold>
+                        <HTMLContent content={thirdText}/>
+
                         <LinkContainer>
                             <InternalLink text="DOWNLOAD PDF" color="green" />
-                            {/* <InternalLink text="DOWNLOAD PDF" color="green" /> */}
+                            <InternalLink text="DOWNLOAD PDF" color="green" />
                         </LinkContainer>
 
                     </Wrapper>               

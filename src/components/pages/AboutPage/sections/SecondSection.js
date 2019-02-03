@@ -1,36 +1,10 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, InternalLink} from '../../../modules';
 import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
-
-
-const ImageContainer = styled.img`
-height: 480px; 
-width: auto; 
-`
-const BrandContainer = styled.div`
-
-`
-
-const Section = styled.div `
-width: ${props => props.width || "100%"};
-text-align: center;
-height: 100%;
-@media (min-width: 768px){
-    width: 50%;
-}
-`
-const Wrapper = styled.div`
-text-align: left;
-padding-right: 180px;
-`
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
-`
-
+import PageOpenerV2 from "../../../modules/pageLayout/PageOpenerV2";
 
 class SecondSection extends Component {
     componentDidMount () {
@@ -48,30 +22,16 @@ class SecondSection extends Component {
             }
         
         return (
-            <SectionWrapper color={color} height="auto">
-                <Section>
-                    <ImageContainer src= {content[0].image? content[0].image.secure_url: image} />
-                    <BrandContainer>
-                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url}  alt=""/>
-                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} alt=""/>
-                    </BrandContainer>
-                </Section>
-
-                <Section>
-                    <Wrapper>
-                        
-                        <h2>{content[0].contentTop.heading}</h2> 
-                        <P margin="50px">{content[0].contentTop.text}</P>
-                        <h2>{content[0].contentMiddle.heading}</h2>
-                        <P margin="50px">{content[0].contentMiddle.text}.</P>
-                        <h2>{content[0].contentBottom.heading}</h2>
-                        <P margin="30px">{content[0].contentBottom.text}</P>
-                        <InternalLink text="SHOUT OUT" />
-                        <InternalLink text="SHOUT OUT" />
-                        
-                    </Wrapper>               
-                </Section>
-            </SectionWrapper>
+            <>
+                <PageOpenerV2
+                marginTop="1%"
+                secondHeading="heading"
+                image={image}
+                secondText="always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment" 
+                >
+                    <></>
+                </PageOpenerV2>
+            </>
         )
     } 
 }

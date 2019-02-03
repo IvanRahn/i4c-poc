@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, InternalLink} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
-import {Loading} from "./../../../modules"
+import {Loading} from "../../../modules"
 
 const ImageContainer = styled.img`
 height: auto; 
@@ -28,7 +28,7 @@ const P = styled.p`
 margin-bottom: ${props => props.margin || "0px"};
 `
 
-class ThirdSection extends Component {
+class LastSection extends Component {
     componentDidMount () {
         this.props.getContent("about/third-section");    
     }
@@ -72,5 +72,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(ThirdSection);
+})(LastSection);
 
