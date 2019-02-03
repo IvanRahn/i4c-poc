@@ -52,7 +52,7 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs, children, secondHeading, secondText, thirdHeading, thirdText } = this.props;        
+        const { color, image, heading, text, breadcrumbs, children, secondHeading, secondText, thirdHeading, thirdText, fourthHeading, fourthText } = this.props;        
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -63,6 +63,7 @@ class PageOpener extends Component {
                     <ImageContainer src= {image} alt="Cherring man" />
                     {/* first received child is a vertical list */}
                     {children[0]}
+                    
                 </Section>
                 <Section>
                     <Wrapper>
@@ -77,6 +78,9 @@ class PageOpener extends Component {
 
                         <H2Bold>{thirdHeading}</H2Bold>
                         <HTMLContent content={thirdText}/>
+
+                        <H2Bold>{fourthHeading}</H2Bold>
+                        <HTMLContent content={fourthText}/>
 
                         <LinkContainer>
                             <InternalLink text="DOWNLOAD PDF" color="green" />
