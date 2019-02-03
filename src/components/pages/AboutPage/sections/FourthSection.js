@@ -20,16 +20,18 @@ class FourthSection extends Component {
                 return <div>error</div>
             }
 
+            const information = [{heading: `<h2>${content[0].contentTop.heading}</h2>`, text: content[0].contentTop.text}];
+
+            const link =[{linkText: content[0].link.text, linkColor: content[0].link.color, linkLocation: content[0].link.location }]
+    
+
         return (
             <>
             <PageOpenerV2
             marginTop="0"
             image={content[0].image.secure_url}
-            thirdHeading={content[0].contentTop.heading}
-            thirdText={content[0].contentTop.text}
-            firstLinkText={content[0].link.text}
-            firstLinkColor={content[0].link.color}
-            firstLinkLocation={content[0].link.href}
+            information= {information}
+            link= {link}            
             >
                 <></>
             </PageOpenerV2>
