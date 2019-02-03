@@ -8,6 +8,13 @@ const Img = styled.img `
     position: absolute;
     bottom: calc(100% + 8px);
     margin-bottom: -8px;
+    height: 32.4px;
+    @media only screen and (min-width: 500px) {
+        height: 50.4px
+    }
+    @media only screen and (min-width: 960px) {
+        height: 95px
+    }
    
 `
 const SectionWithWave = ({height, id, color, children}) => {

@@ -5,17 +5,13 @@ import {SectionWrapper, Breadcrumb, Link, HTMLContent} from './../../modules';
 
 const ImageContainer = styled.img`
 width: 100%;
+max-width: 720px;
+max-height: 480px;
 height: auto; 
 position: relative;
 top: 0;
-
-@media (min-width: 500px){
-    width: 100%;
-    height: auto; 
-    position: relative;
-    /* top: -110px; */
-}
 `
+
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
@@ -30,16 +26,11 @@ padding: 48px;
     margin-top: 20%;
 }
 `
-// const Div = styled.div`
-// display: flex;
-// flex-wrap: wrap;
-
-// `
 
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs, children } = this.props;        
+        const { color, image, heading, text, breadcrumbs, children, heading2, text2 } = this.props;        
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -58,12 +49,18 @@ class PageOpener extends Component {
                          </Breadcrumb>  
                         <h1>{heading}</h1> 
                         <HTMLContent content={text}/>
+                        <h2>{heading2}</h2>
+                        <HTMLContent content={text2}/>
+                        {/* <h3>{heading3}</h3>
+                        <HTMLContent content={text3}/> */}
+
                     </Wrapper>               
                 </Section>
                         {/* second received child is horizontal list*/}
                         {children[1]}
                         {/* third received child is  vertical list again, but for desktop view it is rendered here*/}
                         {children[2]}
+
             </SectionWrapper>
             
             </>  

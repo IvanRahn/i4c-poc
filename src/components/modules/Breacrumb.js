@@ -9,6 +9,11 @@ width: 100%;
 z-index: 1;
 justify-content: center;
 a {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 1.23;
+    text-align: center;
+
 background-color: ${darkGreen};
 border: 1px solid ${darkGreen};
 
