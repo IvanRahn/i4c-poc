@@ -15,7 +15,10 @@ import LinkWrapper from './LinkWrapper';
 import HorizontalCard from './../modules/HorizontalCard';
 import Breadcrumb from './Breacrumb';
 import SectionWithWave from './SectionWithWave';
-import HowItWorksSection from "./HowItWorksSection"
+import HowItWorksSection from "./HowItWorksSection";
+import SmallHorizontalCard from './SmallHorizontalCard';
+import TreeSVG from "./TreeSVG"
+
 export  {
     Footer,
     InternalLink,
@@ -35,4 +38,6 @@ export  {
     Breadcrumb,
     SectionWithWave,
     HowItWorksSection,
+    SmallHorizontalCard,
+    TreeSVG,
 }

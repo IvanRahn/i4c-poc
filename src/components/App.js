@@ -9,7 +9,7 @@ import GlobalStyle from "./Normalize";
 // import AboutHomePage from "./pages/AboutPage/AboutHomePage";
 // import {detect } from "detect-browser";
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
-const CausePage = lazy(() => import("./pages/CausePage/CausePage"))
+const CausePage = lazy(() => import("./pages/SingleCausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
 const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage")) 
 const HowItWorksHomePage = lazy(() => import("./pages/HowItWorksPage/HowItWorksHomePage"))
@@ -53,7 +53,7 @@ class App extends Component {
                 </Suspense>
               </Switch>
               </main>
-              <Suspense fallback="">
+              <Suspense fallback=""> 
                 <Footer />
               </Suspense>
               </>

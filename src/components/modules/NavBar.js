@@ -16,7 +16,7 @@ border-bottom: 2px solid grey;
 box-shadow: 0px 1px #888818;
 position: absolute;
 background-color: white;
-z-index: 1;
+z-index: 2;
 top: 0;
  @media only screen and (min-width: 900px) {
     justify-content: space-between;
@@ -148,7 +148,7 @@ class NavBar extends Component {
     //     this.nav.style.opacity = 0;
     // }
     componentWillUnmount() {
-        window.removeEventListener('resize');
+        window.removeEventListener('resize', this.updateDimensions, true);
     }
     componentDidUpdate () {
         if (this.state.width > "900" && this.main && this.footer) {
