@@ -5,7 +5,7 @@ import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
 import PageOpener from '../../modules/pageLayout/PageOpenerV2';
 import CardSection from "./../../modules/pageLayout/CardSectionV2"
-
+import {CauseCard, InternalLink} from "./../../modules";
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -43,7 +43,20 @@ class CausePage extends Component {
            <CardSection content={impactList}/>
            <CardSection display="mobile" content={[{image: {secure_url:"asdfasdf"}, text: "qrqwerqwer"}]}/>
            </PageOpener>
-
+            <CauseCard 
+            key={cause._id}
+            to={`cause/${cause.slug}`}
+            CardHeading={cause.cardContent.heading} 
+            CardText="always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment " 
+            >
+            <ul>
+                <li>fasfasdf</li>
+                <li>fasfasdf</li>
+                <li>fasfasdf</li>
+                <li>fasfasdf</li>
+            </ul>
+            <InternalLink text="asdfasDF" color="white"/>
+            </CauseCard>
            </>
         )
             }

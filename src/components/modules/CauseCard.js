@@ -11,7 +11,7 @@ border-radius: 4px;
 
 @media only screen and (min-width: 500px) {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: ${props => props.column ? "column" : "row-reverse"};
     padding: 24px 12px;
     border-radius: 16px;
     width: 460px;
@@ -39,7 +39,7 @@ class FeaturedCauseCard extends Component {
     
     render(){
 
-        const {CardHeading, CardText, CardImage, to} = this.props;
+        const {CardHeading, CardText, CardImage, to, children} = this.props;
 
         return(
             
@@ -49,6 +49,7 @@ class FeaturedCauseCard extends Component {
                         <DivContainer>
                             <h3>{CardHeading}</h3>
                             <HTMLContent content={CardText}/>
+                            {children}
                         </DivContainer>
                     </CardWrapper>
                 </LinkWrapper>
