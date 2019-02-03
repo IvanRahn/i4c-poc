@@ -3,16 +3,17 @@ import PageOpenerV2 from "../../../modules/pageLayout/PageOpenerV2";
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "../../../modules"
-import image from '../../../../img/handshake.jpg';
 
 
-class LastSection extends Component {
+
+class FourthSection extends Component {
     componentDidMount () {
-        this.props.getContent("about/second-section");
+        this.props.getContent("about/last-section");
     }
 
     render () {
-        const { content, isFetching, error} = this.props;       
+        const { content, isFetching, error} = this.props;
+        console.log(content);       
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -23,9 +24,12 @@ class LastSection extends Component {
             <>
             <PageOpenerV2
             marginTop="0"
-            secondHeading="heading"
-            image={image}
-            secondText="always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment" 
+            image={content[0].image.secure_url}
+            thirdHeading={content[0].contentTop.heading}
+            thirdText={content[0].contentTop.text}
+            firstLinkText={content[0].link.text}
+            firstLinkColor={content[0].link.color}
+            firstLinkLocation={content[0].link.href}
             >
                 <></>
             </PageOpenerV2>
@@ -35,7 +39,7 @@ class LastSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutSecond
+    const {content, isFetching, error} = state.aboutLast
     return {
         content,
         isFetching,
@@ -45,5 +49,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(LastSection);
+})(FourthSection);
 

@@ -11,7 +11,7 @@ class SecondSection extends Component {
     }
 
     render () {
-        const { color, content, isFetching, error} = this.props;        
+        const { content, isFetching, error} = this.props;        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -21,10 +21,20 @@ class SecondSection extends Component {
         return (
             <>
                 <PageOpenerV2
-                marginTop="1%"
-                secondHeading="heading"
-                image={image}
-                secondText="always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment" 
+                marginTop="0"
+                image={content[0].image.secure_url}
+                secondHeading={content[0].contentTop.heading}
+                secondText={content[0].contentTop.text}
+                thirdHeading={content[0].contentMiddle.heading}
+                thirdText={content[0].contentMiddle.text}
+                fourthHeading={content[0].contentBottom.heading}
+                fourthText={content[0].contentBottom.text}
+                firstLinkText={content[0].linksBottom.link.text}
+                firstLinkColor={content[0].linksBottom.link.color}
+                firstLinkLocation={content[0].linksBottom.link.href}
+                secondLinkText={content[0].linksBottom.link2.text}
+                secondLinkColor={content[0].linksBottom.link2.color}
+                secondLinkLocation={content[0].linksBottom.link2.href}
                 >
                     <></>
                 </PageOpenerV2>

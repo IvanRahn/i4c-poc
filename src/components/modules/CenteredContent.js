@@ -11,9 +11,6 @@ padding: 0;
 h1 {
     margin-top: auto;
 }
-/* :last-of-type(button) {
-    margin-top: auto;
-} */
 `
 const Div = styled.div `
     padding: 52px 24px;
@@ -21,17 +18,17 @@ const Div = styled.div `
 class CenteredContent extends Component {
     
     render () {
-        const {color} = this.props;
+        const {color, firstHeading, secondHeading, thirdHeading, linkText, linkColor, linkLocation} = this.props;
         
         return (
             <ImpactSectionWrapper aria-live="polite" color={color} height="auto">
                 <Div>
-                    <h1>Ready to invest for this cause?</h1>
-                    <h2>All of this works for ajdkjsahksahsa</h2>
-                    <h3>we slkdja dsk d jkas oq  nmsd nsdk jd a opdpoqdwdowdqpodk kdksad masmdnnm ,sand</h3>
+                    <h1>{firstHeading}</h1>
+                    <h2>{secondHeading}</h2>
+                    <h3>{thirdHeading}</h3>
                 </Div>
                 <Div>
-                    <InternalLink text="Join" color="green" />
+                    <InternalLink text={linkText} color={linkColor} location={linkLocation} />
                 </Div>
             </ImpactSectionWrapper>
         )

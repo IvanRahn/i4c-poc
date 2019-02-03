@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
-import {SectionWrapper, InternalLink, Card} from '../../../modules';
 import PageOpenerV2 from '../../../modules/pageLayout/PageOpenerV2';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
-import image from '../../../../img/handshake.jpg'
+
 
 
 class FirstSection extends Component {
@@ -14,8 +13,7 @@ class FirstSection extends Component {
     }
 
     render () {
-        const { content, isFetching, error} = this.props;
-        console.log(content)        
+        const { content, isFetching, error} = this.props;        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
