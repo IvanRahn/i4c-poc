@@ -35,13 +35,13 @@ margin-top: 30px;
 class BrandOpener extends Component {
 
     render () {
-        const { color, image, link, marginTop, information  } = this.props;  
+        const { color, image1, image2, link, marginTop, information  } = this.props;  
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
                 <Section height="100%"> 
-                    <ImageContainer src= {image} alt="Cherring man" />
-                    <ImageContainer src= {image} alt="Cherring man" />
+                    <ImageContainer src= {image1} alt="Brand" />
+                    <ImageContainer src= {image2} alt="Brand" />
                     {/* first received child is a vertical list */}
                 </Section>
                 <Section>

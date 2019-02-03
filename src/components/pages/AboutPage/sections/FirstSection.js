@@ -13,7 +13,7 @@ class FirstSection extends Component {
     }
 
     render () {
-        const { content, isFetching, error, image} = this.props;        
+        const { content, isFetching, error} = this.props;        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

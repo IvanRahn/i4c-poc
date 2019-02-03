@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import CenteredContent from '../../../modules/CenteredContent';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "../../../modules"
-
+import BrandSection from "../../../modules/pageLayout/BrandSection";
 
 
 class FourthSection extends Component {
@@ -23,9 +22,18 @@ class FourthSection extends Component {
                 return <div>error</div>
             }
 
+            const information = [{heading: `<h3>${content[0].contentBottom.heading}</h3>`, text: content[0].contentBottom.text}];
+
+            const link =[{linkText: content[0].linksBottom.link.text, linkColor: content[0].linksBottom.link.color, linkLocation: content[0].linksBottom.link.href }, {linkText: content[0].linksBottom.link2.text, linkColor: content[0].linksBottom.link2.color, linkLocation: content[0].linksBottom.link2.href }]
+
         return (
             <>
-                <CenteredContent secondHeading={content[0].contentBottom.heading} linkText={content[0].contentBottom.link.text} linkColor={content[0].contentBottom.link.color} linkLocation={content[0].contentBottom.link.href} />
+                <BrandSection
+                information = {information}
+                link = {link}
+                image1= {content[0].image_logos.image_logo1.secure_url}
+                image2= {content[0].image_logos.image_logo2.secure_url}  
+                />
             </>
         )
     } 
