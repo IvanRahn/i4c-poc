@@ -23,7 +23,13 @@ const ImageContainer = styled.img`
 width: 100%; 
 height: auto;
 margin: -128px auto 0 auto;
-@media only screen and (min-width: 500px){
+@media only screen and (min-width: 768px) {
+    width: 40%;
+    margin: -300px auto 0 auto; 
+
+}
+@media only screen and (min-width: 960px) {
+
 width: 360px;
 margin: -300px auto 0 auto; 
 }
@@ -34,7 +40,7 @@ const Section = styled.div `
 width: 100%;
 margin-right: 2em;
 text-align: left;
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 768px) {
     width: 50%;
 
 }
@@ -55,13 +61,10 @@ class TeamSection extends Component {
         return (  
                 <SectionWrapper height="auto">
                             {teamSection[0].media ? <VideoContainer src={teamSection[0].media} /> : <ImageContainer src={teamSection[0].image.secure_url} /> }
-                            
-
                     <Section>
                             <h2>{teamSection[0].heading}</h2>
                             <HTMLContent content={teamSection[0].text}/>
                             <InternalLink width="auto" text="Vetted by our \n Board of Trustees" />
-                        
                     </Section>
                     
                 </SectionWrapper>

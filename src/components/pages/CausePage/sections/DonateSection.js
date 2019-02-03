@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Loading} from "../../../modules";
+import {SectionWrapper, Loading, Card} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
-import Card from '../../../modules/MoreI4cCard';
 import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
 
 const H = styled.h1`

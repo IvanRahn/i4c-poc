@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SmallHorizontalCard from '../../modules/SmallHorizontalCard';
-import {SectionWrapper} from '../../modules';
+import {SmallHorizontalCard} from '..';
 import { getContent } from '../../../actions';
 import { connect } from 'react-redux';
 

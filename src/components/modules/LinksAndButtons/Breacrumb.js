@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import {darkGreen} from "./BrandStyle"
+import {darkGreen} from "./../BrandStyle"
 
 const StyledBreadcrumb = styled.span`
 display: ${props => props.mobile ? "flex" : "none"};
