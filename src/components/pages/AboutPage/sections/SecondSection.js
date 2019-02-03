@@ -18,13 +18,13 @@ class SecondSection extends Component {
                 return <div>error</div>
             }
             
-            const information = [{heading: `<h3>${heading}</h3>`, text: text}, {secondHeading: `<h2>${secondHeading}</h2>`, secondText= secondText}]
+            const information = [{heading: `<h3>${content[0].contentTop.heading}</h3>`, text: content[0].contentTop.text}, {heading: `<h2>${content[0].contentBottom.heading}</h2>`, text: content[0].contentBottom.text}];
         return (
             <>
                 <PageOpenerV2
                 marginTop="0"
                 image={content[0].image.secure_url}
-                c
+                information={information}
                 >
                     <></>
                 </PageOpenerV2>

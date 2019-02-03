@@ -12,6 +12,9 @@ padding: 0;
 position: relative;
 flex-wrap: nowrap;
 /* width: 100%; */
+@media only screen and (min-width: 500px) {
+    height: calc(100vh - 110px);
+}
 button {
     margin: auto auto 0;
     @media only screen and (max-width: 500px) {

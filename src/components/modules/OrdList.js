@@ -32,18 +32,19 @@ list-style: none;
             background: transparent;
             border-radius: 50%;
             text-align: center;
+            vertical-align:middle;
+            padding: 5px 7px 9px;
             content: counter(my-awesome-counter);
             border-style: solid;
-            --size: 40px;
-            width: var(--size);
-            height: var(--size);
-            font-size: 2rem;
+            width: 24px;
+            height: 24px;
+            font-size: 24px;
             vertical-align: middle;
             /* left: 16px; */
             font-weight: bold;
             margin: auto;
             @media only screen and (min-width: 500px) {
-            left: calc(-1 * var(--size) - 12px);
+            left: calc(-44px - 12px);
             top: 250px;
             }
         }

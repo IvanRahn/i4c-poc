@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
 import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from './../../modules';
 
@@ -6,17 +6,13 @@ import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from './../
 
 const ImageContainer = styled.img`
 width: 100%;
+max-width: 720px;
+max-height: 480px;
 height: auto; 
 position: relative;
 top: 0;
-
-@media (min-width: 500px){
-    width: 100%;
-    height: auto; 
-    position: relative;
-    /* top: -110px; */
-}
 `
+
 const Section = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
@@ -32,18 +28,6 @@ padding: 48px;
 }
 `
 
-const H2 = styled.h2`
-&:empty{
-    display: none;
-}
-`
-const H2Bold = styled.h2`
-margin-top: 80px;
-&:empty{
-    display: none;
-}
-`
-
 const LinkContainer = styled.div`
 margin-top: 30px;
 `
@@ -51,7 +35,8 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, breadcrumbs, children, link, marginTop,   } = this.props;        
+        const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
+        console.log(information)      
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -68,23 +53,29 @@ class PageOpener extends Component {
                     <Wrapper marginTop={marginTop}>
                         <Breadcrumb>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null}             
-                         </Breadcrumb>  
-                        <h1>{heading}</h1> 
-                        <HTMLContent content={text}/>
+                        </Breadcrumb>  
+                        
+                        {information ? information.map((information) => {
 
-                        <H2>{secondHeading}</H2>
-                        <HTMLContent content={secondText}/>
+                        return(
+                            <Fragment key={information.heading}>
+                            <HTMLContent  content={information.heading} />
+                            <HTMLContent content={information.text} />
+                            </Fragment>
+                        )
+                        } ) : null}
 
-                        <H2Bold>{thirdHeading}</H2Bold>
-                        <HTMLContent content={thirdText}/>
+                        {link ? link.map((link) => {
 
-                        <H2Bold>{fourthHeading}</H2Bold>
-                        <HTMLContent content={fourthText}/>
+                        return(
+                            <InternalLink text={link.linkText} color={link.linkColor} location={link.linkLocation} key={link.linkText}  />
+                        )
+                        } ) : null}
 
-                        <LinkContainer>
-                            <InternalLink text={firstLinkText} color={firstLinkColor} location={firstLinkLocation}/>
-                            <InternalLink text={secondLinkText} color={secondLinkColor} location={secondLinkLocation}/>
-                        </LinkContainer>
+                        
+
+
+
 
                     </Wrapper>               
                 </Section>
@@ -92,6 +83,7 @@ class PageOpener extends Component {
                         {children[1]}
                         {/* third received child is  vertical list again, but for desktop view it is rendered here*/}
                         {children[2]}
+
             </SectionWrapper>
             
             </>  
