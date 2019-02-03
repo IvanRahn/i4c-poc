@@ -72,7 +72,9 @@ class PageOpener extends Component {
                         </Breadcrumb>    
                     </BorderPMobile>
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
+                    <VerticalCardSection 
+                    verticalCardApi={verticalCardApi} 
+                    verticalCardState={verticalCardState}  /> 
  
                 </Section>
 
@@ -84,7 +86,9 @@ class PageOpener extends Component {
                     </Wrapper>               
                 </Section>
             </SectionWrapper>
-            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
+            <CardSection 
+            horizontalCardApi={horizontalCardApi} 
+            horizontalCardState={horizontalCardState} />
             </>
 
             

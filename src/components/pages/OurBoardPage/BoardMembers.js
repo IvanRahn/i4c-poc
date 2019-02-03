@@ -10,8 +10,15 @@ const SmallHorizontalCard = styled(HorizontalCard)`
 img {
     border-radius: 50%;
     height: 250px;
-    width: 250px;
-}
+    width: 250px; 
+} 
+@media (max-width: 768px){
+    img {
+        height: 150px; 
+        width: 150px;
+    }
+} 
+
 `
 
 

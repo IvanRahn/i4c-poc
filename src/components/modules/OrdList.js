@@ -6,10 +6,10 @@ color: white;
 display: flex;
 flex-wrap: wrap;
 /* align-content: center; */
-justify-content:center;
+justify-content:space-around;
 width: 100%;
 margin: 0 auto;
-padding: 0 0 128px;
+padding: 0 30px 128px;
 counter-reset: my-awesome-counter;
 list-style: none;
 @media only screen and (min-width: 500px) {

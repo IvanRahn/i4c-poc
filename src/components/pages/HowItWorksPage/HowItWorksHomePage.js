@@ -7,12 +7,15 @@ import {connect} from "react-redux";
 import {getContent} from "./../../../actions"
 import {Loading} from "./../../modules" 
 import image from "./../../../img/house.png"
+import BoardMembers from '../OurBoardPage/BoardMembers';
 
 
 class HowItWorksHomePage extends Component {
     componentDidMount() {
 
         this.props.getContent("storycause")
+        this.props.getContent("storycause")
+
     }
     render() { 
         const {storycause, storycauseError, storycauseIsFetching} = this.props; 
@@ -30,7 +33,8 @@ class HowItWorksHomePage extends Component {
                     text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." 
                     image={image}  
                     link="yo" 
-                    horizontalCard= "howitworkshomepagecard" /> 
+                    verticalCardApi= "howitworkshomepagecard"
+                    verticalCardState="howItWorksHomePageCard" /> 
 
 
                     <HowItWorksSection cardCount={6} color={darkGreen}/>
@@ -61,5 +65,13 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {getContent})(HowItWorksHomePage); 
+export default connect(mapStateToProps, {getContent})(HowItWorksHomePage);  
+
+
+
+
+// TO DO : 
+// CREATE TWO REDUCERES BoardMembersTOPPAGE REDUCER , AND HOWITWORKS TOP PAGE REDUCER 
+// IMPLEMENT THEM TO THIER PERSPECTIVE HOME PAGES (BOARD HOME PAGE , HOW IT WORKS HOME PAGE) 
+// AND PUT THEIR KEYS , THEN DO CONSTRUCTIVE DENOTATION   ex... content.image, content.text blah blah
 

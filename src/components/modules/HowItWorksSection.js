@@ -15,7 +15,6 @@ class HowItWorksSection extends Component {
     render() {
 
         const {color, steps, stepsIsFetching, stepsError, cardCount} = this.props;
-		console.log('TCL: HowItWorksSection -> render -> this.props', this.props)
         if (stepsIsFetching) {
             return <Loading/>
         } else if (stepsError || !steps || !steps[0]) {

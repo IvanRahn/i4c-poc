@@ -48,14 +48,9 @@ class CardSection extends Component {
     }
 }
 
-<<<<<<< HEAD
-const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.howItWorksHomePageCard
-=======
 const mapStateToProps = (state, props) => {
     const key = props.horizontalCardState
     const {content, isFetching, error} = state[key] ? state[key] : state;
->>>>>>> origin/development
     return {
         content,
         isFetching,
