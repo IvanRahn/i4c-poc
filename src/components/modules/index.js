@@ -19,6 +19,9 @@ import SectionWithWave from './SectionWithWave';
 import HowItWorksSection from "./HowItWorksSection"; 
 import FeaturedCauseSection from "./FeaturedCauseSection"; 
 import StoryCause from "./StoryCause"; 
+import SmallHorizontalCard from './SmallHorizontalCard';
+import TreeSVG from "./TreeSVG"
+
 export  {
     Footer,
     InternalLink,
@@ -41,4 +44,6 @@ export  {
     HowItWorksSection,
     FeaturedCauseSection, 
     StoryCause,
+    SmallHorizontalCard,
+    TreeSVG,
 }

@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 html {
-  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 html,body
@@ -34,9 +33,9 @@ html,body
  */
 
 body {
-  margin: 0;
   scroll-behavior: smooth;
   font-family: Helvetica;
+  letter-spacing: 0.25px;
 }
 
 
@@ -47,12 +46,11 @@ main {
   position: relative;
   transition: 1s;
   left: 0;
-  @media only screen and (min-width: 500px) {
+  @media only screen and (min-width: 900px) {
     margin-top: 110px;
   }
   section:first-child {
     @media only screen and (min-width: 500px) {
-    height: calc(100vh - 110px);
     
   }
   }
@@ -68,27 +66,73 @@ small {
 
 h1 {
   font-size: 32px;
-  @media only screen and (min-width: 500px) {
-    font-size: 48px
+  font-weight: bold;
+  line-height: 40px;;
+  @media only screen and (min-width: 960px) {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 46px;
+  }
+}
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  @media only screen and (min-width: 960px) {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 40px;
   }
 }
 h3 {
   font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: 0px;
-  margin: 0;
+  font-weight: light;
+  line-height: 32px;
+  @media only screen and (min-width: 960px) {
+    font-size: 32px;
+    font-weight: light;
+    line-height: 40px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 28px;
+  @media only screen and (min-width: 960px) {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+}
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  @media only screen and (min-width: 960px) {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+}
+h6 {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
+  @media only screen and (min-width: 960px) {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+  }
 }
 p {
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: 0px;
+  font-size: 16px;
+  line-height: 24px;
   margin: 0;
+  @media only screen and (min-width: 960px) {
+    font-size: 20px;
+    line-height: 32px;
+  }
 }
 
 /* Grouping content
@@ -99,11 +143,6 @@ p {
  * 2. Show the overflow in Edge and IE.
  */
 
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
 
 
 
@@ -116,7 +155,6 @@ pre {
 
 a {
   text-decoration: none;
-  
 }
 
 

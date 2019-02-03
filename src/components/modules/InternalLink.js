@@ -9,31 +9,16 @@ const ButtonLink = styled(Link)`
     text-align: center;
     text-decoration: none;	
     ${props => props.auto ? "" : "width: 128px;"}
-    margin: 8px 8px;
+    /* margin: 8px 8px; */
+    margin: 0 8px  16px;
     /* height: 32px; */
-    padding-bottom: 8px;
+    padding-bottom: 12px;
     font-size: 16px;
     :hover, :focus {
         color: blue;
     }
     `
 
-    
-// function StyledLink({className, section, text, location, color, to, auto}) {
-    
-//         return (
-//         <ButtonLink 
-//             className={className}
-//             auto={auto} 
-//             to={`${to}`} 
-//             color={color}
-//             location={location}
-//             section={section}
-//             >
-//                 {text}
-//         </ButtonLink>
-//         )
-//     }
   
 export default ButtonLink;
 

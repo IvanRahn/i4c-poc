@@ -10,7 +10,11 @@ flex-direction: column;
 text-align: center;
 padding: 0;
 position: relative;
-
+flex-wrap: nowrap;
+/* width: 100%; */
+@media only screen and (min-width: 500px) {
+    height: calc(100vh - 110px);
+}
 button {
     margin: auto auto 0;
     @media only screen and (max-width: 500px) {
@@ -43,7 +47,7 @@ class ImpactSection extends Component {
         return (
             <>
             
-            <ImpactSectionWrapper height="100vh" aria-live="polite" color={color}>
+            <ImpactSectionWrapper height="calc(100vh - 60px)" aria-live="polite" color={color}>
             <Div>
                 <h1>{impact[0].heading}</h1>
                 <p>{impact[0].subtext}</p>

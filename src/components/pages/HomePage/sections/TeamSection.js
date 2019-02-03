@@ -60,7 +60,7 @@ class TeamSection extends Component {
                     <Section>
                             <h2>{teamSection[0].heading}</h2>
                             <HTMLContent content={teamSection[0].text}/>
-                            <InternalLink text="Vetted by our \n Board of Trustees" />
+                            <InternalLink width="auto" text="Vetted by our \n Board of Trustees" />
                         
                     </Section>
                     

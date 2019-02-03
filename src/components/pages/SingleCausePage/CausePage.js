@@ -3,7 +3,13 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
-
+import PageOpener from '../../modules/pageLayout/PageOpenerV2';
+import CardSection from "../../modules/pageLayout/CardSectionV2"
+import {CauseCard, InternalLink} from "../../modules";
+import FirstSection from './Sections/FirstSection';
+import SecondSection from './Sections/SecondSection';
+import ThirdSection from './Sections/ThirdSection';
+import CenteredContent from '../../modules/CenteredContent';
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -21,19 +27,20 @@ class CausePage extends Component {
             return <div>Error</div>
         }
         const cause = causes.filter(cause => cause.slug === slug)[0]
-        console.log(this.props)
+    		
         return (
            <>
-               <h1>{cause.pageContent.heading}</h1>
-
-               <p>{cause.pageContent.text}</p>
+           <FirstSection cause={cause}/>
+            <SecondSection cause={cause}/>
+            <ThirdSection cause={cause} />
+            <CenteredContent/>
            </>
         )
             }
     }
 const mapStateToProps = (state) => {
    
-    const {causes, causesIsFetching, causesError} = state.causes
+    const {causes, causesIsFetching, causesError} = state.cause
     return {
       causes,
       causesIsFetching,

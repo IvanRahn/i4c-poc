@@ -2,16 +2,15 @@ import React, {Component} from "react"
 import {withRouter}from "react-router"
 import styled from "styled-components";
 import ReactGA from "react-ga";
+import {brandBlack} from "./BrandStyle"
 
 const Div = styled.div `
    a {
-    border-bottom: 3px solid ${props => props.color || "black"};
+    border-bottom: 3px solid ${brandBlack};
     display: inline;
     color: ${props => props.color || "black"};
     text-align: center;
     text-decoration: none;	
-    ${props => props.auto ? "" : "width: 128px;"}
-    margin: 8px 8px;
     font-size: 1em;
     :hover {
         color: blue;
