@@ -9,32 +9,32 @@ import getContent from '../../../../actions/keystoneActions';
 const H = styled.h1`
 width: 100%;
 text-align: center;
-/* margin-top: 120px; */
 `
 class OurDonorSection extends Component {
     componentDidMount() {
-        this.props.getContent("HOWITWORKSSTEPS")
+        this.props.getContent("causes/our-donor")
     }
     render() {
 
-        const { color, content, isFetching, error} = this.props;        
-        if (false) {
+        const {content, isFetching, error} = this.props;
+        console.log(content)        
+        if (isFetching) {
             return (<Loading/>)
-            // } else if (error || !content || !content[0]){
+            } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
         
         return (
-            <SectionWrapper height="auto">
-                <H>Our Donors/ Charity Stories</H>
+            <SectionWrapper height="auto" padding="0 0 52px 0">
+                <H>{content[0].pageHeading}</H>
 
-                <HeroArticleCard CardHeading="This is the heading" CardText="<p>This is some text</p>"/>
+                <HeroArticleCard big CardName={content[0].heading} CardText={content[0].text} CardImage={content[0].image.secure_url}/>
             </SectionWrapper>
         )
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.causeOurDonorSection
     return {
         content,
         isFetching,

@@ -20,6 +20,7 @@ const Section = styled.div`
     display: flex;
     flex-direction: ${props => props.direction || "row"};
     justify-content: ${props => props.justify || null};
+    padding-left: ${props => props.padding || null}
   }
 `;
 const Svg = styled.svg`
@@ -38,16 +39,17 @@ const Svg = styled.svg`
 
 class JoinSection extends Component {
   componentDidMount() {
-    this.props.getContent("");
+    this.props.getContent("causes/join-us");
   }
 
   render() {
-    const { color, content, isFetching, error } = this.props;
-    if (false) {
-      return <Loading />;
-      // } else if (error || !content || !content[0]){
-      return <div>error</div>;
-    }
+    const { content, isFetching, error} = this.props;
+        console.log("This page", content)       
+        if (isFetching) {
+            return (<Loading/>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
 
     return (
       <SectionWrapper color="green" height="auto" padding="28px 16px 64px 16px">
@@ -65,12 +67,12 @@ class JoinSection extends Component {
                     c-2.7-0.6-5.5,0.3-7.4,2c3.1,0.9,7.3,4.1,7.4,4.7c0,0-6.4-2.8-9.3-2.3c0,0,0,0.1-0.1,0.1L30.5,24.1z"
             />
           </Svg>
-          <h1>Investing for charity</h1>
+          <h1>{content[0].heading}</h1>
         </Section>
 
-        <Section direction="column">
-          <h2>All this works because of our Donors.</h2>
-          <InternalLink text="Join the cause" color="white" />
+        <Section direction="column" padding="30px">
+          <h2>{content[0].subheading}</h2>
+          <InternalLink text={content[0].link.text} color={content[0].link.color} location={content[0].link.href} />
         </Section>
       </SectionWrapper>
     );
@@ -78,7 +80,7 @@ class JoinSection extends Component {
 }
 
 const mapStateToProps = state => {
-  const { content, isFetching, error } = state.aboutFirst;
+  const { content, isFetching, error } = state.causeJoinUsSection;
   return {
     content,
     isFetching,
