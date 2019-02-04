@@ -21,17 +21,17 @@ class HTMLContent extends Component {
     contentClickHandler = (e) => {
       const targetLink = e.target.closest('a');
       const {location} = this.props;
+      const {history} = this.props
+      if(!targetLink) return;
+      if (targetLink.href.match(/localhost/)) {
+        e.preventDefault();
+        history.push(e.target.getAttribute("href"))
+      } 
       const text = targetLink.innerHTML
       ReactGA.event({
         category: 'ButtonLink',
         action: `Section: "CMS content", Button: ${text}, Page: ${location.pathname}`,
       });
-      const {history} = this.props
-      if(!targetLink) return;
-      if (targetLink.href.match(/localhost/)) {
-          e.preventDefault();
-          history.push(e.target.getAttribute("href"))
-      } 
     };
     
     render() {

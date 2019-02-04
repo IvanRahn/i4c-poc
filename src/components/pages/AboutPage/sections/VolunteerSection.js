@@ -26,6 +26,7 @@ class VolunteerSection extends Component {
 
         return (
            <SectionWrapper height="auto" padding="52px 24px">
+                {/* Fix this up so that it is dynamic */}
                 <H>Now we have volunteers:</H>
 
                 {content.map((content) => {
