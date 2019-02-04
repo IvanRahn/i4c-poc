@@ -1,6 +1,7 @@
 import React from "react";
 import {Link, withRouter} from "react-router-dom"
 import ReactGA  from 'react-ga';
+import { ErrorBoundary } from "..";
 
 
 export default withRouter(({className, section, text, location, children, to}) => {
@@ -11,12 +12,14 @@ export default withRouter(({className, section, text, location, children, to}) =
           });
     }
     return (
+        <ErrorBoundary>
         <Link className={className}
         onClick={analytics}
         to={`${to}`}
         >
             {text || children }
         </Link>
+        </ErrorBoundary>
     )
 }
 )

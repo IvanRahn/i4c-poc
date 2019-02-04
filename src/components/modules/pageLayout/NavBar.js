@@ -5,6 +5,7 @@ import LogoFull from "./../../../img/I4C.png";
 import LogoSquare from "./../../../img/I4C_Square.png"; 
 
 const Nav = styled.nav`
+
 width: 100%;
 height: 60px;
 display: flex;

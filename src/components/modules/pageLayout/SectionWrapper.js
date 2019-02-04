@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import {darkGreen, brandWhite} from "./../BrandStyle"
 
 const SectionWrapper = styled.section`
     display: flex;
@@ -13,7 +13,7 @@ const SectionWrapper = styled.section`
     :last-of-type(a) {
         width: 100%;
     }
-    background-color: ${props => props.color};
+    background-color: ${props => props.color ? darkGreen : "#ffffff" };
         height: ${props => props.height || "auto"};
     @media only screen and (min-width: 500px) {
         height: ${props => props.height || "100vh"};

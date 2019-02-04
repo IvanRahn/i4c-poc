@@ -10,5 +10,5 @@ export {
     brightGreen,
     brandBlack,
     brandWhite,
-    brandGrey
+    brandGrey,
 }

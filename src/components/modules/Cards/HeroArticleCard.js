@@ -1,27 +1,27 @@
 import React  from "react";
 import styled from "styled-components";
 import {HTMLContent} from ".."
-import {brandBlack, brandWhite} from "./../"
+import {brandBlack, brandWhite} from "./../BrandStyle"
 
 const CardWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
-margin-top: 36px;
+margin: 36px 0 24px;
+
 color: ${props => props.white ? brandWhite : brandBlack};
 @media only screen and (min-width: 500px) {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
-    width: 100%;
  }
 `
 const DivContainer = styled.div`
 width: 100%;
 color: ${brandWhite};
-padding-left: 24px;
+padding: 0 24px 0;
 h3 {
     margin: 24px 0;
 }
@@ -29,8 +29,8 @@ h4 {
     margin: 24px 0;
 }
 @media only screen and (min-width: 500px) {
-margin-top: -80px;
     width: 50%;
+    padding-top: 80px;
  }
 `
 

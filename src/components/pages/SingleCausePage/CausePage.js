@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
-import {CenteredContent} from "../../modules";
+import {CenteredContent, Loading, ErrorBoundary} from "../../modules";
 import FirstSection from './Sections/FirstSection';
 import SecondSection from './Sections/SecondSection';
 import ThirdSection from './Sections/ThirdSection';
@@ -19,19 +19,21 @@ class CausePage extends Component {
         const {slug} = this.props.match.params
         const {causes, causesError, causesIsFetching} = this.props
         if (causesIsFetching) {
-            return <div>Loading</div>
+            return <Loading/>
         } else if (causesError || !causes || !causes[0]) {
             return <div>Error</div>
         }
-        const cause = causes.filter(cause => cause.slug === slug)[0]
-    		
+        const cause = causes.filter(cause => cause.slug === slug)[0] || null
+        if (!cause) {
+            return 404
+        }
         return (
-           <>
-           <FirstSection cause={cause}/>
-            <SecondSection cause={cause}/>
-            <ThirdSection cause={cause} />
-            <CenteredContent/>
-           </>
+            <ErrorBoundary>
+                <FirstSection cause={cause}/>
+                <SecondSection cause={cause}/>
+                <ThirdSection cause={cause} />
+                <CenteredContent/>
+            </ErrorBoundary>
         )
             }
     }

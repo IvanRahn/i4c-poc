@@ -26,6 +26,9 @@ import ProposalCardAnchor from "./Cards/ProposalCardAnchor";
 import QuoteCard from "./Cards/QuoteCard";
 import {darkGreen, brightGreen,brandBlack, brandGrey, brandWhite} from "./BrandStyle"
 import ProfileCard from "./Cards/ProfileCard";
+import HorizontalCardSection from "./Lists/HorizontalCardSection";
+import ImpactStatsCard from './Cards/ImpactStatsCard';
+import ErrorBoundary from './other/ErrorBoundary';
 import StoryCause from "./StoryCause";
 
 export  {
@@ -62,4 +65,7 @@ export  {
     ProposalCardAnchor,
     QuoteCard,
     ProfileCard,
+    HorizontalCardSection,
+    ImpactStatsCard,
+    ErrorBoundary,
 }

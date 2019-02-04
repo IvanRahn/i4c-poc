@@ -9,7 +9,7 @@ const ButtonLink = styled(Link)`
     text-align: center;
     text-decoration: none;	
     ${props => props.auto ? "" : "width: 128px;"}
-    margin: 0 8px  16px;
+    margin: 12px 8px  16px;
     padding-bottom: 8px;
     font-size: 16px;
     :hover, :focus {
