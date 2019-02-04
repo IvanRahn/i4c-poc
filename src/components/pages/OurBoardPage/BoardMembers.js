@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {HorizontalCard, SectionWrapper} from './../../modules/'; 
+import {HeroArticleCard, SectionWrapper} from './../../modules/'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
 import {Loading} from "./../../modules"
 
 
-const SmallHorizontalCard = styled(HorizontalCard)`
+const SmallHorizontalCard = styled(HeroArticleCard)`
 img {
     border-radius: 50%;
     height: 250px;

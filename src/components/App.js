@@ -13,7 +13,7 @@ const CausePage = lazy(() => import("./pages/SingleCausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
 const AboutHomePage = lazy(() => import("./pages/AboutPage/AboutHomePage")) 
 const HowItWorksHomePage = lazy(() => import("./pages/HowItWorksPage/HowItWorksHomePage"))
-const Footer = lazy(() => import("./modules/Footer"))
+const Footer = lazy(() => import("./modules/pageLayout/Footer"))
 
 
 // const browser = detect();

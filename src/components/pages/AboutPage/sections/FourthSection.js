@@ -1,40 +1,46 @@
 import React, {Component} from 'react';
-import PageOpener from '../../../modules/pageLayout/PageOpener';
-import {Loading} from '../../../modules';
+import PageOpener from "../../../modules/pageLayout/PageOpener";
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
+import {Loading} from "../../../modules"
 
 
-class FirstSection extends Component {
 
+class FourthSection extends Component {
     componentDidMount () {
-        this.props.getContent("causes/causeTopPage");    
+        this.props.getContent("about/last-section");
     }
 
     render () {
         const { content, isFetching, error} = this.props;
-        console.log("This page", content)       
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
-        
-            const information = [{heading: `<h1>${content[0].heading}</h1>`, text: content[0].text}];
+
+            const information = [{heading: `<h2>${content[0].contentTop.heading}</h2>`, text: content[0].contentTop.text}];
+
+            const link =[{linkText: content[0].link.text, linkColor: content[0].link.color, linkLocation: content[0].link.location }]
+    
+
         return (
+            <>
             <PageOpener
+            marginTop="0"
+            image={content[0].image.secure_url}
             information= {information}
-            image={content[0].image.secure_url}  
-            breadcrumbs={[{to: "/", text: "homepage"}]}
+            link= {link}            
             >
-            <></>
+                <></>
             </PageOpener>
+            </>
         )
     } 
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causeHomePageFirstSection
+    const {content, isFetching, error} = state.aboutLast
     return {
         content,
         isFetching,
@@ -44,5 +50,5 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(FirstSection);
+})(FourthSection);
 

@@ -1,39 +1,34 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import image from "./../../img/cartoon.jpg"
-import {HTMLContent, LinkWrapper} from "./../modules"
+import {HTMLContent, LinkWrapper} from ".."
+import {brightGreen} from "../BrandStyle"
+import image from "../../../img/cartoon.jpg"
 
 const CardWrapper = styled.div`
 overflow: hidden;
-padding: 18px 12px;
-background-color: #24c421;
-border-radius: 4px;
 
-@media only screen and (min-width: 500px) {
-    display: flex;
-    flex-direction: ${props => props.column ? "column" : "row-reverse"};
+background-color: ${brightGreen};
     padding: 24px 12px;
     border-radius: 16px;
-    width: 460px;
+    width: auto;
+@media only screen and (min-width: 500px) {
 }
 `
 const DivContainer = styled.div`
     color: white;
-    font-size: 24px;
+    /* font-size: 24px; */
     min-width: 150px;
-    p {
-        line-height: 1.5;
-        font-size: 16px;
+    margin-bottom: 24px;
+    li {
+        margin-bottom: 8px;
     }
-    h3 {
-        margin: 8px 0;
-    }
+
 `
 
 
 const ImageContainer = styled.img`
-height: 100px; 
-max-width: 100px;
+height: 96px; 
+width: 96px;
 `
 class FeaturedCauseCard extends Component {
     
@@ -47,10 +42,10 @@ class FeaturedCauseCard extends Component {
                     <CardWrapper>
                         <ImageContainer src={CardImage || image} />
                         <DivContainer>
-                            <h3>{CardHeading}</h3>
+                            <h4>{CardHeading}</h4>
                             <HTMLContent content={CardText}/>
-                            {children}
                         </DivContainer>
+                            {children}
                     </CardWrapper>
                 </LinkWrapper>
 

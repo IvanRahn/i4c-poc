@@ -1,7 +1,7 @@
 import React from "react";
-import { SectionWrapper } from ".";
+import { SectionWrapper } from "..";
 import styled from "styled-components";
-import Background from "./../../img/placeholder_background_wave.png"
+import Background from "./../../../img/placeholder_background_wave.png"
 const Img = styled.img `
     width: 100%;
     margin: auto auto 0;

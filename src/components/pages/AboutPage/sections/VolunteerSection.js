@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Card} from '../../../modules';
+import {SectionWrapper, ProfileCard} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
@@ -8,7 +8,6 @@ import {Loading} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
-    text-align: center;
 `
 
 class VolunteerSection extends Component {
@@ -19,8 +18,6 @@ class VolunteerSection extends Component {
 
     render() {
         const {content, isFetching, error} = this.props;
-        console.log(content)
-
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -28,16 +25,18 @@ class VolunteerSection extends Component {
             }
 
         return (
-           <SectionWrapper height="auto">
-                <H>Now we have volunteers</H>
+           <SectionWrapper height="auto" padding="52px 24px">
+                {/* Fix this up so that it is dynamic */}
+                <H>Now we have volunteers:</H>
 
                 {content.map((content) => {
                         return (
-                            <Card
+                            <ProfileCard
                             key={content._id} 
                             CardText={content.card.text}
                             CardImage={content.card.pageImage ? content.card.pageImage.secure_url : null}
                             CardHeading={content.card.heading}
+                            position="flex-start"
                             />
                         )
                 }) }

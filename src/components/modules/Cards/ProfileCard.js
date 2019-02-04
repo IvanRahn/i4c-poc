@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent} from "./index"
+import {HTMLContent} from "../index"
 
 const CardWrapper = styled.div`
 overflow: hidden;
@@ -21,12 +21,11 @@ p {
 `
 
 const ImageContainer = styled.img`
-height: 180px; 
-width: 180px; 
-/* max-width: 250px;  */
-/* max-height: 250px; */
+height: 118px; 
+width: 118px; 
 border-radius: 100%;
-align-self: flex-end;
+/* align-self: ${props => props.position || "flex-end"}; */
+
 @media only screen and (min-width: 500px) {
     align-self: inherit;
 }
@@ -41,10 +40,8 @@ class VolunteerCard extends Component {
             // <div>
                 <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
-                    {/* <DivContainer> */}
-                        <h2>{CardHeading}</h2>
+                        <h5>{CardHeading}</h5>
                         <HTMLContent content={CardText}/>
-                    {/* </DivContainer> */}
                 </CardWrapper>
             // </div>
         )

@@ -1,25 +1,23 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from "../../../modules";
+import {SectionWrapper, Loading, HeroArticleCard} from "../../../modules";
 import { connect } from 'react-redux';
-import HorizontalCard from '../../../modules/HorizontalCard';
 import getContent from '../../../../actions/keystoneActions';
-import {Loading} from "./../../../modules"
 
 
 
 const H = styled.h1`
 width: 100%;
 text-align: center;
-/* margin-top: 120px; */
 `
 class OurDonorSection extends Component {
     componentDidMount() {
-        this.props.getContent("HOWITWORKSSTEPS")
+        this.props.getContent("causes/our-donor")
     }
     render() {
 
-        const { color, content, isFetching, error} = this.props;        
+        const {content, isFetching, error} = this.props;
+        console.log(content)        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -27,16 +25,16 @@ class OurDonorSection extends Component {
             }
         
         return (
-            <SectionWrapper height="auto">
-                <H>Our Donors/ Charity Stories</H>
+            <SectionWrapper height="auto" padding="0 0 52px 0">
+                <H>{content[0].pageHeading}</H>
 
-                <HorizontalCard />
+                <HeroArticleCard big CardName={content[0].heading} CardText={content[0].text} CardImage={content[0].image.secure_url}/>
             </SectionWrapper>
         )
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.causeOurDonorSection
     return {
         content,
         isFetching,

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PageOpener from '../../modules/pageLayout/PageOpener'; 
-import {SmallHorizontalCard, FeaturedCauseSection, HowItWorksSection, StoryCause} 
-from './../../modules/'; 
+import {SmallHorizontalCard, FeaturedCauseSection, HowItWorksSection, HeroArticleCard} 
+from './../../modules'; 
 import {darkGreen} from "./../../modules/BrandStyle"
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
@@ -39,7 +39,7 @@ class HowItWorksHomePage extends Component {
 
                     <HowItWorksSection cardCount={6} color={darkGreen}/>
                     <FeaturedCauseSection cardCount={3}>
-                    <StoryCause 
+                    <HeroArticleCard
                     CardName={storycause[0].content.heading}
                     CardText={storycause[0].content.text} 
                     CardImage={storycause[0].image ? storycause[0].image.secure_url : null } 
