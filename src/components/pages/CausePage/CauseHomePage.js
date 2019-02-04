@@ -17,13 +17,11 @@ class causesHomePage extends Component {
 
         return (
             <div>
-                {/* <FirstSection /> */}
-                {/* <OurDonorSection /> */}
-
-                <JoinSection />
-                {/* <DonateSection  color="green"/>
+                <FirstSection />
+                <DonateSection  color="green"/>
                 <OurDonorSection />
-                <JoinSection /> */}
+                <JoinSection />
+                
             </div>
         );
     }

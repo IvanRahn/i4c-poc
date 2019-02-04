@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Loading, Card} from "../../../modules";
+import {SectionWrapper, Loading, MoreI4cCard} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
-import image from '../../../../img/placeholder_circle_profile_520x520.jpg';
 
 const H = styled.h1`
 width: 100%;
@@ -15,7 +14,8 @@ class DonateSection extends Component {
     }
     render() {
 
-        const {color, content, isFetching, error} = this.props;        
+        const {color, content, isFetching, error} = this.props;
+        console.log(content)        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -29,14 +29,25 @@ class DonateSection extends Component {
             <SectionWrapper id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
                 {/* Fix this to be dynamic */}
                 <H>Donate once, give forever</H>
-                <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
+
+                {content.map((content) => {
+                        return (
+                            <MoreI4cCard
+                            key={content._id} 
+                            CardText={content.text}
+                            CardImage={content.image ? content.image.secure_url : null}
+                            CardHeading={content.heading}
+                            />
+                        )
+                }) }
+
             </SectionWrapper>
             </>
         )
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.causeHomeCard
     return {
         content,
         isFetching,
