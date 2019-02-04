@@ -1,6 +1,6 @@
 import React  from "react";
 import styled from "styled-components";
-import {HTMLContent} from "./index"
+import {HTMLContent} from ".."
 
 const CardWrapper = styled.div`
 display: flex;
@@ -44,13 +44,13 @@ align-items: center;
 `
 
 const ImageContainer = styled.img`
-height: 250px; 
-width: 250px; 
+height: 270px; 
+width: 270px; 
 border-radius: 100%;
 
 @media only screen and (min-width: 500px) {
-    height: 450px; 
-    width: 450px; 
+    height: 436px; 
+    width: 436px; 
     border-radius: 100%;
  }
 `
@@ -62,8 +62,8 @@ const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName, 
                     <ImageContainer  src= {CardImage} />
                 </DivImageContainer>
                 <DivContainer>
-                    <h2>{CardName}</h2>
-                    <h2>{CardHeading}</h2>
+                    <h3>{CardName}</h3>
+                    <h4>{CardHeading}</h4>
                 <HTMLContent content= {CardText} />
                 {children}
                 </DivContainer>

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import CenteredContent from '../../../modules/CenteredContent';
+import {CenteredContent} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "../../../modules"

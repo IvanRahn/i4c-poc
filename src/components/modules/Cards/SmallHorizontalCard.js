@@ -1,5 +1,5 @@
 import styled from "styled-components"; 
-import HorizontalCard from "./HorizontalCard"; 
+import HorizontalCard from "./HeroArticleCard"; 
 
 
 // Props you can use for this Component:

@@ -3,13 +3,10 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
-import PageOpener from '../../modules/pageLayout/PageOpenerV2';
-import CardSection from "../../modules/pageLayout/CardSectionV2"
-import {CauseCard, InternalLink} from "../../modules";
+import {CenteredContent} from "../../modules";
 import FirstSection from './Sections/FirstSection';
 import SecondSection from './Sections/SecondSection';
 import ThirdSection from './Sections/ThirdSection';
-import CenteredContent from '../../modules/CenteredContent';
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;

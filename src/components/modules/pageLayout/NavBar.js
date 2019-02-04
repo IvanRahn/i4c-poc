@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import {InternalLink} from "./index";
+import {InternalLink} from "./../";
 import styled from "styled-components";
-import LogoFull from "./../../img/I4C.png";
-import LogoSquare from "./../../img/I4C_Square.png"; 
+import LogoFull from "./../../../img/I4C.png";
+import LogoSquare from "./../../../img/I4C_Square.png"; 
 
 const Nav = styled.nav`
 width: 100%;

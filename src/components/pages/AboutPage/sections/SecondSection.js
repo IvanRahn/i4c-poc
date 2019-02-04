@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
-import PageOpenerV2 from "../../../modules/pageLayout/PageOpenerV2";
+import PageOpener from "../../../modules/pageLayout/PageOpener";
 
 class SecondSection extends Component {
     componentDidMount () {
@@ -21,13 +20,13 @@ class SecondSection extends Component {
             const information = [{heading: `<h3>${content[0].contentTop.heading}</h3>`, text: content[0].contentTop.text}, {heading: `<h2>${content[0].contentMiddle.heading}</h2>`, text: content[0].contentMiddle.text}];
         return (
             <>
-                <PageOpenerV2
+                <PageOpener
                 marginTop="0"
                 image={content[0].image.secure_url}
                 information={information}
                 >
                     <></>
-                </PageOpenerV2>
+                </PageOpener>
             </>
         )
     } 

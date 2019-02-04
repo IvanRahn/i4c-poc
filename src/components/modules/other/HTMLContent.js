@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {withRouter}from "react-router"
 import styled from "styled-components";
 import ReactGA from "react-ga";
-import {brandBlack} from "./BrandStyle"
+import {brandBlack} from "../BrandStyle"
 
 const Div = styled.div `
    a {

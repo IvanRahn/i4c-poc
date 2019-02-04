@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import PageOpenerV2 from '../../../modules/pageLayout/PageOpenerV2';
+import PageOpener from '../../../modules/pageLayout/PageOpener';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
@@ -26,7 +26,7 @@ class FirstSection extends Component {
         
         return (
             <>
-                <PageOpenerV2
+                <PageOpener
                 information= {information}
                 link= {link}
                 image={content[0].image.secure_url}
@@ -37,7 +37,7 @@ class FirstSection extends Component {
                 ]}
                 >
                     <></>
-                </PageOpenerV2>
+                </PageOpener>
             </>
         )
     } 

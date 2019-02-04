@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper} from "../../../modules";
+import {SectionWrapper, Loading, HorizontalCard} from "../../../modules";
 import { connect } from 'react-redux';
-import HorizontalCard from '../../../modules/HorizontalCard';
 import getContent from '../../../../actions/keystoneActions';
-import {Loading} from "./../../../modules"
 
 
 

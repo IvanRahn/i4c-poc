@@ -1,10 +1,9 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent} from "./index"
+import {HTMLContent} from "../index"
 
 const CardWrapper = styled.div`
 overflow: hidden;
-/* padding: 0 0 32px; */
 margin: 48px auto 0;
 width: 100%;
 display: flex;
@@ -37,13 +36,11 @@ class VolunteerCard extends Component {
         const {CardHeading, CardText, CardImage} = this.props;
 
         return(
-            // <div>
                 <CardWrapper display={this.props.display}>
                     <ImageContainer src= {CardImage} />
                         <h2>{CardHeading}</h2>
                         <HTMLContent content={CardText}/>
                 </CardWrapper>
-            // </div>
         )
     }
 }

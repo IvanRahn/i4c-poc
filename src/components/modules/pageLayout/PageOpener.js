@@ -1,100 +1,85 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Link, HTMLContent} from './../../modules';
-import CardSection from './CardSection';
-import VerticalCardSection from './VerticalCardSection';
-
-const SectionWrapper2 = styled(SectionWrapper)`
-overflow: hidden;
-position: relative;
-min-height: 100vh;
-`
+import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from '..';
 
 const ImageContainer = styled.img`
 width: 100%;
+max-width: 720px;
+max-height: 480px;
 height: auto; 
 position: relative;
-top: -110px;
-
-@media (min-width: 500px){
-    width: 550px;
-    height: 400px; 
-    position: relative;
-    top: 0;
-}
-
-@media (min-width: 1025px){
-    width: 670px;
-    height: 500px; 
-    position: relative;
-    top: 0;
-}
-
+top: 0;
 `
-const SectionLeft = styled.div `
+
+const Section = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
     width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-`
-const SectionRight = styled.div `
-width: ${props => props.width || "100%"};
-@media (min-width: 768px){
-    width: 50%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
+    height: ${props => props.height || "auto"};
 }
 `
 
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px;
-
 @media (min-width: 768px){
-    margin-top: 200px;
+    margin-top: ${props => props.marginTop || "20%"};
 }
 `
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
-
+const LinkContainer = styled.div`
+margin-top: 30px;
 `
 
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs,  horizontalCardApi, horizontalCardState, verticalCardApi, verticalCardState, children } = this.props;        
-		console.log('TCL: PageOpener -> render -> children ', children )
-        
+        const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
         return (
             <>
-            <SectionWrapper2 color={color} height= "auto" padding="0">
-                <SectionLeft height="100%">
+            <SectionWrapper align_start color={color} height= "auto" padding="0">
+                <Section height="100%">
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 
                         </Breadcrumb>    
                     <ImageContainer src= {image} alt="Cherring man" />
-                    <VerticalCardSection verticalCardApi={verticalCardApi} verticalCardState={verticalCardState}  /> 
- 
-                </SectionLeft>
-
-                <SectionRight>
-                    <Wrapper>
+                    {/* first received child is a vertical list */}
+                    {children[0]}
+                </Section>
+                <Section>
+                    <Wrapper marginTop={marginTop}>
                         <Breadcrumb>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null}             
                          </Breadcrumb>  
-                        <h1>{heading}</h1> 
-                        {/* <P margin="70px">{text}</P> */}
-                        <HTMLContent content={text} />
+
+                        {information ? information.map((information) => {
+
+                        return(
+                            <Fragment key={information.heading}>
+                            <HTMLContent  content={information.heading} />
+                            <HTMLContent content={information.text} />
+                            </Fragment>
+                        )
+                        } ) : null}
+
+                        {link ? link.map((link) => {
+
+                        return(
+                            <LinkContainer key={link.linkText}>
+                                <InternalLink text={link.linkText} color={link.linkColor} location={link.linkLocation}  />
+                            </LinkContainer>
+                        )
+                        } ) : null}
+
+
                     </Wrapper>               
-                </SectionRight>
-            </SectionWrapper2>
-            <CardSection horizontalCardApi={horizontalCardApi} horizontalCardState={horizontalCardState} />
+                </Section>
+                        {/* second received child is horizontal list*/}
+                        {children[1]}
+                        {/* third received child is  vertical list again, but for desktop view it is rendered here*/}
+                        {children[2]}
+
+            </SectionWrapper>
+            
             </>  
         )
     } 
