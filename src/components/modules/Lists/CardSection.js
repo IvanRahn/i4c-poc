@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SmallHorizontalCard} from '..';
+import {SmallHorizontalCard, ImpactStatsCard} from '..';
 
 
 const Wrapper = styled.div`
