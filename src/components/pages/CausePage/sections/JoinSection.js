@@ -20,6 +20,7 @@ const Section = styled.div`
     display: flex;
     flex-direction: ${props => props.direction || "row"};
     justify-content: ${props => props.justify || null};
+    padding-left: ${props => props.padding || null}
   }
 `;
 const Svg = styled.svg`
@@ -69,7 +70,7 @@ class JoinSection extends Component {
           <h1>{content[0].heading}</h1>
         </Section>
 
-        <Section direction="column">
+        <Section direction="column" padding="30px">
           <h2>{content[0].subheading}</h2>
           <InternalLink text={content[0].link.text} color={content[0].link.color} location={content[0].link.href} />
         </Section>
