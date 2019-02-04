@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Loading, HorizontalCard} from "../../../modules";
+import {SectionWrapper, Loading, HeroArticleCard} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 
@@ -28,7 +28,7 @@ class OurDonorSection extends Component {
             <SectionWrapper height="auto">
                 <H>Our Donors/ Charity Stories</H>
 
-                <HorizontalCard CardHeading="This is the heading" CardText="<p>This is some text</p>"/>
+                <HeroArticleCard CardHeading="This is the heading" CardText="<p>This is some text</p>"/>
             </SectionWrapper>
         )
     }

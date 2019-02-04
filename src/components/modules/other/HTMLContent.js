@@ -5,6 +5,7 @@ import ReactGA from "react-ga";
 import {brandBlack} from "../BrandStyle"
 
 const Div = styled.div `
+color: inherit;
    a {
     border-bottom: 3px solid ${brandBlack};
     display: inline;
