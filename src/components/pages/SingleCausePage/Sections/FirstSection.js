@@ -18,7 +18,7 @@ const FirstSection = ({cause}) => {
            information={information}
            breadcrumbs={[
             {to: "/cause", text:"Causes we care about"}, 
-            {to: "#", text: cause.title.name.adsfdasf} 
+            {to: "#", text: cause.title.name} 
         ]}
             >
            <></>
