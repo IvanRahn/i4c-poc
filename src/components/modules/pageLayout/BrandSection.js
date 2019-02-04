@@ -65,7 +65,9 @@ class BrandOpener extends Component {
                         {link ? link.map((link) => {
 
                         return(
-                            <InternalLink text={link.linkText} color={link.linkColor} location={link.linkLocation} key={link.linkText}  />
+                            <LinkContainer key={link.text}>
+                                <InternalLink text={link.text} color={link.color} location={link.location}  />
+                            </LinkContainer>
                         )
                         } ) : null}
 
