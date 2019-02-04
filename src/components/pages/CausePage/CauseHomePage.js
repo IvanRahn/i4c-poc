@@ -18,7 +18,9 @@ class causesHomePage extends Component {
         return (
             <div>
                 {/* <FirstSection /> */}
-                <OurDonorSection />
+                {/* <OurDonorSection /> */}
+
+                <JoinSection />
                 {/* <DonateSection  color="green"/>
                 <OurDonorSection />
                 <JoinSection /> */}

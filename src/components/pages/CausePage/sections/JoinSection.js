@@ -66,12 +66,12 @@ class JoinSection extends Component {
                     c-2.7-0.6-5.5,0.3-7.4,2c3.1,0.9,7.3,4.1,7.4,4.7c0,0-6.4-2.8-9.3-2.3c0,0,0,0.1-0.1,0.1L30.5,24.1z"
             />
           </Svg>
-          <h1>Investing for charity</h1>
+          <h1>{content[0].heading}</h1>
         </Section>
 
         <Section direction="column">
-          <h2>All this works because of our Donors.</h2>
-          <InternalLink text="Join the cause" color="white" />
+          <h2>{content[0].subheading}</h2>
+          <InternalLink text={content[0].link.text} color={content[0].link.color} location={content[0].link.href} />
         </Section>
       </SectionWrapper>
     );
