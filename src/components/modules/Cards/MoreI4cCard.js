@@ -1,6 +1,8 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {LinkWrapper} from './';
+import {LinkWrapper} from './../';
+
+
 const CardWrapper = styled.div`
 overflow: hidden;
 width: 300px;

@@ -1,12 +1,11 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import image from "./../../img/cartoon.jpg"
-import {HTMLContent, LinkWrapper} from "./../modules"
-
+import {HTMLContent, LinkWrapper} from ".."
+import {brightGreen} from "../BrandStyle"
 const CardWrapper = styled.div`
 overflow: hidden;
 padding: 18px 12px;
-background-color: #24c421;
+background-color: ${brightGreen};
 border-radius: 4px;
 
 @media only screen and (min-width: 500px) {
@@ -45,7 +44,7 @@ class FeaturedCauseCard extends Component {
             
                 <LinkWrapper to={to}>
                     <CardWrapper>
-                        <ImageContainer src={CardImage || image} />
+                        <ImageContainer src={CardImage || ""} />
                         <DivContainer>
                             <h3>{CardHeading}</h3>
                             <HTMLContent content={CardText}/>

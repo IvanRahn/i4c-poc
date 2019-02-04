@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import SectionWrapper from './SectionWrapper';
-import InternalLink from './InternalLink';
+import {SectionWrapper, InternalLink} from './../';
 const ImpactSectionWrapper = styled(SectionWrapper)`
 display: flex;
 flex-direction: column;
