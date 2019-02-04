@@ -18,7 +18,7 @@ margin: 0px 24px;
     padding: 0 0 32px;
     margin: 48px auto 0;
     width: 100%;
-    margin: 0px 24px;
+    margin: 0px 24px; 
  }
 `
 const DivContainer = styled.div`
@@ -27,7 +27,8 @@ padding: 2px 20px;
 
 @media only screen and (min-width: 500px) {
     width: 50%;
-    padding: 40px 80px 0px 0px;
+    padding: 40px 80px 0px 0px; 
+    
  }
 `
 const DivImageContainer = styled.div`

@@ -15,9 +15,14 @@ img {
 @media (max-width: 768px){
     img {
         height: 150px; 
-        width: 150px;
+        width: 150px; 
+        margin: 0 126px 0 0;
     }
 } 
+
+div {
+    padding: 0; 
+}
 
 `
 

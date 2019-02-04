@@ -47,6 +47,7 @@ const ImageContainer = styled.img`
 height: 250px; 
 width: 250px; 
 border-radius: 100%;
+margin: 12px auto 25px;
 
 @media only screen and (min-width: 500px) {
     height: 400px; 
