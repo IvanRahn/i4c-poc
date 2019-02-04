@@ -12,11 +12,11 @@ import Link from "./LinksAndButtons/Link";
 import CenteredContent from "./pageLayout/CenteredContent";
 import Loading from "./pageLayout/Loading";
 import LinkWrapper from './LinksAndButtons/LinkWrapper';
+import SmallHorizontalCard from './../modules/Cards/SmallHorizontalCard';
 import HeroArticleCard from './Cards/HeroArticleCard';
 import Breadcrumb from './LinksAndButtons/Breacrumb';
 import SectionWithWave from './pageLayout/SectionWithWave';
 import HowItWorksSection from "./pageLayout/HowItWorksSection";
-import SmallHorizontalCard from './Cards/SmallHorizontalCard';
 import TreeSVG from "./other/TreeSVG";
 import PageOpener from './pageLayout/PageOpener';
 import Disclaimer from './pageLayout/Disclaimer';
@@ -27,7 +27,9 @@ import QuoteCard from "./Cards/QuoteCard";
 import {darkGreen, brightGreen,brandBlack, brandGrey, brandWhite} from "./BrandStyle"
 import ProfileCard from "./Cards/ProfileCard";
 import HorizontalCardSection from "./Lists/HorizontalCardSection";
-
+import ImpactStatsCard from './Cards/ImpactStatsCard';
+import ErrorBoundary from './other/ErrorBoundary';
+import StoryCause from "./StoryCause";
 
 export  {
     darkGreen, 
@@ -49,11 +51,12 @@ export  {
     CenteredContent,
     Loading,
     LinkWrapper,
+    SmallHorizontalCard,
     HeroArticleCard,
     Breadcrumb,
     SectionWithWave,
     HowItWorksSection,
-    SmallHorizontalCard,
+    StoryCause,
     TreeSVG,
     PageOpener,
     Disclaimer,
@@ -63,4 +66,6 @@ export  {
     QuoteCard,
     ProfileCard,
     HorizontalCardSection,
+    ImpactStatsCard,
+    ErrorBoundary,
 }
