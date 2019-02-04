@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import {darkGreen} from "./../BrandStyle"
+import { ErrorBoundary } from '..';
 
 const StyledBreadcrumb = styled.span`
 display: ${props => props.mobile ? "flex" : "none"};
@@ -40,9 +41,11 @@ border: 1px solid ${darkGreen};
 `
 const Breadcrumb = ({text, to, mobile, children}) => {
     return (
+        <ErrorBoundary>
         <StyledBreadcrumb mobile={mobile}>
         {children}
         </StyledBreadcrumb>
+        </ErrorBoundary>
     )
 }
 

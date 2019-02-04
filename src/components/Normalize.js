@@ -20,9 +20,10 @@ html,body
 {
     width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; 
+    color: #3c4153;
     /* max-width: 1200px; */
     /* margin: 0 auto */
 }
@@ -44,6 +45,7 @@ body {
 
 main {
   display: block;
+  min-height: 100vh;
   margin-top: 60px;
   position: relative;
   transition: 1s;
@@ -64,7 +66,14 @@ small {
   font-size: 13px;
 }
 
-
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start:0;
+  margin-block-end:0;
+  margin-bottom: 16px;
+  @media only screen and (min-width: 960px) {
+    margin-bottom: 24px;
+  }
+}
 
 h1 {
   font-size: 32px;

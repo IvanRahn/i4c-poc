@@ -7,7 +7,7 @@ import HorizontalCard from "./HeroArticleCard";
 
 const SmallHorizontalCard = styled(HorizontalCard)`
 img {
-    border-radius: 50%;
+    border-radius: 0;
     height: 100px;
     width: 100px;
 }
