@@ -23,6 +23,8 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+    /* max-width: 1200px; */
+    /* margin: 0 auto */
 }
 
 /* Sections

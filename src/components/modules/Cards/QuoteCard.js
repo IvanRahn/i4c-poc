@@ -7,14 +7,17 @@ const Quote = styled.div`
     padding: 24px;
     z-index: 1;
     background-color: ${brandWhite};
-    margin-bottom: -164px;
+    /* margin-bottom: -164px; */
     width: 262px;
+    /* position: absolute; */
+    bottom: 0;
     /* height: 246px; */
+    transform: translateY(50%);
     @media only screen and (min-width: 500px) {
         
     }
     @media only screen and (min-width: 500px) {
-    margin-bottom: -148px;
+    /* margin-bottom: -148px; */
     width: 576px;
     /* height: 202px; */
     }

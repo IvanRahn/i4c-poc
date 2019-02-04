@@ -25,6 +25,9 @@ import CardSection from './Lists/CardSection';
 import ProposalCardAnchor from "./Cards/ProposalCardAnchor";
 import QuoteCard from "./Cards/QuoteCard";
 import {darkGreen, brightGreen,brandBlack, brandGrey, brandWhite} from "./BrandStyle"
+import ProfileCard from "./Cards/ProfileCard";
+
+
 export  {
     darkGreen, 
     brightGreen, 
@@ -56,5 +59,6 @@ export  {
     FeaturedCauseSection,
     CardSection,
     ProposalCardAnchor,
-    QuoteCard
+    QuoteCard,
+    ProfileCard,
 }

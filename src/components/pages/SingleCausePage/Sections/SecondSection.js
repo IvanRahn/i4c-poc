@@ -5,7 +5,7 @@ import  styled  from 'styled-components';
 const Div = styled.div`
     width: 100%;
     padding: 0 24px 24px;
-    max-width: 376px;
+    max-width: 500px;
     @media only screen and (min-width: 500px) {
         width: 50%;
     }
@@ -43,7 +43,7 @@ const SecondSection = ({cause}) => {
             </ProposalCardAnchor></Div>
             <QuoteCard
             quote="I'm a very motivational quote
-            I'm a very motivational quote
+    I'm a very motivational quote
             I'm a very motivational quote"
             author="I'm the author"
             />
