@@ -5,7 +5,7 @@ import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from './../
 
 
 const ImageContainer = styled.img`
-width: 100%;
+width: 50%;
 max-width: 720px;
 max-height: 480px;
 height: auto; 
@@ -13,19 +13,25 @@ position: relative;
 top: 0;
 `
 
-const Section = styled.div `
+const SectionLeft = styled.div `
+width: ${props => props.width || "100%"};
+@media (min-width: 768px){
+    width: 50%;
+    height: ${props => props.height || "auto"};
+    margin-top: 80px;
+}
+`
+const SectionRight = styled.div `
 width: ${props => props.width || "100%"};
 @media (min-width: 768px){
     width: 50%;
     height: ${props => props.height || "auto"};
 }
 `
+
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px;
-@media (min-width: 768px){
-    margin-top: ${props => props.marginTop || "20%"};
-}
 `
 
 const LinkContainer = styled.div`
@@ -39,12 +45,12 @@ class BrandOpener extends Component {
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
-                <Section height="100%"> 
+                <SectionLeft height="100%"> 
                     <ImageContainer src= {image1} alt="Brand" />
                     <ImageContainer src= {image2} alt="Brand" />
                     {/* first received child is a vertical list */}
-                </Section>
-                <Section>
+                </SectionLeft>
+                <SectionRight>
                     <Wrapper marginTop={marginTop}>
                         {information ? information.map((information) => {
 
@@ -64,7 +70,7 @@ class BrandOpener extends Component {
                         } ) : null}
 
                     </Wrapper>               
-                </Section>
+                </SectionRight>
             </SectionWrapper>
             
             </>  
