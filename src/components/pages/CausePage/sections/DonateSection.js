@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Loading, MoreI4cCard} from "../../../modules";
+import {SectionWithWave, Loading, MoreI4cCard} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 
@@ -10,7 +10,7 @@ text-align: center;
 `
 class DonateSection extends Component {
     componentDidMount() {
-        this.props.getContent("causes/homepage-card")
+        this.props.getContent("causes/donate-card")
     }
     render() {
 
@@ -26,7 +26,7 @@ class DonateSection extends Component {
         return (
             <>
 
-            <SectionWrapper id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
+            <SectionWithWave id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
                 {/* Fix this to be dynamic */}
                 <H>Donate once, give forever</H>
 
@@ -41,13 +41,13 @@ class DonateSection extends Component {
                         )
                 }) }
 
-            </SectionWrapper>
+            </SectionWithWave>
             </>
         )
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causeHomeCard
+    const {content, isFetching, error} = state.causeDonateCard
     return {
         content,
         isFetching,

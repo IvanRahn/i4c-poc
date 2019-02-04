@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Loading, HeroArticleCard} from "../../../modules";
+import {SectionWrapper, Loading, HeroArticleCard, TreeSVG} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 
@@ -25,11 +25,15 @@ class OurDonorSection extends Component {
             }
         
         return (
+            <>
             <SectionWrapper height="auto" padding="0 0 52px 0">
                 <H>{content[0].pageHeading}</H>
 
                 <HeroArticleCard big CardName={content[0].heading} CardText={content[0].text} CardImage={content[0].image.secure_url}/>
             </SectionWrapper>
+                <TreeSVG color="green"/>
+            </>
+
         )
     }
 }
