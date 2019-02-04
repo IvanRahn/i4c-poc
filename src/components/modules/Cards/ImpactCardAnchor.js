@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent, LinkWrapper} from "../"
+import {HTMLContent, LinkWrapper} from ".."
 import {brightGreen} from "../BrandStyle"
 const CardWrapper = styled.div`
 overflow: hidden;

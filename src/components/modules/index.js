@@ -1,6 +1,6 @@
 import InternalLink from "./LinksAndButtons/InternalLink";
-import Card from "./Cards/Card";
-import CauseCard from "./Cards/CauseCard";
+import Card from "./Cards/HeroListCard";
+import CauseCard from "./Cards/ImpactCardAnchor";
 import Footer from "./pageLayout/Footer";
 import HTMLContent from "./other/HTMLContent";
 import NavBar from "./pageLayout/NavBar";
@@ -12,7 +12,7 @@ import Link from "./LinksAndButtons/Link";
 import CenteredContent from "./pageLayout/CenteredContent";
 import Loading from "./pageLayout/Loading";
 import LinkWrapper from './LinksAndButtons/LinkWrapper';
-import HorizontalCard from './../modules/Cards/HorizontalCard';
+import HorizontalCard from './Cards/HeroArticleCard';
 import Breadcrumb from './LinksAndButtons/Breacrumb';
 import SectionWithWave from './pageLayout/SectionWithWave';
 import HowItWorksSection from "./pageLayout/HowItWorksSection";

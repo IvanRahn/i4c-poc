@@ -1,6 +1,6 @@
 import React  from "react";
 import styled from "styled-components";
-import {HTMLContent} from "./../"
+import {HTMLContent} from ".."
 
 const CardWrapper = styled.div`
 display: flex;
