@@ -12,7 +12,7 @@ import Link from "./LinksAndButtons/Link";
 import CenteredContent from "./pageLayout/CenteredContent";
 import Loading from "./pageLayout/Loading";
 import LinkWrapper from './LinksAndButtons/LinkWrapper';
-import HorizontalCard from './Cards/HeroArticleCard';
+import HeroArticleCard from './Cards/HeroArticleCard';
 import Breadcrumb from './LinksAndButtons/Breacrumb';
 import SectionWithWave from './pageLayout/SectionWithWave';
 import HowItWorksSection from "./pageLayout/HowItWorksSection";
@@ -22,10 +22,18 @@ import PageOpener from './pageLayout/PageOpener';
 import Disclaimer from './pageLayout/Disclaimer';
 import FeaturedCauseSection from "./pageLayout/FeaturedCauseSection";
 import CardSection from './Lists/CardSection';
-import AboutCard from "./AboutCard";
+import ProposalCardAnchor from "./Cards/ProposalCardAnchor";
+import QuoteCard from "./Cards/QuoteCard";
+import {darkGreen, brightGreen,brandBlack, brandGrey, brandWhite} from "./BrandStyle"
+import ProfileCard from "./Cards/ProfileCard";
 
 
 export  {
+    darkGreen, 
+    brightGreen, 
+    brandBlack, 
+    brandGrey, 
+    brandWhite,
     Footer,
     InternalLink,
     Card,
@@ -40,7 +48,7 @@ export  {
     CenteredContent,
     Loading,
     LinkWrapper,
-    HorizontalCard,
+    HeroArticleCard,
     Breadcrumb,
     SectionWithWave,
     HowItWorksSection,
@@ -50,5 +58,7 @@ export  {
     Disclaimer,
     FeaturedCauseSection,
     CardSection,
-    AboutCard,
+    ProposalCardAnchor,
+    QuoteCard,
+    ProfileCard,
 }
