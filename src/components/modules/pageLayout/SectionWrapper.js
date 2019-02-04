@@ -4,10 +4,10 @@ import styled from "styled-components";
 const SectionWrapper = styled.section`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: ${props => props.justify || "center"};
     width: 100%;
     margin: 0 auto;
-    align-items: ${props => props.align_start ? "flex-start" : "center"}; 
+    align-items: ${props => props.align || "center"}; 
     position: relative;
     padding: ${props => props.padding || "52px 24px 0px"};
     :last-of-type(a) {

@@ -6,8 +6,8 @@ const LinkWrapper = styled(Link) `
 width: auto;
 margin: 24px 0;
 :hover, :focus {
+    > div {
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    div {
     background-color: ${darkGreen};
     }
 }

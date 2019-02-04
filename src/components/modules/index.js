@@ -22,8 +22,15 @@ import PageOpener from './pageLayout/PageOpener';
 import Disclaimer from './pageLayout/Disclaimer';
 import FeaturedCauseSection from "./pageLayout/FeaturedCauseSection";
 import CardSection from './Lists/CardSection';
-
+import ProposalCardAnchor from "./Cards/ProposalCardAnchor";
+import QuoteCard from "./Cards/QuoteCard";
+import {darkGreen, brightGreen,brandBlack, brandGrey, brandWhite} from "./BrandStyle"
 export  {
+    darkGreen, 
+    brightGreen, 
+    brandBlack, 
+    brandGrey, 
+    brandWhite,
     Footer,
     InternalLink,
     Card,
@@ -48,4 +55,6 @@ export  {
     Disclaimer,
     FeaturedCauseSection,
     CardSection,
+    ProposalCardAnchor,
+    QuoteCard
 }
