@@ -8,13 +8,13 @@ import {PageOpener, CardSection} from "../../../modules";
 
 const FirstSection = ({cause}) => {
         const impactList = Object.values(cause.impact)
-
+        console.log(cause.topSection)
+        const information = [{heading: `<h1>${cause.topSection.heading}</h1>`, text: cause.topSection.text} ]
         return ( 
 
 <PageOpener 
-           heading={cause.topSection.heading}
            image={cause.topSection.image.secure_url}
-           text={cause.topSection.text}
+           information={information}
            breadcrumbs={[
             {to: "/cause", text:"Causes we care about"}, 
             {to: "#", text: cause.title}
