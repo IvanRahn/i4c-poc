@@ -38,7 +38,7 @@ class FeaturedCauseCard extends Component {
 
         return(
             
-                <LinkWrapper to={to}>
+                <LinkWrapper color to={to}>
                     <CardWrapper>
                         <ImageContainer src={CardImage || image} />
                         <DivContainer>

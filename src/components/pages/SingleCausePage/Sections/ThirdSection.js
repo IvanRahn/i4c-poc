@@ -3,6 +3,9 @@ import styled from "styled-components";
 import {SectionWrapper, HeroArticleCard, SmallHorizontalCard, TreeSVG } from "./../../../modules"
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg";
 
+const SVG = styled(TreeSVG)`
+margin-bottom: -22px;
+`
 
 const ThirdSection = ({cause}) => {
 return (
@@ -15,7 +18,7 @@ return (
         CardText="Dolorem voluptatibus quisquam et nesciunt quis cupiditate. Sequi eum qui tempore a velit perferendis voluptate ipsum. Accusamus dolorem voluptates quia placeat et voluptas nstrum ut. Eum nisi autem ad tenetur. In officiis enim dicta enim itaque aspernatur cons"
         >
         </HeroArticleCard>
-        <TreeSVG color="white"/>
+        <SVG color="white"/>
     </SectionWrapper>
 )
 }

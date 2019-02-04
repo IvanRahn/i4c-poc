@@ -8,7 +8,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
-margin-top: 36px;
+margin: 36px 0 24px;
+
 color: ${props => props.white ? brandWhite : brandBlack};
 @media only screen and (min-width: 500px) {
     display: flex;
@@ -29,7 +30,6 @@ h4 {
     margin: 24px 0;
 }
 @media only screen and (min-width: 500px) {
-margin-top: -80px;
     width: 50%;
  }
 `

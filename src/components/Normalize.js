@@ -23,6 +23,7 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+    color: #3c4153;
     /* max-width: 1200px; */
     /* margin: 0 auto */
 }
