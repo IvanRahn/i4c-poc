@@ -13,6 +13,8 @@ import howItWorksStepsReducer from "./how_it_works_steps_reducer"
 import causeHomeCard from "./cause_home_card"
 import causeHomeVerticalCard from "./cause_home_card_vertical";
 import causeHomePageFirstSection from "./cause_homepage_first_section";
+import causeJoinUsSection from "./cause_join_us_section";
+import causeOurDonorSection from "./cause_our_donor_section";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -29,4 +31,7 @@ export default combineReducers({
     causeHomeCard: causeHomeCard,
     causeHomeVerticalCard: causeHomeVerticalCard,
     causeHomePageFirstSection: causeHomePageFirstSection,
+    causeJoinUsSection: causeJoinUsSection,
+    causeOurDonorSection: causeOurDonorSection,
+
 });

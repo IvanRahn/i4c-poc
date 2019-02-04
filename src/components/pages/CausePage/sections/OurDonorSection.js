@@ -12,12 +12,13 @@ text-align: center;
 `
 class OurDonorSection extends Component {
     componentDidMount() {
-        this.props.getContent("HOWITWORKSSTEPS")
+        this.props.getContent("causes/our-donor")
     }
     render() {
 
-        const { color, content, isFetching, error} = this.props;        
-        if (false) {
+        const {content, isFetching, error} = this.props;
+        console.log(content)        
+        if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
@@ -25,15 +26,15 @@ class OurDonorSection extends Component {
         
         return (
             <SectionWrapper height="auto">
-                <H>Our Donors/ Charity Stories</H>
+                <H>{content[0].pageHeading}</H>
 
-                <HeroArticleCard heading="This is the heading" text="<p>This is some text</p>"/>
+                <HeroArticleCard heading={content[0].heading} text={content[0].text} image={content[0].image.secure_url}/>
             </SectionWrapper>
         )
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.causeOurDonorSection
     return {
         content,
         isFetching,

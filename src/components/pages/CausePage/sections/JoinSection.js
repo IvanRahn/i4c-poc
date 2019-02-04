@@ -38,16 +38,17 @@ const Svg = styled.svg`
 
 class JoinSection extends Component {
   componentDidMount() {
-    this.props.getContent("");
+    this.props.getContent("causes/join-us");
   }
 
   render() {
-    const { color, content, isFetching, error } = this.props;
-    if (false) {
-      return <Loading />;
-      // } else if (error || !content || !content[0]){
-      return <div>error</div>;
-    }
+    const { content, isFetching, error} = this.props;
+        console.log("This page", content)       
+        if (isFetching) {
+            return (<Loading/>)
+            } else if (error || !content || !content[0]){
+                return <div>error</div>
+            }
 
     return (
       <SectionWrapper color="green" height="auto" padding="28px 16px 64px 16px">
@@ -78,7 +79,7 @@ class JoinSection extends Component {
 }
 
 const mapStateToProps = state => {
-  const { content, isFetching, error } = state.aboutFirst;
+  const { content, isFetching, error } = state.causeJoinUsSection;
   return {
     content,
     isFetching,
