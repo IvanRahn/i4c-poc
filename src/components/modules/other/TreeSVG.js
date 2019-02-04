@@ -21,4 +21,4 @@ const Tree = ({color}) => {
     )
 }
 
-export default Tree
+export default Tree;

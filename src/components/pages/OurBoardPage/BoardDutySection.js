@@ -12,7 +12,14 @@ height: auto;
 width: auto; 
 max-width: 600px; 
 max-height: 600px;
-margin: -140px auto 0 auto; 
+margin: -140px auto 0 auto;
+
+@media (max-width: 768px){
+    img {
+        height: 10px; 
+        width: 15px;
+    }
+}
 `
 
 const Section = styled.div `

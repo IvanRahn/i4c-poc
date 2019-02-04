@@ -8,7 +8,14 @@ import {Loading} from "./../../modules";
 const Section = styled.div `
 height: 50%;
 width: ${props => props.width || "100%"};
-text-align: center;
+text-align: center; 
+border-bottom-style: solid;
+border-bottom-width: thin;
+margin: 0 auto;
+padding: 0 0 70px; 
+a{
+color: green;
+}
 @media (min-width: 768px){
     width: 50%;
 }
@@ -36,7 +43,7 @@ class FindOutMore extends Component {
                         <InternalLink 
                         text={findout[0].content.link.text} 
                         to={findout[0].url} 
-                        />
+                        /> 
                     </Section> 
                 </SectionWrapper>
                 
