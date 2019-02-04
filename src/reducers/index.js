@@ -15,6 +15,7 @@ import causeHomeVerticalCard from "./cause_home_card_vertical";
 import causeHomePageFirstSection from "./cause_homepage_first_section";
 import causeJoinUsSection from "./cause_join_us_section";
 import causeOurDonorSection from "./cause_our_donor_section";
+import aboutCard from "./about_homepage_card";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -26,6 +27,7 @@ export default combineReducers({
     aboutSecond: aboutSecondSection,
     aboutLast: aboutLastSection,
     aboutVolunteer: aboutVolunteerSection,
+    aboutCard: aboutCard,
     steps: howItWorksStepsReducer,
     teamSection: homePageTeamSectionReducer,
     causeHomeCard: causeHomeCard,
