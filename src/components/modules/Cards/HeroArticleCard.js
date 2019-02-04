@@ -8,19 +8,20 @@ display: flex;
 flex-direction: column;
 align-items: center;
 width: 100%;
+margin-top: 36px;
 color: ${props => props.white ? brandWhite : brandBlack};
 @media only screen and (min-width: 500px) {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
  }
 `
 const DivContainer = styled.div`
 width: 100%;
 color: ${brandWhite};
-margin-top: -80px;
+padding-left: 24px;
 h3 {
     margin: 24px 0;
 }
@@ -28,10 +29,10 @@ h4 {
     margin: 24px 0;
 }
 @media only screen and (min-width: 500px) {
+margin-top: -80px;
     width: 50%;
  }
 `
-
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -56,7 +57,6 @@ const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName, 
                     <h4>{CardHeading}  </h4>
                 <HTMLContent content= {CardText} />
                 </DivContainer>
-                {children}
             </CardWrapper>
 
         )
