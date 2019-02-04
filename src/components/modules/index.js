@@ -12,7 +12,7 @@ import Link from "./LinksAndButtons/Link";
 import CenteredContent from "./pageLayout/CenteredContent";
 import Loading from "./pageLayout/Loading";
 import LinkWrapper from './LinksAndButtons/LinkWrapper';
-import HorizontalCard from './Cards/HeroArticleCard';
+import HeroArticleCard from './Cards/HeroArticleCard';
 import Breadcrumb from './LinksAndButtons/Breacrumb';
 import SectionWithWave from './pageLayout/SectionWithWave';
 import HowItWorksSection from "./pageLayout/HowItWorksSection";
@@ -40,7 +40,6 @@ export  {
     CenteredContent,
     Loading,
     LinkWrapper,
-    HorizontalCard,
     Breadcrumb,
     SectionWithWave,
     HowItWorksSection,
@@ -51,4 +50,5 @@ export  {
     FeaturedCauseSection,
     CardSection,
     AboutCard,
+    HeroArticleCard,
 }

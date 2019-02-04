@@ -27,6 +27,7 @@ class DonateSection extends Component {
             <>
 
             <SectionWrapper id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
+                {/* Fix this to be dynamic */}
                 <H>Donate once, give forever</H>
                 <Card CardHeading="This is a heading" CardText="This is some text" CardImage={image}/>
             </SectionWrapper>

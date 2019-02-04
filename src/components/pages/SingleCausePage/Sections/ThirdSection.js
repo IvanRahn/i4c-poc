@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {SectionWrapper, HorizontalCard, SmallHorizontalCard, TreeSVG } from "./../../../modules"
+import {SectionWrapper, HeroArticleCard, SmallHorizontalCard, TreeSVG } from "./../../../modules"
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg";
 
 const Div = styled.div`
@@ -12,7 +12,7 @@ const ThirdSection = ({cause}) => {
 return (
     <SectionWrapper color="green" height="auto">
 
-        <HorizontalCard
+        <HeroArticleCard
         CardImage={image}
         CardHeading="Heading"
         CardText="asfsadfasdfasdfasfasdfasfasdf"
@@ -42,7 +42,7 @@ return (
             >
             </SmallHorizontalCard>
     </Div>
-        </HorizontalCard>
+        </HeroArticleCard>
         <TreeSVG color="white"/>
     </SectionWrapper>
 )

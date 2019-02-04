@@ -54,17 +54,17 @@ border-radius: 100%;
     border-radius: 100%;
  }
 `
-const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName, children}) => {
+const HorizontalCard = ({className, heading, subHeading, text, image, children}) => {
     
         return(
             <CardWrapper className={className}>
                 <DivImageContainer>
-                    <ImageContainer  src= {CardImage} />
+                    <ImageContainer  src= {image} />
                 </DivImageContainer>
                 <DivContainer>
-                    <h3>{CardName}</h3>
-                    <h4>{CardHeading}</h4>
-                <HTMLContent content= {CardText} />
+                    <h3>{heading}</h3>
+                    <h4>{subHeading}</h4>
+                <HTMLContent content= {text} />
                 {children}
                 </DivContainer>
             </CardWrapper>
