@@ -14,15 +14,14 @@ color: ${props => props.white ? brandWhite : brandBlack};
 @media only screen and (min-width: 500px) {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-around;
-    width: 100%;
  }
 `
 const DivContainer = styled.div`
 width: 100%;
 color: ${brandWhite};
-padding-left: 24px;
+padding: 0 24px 0;
 h3 {
     margin: 24px 0;
 }
@@ -31,6 +30,7 @@ h4 {
 }
 @media only screen and (min-width: 500px) {
     width: 50%;
+    padding-top: 80px;
  }
 `
 

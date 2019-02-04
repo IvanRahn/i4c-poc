@@ -12,7 +12,8 @@ const FirstSection = ({cause}) => {
         const information = [{heading: `<h1>${cause.topSection.heading}</h1>`, text: cause.topSection.text} ]
         return ( 
 
-<PageOpener 
+        <PageOpener 
+            
            image={cause.topSection.image.secure_url}
            information={information}
            breadcrumbs={[
@@ -24,7 +25,7 @@ const FirstSection = ({cause}) => {
            <CardSection content={impactList}/>
 
 
-           </PageOpener>
+        </PageOpener>
 
          );
     }

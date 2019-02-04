@@ -8,7 +8,7 @@ const CardWrapper = styled.div`
 overflow: hidden;
 
 background-color: ${brightGreen};
-    padding: 24px 12px;
+    padding: 24px;
     border-radius: 16px;
     width: auto;
 @media only screen and (min-width: 500px) {
@@ -29,6 +29,7 @@ const DivContainer = styled.div`
 const ImageContainer = styled.img`
 height: 96px; 
 width: 96px;
+margin-bottom: 12px;
 `
 class FeaturedCauseCard extends Component {
     

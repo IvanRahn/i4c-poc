@@ -13,6 +13,9 @@ top: 0;
 
 const Section = styled.div `
 width: ${props => props.width || "100%"};
+    h1 {
+margin-top: 32px;
+    }
 @media (min-width: 768px){
     width: 50%;
     height: ${props => props.height || "auto"};
@@ -21,7 +24,7 @@ width: ${props => props.width || "100%"};
 
 const Wrapper = styled.div`
 text-align: left;
-padding: 48px;
+padding: 48px 24px;
 @media (min-width: 768px){
     margin-top: ${props => props.marginTop || "20%"};
 }
@@ -36,7 +39,7 @@ class PageOpener extends Component {
         const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
         return (
             <>
-            <SectionWrapper align="flex-start" color={color} height= "auto" padding="0">
+            <SectionWrapper align="flex-start" color={color} height= "auto" padding="0 0">
                 <Section height="100%">
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 

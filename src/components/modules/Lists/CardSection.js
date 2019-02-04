@@ -17,14 +17,16 @@ const Div = styled.div `
     justify-content: center;
     width: auto;
     flex-wrap: wrap;
-    margin: 0 auto;
-@media only screen and (min-width: 768px){
+    margin: 0 24px;
+@media only screen and (min-width: 960px){
+
 }
 `
 
 class CardSection extends Component {
     render() { 
-            const {content, display} = this.props
+            const { content , display} = this.props
+			console.log('TCL: CardSection -> render -> content', content)
             console.log("PROPS", this.props)
             return (
                 <>
@@ -38,7 +40,11 @@ class CardSection extends Component {
                         //     mobile={this.props.mobile}
                         //     />
                         // </Wrapper>
-                        <ImpactStatsCard/>
+                        <ImpactStatsCard 
+                        value = {content.value}
+                        text={content.text}
+                        image={content.image}
+                         key={content.image.secure_url}/>
                     )
                     }) }
 </Div>

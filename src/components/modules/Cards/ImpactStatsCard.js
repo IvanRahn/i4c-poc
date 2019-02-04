@@ -1,20 +1,24 @@
 import React  from "react";
 import styled from "styled-components";
-import {brandBlack, brandWhite, brightGreen} from "./../"
+import {brandBlack, brandWhite, brightGreen, HTMLContent} from "./../"
 
 const CardWrapper = styled.div `
     display: flex;
     flex-direction: column;
-    flex-wrap: no-wrap;
-    justify-items: flex-start;
-    margin: 24px;
+    margin: 24px 12px ;
+        width: 40%;
     img {
-        width: 40px;
-        height: 40px;
+        width: 48px;
+        height: 48px;
+    }
+    @media only screen and (min-width: 500px) {
+        align-items: center;
+        
     }
     @media only screen and (min-width: 960px) {
-        align-items: center;
-    }
+            width: auto;
+    }   
+
     p {
         @media only screen and (min-width: 960px) {
             text-align: center;
@@ -24,14 +28,17 @@ const CardWrapper = styled.div `
 const Stats = styled.p`
 color: ${brightGreen};
 font-size: 24px;
+margin: 24px 0 12px;
 `
 
-const ImpactStatsCard = () => {
+const ImpactStatsCard = ({image, text, value}) => {
+	console.log('TCL: ImpactStatsCard -> image, text, impact', image, text, value)
     
         return(
             <CardWrapper>
-                <Stats>STATS</Stats>
-                <p>Explaining the stats</p>
+                <img src={image.secure_url} alt=""/>
+                <Stats>{value}</Stats>
+                <HTMLContent content={text}/>
             </CardWrapper>
 
         )
