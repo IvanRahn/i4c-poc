@@ -205,7 +205,7 @@ class NavBar extends Component {
                 <NavCheckbox type="checkbox" onClick={this.moveContent}id="nav-checkbox"/>
                 <NavUl>
                     <li> <InternalLink text="ABOUT US" to="/about" section="nav" location="homepage"/></li> 
-                    <li> <InternalLink text="HOW IT WORKS"to="/howitworks"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="HOW IT WORKS"to="/how-it-works"section="nav" location="homepage"/> </li>
                     <li> <InternalLink text="OUR IMPACT"to="#"section="nav" location="homepage"/> </li>
                     <li> <InternalLink text="CONTACT US"to="#"section="nav" location="homepage"/> </li>
                     <li> <InternalLink text="Login"to="#"section="nav" location="homepage"/> </li>
