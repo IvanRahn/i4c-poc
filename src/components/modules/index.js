@@ -22,6 +22,8 @@ import PageOpener from './pageLayout/PageOpener';
 import Disclaimer from './pageLayout/Disclaimer';
 import FeaturedCauseSection from "./pageLayout/FeaturedCauseSection";
 import CardSection from './Lists/CardSection';
+import AboutCard from "./AboutCard";
+
 
 export  {
     Footer,
@@ -48,4 +50,5 @@ export  {
     Disclaimer,
     FeaturedCauseSection,
     CardSection,
+    AboutCard,
 }

@@ -20,7 +20,6 @@ const Div = styled.div `
 class HTMLContent extends Component {
     contentClickHandler = (e) => {
       const targetLink = e.target.closest('a');
-			console.log('​HTMLContent -> contentClickHandler -> targetLink', targetLink.innerHTML)
       const {location} = this.props;
       const text = targetLink.innerHTML
       ReactGA.event({

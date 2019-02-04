@@ -18,9 +18,9 @@ class OurDonorSection extends Component {
     render() {
 
         const { color, content, isFetching, error} = this.props;        
-        if (isFetching) {
+        if (false) {
             return (<Loading/>)
-            } else if (error || !content || !content[0]){
+            // } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
         
@@ -28,7 +28,7 @@ class OurDonorSection extends Component {
             <SectionWrapper height="auto">
                 <H>Our Donors/ Charity Stories</H>
 
-                <HorizontalCard />
+                <HorizontalCard CardHeading="This is the heading" CardText="<p>This is some text</p>"/>
             </SectionWrapper>
         )
     }

@@ -1,7 +1,6 @@
-import React, {Component} from 'react';
+import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Link, HTMLContent} from '..';
-
+import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from '..';
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -19,18 +18,22 @@ width: ${props => props.width || "100%"};
     height: ${props => props.height || "auto"};
 }
 `
+
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px;
 @media (min-width: 768px){
-    margin-top: 20%;
+    margin-top: ${props => props.marginTop || "20%"};
 }
+`
+const LinkContainer = styled.div`
+margin-top: 30px;
 `
 
 class PageOpener extends Component {
 
     render () {
-        const { color, image, heading, text, breadcrumbs, children, heading2, text2 } = this.props;        
+        const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -43,16 +46,30 @@ class PageOpener extends Component {
                     {children[0]}
                 </Section>
                 <Section>
-                    <Wrapper>
+                    <Wrapper marginTop={marginTop}>
                         <Breadcrumb>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null}             
                          </Breadcrumb>  
-                        <h1>{heading}</h1> 
-                        <HTMLContent content={text}/>
-                        <h2>{heading2}</h2>
-                        <HTMLContent content={text2}/>
-                        {/* <h3>{heading3}</h3>
-                        <HTMLContent content={text3}/> */}
+
+                        {information ? information.map((information) => {
+
+                        return(
+                            <Fragment key={information.heading}>
+                            <HTMLContent  content={information.heading} />
+                            <HTMLContent content={information.text} />
+                            </Fragment>
+                        )
+                        } ) : null}
+
+                        {link ? link.map((link) => {
+
+                        return(
+                            <LinkContainer key={link.linkText}>
+                                <InternalLink text={link.linkText} color={link.linkColor} location={link.linkLocation}  />
+                            </LinkContainer>
+                        )
+                        } ) : null}
+
 
                     </Wrapper>               
                 </Section>
