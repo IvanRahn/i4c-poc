@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Loading, MoreI4cCard} from "../../../modules";
+import {SectionWithWave, Loading, MoreI4cCard} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
 
@@ -26,7 +26,7 @@ class DonateSection extends Component {
         return (
             <>
 
-            <SectionWrapper id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
+            <SectionWithWave id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
                 {/* Fix this to be dynamic */}
                 <H>Donate once, give forever</H>
 
@@ -41,7 +41,7 @@ class DonateSection extends Component {
                         )
                 }) }
 
-            </SectionWrapper>
+            </SectionWithWave>
             </>
         )
     }
