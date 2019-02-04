@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent} from "./index"
+import {HTMLContent} from "../index"
 
 const CardWrapper = styled.div`
 overflow: hidden;

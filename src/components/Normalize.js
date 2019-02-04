@@ -23,6 +23,8 @@ html,body
     margin: 0px;
     padding: 0px;
     overflow-x: hidden; 
+    /* max-width: 1200px; */
+    /* margin: 0 auto */
 }
 
 /* Sections
@@ -86,11 +88,11 @@ h2 {
 }
 h3 {
   font-size: 24px;
-  font-weight: light;
+  font-weight: lighter;
   line-height: 32px;
   @media only screen and (min-width: 960px) {
     font-size: 32px;
-    font-weight: light;
+    font-weight: lighter;
     line-height: 40px;
   }
 }

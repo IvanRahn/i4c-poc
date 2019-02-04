@@ -36,7 +36,7 @@ class PageOpener extends Component {
         const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
         return (
             <>
-            <SectionWrapper align_start color={color} height= "auto" padding="0">
+            <SectionWrapper align="flex-start" color={color} height= "auto" padding="0">
                 <Section height="100%">
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 

@@ -1,71 +1,61 @@
 import React  from "react";
 import styled from "styled-components";
 import {HTMLContent} from ".."
+import {brandBlack, brandWhite} from "./../"
 
 const CardWrapper = styled.div`
 display: flex;
 flex-direction: column;
-overflow: hidden;
-padding: 0 0 32px;
-margin: 48px auto 0;
+align-items: center;
 width: 100%;
-margin: 0px 24px;
-
+margin-top: 36px;
+color: ${props => props.white ? brandWhite : brandBlack};
 @media only screen and (min-width: 500px) {
     display: flex;
     flex-direction: row;
-    overflow: hidden;
-    padding: 0 0 32px;
-    margin: 48px auto 0;
+    align-items: center;
+    justify-content: space-around;
     width: 100%;
-    margin: 0px 24px;
  }
 `
 const DivContainer = styled.div`
 width: 100%;
-padding: 2px 20px;
-
+color: ${brandWhite};
+padding-left: 24px;
+h3 {
+    margin: 24px 0;
+}
+h4 {
+    margin: 24px 0;
+}
 @media only screen and (min-width: 500px) {
+margin-top: -80px;
     width: 50%;
-    padding: 40px 80px 0px 0px;
- }
-`
-const DivImageContainer = styled.div`
-width: 100%;
-padding: 2px 16px;
-display: flex;
-justify-content: center;
-align-items: center;
-
-@media only screen and (min-width: 500px) {
-    width: 50%;
-    padding: 2px 16px;
  }
 `
 
 const ImageContainer = styled.img`
-height: 270px; 
-width: 270px; 
+width: 100%;
+height: 100%;
 border-radius: 100%;
-
+max-width: ${props => props.big ? "270px" : "160px"}; 
+max-height: ${props => props.big ? "270px" : "160px"}; 
 @media only screen and (min-width: 500px) {
-    height: 436px; 
-    width: 436px; 
-    border-radius: 100%;
+
+max-width: ${props => props.big ? "436px" : "270px"}; 
+max-height: ${props => props.big ? "436px" : "270px"}; 
+width: 50%;
  }
 `
-const HorizontalCard = ({className, heading, subHeading, text, image, children}) => {
+const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName, children, white, big}) => {
     
         return(
-            <CardWrapper className={className}>
-                <DivImageContainer>
-                    <ImageContainer  src= {image} />
-                </DivImageContainer>
+            <CardWrapper white={white} className={className}>
+                    <ImageContainer big={big} src= {CardImage} />
                 <DivContainer>
-                    <h3>{heading}</h3>
-                    <h4>{subHeading}</h4>
-                <HTMLContent content= {text} />
-                {children}
+                    <h3>{CardName}</h3>
+                    <h4>{CardHeading}  </h4>
+                <HTMLContent content= {CardText} />
                 </DivContainer>
             </CardWrapper>
 
