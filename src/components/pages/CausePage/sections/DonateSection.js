@@ -10,7 +10,7 @@ text-align: center;
 `
 class DonateSection extends Component {
     componentDidMount() {
-        this.props.getContent("causes/homepage-card")
+        this.props.getContent("causes/donate-card")
     }
     render() {
 
@@ -47,7 +47,7 @@ class DonateSection extends Component {
     }
 }
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.causeHomeCard
+    const {content, isFetching, error} = state.causeDonateCard
     return {
         content,
         isFetching,

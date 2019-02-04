@@ -11,10 +11,10 @@ const Wrapper = styled.div`
     }
 `
 
-class CardSection extends Component {
+class HorizontalCardSection extends Component {
     render() { 
             const {content, display} = this.props
-            console.log("PROPS", this.props)
+            // console.log("PROPS", this.props)
             return (
                 <>
                
@@ -36,4 +36,4 @@ class CardSection extends Component {
 }
 
 
-export default CardSection;
+export default HorizontalCardSection;

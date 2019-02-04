@@ -11,7 +11,6 @@ import aboutVolunteerSection from "./about_volunteer_section";
 import homePageTeamSectionReducer from "./home_page_team_section"
 import howItWorksStepsReducer from "./how_it_works_steps_reducer"
 import causeHomeCard from "./cause_home_card"
-import causeHomeVerticalCard from "./cause_home_card_vertical";
 import causeHomePageFirstSection from "./cause_homepage_first_section";
 import causeJoinUsSection from "./cause_join_us_section";
 import causeOurDonorSection from "./cause_our_donor_section";
@@ -32,7 +31,6 @@ export default combineReducers({
     steps: howItWorksStepsReducer,
     teamSection: homePageTeamSectionReducer,
     causeHomeCard: causeHomeCard,
-    causeHomeVerticalCard: causeHomeVerticalCard,
     causeHomePageFirstSection: causeHomePageFirstSection,
     causeJoinUsSection: causeJoinUsSection,
     causeOurDonorSection: causeOurDonorSection,
