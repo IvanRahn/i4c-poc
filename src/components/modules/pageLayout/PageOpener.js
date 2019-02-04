@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from '..';
+import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink, ErrorBoundary} from '..';
 
 const ImageContainer = styled.img`
 width: 100%;
@@ -38,7 +38,7 @@ class PageOpener extends Component {
     render () {
         const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
         return (
-            <>
+            <ErrorBoundary>
             <SectionWrapper align="flex-start" color={color} height= "auto" padding="0 0">
                 <Section height="100%">
                         <Breadcrumb mobile>
@@ -83,8 +83,7 @@ class PageOpener extends Component {
 
             </SectionWrapper>
             
-            </>  
-        )
+            </ErrorBoundary>        )
     } 
 }
 

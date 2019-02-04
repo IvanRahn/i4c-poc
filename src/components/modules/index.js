@@ -27,8 +27,7 @@ import QuoteCard from "./Cards/QuoteCard";
 import {darkGreen, brightGreen,brandBlack, brandGrey, brandWhite} from "./BrandStyle"
 import ProfileCard from "./Cards/ProfileCard";
 import ImpactStatsCard from './Cards/ImpactStatsCard';
-
-
+import ErrorBoundary from './other/ErrorBoundary';
 export  {
     darkGreen, 
     brightGreen, 
@@ -63,4 +62,5 @@ export  {
     QuoteCard,
     ProfileCard,
     ImpactStatsCard,
+    ErrorBoundary,
 }

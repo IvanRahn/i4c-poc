@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionWrapper, InternalLink, ProposalCardAnchor, QuoteCard} from '../../../modules';
+import {SectionWrapper, InternalLink, ProposalCardAnchor, QuoteCard, ErrorBoundary} from '../../../modules';
 import  styled  from 'styled-components';
 import {brandGrey} from "./../../../modules/BrandStyle"
 const Div = styled.div`
@@ -24,7 +24,7 @@ const Hr = styled.hr`
 
 const SecondSection = ({cause}) => {
     return (
-        <>
+        <ErrorBoundary>
             <Hr/>
         <SectionWrapper height="auto" justify="space-around" padding="52px 0 0">
             <Div width="40%"> 
@@ -54,7 +54,7 @@ const SecondSection = ({cause}) => {
             author="I'm the author"
             />
         </SectionWrapper>
-        </>
-    )
+        </ErrorBoundary>
+            )
 }
 export default SecondSection

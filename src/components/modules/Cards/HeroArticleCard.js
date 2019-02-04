@@ -1,7 +1,7 @@
 import React  from "react";
 import styled from "styled-components";
 import {HTMLContent} from ".."
-import {brandBlack, brandWhite} from "./../"
+import {brandBlack, brandWhite} from "./../BrandStyle"
 
 const CardWrapper = styled.div`
 display: flex;

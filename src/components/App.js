@@ -1,6 +1,6 @@
 import React, { Component, lazy, Suspense } from 'react';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import {NavBar} from "./modules"
+import {NavBar, ErrorBoundary} from "./modules"
 import HomePage from "./pages/HomePage/HomePage";
 // import CauseHomePage from "./pages/CausePage/CauseHomePage";
 // import CausePage from "./pages/CausePage/CausePage";
@@ -36,6 +36,7 @@ class App extends Component {
     // }
     return (
       <>
+      <ErrorBoundary>
           <GlobalStyle />
 
             <BrowserRouter>
@@ -58,6 +59,7 @@ class App extends Component {
               </Suspense>
               </>
             </BrowserRouter>
+            </ErrorBoundary>
       </>
       );
   }

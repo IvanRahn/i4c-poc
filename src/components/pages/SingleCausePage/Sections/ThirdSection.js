@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {SectionWrapper, HeroArticleCard, SmallHorizontalCard, TreeSVG } from "./../../../modules"
+import {SectionWrapper, HeroArticleCard, SmallHorizontalCard, TreeSVG, ErrorBoundary } from "./../../../modules"
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg";
 
 const SVG = styled(TreeSVG)`
@@ -9,6 +9,7 @@ margin-bottom: -22px;
 
 const ThirdSection = ({cause}) => {
 return (
+    <ErrorBoundary>
     <SectionWrapper height="100vh" padding="120px 0 0 "justify="flex-end" color="green">
 
         <HeroArticleCard big white padding="300px 0 0"
@@ -20,6 +21,7 @@ return (
         </HeroArticleCard>
         <SVG color="white"/>
     </SectionWrapper>
+    </ErrorBoundary>
 )
 }
 
