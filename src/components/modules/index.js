@@ -18,6 +18,7 @@ import SectionWithWave from './SectionWithWave';
 import HowItWorksSection from "./HowItWorksSection";
 import SmallHorizontalCard from './SmallHorizontalCard';
 import TreeSVG from "./TreeSVG"
+import AboutCard from "./AboutCard";
 
 export  {
     Footer,
@@ -40,4 +41,5 @@ export  {
     HowItWorksSection,
     SmallHorizontalCard,
     TreeSVG,
+    AboutCard,
 }

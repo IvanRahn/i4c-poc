@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Card} from '../../../modules';
+import {SectionWrapper, AboutCard} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
@@ -30,7 +30,7 @@ class VolunteerSection extends Component {
 
                 {content.map((content) => {
                         return (
-                            <Card
+                            <AboutCard
                             key={content._id} 
                             CardText={content.card.text}
                             CardImage={content.card.pageImage ? content.card.pageImage.secure_url : null}
