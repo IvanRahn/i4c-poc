@@ -30,7 +30,7 @@ import HorizontalCardSection from "./Lists/HorizontalCardSection";
 import ImpactStatsCard from './Cards/ImpactStatsCard';
 import ErrorBoundary from './other/ErrorBoundary';
 import StoryCause from "./StoryCause";
-
+import ImpactCard from "./Cards/ImpactCard";
 export  {
     darkGreen, 
     brightGreen, 
@@ -68,4 +68,5 @@ export  {
     HorizontalCardSection,
     ImpactStatsCard,
     ErrorBoundary,
+    ImpactCard,
 }

@@ -24,7 +24,7 @@ class CausePage extends Component {
             return <div>Error</div>
         }
         const cause = causes.filter(cause => cause.slug === slug)[0] || null
-        if (!cause) {
+        if (!cause) {   
             return 404
         }
         return (

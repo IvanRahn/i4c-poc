@@ -8,13 +8,14 @@ import { connect } from 'react-redux';
 class FirstSection extends Component {
 
     componentDidMount () {
-        this.props.getContent("causes/causeTopPage");
-        this.props.getContent("causes/homepage-card");
+        const {content} = this.props;
+        if(!content){
+        this.props.getContent("causes/causeTopPage");    
+        }
     }
 
     render () {
         const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
-        console.log("Cardcontent", cardContent);
         if (isFetching || cardIsFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -37,7 +38,6 @@ class FirstSection extends Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log("STATE",state);
     const {content, isFetching, error} = state.causeHomePageFirstSection
     const {cardContent, cardIsFetching, cardError} = state.causeHomeCard
 

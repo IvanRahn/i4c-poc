@@ -39,12 +39,14 @@ const Svg = styled.svg`
 
 class JoinSection extends Component {
   componentDidMount() {
+    const {content} = this.props;
+        if(!content){
     this.props.getContent("causes/join-us");
+        }
   }
 
   render() {
     const { content, isFetching, error} = this.props;
-        console.log("This page", content)       
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

@@ -12,12 +12,14 @@ text-align: center;
 `
 class OurDonorSection extends Component {
     componentDidMount() {
+        const {content} = this.props;
+        if(!content){
         this.props.getContent("causes/our-donor")
+        }
     }
     render() {
 
         const {content, isFetching, error} = this.props;
-        console.log(content)        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

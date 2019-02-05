@@ -8,7 +8,10 @@ import {Loading} from "../../../modules"
 
 class FourthSection extends Component {
     componentDidMount () {
+        const {content} = this.props;
+        if(!content){
         this.props.getContent("about/last-section");
+        }
     }
 
     render () {

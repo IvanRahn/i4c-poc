@@ -10,12 +10,14 @@ text-align: center;
 `
 class DonateSection extends Component {
     componentDidMount() {
-        this.props.getContent("causes/donate-card")
+        const {content} = this.props;
+        if(!content){
+        this.props.getContent("causes/homepage-card")
+        }
     }
     render() {
 
         const {color, content, isFetching, error} = this.props;
-        console.log(content)        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
