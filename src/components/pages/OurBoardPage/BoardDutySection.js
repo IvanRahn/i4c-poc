@@ -47,7 +47,11 @@ background-color: green;
 
 class BoardDutySection extends Component {
     componentDidMount() {
+        const {promise} = this.props;
+        if (!promise) {
+
         this.props.getContent("our-team/our-promise")
+        }
     }
     
     render() { 

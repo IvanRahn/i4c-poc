@@ -9,7 +9,10 @@ import {Loading} from "./../../../modules"
 class FirstSection extends Component {
 
     componentDidMount () {
+        const {content} = this.props;
+        if(!content){
         this.props.getContent("about/first-section");    
+        }
     }
 
     render () {

@@ -12,7 +12,10 @@ text-align: center;
 `
 class OurDonorSection extends Component {
     componentDidMount() {
+        const {content} = this.props;
+        if(!content){
         this.props.getContent("causes/our-donor")
+        }
     }
     render() {
 

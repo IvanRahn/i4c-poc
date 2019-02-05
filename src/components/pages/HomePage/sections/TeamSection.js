@@ -49,7 +49,10 @@ text-align: left;
 
 class TeamSection extends Component {
     componentDidMount() {
+        const {teamSection} = this.props
+        if (!teamSection) {
         this.props.getContent("teamSection")
+        }
     }
     render() { 
         const {teamSection, teamSectionError, teamSectionIsFetching} = this.props;

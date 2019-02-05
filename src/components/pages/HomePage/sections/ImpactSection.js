@@ -32,7 +32,10 @@ const Div = styled.div `
 
 class ImpactSection extends Component {
     componentDidMount() {
+        const {impact} = this.props;
+        if(!impact){
         this.props.getContent("impactsection")
+        }
     }
     
     render () {

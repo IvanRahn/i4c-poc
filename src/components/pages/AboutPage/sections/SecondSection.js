@@ -6,7 +6,10 @@ import PageOpener from "../../../modules/pageLayout/PageOpener";
 
 class SecondSection extends Component {
     componentDidMount () {
-        this.props.getContent("about/second-section");    
+        const {content} = this.props;
+        if(!content){
+        this.props.getContent("about/second-section"); 
+        }   
     }
 
     render () {

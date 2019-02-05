@@ -39,7 +39,10 @@ const Svg = styled.svg`
 
 class JoinSection extends Component {
   componentDidMount() {
+    const {content} = this.props;
+        if(!content){
     this.props.getContent("causes/join-us");
+        }
   }
 
   render() {

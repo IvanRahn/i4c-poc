@@ -10,7 +10,10 @@ text-align: center;
 `
 class DonateSection extends Component {
     componentDidMount() {
+        const {content} = this.props;
+        if(!content){
         this.props.getContent("causes/homepage-card")
+        }
     }
     render() {
 

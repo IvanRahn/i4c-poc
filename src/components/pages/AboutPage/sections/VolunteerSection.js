@@ -13,7 +13,10 @@ const H = styled.h1`
 class VolunteerSection extends Component {
 
     componentDidMount () {
-        this.props.getContent("about/volunteer-section");    
+        const {content} = this.props;
+        if(!content){
+        this.props.getContent("about/volunteer-section");  
+        }  
     }
 
     render() {
