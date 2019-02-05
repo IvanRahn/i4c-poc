@@ -42,7 +42,7 @@ class FindOutMore extends Component {
                         <InternalLink 
                         text="FIND OUT MORE" 
                         to="about"
-                        color="black"
+                        color="green"
                         section="Out board page find out more section"
                         /> 
                     </Section> 
