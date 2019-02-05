@@ -8,24 +8,29 @@ import {Loading} from "./../../../modules"
 const ImpactSectionWrapper = styled(SectionWrapper)`
 flex-direction: column;
 text-align: center;
-padding: 0;
 position: relative;
 flex-wrap: nowrap;
-/* width: 100%; */
+text-align: left;
 @media only screen and (min-width: 500px) {
+    text-align: center;
     height: calc(100vh - 110px);
 }
 button {
-    margin: auto auto 0;
+    /* margin: auto auto 0; */
     @media only screen and (max-width: 500px) {
-    position: absolute;
-    left: 16px;
+    /* position: absolute; */
+    /* left: 16px; */
     /* bottom: 24vh; */
     }
 }
 `
 const Div = styled.div `
-    padding: 52px 24px;
+    padding: 0 24px 52px;
+    h1, p {
+        @media only screen and (min-width: 500px) {
+        text-align: center;
+    }
+    }
     /* margin: auto auto; */
 `
 
@@ -50,15 +55,13 @@ class ImpactSection extends Component {
         return (
             <>
             
-            <ImpactSectionWrapper height="calc(100vh - 60px)" aria-live="polite" color={color}>
+            <ImpactSectionWrapper padding="0" height="calc(100vh - 90px)" aria-live="polite" color={color}>
             <Div>
                 <h1>{impact[0].heading}</h1>
                 <p>{impact[0].subtext}</p>
                 
                 </Div>
-                <Div>
-                <ScrollButton target="HowItWorks" text="Learn More" />
-                </Div>
+                <ScrollButton target="HowItWorks" text="LEARN MORE" />
             </ImpactSectionWrapper>
             </>
         )

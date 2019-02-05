@@ -7,16 +7,20 @@ grid-column-gap: 24px;
 grid-row-gap: 24px;
 grid-template-columns: 100%;
 @media only screen and (min-width: 500px){
+grid-column-gap: 48px;
 grid-template-columns: 50% 50%;
+    margin: 0 48px 0 0;
 }
 @media only screen and (min-width: 960px) {
-   
+    /* padding: 0 48px; */
+   /* margin: 0 0 0 24px; */
+grid-column-gap: 24px;
 grid-template-columns: 33% 33% 33%;
 } 
 color: white;
 width: 100%;
 margin: 0 auto;
-padding: 0 30px 128px;
+padding: 0;
 counter-reset: my-awesome-counter;
 list-style: none;
     li {
@@ -26,33 +30,11 @@ list-style: none;
         position: relative;
         width: 100%;
         @media only screen and (min-width: 500px) {
-            width: auto;
+            /* width: auto; */
+            grid-column: auto;
             margin: 0 auto;
         }
-
-        /* padding: 32px; */
-        ::before {
-            position: absolute;
-            top: 200px;
-            background: transparent;
-            border-radius: 50%;
-            text-align: center;
-            vertical-align:middle;
-            padding: 5px 7px 9px;
-            content: counter(my-awesome-counter);
-            border-style: solid;
-            width: 24px;
-            height: 24px;
-            font-size: 24px;
-            vertical-align: middle;
-            /* left: 16px; */
-            font-weight: bold;
-            margin: auto;
-            @media only screen and (min-width: 960px) {
-            left: calc(-44px - 12px);
-            top: 250px;
-            }
-        }
+        
     }
 `
 const List = ({children}) => {

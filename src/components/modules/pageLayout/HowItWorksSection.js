@@ -7,6 +7,11 @@ import {getContent} from '../../../actions';
 const H = styled.h1`
 margin: 0;
 color: white;
+margin-bottom: 32px;
+@media only screen and (min-width: 960px){
+margin-bottom: 88px;
+}
+
 `
 class HowItWorksSection extends Component {
     componentDidMount() {
@@ -24,7 +29,12 @@ class HowItWorksSection extends Component {
         return (
             <>
 
-            <SectionWithWave height="auto" id="HowItWorks" color={color} >
+            <SectionWithWave 
+            padding="112px 24px"
+            height="auto" 
+            id="HowItWorks" 
+            mobilePadding="72px 24px"
+            color={color} >
             <H>Donate once, give forever</H>
                 <OrdList>
                 {steps.map((step, i) => {
@@ -36,7 +46,7 @@ class HowItWorksSection extends Component {
                                     CardImage={step.image ? step.image.secure_url : null}
                                     CardHeading={step.title}
                                 />
-                                <InternalLink to="/" text="placeholder" color="white"/>
+                                
                             </li>
                         )
                         } else return null
