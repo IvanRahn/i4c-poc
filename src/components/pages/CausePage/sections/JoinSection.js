@@ -74,7 +74,7 @@ class JoinSection extends Component {
 
         <Section direction="column" padding="30px">
           <h2>{content[0].subheading}</h2>
-          <InternalLink text={content[0].link.text} color={content[0].link.color} location={content[0].link.href} />
+          <InternalLink text="Join our cause" color="white" to="join" section="Cause page join section" />
         </Section>
       </SectionWrapper>
     );
