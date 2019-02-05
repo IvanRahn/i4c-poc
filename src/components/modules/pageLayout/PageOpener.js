@@ -14,7 +14,7 @@ top: 0;
 const Section = styled.div `
 width: ${props => props.width || "100%"};
     h1 {
-margin-top: 32px;
+        margin-top: 32px;
     }
 @media (min-width: 768px){
     width: 50%;
@@ -25,6 +25,14 @@ margin-top: 32px;
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px 24px;
+h2{
+    margin-top: 60px;
+}
+
+h3{
+    margin-top: 60px;
+}
+
 @media (min-width: 768px){
     margin-top: ${props => props.marginTop || "20%"};
 }
