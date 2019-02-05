@@ -14,10 +14,10 @@ const HomePage = () => {
                     <ImpactSection />
                     <Suspense fallback="">
                         <HowItWorksSection cardCount={3}color={darkGreen}/>
-                        <TeamSection />
+                        <TeamSection/>
                         <FeaturedCauseSection cardCount={2}/>
                             
-                        <MoreI4cSection color={darkGreen} />
+                        {/* <MoreI4cSection color={darkGreen} /> */}
                     </Suspense>
                 
             </>

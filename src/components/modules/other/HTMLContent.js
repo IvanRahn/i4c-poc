@@ -5,17 +5,20 @@ import ReactGA from "react-ga";
 import {brandBlack} from "../BrandStyle"
 
 const Div = styled.div `
-color: inherit;
    a {
-    border-bottom: 3px solid ${brandBlack};
+    border-bottom: 3px solid inherit;
     display: inline;
-    color: ${props => props.color || "black"};
+    color: ${props => props.color || "inherit"};
     text-align: center;
     text-decoration: none;	
     font-size: 1em;
     :hover {
         color: blue;
     }
+  }
+  margin: ${props => props.marginMobile || "0"};
+  @media only screen and (min-width: 960px) {
+  margin: ${props => props.margin || "0"};
   }
 `
 class HTMLContent extends Component {
@@ -39,6 +42,8 @@ class HTMLContent extends Component {
 
       return (
         <Div 
+          margin={this.props.margin}
+          marginMobile={this.props.marginMobile}
           onClick={this.contentClickHandler}
           dangerouslySetInnerHTML={{__html: this.props.content}} 
         />
