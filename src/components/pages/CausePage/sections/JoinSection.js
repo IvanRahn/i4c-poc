@@ -47,7 +47,6 @@ class JoinSection extends Component {
 
   render() {
     const { content, isFetching, error} = this.props;
-        console.log("This page", content)       
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){

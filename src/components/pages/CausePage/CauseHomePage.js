@@ -13,7 +13,6 @@ class causesHomePage extends Component {
 
     render () {
         const { content, isFetching, error} = this.props;
-        console.log("this", content);
 
         return (
             <div>

@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SmallHorizontalCard, ImpactStatsCard, } from '..';
-import { getContent } from '../../../actions';
-import { connect } from 'react-redux';
+import {SmallHorizontalCard, ImpactStatsCard} from '..';
+
 
 const Wrapper = styled.div`
     width: auto;

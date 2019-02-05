@@ -17,13 +17,16 @@ const Img = styled.img `
     }
    
 `
-const SectionWithWave = ({height, id, color, children}) => {
+const SectionWithWave = ({height, id, color, children, justify, align, padding}) => {
         return (     
             <>
             <SectionWrapper 
             height={height}
             id={id}
             color={color}
+            justify={justify}
+            align={align}
+            padding={padding}
             >
             <Img src={Background} alt =""/>
 

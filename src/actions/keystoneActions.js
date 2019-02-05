@@ -8,7 +8,6 @@ const getContent = (route) => async dispatch => {
         error: null
     })
     return  await KeystoneApi.get(`/${route}`).then(response => {
-		console.log('TCL: response', response)
         dispatch({
             type: `GET_CONTENT_SUCCESS_${route}`,
             isFetching: false,
