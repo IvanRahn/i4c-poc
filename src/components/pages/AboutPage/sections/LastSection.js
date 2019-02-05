@@ -25,7 +25,7 @@ class FourthSection extends Component {
 
         return (
             <>
-                <CenteredContent secondHeading={content[0].contentBottom.heading} linkText={content[0].contentBottom.link.text} linkColor={content[0].contentBottom.link.color} linkLocation={content[0].contentBottom.link.href} />
+                <CenteredContent secondHeading={content[0].contentBottom.heading} linkText="LEARN HOW IT WORKS" linkColor="green" linkLocation="how-it-works" linkSection="About page last section"/>
             </>
         )
     } 
