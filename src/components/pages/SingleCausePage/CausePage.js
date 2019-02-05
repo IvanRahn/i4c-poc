@@ -3,10 +3,11 @@ import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
 import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
-import {CenteredContent, Loading, ErrorBoundary} from "../../modules";
+import { Loading, ErrorBoundary} from "../../modules";
 import FirstSection from './Sections/FirstSection';
 import SecondSection from './Sections/SecondSection';
 import ThirdSection from './Sections/ThirdSection';
+import LastSection from "../AboutPage/sections/LastSection"
 class CausePage extends Component {
     componentDidMount() {
         const {causes, getContent} = this.props;
@@ -32,7 +33,7 @@ class CausePage extends Component {
                 <FirstSection cause={cause}/>
                 <SecondSection cause={cause}/>
                 <ThirdSection cause={cause} />
-                <CenteredContent/>
+                <LastSection/>
             </ErrorBoundary>
         )
             }
