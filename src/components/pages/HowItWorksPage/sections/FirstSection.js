@@ -1,23 +1,27 @@
 import React, {Component} from 'react';
 import PageOpener from '../../../modules/pageLayout/PageOpener'; 
-import {FeaturedCauseSection, HowItWorksSection, HeroArticleCard} 
-from './../../../modules'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../../actions"
-import {Loading} from "./../../../modules" 
+import {Loading, HorizontalCardSection, ImpactCard} from "./../../../modules"
+
 
 
 
 class FirstSection extends Component {
     componentDidMount() {
-
+        const {content} = this.props;
+        if(!content){
         this.props.getContent("howitworkshpfirstsection")
-
+        }
+        this.props.getContent("how-it-works-top-card")
     }
+
+
+    
     render() { 
-        const {content, error, isFetching} = this.props; 
+        const {content, error, isFetching, cardContent, cardIsFetching, cardError} = this.props; 
 		
-        if (isFetching) {
+        if (isFetching || cardIsFetching) {
             return <Loading/>
 
         } else if (error || !content|| !content[0]){
@@ -39,7 +43,19 @@ class FirstSection extends Component {
                     >
                     
                     <>
+                    {cardContent.map(content => {
+                      return(  <ImpactCard
+                        key={content.text}
+                        display="desktop"
+                        text={content.text}
+                        image={content.image ? content.image.secure_url : null}
+                        heading={content.heading}
+                        />
+                      )
+                    })}
                     </>
+                    <></>
+                    <HorizontalCardSection display="mobile" content={cardContent} />
                     </PageOpener> 
                 
 
@@ -49,15 +65,20 @@ class FirstSection extends Component {
 }
  
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.howItWorksTopPage
-    console.log("This is the state", state)
+    console.log("THIS IS STATAAATE", state)
+    const {content, isFetching, error} = state.howItWorksTopPage 
+    const {cardContent, cardIsFetching, cardError} = state.howItWorksTopCard
+    
+    
     return {
         content,
         isFetching,
         error,
+        cardContent,
+        cardIsFetching,
+        cardError,
     }
 }
-
 
 export default connect(mapStateToProps, {getContent})(FirstSection);  
 
