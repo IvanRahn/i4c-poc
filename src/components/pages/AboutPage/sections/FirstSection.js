@@ -18,7 +18,6 @@ class FirstSection extends Component {
 
     render () {
         const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
-        console.log("CardCONTENT",cardContent)        
         if (isFetching || cardIsFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -35,7 +34,7 @@ class FirstSection extends Component {
                 padding="0 0 72px"
                 information= {information}
                 link= {link}
-                image={content[0].image.secure_url}
+                image={content[0].image ? content[0].image.secure_url: null}
 
                 breadcrumbs={[
                 {to: "/about", text:"about"}
@@ -47,7 +46,7 @@ class FirstSection extends Component {
                         key={content.text}
                         display="desktop"
                         text={content.text}
-                        image={content.image.secure_url}
+                        image={content.image ? content.image.secure_url : null}
                         heading={content.heading}
                         />
                       )

@@ -26,7 +26,7 @@ class FirstSection extends Component {
 
         const information = [{heading: `<h1>${content[0].mainHeading}</h1>`, text: content[0].mainText}, {heading: `<h3>${content[0].subHeading}</h3>`, text: content[0].subText}];
 
-        const link =[{linkText: "DOWNLOAD PDF", linkColor: "green", linkLocation: null }]
+        const link =[{linkText: "DOWNLOAD PDF", linkColor: "green", linkLocation: null, linkSection: "How it works page first section" }]
 
             return ( 
                 <> 
