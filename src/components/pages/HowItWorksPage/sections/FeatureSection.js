@@ -6,28 +6,28 @@ import {Loading} from "../../../modules"
 
 
 
-class StorySection extends Component {
+class FeatureSection extends Component {
     componentDidMount() {
 
         this.props.getContent("how-it-works/featured-cause")
 
     }
     render() {  
-        const {storycause, storycauseError, storycauseIsFetching} = this.props; 
-        console.log("OVER HERE", storycause)
-        if (storycauseIsFetching) {
+        const {featurecause, featurecauseError, featurecauseIsFetching} = this.props; 
+        console.log("OVER HERE", featurecause)
+        if (featurecauseIsFetching) {
             return <Loading/>
 
-        } else if (storycauseError || !storycause|| !storycause[0]){
+        } else if (featurecauseError || !featurecause|| !featurecause[0]){
             return <div>error</div>
         }
         
             return ( 
                 <>  
                     <HeroArticleCard
-                    CardName={storycause[0].content.heading}
-                    CardText={storycause[0].content.text} 
-                    CardImage={storycause[0].image ? storycause[0].image.secure_url : null } 
+                    CardName={featurecause[0].content.heading}
+                    CardText={featurecause[0].content.text} 
+                    CardImage={featurecause[0].image ? featurecause[0].image.secure_url : null } 
                     />
           
                 </>
@@ -36,16 +36,17 @@ class StorySection extends Component {
 }
  
 const mapStateToProps = (state) => {
-    const {storycause, storycauseIsFetching, storycauseError} = state.storycause
+    console.log("this one", state)
+    const {featurecause, featurecauseIsFetching, featurecauseError} = state.howItWorksFeatureCause
     return {
-        storycause, 
-        storycauseIsFetching,
-        storycauseError
+        featurecause, 
+        featurecauseIsFetching,
+        featurecauseError
 
     }
 }
 
-export default connect(mapStateToProps, {getContent})(StorySection);  
+export default connect(mapStateToProps, {getContent})(FeatureSection);  
 
 
 

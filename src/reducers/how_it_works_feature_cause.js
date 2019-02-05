@@ -1,29 +1,29 @@
-const defaultState = {storycause: null, storycauseIsFetching: false, storycauseError:null};
+const defaultState = {featurecause: null, featurecauseIsFetching: false, featurecauseError:null};
 
 export default (state = defaultState, action) => {
     switch (action.type) {
         case "GET_CONTENT_how-it-works/featured-cause":
         return {
             ...state,
-            storycause: null,
-            storycauseIsFetching: action.isFetching,
-            storycauseError: null,
+            featurecause: null,
+            featurecauseIsFetching: action.isFetching,
+            featurecauseError: null,
             
         }
         case "GET_CONTENT_SUCCESS_how-it-works/featured-cause":
         return {
             ...state,
-            storycause: action.payload,
-            storycauseIsFetching: action.isFetching,
+            featurecause: action.payload,
+            featurecauseIsFetching: action.isFetching,
             
         }
         case "GET_CONTENT_ERROR_how-it-works/featured-cause":
    
             return {
                 ...state,
-                storycause: null,
-                storycauseIsFetching: action.isFetching, 
-                storycauseError: action.error
+                featurecause: null,
+                featurecauseIsFetching: action.isFetching, 
+                featurecauseError: action.error
             };
         default:
             return state;
