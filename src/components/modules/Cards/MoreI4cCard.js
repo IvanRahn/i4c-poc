@@ -5,14 +5,14 @@ import {LinkWrapper} from './../';
 
 const CardWrapper = styled.div`
 overflow: hidden;
-width: 300px;
+/* width: 300px; */
 background-color: white;
 border-radius: 10px;
+    width: 100%;
 
 @media only screen and (min-width: 500px) {
     overflow: hidden;
     padding: 0 0 32px;
-    width: 380px;
     background-color: white;
     border-radius: 10px;
 }
@@ -26,7 +26,7 @@ height: 120px;
 width: 300px; 
 @media only screen and (min-width: 500px) {
     height: 220px; 
-    width: 400px; 
+    width: 100%; 
 }
 `
 class MoreI4cCard extends Component {

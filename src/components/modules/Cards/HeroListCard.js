@@ -8,9 +8,10 @@ margin: 48px auto 0;
 width: 100%;
 display: flex;
 flex-direction: column;
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 960px) {
     width: 250px;
 }
+
 h2 {
     margin: 24px 0;
 }
@@ -25,7 +26,7 @@ width: 180px;
 border-radius: 100%;
 align-self: ${props => props.position || "flex-end"};
 
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 960px) {
     align-self: inherit;
 }
 `
