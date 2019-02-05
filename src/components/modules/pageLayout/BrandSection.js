@@ -18,7 +18,6 @@ width: ${props => props.width || "100%"};
 @media (min-width: 768px){
     width: 50%;
     height: ${props => props.height || "auto"};
-    margin-top: 80px;
 }
 `
 const SectionRight = styled.div `
