@@ -11,7 +11,6 @@ import aboutLastSection from "./about_last_section";
 import aboutVolunteerSection from "./about_volunteer_section";
 import homePageTeamSectionReducer from "./home_page_team_section"; 
 import howItWorksStepsReducer from "./how_it_works_steps_reducer"; 
-import story_cause_reducer from "./story_cause_reducer";
 import causeHomeCard from "./cause_home_card"; 
 import howItWorksHomePageCard from "./how_it_works_home_page_card_reducer";
 import howItWorksTopPage from "./how_it_works_top_page_reducer";
@@ -21,6 +20,7 @@ import causeJoinUsSection from "./cause_join_us_section";
 import causeOurDonorSection from "./cause_our_donor_section";
 import aboutCard from "./about_homepage_card";
 import causeDonateCard from "./cause_donate_card";
+import howItWorksFeatureCause from "./how_it_works_feature_cause";
 
 export default combineReducers({
     impact: impact_reducer,
@@ -36,7 +36,7 @@ export default combineReducers({
     aboutCard: aboutCard,
     steps: howItWorksStepsReducer,
     teamSection: homePageTeamSectionReducer, 
-    storycause: story_cause_reducer, 
+    howItWorksFeatureCause: howItWorksFeatureCause, 
     causeHomeCard: causeHomeCard,
     howItWorksHomePageCard: howItWorksHomePageCard, 
     howItWorksTopPage: howItWorksTopPage,

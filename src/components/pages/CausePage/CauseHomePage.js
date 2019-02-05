@@ -4,7 +4,6 @@ import {getContent} from "./../../../actions"
 import DonateSection from "./sections/DonateSection";
 import OurDonorSection from "./sections/OurDonorSection";
 import JoinSection from "./sections/JoinSection";
-import {Loading} from '../../modules';
 import FirstSection from '../CausePage/sections/FirstSection';
 
 

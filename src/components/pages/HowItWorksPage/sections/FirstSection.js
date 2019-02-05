@@ -30,13 +30,13 @@ class FirstSection extends Component {
 
             return ( 
                 <> 
-                    <PageOpener
-                    information={information}
+                    <PageOpener 
+                    padding = "0"
+                    information={information} 
                     image={content[0].image.secure_url}
+                    breadcrumbs={[{to: "/", text: "OUR APPOROACH"}]}
                     link={link}
                     >
-                    
-                    
                     
                     <>
                     </>
