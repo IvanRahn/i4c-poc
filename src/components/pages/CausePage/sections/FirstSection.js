@@ -11,14 +11,16 @@ class FirstSection extends Component {
         const {content} = this.props;
         if(!content){
         this.props.getContent("causes/causeTopPage");    
-        }
+    }
+    this.props.getContent("causes/homepage-card");    
     }
 
     render () {
         const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
+		
         if (isFetching || cardIsFetching) {
             return (<Loading/>)
-            } else if (error || !content || !content[0]){
+            } else if (error || cardError || !content || !content[0]){
                 return <div>error</div>
             }
             const information = [{heading: `<h1>${content[0].heading}</h1>`, text: content[0].text}];

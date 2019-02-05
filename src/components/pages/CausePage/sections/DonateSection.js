@@ -11,13 +11,14 @@ text-align: center;
 class DonateSection extends Component {
     componentDidMount() {
         const {content} = this.props;
-        if(!content){
-        this.props.getContent("causes/homepage-card")
-        }
+        // if(!content){
+        this.props.getContent("causes/donate-card")
+        // }
     }
     render() {
 
         const {color, content, isFetching, error} = this.props;
+		console.log('TCL: DonateSection -> render -> color', color)
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
