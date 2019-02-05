@@ -25,12 +25,16 @@ class FirstSection extends Component {
             return <div>error</div>
         }
 
-        const information = [{heading: `<h1>${content[0].contentTop.heading}</h1>`, text: content[0].contentTop.text}, {heading: `<h3>${content[0].contentBottom.heading}</h3>`, text: content[0].contentBottom.text}];
+        const information = [{heading: `<h1>${content[0].mainHeading}</h1>`, text: content[0].mainText}, {heading: `<h3>${content[0].subHeading}</h3>`, text: content[0].subText}];
+
+        const link =[{linkText: "DOWNLOAD PDF", linkColor: "green", linkLocation: null }]
 
             return ( 
                 <> 
                     <PageOpener
-                    
+                    information={information}
+                    image={content[0].image.secure_url}
+                    link={link}
                     >
                     
                     
