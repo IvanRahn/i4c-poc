@@ -2,10 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import logo from "./../../../img/I4C.png"
 const Section = styled.section`
-    box-shadow: inset 0px 2px 2px 0px grey;
+    /* box-shadow: inset 0px 2px 2px 0px grey; */
     padding: 24px;
+    margin: 0 64px;
     div {
-        width: 70%;
+        width: 100%;
+
         margin: 12px auto;
         font-size: 13px;
     }
@@ -19,7 +21,7 @@ const Section = styled.section`
 const Logo = styled.img`
 width: 110px;
 @media only screen and (min-width: 500px) {
-    margin-right: 52px;
+    /* margin-right: 52px; */
 }
 `
 const Disclaimer = (props) => {

@@ -31,6 +31,7 @@ import ImpactStatsCard from './Cards/ImpactStatsCard';
 import ErrorBoundary from './other/ErrorBoundary';
 import StoryCause from "./StoryCause";
 import ImpactCard from "./Cards/ImpactCard";
+import Icon from "./other/Icon"
 export  {
     darkGreen, 
     brightGreen, 
@@ -69,4 +70,5 @@ export  {
     ImpactStatsCard,
     ErrorBoundary,
     ImpactCard,
+    Icon,
 }

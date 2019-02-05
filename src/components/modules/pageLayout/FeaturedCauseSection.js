@@ -6,13 +6,21 @@ import {getContent} from "../../../actions";
 
 const H = styled.h1`
     width:100%;
+    margin-bottom: 40px;
+    text-align: left;
+    @media only screen and (min-width: 500px) {
     text-align: center;
+        
+    }
+    @media only screen and (min-width: 960px) {
+        margin-bottom: 88px;
+    }
 `
 
 const Div = styled.div`
 width: 100%;
 text-align: center; 
-padding: 12px;
+padding: 24px;
 `
 
 
@@ -21,7 +29,7 @@ class FeacturedCauseSection extends Component {
         this.props.getContent("causes");
     }
     render() {
-        const {color, causes, causesIsFetching, causesError, cardCount} = this.props
+        const {color, causes, causesIsFetching, causesError, cardCount, tree} = this.props
         if (causesIsFetching) {
             return <Loading/>
         } else if (causesError || !causes) {
@@ -29,14 +37,18 @@ class FeacturedCauseSection extends Component {
         }
         return (
             <>
-            <SectionWrapper color={color} height="auto">
+            <SectionWrapper 
+            color={color} 
+            height="auto"
+            padding="72px 24px"
+            mobilePadding="48px 24px"
+            >
                 <H>Featured Causes</H>
                 {this.props.children}
                 {causes.filter(cause => cause.featuredAsCard).map((cause, i) => {
                     
                     if (i < cardCount) {
                         return (
-                        
                         <CauseCard 
                         key={cause._id}
                         to={`cause/${cause.slug}`}
@@ -52,10 +64,10 @@ class FeacturedCauseSection extends Component {
                     return null
                 })}
                 <Div>
-                <InternalLink auto="auto" to="/cause" text="view every cause we care about" color="grey"/>
+                <InternalLink width="auto" to="/cause" text="view every cause we care about" color="grey"/>
                 </Div>
             </SectionWrapper>
-                <TreeSVG color="green"/>
+                {tree ? <TreeSVG color="green"/> : null}
             
             </>
         )

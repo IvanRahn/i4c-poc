@@ -15,6 +15,9 @@ const Section = styled.div `
 width: ${props => props.width || "100%"};
     h1 {
         margin-top: 32px;
+        @media (min-width: 500px) {
+        text-align: left;
+        }
     }
 @media (min-width: 768px){
     width: 50%;

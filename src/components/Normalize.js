@@ -70,7 +70,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-block-start:0;
   margin-block-end:0;
   margin-bottom: 16px;
+  text-align: left;
   @media only screen and (min-width: 960px) {
+  text-align: center;
     margin-bottom: 24px;
   }
 }
@@ -82,7 +84,7 @@ h1 {
   @media only screen and (min-width: 960px) {
     font-size: 48px;
     font-weight: bold;
-    line-height: 46px;
+    line-height: 56px;
   }
 }
 h2 {
@@ -130,18 +132,14 @@ h6 {
   font-size: 13px;
   font-weight: bold;
   line-height: 16px;
-  @media only screen and (min-width: 960px) {
-    font-size: 20px;
-    font-weight: bold;
-    line-height: 30px;
-  }
 }
 p {
   font-size: 16px;
   line-height: 24px;
-  margin: 0;
+  margin: 0 0 16px;
   @media only screen and (min-width: 960px) {
     font-size: 20px;
+    margin-bottom: 24px;
     line-height: 32px;
   }
 }
