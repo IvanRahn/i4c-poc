@@ -30,6 +30,7 @@ class FourthSection extends Component {
         return (
             <>
             <PageOpener
+            padding="0"
             marginTop="0"
             image={content[0].image.secure_url}
             information= {information}
