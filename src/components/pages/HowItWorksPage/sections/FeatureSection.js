@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import {HeroArticleCard} from './../../../modules'; 
+import {HeroArticleCard} from '../../../modules'; 
 import {connect} from "react-redux"; 
-import {getContent} from "./../../../../actions"
-import {Loading} from "./../../../modules" 
+import {getContent} from "../../../../actions"
+import {Loading} from "../../../modules" 
 
 
 
 class StorySection extends Component {
     componentDidMount() {
 
-        this.props.getContent("storycause")
+        this.props.getContent("how-it-works/featured-cause")
 
     }
-    render() { 
+    render() {  
         const {storycause, storycauseError, storycauseIsFetching} = this.props; 
         if (storycauseIsFetching) {
             return <Loading/>
