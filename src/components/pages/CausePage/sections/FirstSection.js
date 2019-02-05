@@ -26,6 +26,7 @@ class FirstSection extends Component {
             const information = [{heading: `<h1>${content[0].heading}</h1>`, text: content[0].text}];
         return (
             <PageOpener
+            padding="0 0 72px"
             information= {information}
             image={content[0].image.secure_url}  
             breadcrumbs={[{to: "/", text: "homepage"}]}

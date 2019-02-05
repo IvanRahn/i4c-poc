@@ -36,10 +36,10 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, breadcrumbs, children, link, marginTop, information  } = this.props;  
+        const { color, image, breadcrumbs, children, link, marginTop, information, padding  } = this.props;  
         return (
             <ErrorBoundary>
-            <SectionWrapper align="flex-start" color={color} height= "auto" padding="0 0">
+            <SectionWrapper align="flex-start" color={color} height= "auto" padding={padding}>
                 <Section height="100%">
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 

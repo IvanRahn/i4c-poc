@@ -29,7 +29,7 @@ class DonateSection extends Component {
         return (
             <>
 
-            <SectionWithWave id="HowItWorks" color={color} height="auto" padding="52px 24px 52px" >
+            <SectionWithWave id="HowItWorks" color={color} height="auto" padding="52px 0 52px" >
                 {/* Fix this to be dynamic */}
                 <H>Donate once, give forever</H>
 
