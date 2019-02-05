@@ -14,6 +14,7 @@ class StorySection extends Component {
     }
     render() {  
         const {storycause, storycauseError, storycauseIsFetching} = this.props; 
+        console.log("OVER HERE", storycause)
         if (storycauseIsFetching) {
             return <Loading/>
 

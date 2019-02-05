@@ -2,7 +2,7 @@ const defaultState = {storycause: null, storycauseIsFetching: false, storycauseE
 
 export default (state = defaultState, action) => {
     switch (action.type) {
-        case "GET_CONTENT_storycause":
+        case "GET_CONTENT_how-it-works/featured-cause":
         return {
             ...state,
             storycause: null,
@@ -10,14 +10,14 @@ export default (state = defaultState, action) => {
             storycauseError: null,
             
         }
-        case "GET_CONTENT_SUCCESS_storycause":
+        case "GET_CONTENT_SUCCESS_how-it-works/featured-cause":
         return {
             ...state,
             storycause: action.payload,
             storycauseIsFetching: action.isFetching,
             
         }
-        case "GET_CONTENT_ERROR_storycause":
+        case "GET_CONTENT_ERROR_how-it-works/featured-cause":
    
             return {
                 ...state,

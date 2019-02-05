@@ -6,7 +6,11 @@ import {Loading, PageOpener} from "./../../modules"
 
 class BoardDutySection extends Component {
     componentDidMount() {
+        const {promise} = this.props;
+        if (!promise) {
+
         this.props.getContent("our-team/our-promise")
+        }
     }
     
     render() { 

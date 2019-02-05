@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {SectionWrapper, MoreI4cCard} from "../../../modules";
 import {connect} from "react-redux";
 import {Loading} from "./../../../modules"
-
+import {getContent} from '../../../../actions';
 
 const H = styled.h1`
     color: white;
@@ -12,6 +12,12 @@ const H = styled.h1`
 `
 
 class MoreI4cSection extends Component {
+    componentDidMount() {
+        const {causes} = this.props;
+        if(!causes){
+        this.props.getContent("impactsection")
+        }
+    }
     render() {
         const {color, causes, causesError, causesIsFetching} = this.props;
 		
@@ -48,4 +54,4 @@ const mapStateToProps = (state) => {
         causesError
     }
 }
-export default connect(mapStateToProps)(MoreI4cSection);
+export default connect(mapStateToProps, {getContent})(MoreI4cSection);

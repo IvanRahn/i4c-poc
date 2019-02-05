@@ -25,14 +25,9 @@ class FirstSection extends Component {
             return <div>error</div>
         }
 
-        const information = [{
-            heading: `<h1>${content[0].mainHeading}</h1>`, 
-            text: content[0].mainText
-            }, 
-            {
-                heading: `<h3>${content[0].subHeading}</h3>`, 
-                text: content[0].subText
-            }];
+        const information = [{heading: `<h1>${content[0].mainHeading}</h1>`, text: content[0].mainText}, {heading: `<h3>${content[0].subHeading}</h3>`, text: content[0].subText}];
+
+        const link =[{linkText: "DOWNLOAD PDF", linkColor: "green", linkLocation: null }]
 
             return ( 
                 <> 
@@ -40,6 +35,7 @@ class FirstSection extends Component {
                     information={information} 
                     image={content[0].image.secure_url}
                     breadcrumbs={[{to: "/", text: "OUR APPOROACH"}]}
+                    link={link}
                     >
                     
                     <>
