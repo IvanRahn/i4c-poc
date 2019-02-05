@@ -13,13 +13,13 @@ border-radius: 4px;
     flex-direction: ${props => props.column ? "column" : "row-reverse"};
     padding: 24px 12px;
     border-radius: 16px;
-    width: 460px;
+    width: 400px;
 }
 `
 const DivContainer = styled.div`
     color: white;
     font-size: 24px;
-    min-width: 150px;
+    min-width: 120px;
     p {
         line-height: 1.5;
         font-size: 16px;

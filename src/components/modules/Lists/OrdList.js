@@ -14,10 +14,6 @@ grid-template-columns: 50% 50%;
 grid-template-columns: 33% 33% 33%;
 } 
 color: white;
-/* display: flex; */
-/* flex-wrap: wrap; */
-/* align-content: center; */
-/* justify-content:space-around; */
 width: 100%;
 margin: 0 auto;
 padding: 0 30px 128px;
