@@ -8,12 +8,12 @@ import {getContent} from "./../../../actions"
 import {Loading} from "./../../modules" 
 import image from "./../../../img/house.png"
 import BoardMembers from '../OurBoardPage/BoardMembers';
+import FirstSection from './sections/FirstSection';
 
 
 class HowItWorksHomePage extends Component {
     componentDidMount() {
 
-        this.props.getContent("storycause")
         this.props.getContent("storycause")
 
     }
@@ -28,21 +28,12 @@ class HowItWorksHomePage extends Component {
         
             return ( 
                 <> 
-                    <PageOpener 
-                    heading="Blah"
-                    text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged." 
-                    image={image}  
-                    breadcrumbs={[ 
-                        {to: "/", text: "OUR APPROACH"}
-                    ]} 
-                    verticalCardApi= "howitworkshomepagecard"
-                    verticalCardState="howItWorksHomePageCard" > 
-                    <>
-                    </>
-                    </PageOpener> 
+                    <FirstSection />
+                    
+                    
 
 
-                    <HowItWorksSection cardCount={6} color={darkGreen}/>
+                    {/* <HowItWorksSection cardCount={6} color={darkGreen}/>
                     <FeaturedCauseSection cardCount={3}>
                     <HeroArticleCard
                     CardName={storycause[0].content.heading}
@@ -50,7 +41,7 @@ class HowItWorksHomePage extends Component {
                     CardImage={storycause[0].image ? storycause[0].image.secure_url : null } 
 
                     />
-                    </FeaturedCauseSection> 
+                    </FeaturedCauseSection>  */}
                     
 
                 

@@ -31,7 +31,7 @@ width: ${props => props.width || "100%"};
 
 const Wrapper = styled.div`
 text-align: left;
-padding: 48px;
+padding: 48px 24px;
 `
 
 const LinkContainer = styled.div`

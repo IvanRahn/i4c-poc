@@ -1,48 +1,7 @@
 import React, {Component} from "react"; 
-import styled from 'styled-components'; 
-import {SectionWrapper, InternalLink, HTMLContent} from '../../modules';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
-import {Loading} from "./../../modules"
-
-
-
-const ImageContainer = styled.img`
-height: auto; 
-width: auto; 
-max-width: 600px; 
-max-height: 600px;
-margin: -140px auto 0 auto;
-
-@media (max-width: 768px){
-    img {
-        height: 10px; 
-        width: 15px;
-    }
-}
-`
-
-const Section = styled.div `
-width: ${props => props.width || "100%"};
-@media (min-width: 768px){
-    width: 50%;
-}
-`
-const Wrapper = styled.div`
-text-align: left;
-padding-right: 180px;
-`
-
-const BorderP = styled.p`
-
-a{
-color: white;
-width: 450px;
-}
-background-color: green;
-
-`
-
+import {Loading, PageOpener} from "./../../modules"
 
 
 class BoardDutySection extends Component {
@@ -51,7 +10,8 @@ class BoardDutySection extends Component {
     }
     
     render() { 
-        const {promise, promiseError, promiseIsFetching} = this.props; 
+        const {promise, promiseError, promiseIsFetching} = this.props;
+        console.log(promise) 
         if (promiseIsFetching) {
             return <Loading/>
 
@@ -59,22 +19,23 @@ class BoardDutySection extends Component {
             return <div>error</div>
         }     
         
-            return ( 
-                <SectionWrapper>
-                <Section>
-                    <ImageContainer src= {promise[0].image ? promise[0].image.secure_url : null} alt="Cherring man" />
-                </Section>
+        const information = [{
+        heading: `<h1>${promise[0].content.heading}</h1>`, 
+        text: promise[0].content.text
+        }];
 
-                <Section>
-                    <Wrapper>
-                        <BorderP>
-                        <InternalLink text={promise[0].link.text} />
-                        </BorderP>
-                        <h1>{promise[0].content.heading}</h1> 
-                        <HTMLContent margin="70px" content={promise[0].content.text} />
-                    </Wrapper>               
-                </Section>
-            </SectionWrapper>
+        return ( 
+            <PageOpener
+            information= {information}
+            image={promise[0].image.secure_url}
+            breadcrumbs={[{to: "/", text: "About Investing For Charity"}, {to: "/", text: "This is second exmaple"}]}
+
+
+            
+            >
+
+                <></>
+            </PageOpener>
         )
             
     } 
