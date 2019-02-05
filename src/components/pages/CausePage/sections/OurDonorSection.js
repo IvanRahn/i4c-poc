@@ -28,10 +28,16 @@ class OurDonorSection extends Component {
         
         return (
             <>
-            <SectionWrapper height="auto" padding="0 0 52px 0">
+            <SectionWrapper 
+            height="auto" 
+            padding="52px 0 52px 0">
                 <H>{content[0].pageHeading}</H>
 
-                <HeroArticleCard big CardName={content[0].heading} CardText={content[0].text} CardImage={content[0].image.secure_url}/>
+                <HeroArticleCard 
+                big 
+                CardName={content[0].heading} 
+                CardText={content[0].text} 
+                CardImage={content[0].image.secure_url}/>
             </SectionWrapper>
                 <TreeSVG color="green"/>
             </>

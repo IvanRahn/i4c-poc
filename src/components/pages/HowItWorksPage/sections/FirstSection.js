@@ -16,8 +16,7 @@ class FirstSection extends Component {
     }
     render() { 
         const {content, error, isFetching} = this.props; 
-        console.log("This is our content", content)
-
+		
         if (isFetching) {
             return <Loading/>
 

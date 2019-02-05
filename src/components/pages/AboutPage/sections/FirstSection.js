@@ -30,6 +30,7 @@ class FirstSection extends Component {
         return (
             <>
                 <PageOpener
+                padding="0 0 72px"
                 information= {information}
                 link= {link}
                 image={content[0].image.secure_url}
