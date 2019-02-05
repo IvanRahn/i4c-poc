@@ -9,8 +9,6 @@ const Section = styled.div `
 height: 50%;
 width: ${props => props.width || "100%"};
 text-align: center; 
-border-bottom-style: solid;
-border-bottom-width: thin;
 margin: 0 auto;
 padding: 0 0 70px; 
 a{

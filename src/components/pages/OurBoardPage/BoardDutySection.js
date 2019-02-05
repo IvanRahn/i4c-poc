@@ -30,6 +30,7 @@ class BoardDutySection extends Component {
 
         return ( 
             <PageOpener
+            padding="0"
             information= {information}
             image={promise[0].image.secure_url}
             breadcrumbs={[{to: "/", text: "About Investing For Charity"}, {to: "/", text: "This is second exmaple"}]}
