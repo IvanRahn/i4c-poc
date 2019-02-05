@@ -13,7 +13,7 @@ const FirstSection = ({cause}) => {
         return ( 
         <ErrorBoundary>
         <PageOpener 
-            
+        padding="0 0 52px"
            image={cause.topSection.image.secure_url}
            information={information}
            breadcrumbs={[

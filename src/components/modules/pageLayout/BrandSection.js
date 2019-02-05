@@ -35,12 +35,14 @@ padding: 48px 24px;
 
 const LinkContainer = styled.div`
 margin-top: 30px;
+display: flex;
+width: auto;
 `
 
 class BrandOpener extends Component {
 
     render () {
-        const { color, image1, image2, link, marginTop, information  } = this.props;  
+        const { color, image1, image2, link, marginTop, information  } = this.props;
         return (
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
@@ -61,15 +63,13 @@ class BrandOpener extends Component {
                         )
                         } ) : null}
 
-                        {link ? link.map((link) => {
-
-                        return(
-                            <LinkContainer key={link.text}>
-                                <InternalLink text={link.text} color={link.color} location={link.location}  />
-                            </LinkContainer>
-                        )
-                        } ) : null}
-
+                        <LinkContainer>
+                            {link ? link.map((link) => {
+                            return(
+                                    <InternalLink key={link.linkText} text={link.linkText} color={link.linkColor} to={link.linkLocation} section={link.linkSection}  />
+                                    )
+                                } ) : null}
+                        </LinkContainer>
                     </Wrapper>               
                 </SectionRight>
             </SectionWrapper>

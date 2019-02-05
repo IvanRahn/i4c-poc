@@ -3,11 +3,13 @@ import styled from 'styled-components';
 import {SectionWithWave, Loading, MoreI4cCard} from "../../../modules";
 import { connect } from 'react-redux';
 import getContent from '../../../../actions/keystoneActions';
+import { brandWhite } from '../../../modules/BrandStyle';
 
 const H = styled.h1`
 width: 100%;
 text-align: center;
 margin-bottom: 88px;
+color: ${brandWhite};
 `
 class DonateSection extends Component {
     componentDidMount() {

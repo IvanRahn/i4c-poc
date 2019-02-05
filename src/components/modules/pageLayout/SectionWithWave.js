@@ -17,7 +17,7 @@ const Img = styled.img `
     }
    
 `
-const SectionWithWave = ({height, id, color, children, justify, align, padding}) => {
+const SectionWithWave = ({height, id, color, children, justify, align, padding, mobilePadding}) => {
         return (     
             <>
             <SectionWrapper 
@@ -27,6 +27,7 @@ const SectionWithWave = ({height, id, color, children, justify, align, padding})
             justify={justify}
             align={align}
             padding={padding}
+            mobilePadding={mobilePadding}
             >
             <Img src={Background} alt =""/>
 

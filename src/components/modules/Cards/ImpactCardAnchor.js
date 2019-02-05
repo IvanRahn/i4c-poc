@@ -1,31 +1,37 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent, LinkWrapper} from ".."
+import {HTMLContent, LinkWrapper, Icon} from ".."
 import {brightGreen} from "../BrandStyle"
+
 const CardWrapper = styled.div`
 overflow: hidden;
-padding: 18px 12px;
+padding: 24px;
 background-color: ${brightGreen};
-border-radius: 4px;
+border-radius: 8px;
 
 @media only screen and (min-width: 500px) {
     display: flex;
     flex-direction: ${props => props.column ? "column" : "row-reverse"};
-    padding: 24px 12px;
-    border-radius: 16px;
-    width: 460px;
+    /* border-radius: 16px; */
+    width: 400px;
 }
 `
 const DivContainer = styled.div`
     color: white;
     font-size: 24px;
-    min-width: 150px;
+    min-width: 120px;
     p {
         line-height: 1.5;
         font-size: 16px;
     }
     h3 {
-        margin: 8px 0;
+        margin-bottom: 16px;
+        text-align: left;
+        @media only screen and (min-width: 500px) {
+            
+            margin-bottom: 24px;
+        }
+
     }
 `
 
@@ -44,7 +50,9 @@ class FeaturedCauseCard extends Component {
             
                 <LinkWrapper color to={to}>
                     <CardWrapper>
-                        <ImageContainer src={CardImage || ""} />
+                        <Icon
+                         big
+                         src={CardImage || ""} />
                         <DivContainer>
                             <h3>{CardHeading}</h3>
                             <HTMLContent content={CardText}/>

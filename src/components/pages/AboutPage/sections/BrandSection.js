@@ -14,8 +14,7 @@ class FourthSection extends Component {
     }    
 
     render () {
-        const { content, isFetching, error} = this.props;
-        console.log(content);       
+        const { content, isFetching, error} = this.props;      
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -24,8 +23,7 @@ class FourthSection extends Component {
 
             const information = [{heading: `<h3>${content[0].contentBottom.heading}</h3>`, text: content[0].contentBottom.text}];
 
-            // const link =[{linkText: content[0].linksBottom.link.text, linkColor: content[0].linksBottom.link.color, linkLocation: content[0].linksBottom.link.href }, {linkText: content[0].linksBottom.link2.text, linkColor: content[0].linksBottom.link2.color, linkLocation: content[0].linksBottom.link2.href }]
-            const linkList = Object.values(content[0].linksBottom).filter(link => link.text);
+            const linkList =[{linkText: "SHOUT OUT1", linkColor: "black", linkLocation: "google", linkSection: "About page brand section" }, {linkText: "SHOUT OUT2", linkColor: "black", linkLocation: "google", linkSection: "About page brand section" }].filter(link => link.linkText);
         return (
             <>
                 <BrandSection

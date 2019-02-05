@@ -20,17 +20,14 @@ color: ${props => props.white ? brandWhite : brandBlack};
 `
 const DivContainer = styled.div`
 width: 100%;
-color: ${brandWhite};
+color: ${props => props.white ? brandWhite : brandBlack};
 padding: 0 24px 0;
-h3 {
-    margin: 24px 0;
-}
-h4 {
-    margin: 24px 0;
-}
 @media only screen and (min-width: 500px) {
     width: 50%;
     padding-top: 80px;
+h3, h4 {
+   text-align: left;
+}
  }
 `
 
@@ -52,7 +49,7 @@ const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName, 
         return(
             <CardWrapper white={white} className={className}>
                     <ImageContainer big={big} src= {CardImage} />
-                <DivContainer>
+                <DivContainer white={white}>
                     <h3>{CardName}</h3>
                     <h4>{CardHeading}  </h4>
                 <HTMLContent content= {CardText} />
