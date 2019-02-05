@@ -10,7 +10,7 @@ color: white;
 `
 class HowItWorksSection extends Component {
     componentDidMount() {
-        this.props.getContent("HOWITWORKSSTEPS")
+        this.props.getContent("how-it-works/donate")
     }
     render() {
 
