@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PageOpener from '../../../modules/pageLayout/PageOpener';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
-import {Loading} from "./../../../modules"
+import {Loading, HorizontalCardSection, ImpactCard} from "./../../../modules"
 
 
 
@@ -13,11 +13,13 @@ class FirstSection extends Component {
         if(!content){
         this.props.getContent("about/first-section");    
         }
+        this.props.getContent("about/homepage-card")
     }
 
     render () {
-        const { content, isFetching, error} = this.props;        
-        if (isFetching) {
+        const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
+        console.log("CardCONTENT",cardContent)        
+        if (isFetching || cardIsFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
@@ -36,11 +38,25 @@ class FirstSection extends Component {
                 image={content[0].image.secure_url}
 
                 breadcrumbs={[
-                {to: "/cause", text:"Causes we care about"}, 
-                {to: "#", text: "Hello"}
+                {to: "/about", text:"about"}
                 ]}
                 >
+                    <>
+                    {cardContent.map(content => {
+                      return(  <ImpactCard
+                        key={content.text}
+                        display="desktop"
+                        text={content.text}
+                        image={content.image.secure_url}
+                        heading={content.heading}
+                        />
+                      )
+                    })}
+                    </>
                     <></>
+                    <HorizontalCardSection display="mobile" content={cardContent} />
+
+
                 </PageOpener>
             </>
         )
@@ -49,10 +65,15 @@ class FirstSection extends Component {
 
 const mapStateToProps = (state) => {
     const {content, isFetching, error} = state.aboutFirst
+    const {cardContent, cardIsFetching, cardError} = state.aboutCard
+
     return {
         content,
         isFetching,
         error,
+        cardContent,
+        cardIsFetching,
+        cardError,
     }
 }
 
