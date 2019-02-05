@@ -12,7 +12,7 @@ import aboutVolunteerSection from "./about_volunteer_section";
 import homePageTeamSectionReducer from "./home_page_team_section"; 
 import howItWorksStepsReducer from "./how_it_works_steps_reducer"; 
 import causeHomeCard from "./cause_home_card"; 
-import howItWorksHomePageCard from "./how_it_works_home_page_card_reducer";
+import howItWorksTopCard from "./how_it_works_top_card_reducer";
 import howItWorksTopPage from "./how_it_works_top_page_reducer";
 import causeHomeVerticalCard from "./cause_home_card_vertical";
 import causeHomePageFirstSection from "./cause_homepage_first_section";
@@ -38,7 +38,7 @@ export default combineReducers({
     teamSection: homePageTeamSectionReducer, 
     howItWorksFeatureCause: howItWorksFeatureCause, 
     causeHomeCard: causeHomeCard,
-    howItWorksHomePageCard: howItWorksHomePageCard, 
+    howItWorksTopCard: howItWorksTopCard, 
     howItWorksTopPage: howItWorksTopPage,
     causeHomeVerticalCard: causeHomeVerticalCard,
     causeHomePageFirstSection: causeHomePageFirstSection,
