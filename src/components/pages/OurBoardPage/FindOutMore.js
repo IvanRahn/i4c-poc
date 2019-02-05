@@ -4,6 +4,7 @@ import {InternalLink, SectionWrapper} from './../../modules';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions";
 import {Loading} from "./../../modules";
+import BrandStyle from "../../modules/BrandStyle";
 
 const Section = styled.div `
 height: 50%;
@@ -39,8 +40,10 @@ class FindOutMore extends Component {
                     <Section width="100%">
                         <h2>{findout[0].content.heading}</h2>
                         <InternalLink 
-                        text={findout[0].content.link.text} 
-                        to={findout[0].url} 
+                        text="FIND OUT MORE" 
+                        to="about"
+                        color="black"
+                        section="Out board page find out more section"
                         /> 
                     </Section> 
                 </SectionWrapper>
