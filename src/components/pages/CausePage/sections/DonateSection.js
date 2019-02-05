@@ -7,6 +7,7 @@ import getContent from '../../../../actions/keystoneActions';
 const H = styled.h1`
 width: 100%;
 text-align: center;
+margin-bottom: 88px;
 `
 class DonateSection extends Component {
     componentDidMount() {
