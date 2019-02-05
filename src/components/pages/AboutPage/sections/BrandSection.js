@@ -24,8 +24,8 @@ class FourthSection extends Component {
 
             const information = [{heading: `<h3>${content[0].contentBottom.heading}</h3>`, text: content[0].contentBottom.text}];
 
-            // const link =[{linkText: content[0].linksBottom.link.text, linkColor: content[0].linksBottom.link.color, linkLocation: content[0].linksBottom.link.href }, {linkText: content[0].linksBottom.link2.text, linkColor: content[0].linksBottom.link2.color, linkLocation: content[0].linksBottom.link2.href }]
-            const linkList = Object.values(content[0].linksBottom).filter(link => link.text);
+            const linkList =[{linkText: "we", linkColor: content[0].linksBottom.link.color, linkLocation: content[0].linksBottom.link.href }, {linkText: content[0].linksBottom.link2.text, linkColor: content[0].linksBottom.link2.color, linkLocation: content[0].linksBottom.link2.href }]
+            // const linkList = Object.values(content[0].linksBottom).filter(link => link.text);
         return (
             <>
                 <BrandSection

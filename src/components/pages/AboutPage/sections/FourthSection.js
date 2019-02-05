@@ -24,7 +24,7 @@ class FourthSection extends Component {
 
             const information = [{heading: `<h2>${content[0].contentTop.heading}</h2>`, text: content[0].contentTop.text}];
 
-            const link =[{linkText: content[0].link.text, linkColor: content[0].link.color, linkLocation: content[0].link.location }]
+            const link =[{linkText: "Get to know our Board", linkColor: "black", linkLocation: "/board-page", linkSection: "About page fourth section" }]
     
 
         return (

@@ -76,7 +76,7 @@ class PageOpener extends Component {
 
                         return(
                             <LinkContainer key={link.linkText}>
-                                <InternalLink text={link.linkText} color={link.linkColor} location={link.linkLocation}  />
+                                <InternalLink text={link.linkText} color={link.linkColor} to={link.linkLocation} section={link.linkSection}  />
                             </LinkContainer>
                         )
                         } ) : null}
