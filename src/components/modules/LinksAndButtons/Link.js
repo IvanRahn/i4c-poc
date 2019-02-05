@@ -10,6 +10,7 @@ export default withRouter(({className, section, text, location, children, to}) =
             category: 'ButtonLink',
             action: `Section: ${section}, Button: ${text}, Page: ${location.pathname}`,
           });
+    window.scrollTo(0)
     }
     return (
         <ErrorBoundary>

@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import styled from "styled-components";
 import {InternalLink} from "./../"; 
 import Disclaimer from "./Disclaimer";
-import {brandBlack, brandGrey} from "../BrandStyle"
+import {brightGreen, brandGrey} from "../BrandStyle"
 const FooterStyling = styled.footer`
     box-shadow: inset 0 1px 3px -2px rgba(0, 0, 0, 0.8),
                 inset 0 -1px 3px -10px rgba(255, 255, 255, 0.8);
@@ -38,6 +38,9 @@ const FooterStyling = styled.footer`
         align-self: flex-start;
         @media only screen and (min-width: 500px) {
             grid-column: 3;
+        }
+        @media only screen and (min-width: 960px) {
+            grid-column: 4;
         }
     }
 `
@@ -134,7 +137,7 @@ class Footer extends Component {
                         </UnorderedListStyling>
                 </div>
 
-                                <InternalLink text = "JOIN US" color= {"green"} href="#"/>
+                                <InternalLink text = "JOIN US" color= {brightGreen} href="#"/>
             
             </FooterStyling>
             <Disclaimer/>
