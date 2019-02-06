@@ -5,6 +5,9 @@ import {connect} from "react-redux";
 import {getContent} from "./../../../actions";
 import {Loading} from "./../../modules";
 import BrandStyle from "../../modules/BrandStyle";
+import {brightGreen} from "../../modules/BrandStyle";
+
+
 
 const Section = styled.div `
 height: 50%;
@@ -42,7 +45,7 @@ class FindOutMore extends Component {
                         <InternalLink 
                         text="FIND OUT MORE" 
                         to="about"
-                        color="green"
+                        color={brightGreen}
                         section="Out board page find out more section"
                         /> 
                     </Section> 

@@ -29,7 +29,7 @@ class FirstSection extends Component {
             padding="0 0 72px"
             information= {information}
             image={content[0].image.secure_url}  
-            breadcrumbs={[{to: "/", text: "homepage"}]}
+            breadcrumbs={[{to: "cause", text: "CAUSES WE CARE"}]}
             >
                 <></>
                 <HorizontalCardSection content={cardContent}/>

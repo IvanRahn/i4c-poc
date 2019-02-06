@@ -3,6 +3,7 @@ import PageOpener from '../../../modules/pageLayout/PageOpener';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading, HorizontalCardSection, ImpactCard} from "./../../../modules"
+import {brightGreen} from "../../../modules/BrandStyle";
 
 
 
@@ -26,8 +27,8 @@ class FirstSection extends Component {
 
             const information = [{heading: `<h1>${content[0].contentTop.heading}</h1>`, text: content[0].contentTop.text}, {heading: `<h3>${content[0].contentBottom.heading}</h3>`, text: content[0].contentBottom.text}];
 
-            const link =[{linkText: "DOWNLOAD PDF", linkColor: "green", linkLocation: null, linkSection: "About page first section" }]
-        
+            const link =[{linkText: "DOWNLOAD PDF", linkColor: brightGreen, linkLocation: null, linkSection: "About page first section" }]
+        console.log(link)
         return (
             <>
                 <PageOpener
@@ -37,7 +38,7 @@ class FirstSection extends Component {
                 image={content[0].image ? content[0].image.secure_url: null}
 
                 breadcrumbs={[
-                {to: "/about", text:"about"}
+                {to: "/about", text:"ABOUT US"}
                 ]}
                 >
                     <>
