@@ -21,7 +21,11 @@ img {
 } 
 
 div {
-    padding: 0; 
+    
+    
+    @media (min-width: 768px){
+        padding: 0;
+    } 
 }
 
 `

@@ -10,9 +10,13 @@ padding: 0px;
 h1 {
     margin-top: auto;
 }
+h2,h3 {
+    text-align:center;
+}
 `
 const Div = styled.div `
     padding: 150px 24px;
+    text-align: center;
 `
 class CenteredContent extends Component {
     

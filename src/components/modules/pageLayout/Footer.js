@@ -5,6 +5,7 @@ import Disclaimer from "./Disclaimer";
 import {brightGreen, brandGrey} from "../BrandStyle";
 import {getContent} from '../../../actions';
 import {connect} from "react-redux";
+
 const FooterStyling = styled.footer`
     box-shadow: inset 0 1px 3px -2px rgba(0, 0, 0, 0.8),
                 inset 0 -1px 3px -10px rgba(255, 255, 255, 0.8);
@@ -38,9 +39,7 @@ const FooterStyling = styled.footer`
     }
     a:last-child {
         align-self: flex-start;
-        /* @media only screen and (min-width: 500px) {
-            grid-column: 3;
-        } */
+       
         @media only screen and (min-width: 960px) {
             grid-column: 4;
         }
@@ -69,8 +68,7 @@ const UnorderedListStyling = styled.ul`
         }
 `
 
-// "JOIN US" button style : 
-// align-self: flex-end;
+
 
 class Footer extends Component {
     componentDidMount () {
@@ -81,7 +79,6 @@ class Footer extends Component {
     }
     render() { 
         const {causes, causesIsFetching, causesError} = this.props;		
-        console.log('TCL: Footer -> render -> causes', this.props)
         if (causesIsFetching) {
             return <Loading/>
         } else if (causesError || !causes) {
@@ -132,9 +129,10 @@ class Footer extends Component {
                         <UnorderedListStyling>
                             {causes.map(cause => {
                                 return (
-<li> <InternalLink text={cause.title} to={`cause/${cause.slug}`}/> </li> 
+<li key={cause._id}> <InternalLink text={cause.title} to={`cause/${cause.slug}`} /> </li> 
                                 )
                             })}
+
                         </UnorderedListStyling>
                 </div>
                 

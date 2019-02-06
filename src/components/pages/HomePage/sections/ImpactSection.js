@@ -16,11 +16,8 @@ text-align: left;
     height: calc(100vh - 110px);
 }
 button {
-    /* margin: auto auto 0; */
     @media only screen and (max-width: 500px) {
-    /* position: absolute; */
-    /* left: 16px; */
-    /* bottom: 24vh; */
+    
     }
 }
 `
@@ -31,7 +28,6 @@ const Div = styled.div `
         text-align: center;
     }
     }
-    /* margin: auto auto; */
 `
 
 
