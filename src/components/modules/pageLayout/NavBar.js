@@ -224,7 +224,7 @@ class NavBar extends Component {
                 <NavUl>
                     <li> <InternalLink text="ABOUT US" to="/about" section="nav" location="homepage"/></li> 
                     <li> <InternalLink text="HOW IT WORKS"to="/how-it-works"section="nav" location="homepage"/> </li>
-                    <li> <InternalLink text="OUR IMPACT"to="#"section="nav" location="homepage"/> </li>
+                    <li> <InternalLink text="OUR IMPACT"to="/cause"section="nav" location="homepage"/> </li>
                     
                     <li> <InternalLink 
                     color={brightGreen}text="LOGIN"to="#"section="nav" location="homepage"/> </li>

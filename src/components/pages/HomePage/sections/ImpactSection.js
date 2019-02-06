@@ -54,10 +54,9 @@ class ImpactSection extends Component {
             <>
             
             <ImpactSectionWrapper padding="0" height="calc(100vh - 90px)" aria-live="polite" color={color}>
-            <Div>
-                <h1>{impact[0].heading}</h1>
-                <p>{impact[0].subtext}</p>
-                
+                <Div>
+                    <h1>{impact[0].heading}</h1>
+                    <p>{impact[0].subtext}</p>
                 </Div>
                 <ScrollButton target="HowItWorks" text="LEARN MORE" />
             </ImpactSectionWrapper>
