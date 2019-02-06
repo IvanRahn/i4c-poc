@@ -111,7 +111,6 @@ margin-left: 10%;
     background-image: url(${LogoFull});
     width: 240px;
     height: 80px;
-    background-color: black;
     margin-left: 64px;
  }
 `

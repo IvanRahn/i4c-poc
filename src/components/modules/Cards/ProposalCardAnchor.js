@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent, LinkWrapper} from ".."
+import {HTMLContent, LinkWrapper, Icon} from ".."
 import {brightGreen} from "../BrandStyle"
 import image from "../../../img/cartoon.jpg"
 
@@ -26,11 +26,7 @@ const DivContainer = styled.div`
 `
 
 
-const ImageContainer = styled.img`
-height: 96px; 
-width: 96px;
-margin-bottom: 12px;
-`
+
 class FeaturedCauseCard extends Component {
     
     render(){
@@ -41,7 +37,8 @@ class FeaturedCauseCard extends Component {
             
                 <LinkWrapper color to={to}>
                     <CardWrapper>
-                        <ImageContainer src={CardImage || image} />
+                        <Icon big
+                        src={CardImage || image} />
                         <DivContainer>
                             <h4>{CardHeading}</h4>
                             <HTMLContent content={CardText}/>
