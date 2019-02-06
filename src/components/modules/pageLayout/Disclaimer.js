@@ -2,9 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import logo from "./../../../img/I4C.png"
 const Section = styled.section`
-    /* box-shadow: inset 0px 2px 2px 0px grey; */
-    padding: 24px;
-    margin: 0 64px;
+    box-shadow: inset 0 1px 3px -2px rgba(0, 0, 0, 0.8),
+                inset 0 -1px 3px -10px rgba(255, 255, 255, 0.8);
+    width: 100%;
+    padding: 24px 24px 24px auto;
+    @media only screen and (min-width: 960px) {
+
+    }
     div {
         width: 100%;
 
@@ -20,6 +24,7 @@ const Section = styled.section`
 `
 const Logo = styled.img`
 width: 110px;
+margin-left: 24px;
 @media only screen and (min-width: 500px) {
     /* margin-right: 52px; */
 }
