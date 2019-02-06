@@ -9,7 +9,10 @@ class FirstSection extends Component {
         body.scrollTo(0, 0);
         this.setState({cause: this.props.cause})
     }
-    
+    componentDidUpdate () {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0);
+    }
     render(){
         const {cause} = this.props
         const impactList = Object.values(cause.impact)

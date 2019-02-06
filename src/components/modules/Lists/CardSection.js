@@ -27,7 +27,7 @@ class CardSection extends Component {
                         value = {content.value}
                         text={content.text}
                         image={content.image}
-                         key={content.image.public_id}/>
+                         key={content.text}/>
                     )
                     }) }
 </Div>
