@@ -8,8 +8,23 @@ import {Loading} from "./../../../modules"
 
 const H = styled.h1`
     width:100%;
+    text-align: left;
+    margin-bottom: 88px;
 `
-
+const Container = styled.div`
+width: 100%;
+display: grid;
+grid-row-gap: 24px;
+grid-column-gap: 1%;
+grid-template-columns: 100%;
+@media only screen and (min-width: 500px){
+    
+grid-template-columns: 50% 50%;
+}
+@media only screen and (min-width: 960px) {
+grid-template-columns: repeat(4, 21%);
+} 
+`
 class VolunteerSection extends Component {
 
     componentDidMount () {
@@ -28,10 +43,14 @@ class VolunteerSection extends Component {
             }
 
         return (
-           <SectionWrapper height="auto" padding="52px 24px">
+           <SectionWrapper 
+           height="auto" 
+           padding="52px 24px 72px 88px;"
+           mobilePadding="52px 24px"
+           >
                 {/* Fix this up so that it is dynamic */}
                 <H>Now we have volunteers:</H>
-
+                <Container>
                 {content.map((content) => {
                         return (
                             <ProfileCard
@@ -43,7 +62,7 @@ class VolunteerSection extends Component {
                             />
                         )
                 }) }
-
+                </Container>
 
            </SectionWrapper>
         )

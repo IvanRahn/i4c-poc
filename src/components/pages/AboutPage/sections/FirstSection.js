@@ -9,18 +9,22 @@ import {Loading, HorizontalCardSection, ImpactCard} from "./../../../modules"
 class FirstSection extends Component {
 
     componentDidMount () {
-        const {content} = this.props;
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
+        const {content, cardContent, getContent} = this.props;
         if(!content){
-        this.props.getContent("about/first-section");    
+        getContent("about/first-section");    
         }
-        this.props.getContent("about/homepage-card")
+        if(!cardContent) {
+        getContent("about/homepage-card")
+        }
     }
 
     render () {
         const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
         if (isFetching || cardIsFetching) {
             return (<Loading/>)
-            } else if (error || !content || !content[0]){
+            } else if (error || cardError || !content || !content[0]){
                 return <div>error</div>
             }
 
@@ -40,7 +44,6 @@ class FirstSection extends Component {
                 {to: "/about", text:"about"}
                 ]}
                 >
-                    <>
                     {cardContent.map(content => {
                       return(  <ImpactCard
                         key={content.text}
@@ -51,9 +54,17 @@ class FirstSection extends Component {
                         />
                       )
                     })}
-                    </>
                     <></>
-                    <HorizontalCardSection display="mobile" content={cardContent} />
+                    {cardContent.map(content => {
+                      return(  <ImpactCard
+                        key={content.text}
+                        display="mobile"
+                        text={content.text}
+                        image={content.image ? content.image.secure_url : null}
+                        heading={content.heading}
+                        />
+                      )
+                    })}
 
 
                 </PageOpener>

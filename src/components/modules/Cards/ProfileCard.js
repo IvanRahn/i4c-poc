@@ -3,17 +3,22 @@ import styled from "styled-components";
 import {HTMLContent} from "../index"
 
 const CardWrapper = styled.div`
+grid-column: auto;
 overflow: hidden;
-/* padding: 0 0 32px; */
-margin: 48px auto 0;
 width: 100%;
 display: flex;
 flex-direction: column;
+padding-right: 12px;
 @media only screen and (min-width: 500px) {
-    width: 250px;
+    align-items: flex-start;
+    max-width: 250px;
 }
-h2 {
+h5 {
     margin: 24px 0;
+    text-align: left;
+    @media only screen and (min-width: 500px) {
+        text-align: center;
+    }
 }
 p {
     margin-bottom: 12px;
