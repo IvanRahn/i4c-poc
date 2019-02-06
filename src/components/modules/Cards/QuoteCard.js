@@ -6,7 +6,7 @@ const Quote = styled.div`
     border-radius: 8px;
     padding: 24px;
     margin: 0 24px;
-    z-index: 1;
+    /* z-index: 1; */
     max-width: 100%;
     background-color: ${brandWhite};
     bottom: 0;
@@ -18,12 +18,16 @@ const Quote = styled.div`
     width: 576px;
     }
     h3 {
+    text-align: left;
+
         padding-bottom: 12px;
     ::before, ::after {
         content: '"';
     }
     }
     h4 {
+    text-align: left;
+
         ::before {
             content: "- ";
         }

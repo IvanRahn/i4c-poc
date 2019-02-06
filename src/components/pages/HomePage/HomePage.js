@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from "react";
 import ImpactSection from './sections/ImpactSection';
-import withTracker from '../../google_analytics/withTracker';
+import { withRouter } from 'react-router-dom';
 import {darkGreen} from "./../../modules/BrandStyle"
 const HowItWorksSection = lazy(() => import('./../../modules/pageLayout/HowItWorksSection')) ;
 const FeaturedCauseSection = lazy(() => import('./../../modules/pageLayout/FeaturedCauseSection')) ;
@@ -14,9 +14,14 @@ const HomePage = (props) => {
             <>      
                     <ImpactSection />
                     <Suspense fallback="">
-                        <HowItWorksSection cardCount={3}color={darkGreen}/>
+                        <HowItWorksSection 
+                        cardCount={3}
+                        color={darkGreen}
+                        />
                         <TeamSection/>
-                        <FeaturedCauseSection cardCount={2}/>
+                        <FeaturedCauseSection 
+                        cardCount={2}
+                        />
                             
                     </Suspense>
                 
@@ -25,4 +30,4 @@ const HomePage = (props) => {
     }
 
 
-export default withTracker(HomePage)
+export default withRouter(HomePage);

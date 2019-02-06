@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import {NavBar, ErrorBoundary, Loading} from "./modules"
 import HomePage from "./pages/HomePage/HomePage";
 import GlobalStyle from "./Normalize";
-// const Redirect = lazy(() => import("./Redirect"));
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/SingleCausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
@@ -28,11 +27,11 @@ class App extends Component {
               <main id="main">
                 <Suspense fallback={<Loading/>}>
               <Switch  >
-                <Route exact path="/" component={HomePage} />
-                  <Route exact path="/cause" render={(props) => <CauseHomePage {...props}/>} />
+                <Route exact path="/" render={props => <HomePage {...props} />} />
+                  <Route exact path="/cause" render={props => <CauseHomePage {...props} />} />
                   <Route exact path="/cause/:slug" render={(props) => <CausePage {...props}/>} />
                   <Route exact path="/board-page" render={(props) => <BoardPage {...props}/>} />
-                  <Route exact path="/about" render={(props) => <AboutHomePage {...props}/>} /> 
+                  <Route exact path="/about" render={props => <AboutHomePage {...props} />}/> 
                   <Route exact path="/how-it-works" render={(props) => <HowItWorksHomePage {...props}/>} />
                   <Redirect path="*" to="/"/>
               </Switch>

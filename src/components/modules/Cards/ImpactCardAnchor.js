@@ -46,7 +46,9 @@ class FeaturedCauseCard extends Component {
                          src={CardImage || ""} />
                         <DivContainer>
                             <h3>{CardHeading}</h3>
-                            <HTMLContent content={CardText}/>
+                            <HTMLContent 
+                            notClickable
+                            content={CardText}/>
                             {children}
                         </DivContainer>
                     </CardWrapper>

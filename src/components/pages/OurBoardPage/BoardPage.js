@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import BoardDutySection from "./BoardDutySection";
 import BoardMembers from "./BoardMembers";
 import FindOutMore from "./FindOutMore";
-
+import withTracker from '../../google_analytics/withTracker';
 
 
 class BoardPage extends Component {
@@ -18,4 +18,4 @@ class BoardPage extends Component {
 }
 
 
-export default BoardPage; 
+export default withTracker(BoardPage); 
