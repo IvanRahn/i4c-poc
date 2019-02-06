@@ -48,7 +48,7 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, breadcrumbs, children, link, marginTop, information, padding  } = this.props;  
+        const { color, image, breadcrumbs, children, link, marginTop, information, padding, mobilePadding  } = this.props;  
         return (
             <ErrorBoundary>
             <SectionWrapper 
@@ -56,6 +56,7 @@ class PageOpener extends Component {
             color={color} 
             height= "auto" 
             padding={padding}
+            mobilePadding={mobilePadding}
             >
                 <Section height="100%">
                         <Breadcrumb mobile>

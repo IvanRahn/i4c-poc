@@ -67,8 +67,8 @@ class TeamSection extends Component {
         return (  
                 <SectionWrapper 
                 height="auto"
-                padding="52px 0 72px"
-                mobilePadding="0 24px 48px"
+                padding="0 0 72px"
+                mobilePadding="0 24px 48px 24px"
                 >
                             {teamSection[0].media ? <VideoContainer src={teamSection[0].media} /> : <ImageContainer src={teamSection[0].image.secure_url} /> }
                     <Section>

@@ -9,13 +9,13 @@ const SectionWrapper = styled.section`
     margin: 0 auto;
     align-items: ${props => props.align || "center"}; 
     position: relative;
-    padding: ${props => props.mobilePadding || "52px 24px 0 px"};
+    padding: ${props => props.mobilePadding || "52px 24px 0px"};
     :last-of-type(a) {
         width: 100%;
     }
     background-color: ${props => props.color ? darkGreen : "#ffffff" };
         height: ${props => props.height || "auto"};
-    @media only screen and (min-width: 500px) {
+    @media only screen and (min-width: 760px) {
     padding: ${props => props.padding || "52px 24px 0px"};
         height: ${props => props.height || "100vh"};
     }

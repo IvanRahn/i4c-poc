@@ -36,6 +36,7 @@ class FirstSection extends Component {
             <>
                 <PageOpener
                 padding="0 0 72px"
+                mobilePadding="0"
                 information= {information}
                 link= {link}
                 image={content[0].image ? content[0].image.secure_url: null}
