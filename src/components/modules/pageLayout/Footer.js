@@ -132,6 +132,7 @@ class Footer extends Component {
 <li key={cause._id}> <InternalLink text={cause.title} to={`cause/${cause.slug}`} /> </li> 
                                 )
                             })}
+
                         </UnorderedListStyling>
                 </div>
                 

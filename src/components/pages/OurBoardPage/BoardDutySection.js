@@ -29,6 +29,7 @@ class BoardDutySection extends Component {
 
         return ( 
             <PageOpener
+            mobilPadding="0"
             padding="0"
             information= {information}
             image={promise[0].image.secure_url}
