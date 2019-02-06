@@ -13,15 +13,12 @@ color: ${brandWhite};
 `
 class DonateSection extends Component {
     componentDidMount() {
-        const {content} = this.props;
-        // if(!content){
         this.props.getContent("causes/donate-card")
-        // }
+        
     }
     render() {
 
         const {color, content, isFetching, error} = this.props;
-		console.log('TCL: DonateSection -> render -> color', color)
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
@@ -33,7 +30,6 @@ class DonateSection extends Component {
             <>
 
             <SectionWithWave id="HowItWorks" color={color} height="auto" padding="52px 0 52px" >
-                {/* Fix this to be dynamic */}
                 <H>Donate once, give forever</H>
 
                 {content.map((content) => {

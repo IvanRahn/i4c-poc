@@ -3,6 +3,8 @@ import PageOpener from '../../../modules/pageLayout/PageOpener';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../../actions"
 import {Loading, HorizontalCardSection, ImpactCard} from "./../../../modules"
+import {brightGreen} from "../../../modules/BrandStyle";
+
 
 
 
@@ -19,8 +21,7 @@ class FirstSection extends Component {
 
     
     render() { 
-        const {content, error, isFetching, cardContent, cardIsFetching, cardError} = this.props; 
-		
+        const {content, error, isFetching, cardContent, cardIsFetching} = this.props; 
         if (isFetching || cardIsFetching) {
             return <Loading/>
 
@@ -30,7 +31,7 @@ class FirstSection extends Component {
 
         const information = [{heading: `<h1>${content[0].mainHeading}</h1>`, text: content[0].mainText}, {heading: `<h3>${content[0].subHeading}</h3>`, text: content[0].subText}];
 
-        const link =[{linkText: "DOWNLOAD PDF", linkColor: "green", linkLocation: null, linkSection: "How it works page first section" }]
+        const link =[{linkText: "DOWNLOAD PDF", linkColor: brightGreen, linkLocation: null, linkSection: "How it works page first section" }]
 
             return ( 
                 <> 
@@ -65,7 +66,6 @@ class FirstSection extends Component {
 }
  
 const mapStateToProps = (state) => {
-    console.log("THIS IS STATAAATE", state)
     const {content, isFetching, error} = state.howItWorksTopPage 
     const {cardContent, cardIsFetching, cardError} = state.howItWorksTopCard
     
@@ -81,12 +81,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {getContent})(FirstSection);  
-
-
-
-
-// TO DO : 
-// CREATE TWO REDUCERES BoardMembersTOPPAGE REDUCER , AND HOWITWORKS TOP PAGE REDUCER 
-// IMPLEMENT THEM TO THIER PERSPECTIVE HOME PAGES (BOARD HOME PAGE , HOW IT WORKS HOME PAGE) 
-// AND PUT THEIR KEYS , THEN DO CONSTRUCTIVE DENOTATION   ex... content.image, content.text blah blah
-

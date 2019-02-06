@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {darkGreen, brandWhite} from "./../BrandStyle"
+import {darkGreen} from "./../BrandStyle"
 
 const SectionWrapper = styled.section`
     display: flex;

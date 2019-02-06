@@ -82,7 +82,6 @@ class PageOpener extends Component {
                         } ) : null}
 
                         {link ? link.map((link) => {
-
                         return(
                             <LinkContainer key={link.linkText}>
                                 <InternalLink 

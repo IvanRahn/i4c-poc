@@ -49,7 +49,6 @@ class MoreI4cSection extends Component {
         } else if (causesError || !causes || !causes[0]) {
             return <div>Error</div>
         }
-        console.log('TCL: MoreI4cSection -> render -> causes', causes)
         return (
             <>
             <GridWrapper height="auto" color={color}>

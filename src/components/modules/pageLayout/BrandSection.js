@@ -1,6 +1,6 @@
 import React, {Component, Fragment} from 'react';
 import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Link, HTMLContent, InternalLink} from './../../modules';
+import {SectionWrapper, HTMLContent, InternalLink} from './../../modules';
 
 
 
