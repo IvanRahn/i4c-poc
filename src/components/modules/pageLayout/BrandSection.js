@@ -22,6 +22,9 @@ width: ${props => props.width || "100%"};
 `
 const SectionRight = styled.div `
 width: ${props => props.width || "100%"};
+h3 {
+    text-align: left;
+}
 @media (min-width: 768px){
     width: 50%;
     height: ${props => props.height || "auto"};

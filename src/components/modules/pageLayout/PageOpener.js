@@ -28,8 +28,9 @@ width: ${props => props.width || "100%"};
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px 24px;
-h2{
+h2, h3{
     margin-top: 60px;
+    text-align: left;
 }
 
 h3{
@@ -83,7 +84,12 @@ class PageOpener extends Component {
                         {link ? link.map((link) => {
                         return(
                             <LinkContainer key={link.linkText}>
-                                <InternalLink text={link.linkText} color={link.linkColor} to={link.linkLocation} section={link.linkSection}  />
+                                <InternalLink 
+                                text={link.linkText} 
+                                color={link.linkColor} 
+                                to={link.linkLocation} 
+                                section={link.linkSection}
+                                />
                             </LinkContainer>
                         )
                         } ) : null}

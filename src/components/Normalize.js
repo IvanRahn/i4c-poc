@@ -36,7 +36,6 @@ html,body
  */
 
 body {
-  scroll-behavior: smooth;
   font-family: Helvetica;
   letter-spacing: 0.25px;
 }
@@ -44,6 +43,8 @@ body {
 
 
 main {
+  scroll-behavior: smooth;
+
   display: block;
   min-height: 100vh;
   margin-top: 60px;
