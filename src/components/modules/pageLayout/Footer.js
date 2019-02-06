@@ -39,9 +39,7 @@ const FooterStyling = styled.footer`
     }
     a:last-child {
         align-self: flex-start;
-        /* @media only screen and (min-width: 500px) {
-            grid-column: 3;
-        } */
+       
         @media only screen and (min-width: 960px) {
             grid-column: 4;
         }
@@ -70,8 +68,7 @@ const UnorderedListStyling = styled.ul`
         }
 `
 
-// "JOIN US" button style : 
-// align-self: flex-end;
+
 
 class Footer extends Component {
     componentDidMount () {
@@ -82,7 +79,6 @@ class Footer extends Component {
     }
     render() { 
         const {causes, causesIsFetching, causesError} = this.props;		
-        console.log('TCL: Footer -> render -> causes', this.props)
         if (causesIsFetching) {
             return <Loading/>
         } else if (causesError || !causes) {
@@ -136,13 +132,7 @@ class Footer extends Component {
 <li> <InternalLink text={cause.title} to={`cause/${cause.slug}`}/> </li> 
                                 )
                             })}
-{/*                             
-                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <InternalLink text= "Cuases Name" href="#"/> </li> 
-                            <li> <InternalLink text= "Cuases Name" href="#"/> </li>  */}
+
                         </UnorderedListStyling>
                 </div>
                 
