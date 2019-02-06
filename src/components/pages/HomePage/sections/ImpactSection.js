@@ -33,6 +33,8 @@ const Div = styled.div `
 
 class ImpactSection extends Component {
     componentDidMount() {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
         const {impact} = this.props;
         if(!impact){
         this.props.getContent("impactsection")

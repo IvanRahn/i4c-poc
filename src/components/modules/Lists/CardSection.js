@@ -6,12 +6,11 @@ import {ImpactStatsCard} from '..';
 
 const Div = styled.div `
     display: flex;
-    justify-content: center;
-    width: auto;
+    width: 100%;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 0 24px;
 @media only screen and (min-width: 960px){
-
 }
 `
 
@@ -19,7 +18,6 @@ class CardSection extends Component {
     render() { 
             const { content} = this.props
 			console.log('TCL: CardSection -> render -> content', content)
-            console.log("PROPS", this.props)
             return (
                 <>
                <Div>
@@ -29,7 +27,7 @@ class CardSection extends Component {
                         value = {content.value}
                         text={content.text}
                         image={content.image}
-                         key={content.image.secure_url}/>
+                         key={content.image.public_id}/>
                     )
                     }) }
 </Div>

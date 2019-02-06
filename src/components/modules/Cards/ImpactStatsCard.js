@@ -32,11 +32,10 @@ margin: 24px 0 12px;
 `
 
 const ImpactStatsCard = ({image, text, value}) => {
-	console.log('TCL: ImpactStatsCard -> image, text, impact', image, text, value)
     
         return(
             <CardWrapper>
-                <img src={image.secure_url} alt=""/>
+                <img src={image ? image.secure_url : null} alt=""/>
                 <Stats>{value}</Stats>
                 <HTMLContent content={text}/>
             </CardWrapper>
