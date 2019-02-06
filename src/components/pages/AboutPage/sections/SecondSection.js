@@ -20,7 +20,7 @@ class SecondSection extends Component {
                 return <div>error</div>
             }
             
-            const information = [{heading: `<h3>${content[0].contentTop.heading}</h3>`, text: content[0].contentTop.text}, {heading: `<h2>${content[0].contentMiddle.heading}</h2>`, text: content[0].contentMiddle.text}];
+            const information = [{heading: `<h2>${content[0].contentTop.heading}</h2>`, text: content[0].contentTop.text}, {heading: `<h3>${content[0].contentMiddle.heading}</h3>`, text: content[0].contentMiddle.text}];
         return (
             <>
                 <PageOpener

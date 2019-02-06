@@ -29,7 +29,7 @@ class CenteredContent extends Component {
                     <h1>{firstHeading}</h1>
                     <h2>{secondHeading}</h2>
                     <h3>{thirdHeading}</h3>
-                    <InternalLink text={linkText} color={linkColor} to={linkLocation} section={linkSection}/>
+                    <InternalLink text={linkText} color={linkColor} to={`/${linkLocation}`} section={linkSection}/>
                 </Div>
 
             </ImpactSectionWrapper>

@@ -7,8 +7,8 @@ import {getContent} from '../../../actions';
 import {connect} from "react-redux";
 
 const FooterStyling = styled.footer`
-    box-shadow: inset 0 1px 3px -2px rgba(0, 0, 0, 0.8),
-                inset 0 -1px 3px -10px rgba(255, 255, 255, 0.8);
+max-width: 1200px;
+margin: 0 auto;
     z-index: 1;
     display: grid;
     padding: 48px 24px 0;
@@ -45,7 +45,10 @@ const FooterStyling = styled.footer`
         }
     }
 `
-
+const Wrapper = styled.section`
+box-shadow: inset 0 1px 3px -2px rgba(0, 0, 0, 0.8),
+                inset 0 -1px 3px -10px rgba(255, 255, 255, 0.8);
+`
 const UnorderedListStyling = styled.ul`
     list-style-type: none;
     display: flex;
@@ -85,7 +88,7 @@ class Footer extends Component {
             return <div>Error</div>
         }
         return (  
-            <>
+            <Wrapper>
             <FooterStyling>
                 <div>
                     <h6>INVESTING FOR CHARITY</h6>
@@ -151,7 +154,7 @@ class Footer extends Component {
             
             </FooterStyling>
             <Disclaimer/>
-            </>
+            </Wrapper>
         );
     }
 }

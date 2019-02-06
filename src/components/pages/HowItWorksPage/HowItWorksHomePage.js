@@ -4,7 +4,8 @@ import {darkGreen} from "./../../modules/BrandStyle"
 import FirstSection from './sections/FirstSection';
 import FeatureSection from './sections/FeatureSection';
 import JoinSection from './sections/JoinSection';
-
+import withTracker from "./../../google_analytics/withTracker"
+import { withRouter } from 'react-router-dom';
 
 class HowItWorksHomePage extends Component {
    
@@ -15,7 +16,7 @@ class HowItWorksHomePage extends Component {
                 <> 
                     <FirstSection /> 
                     <HowItWorksSection cardCount={6} color={darkGreen}/>
-                    <FeaturedCauseSection cardCount={3}>
+                    <FeaturedCauseSection cardCount={2}>
                     <FeatureSection/>
                     </FeaturedCauseSection>
                     <JoinSection />                     
@@ -26,5 +27,5 @@ class HowItWorksHomePage extends Component {
  
 
 
-export default HowItWorksHomePage;
+export default withTracker(HowItWorksHomePage);
 
