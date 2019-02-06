@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {SmallHorizontalCard, ImpactCard} from '..';
+import {ImpactCard} from '..';
 
 
 const Wrapper = styled.div`
@@ -29,11 +29,9 @@ grid-template-columns: 33% 33% 33%;
 class HorizontalCardSection extends Component {
     render() { 
             const {content, display} = this.props
-			console.log('TCL: HorizontalCardSection -> render -> content', content)
             return (
                 <Container>
                     {content.map((content) => {
-					console.log('TCL: HorizontalCardSection -> render -> content', content)
                     return (
                         <Wrapper display={display} key={content._id}>
                             <ImpactCard

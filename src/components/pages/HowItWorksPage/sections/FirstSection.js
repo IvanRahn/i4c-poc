@@ -19,8 +19,7 @@ class FirstSection extends Component {
 
     
     render() { 
-        const {content, error, isFetching, cardContent, cardIsFetching, cardError} = this.props; 
-		
+        const {content, error, isFetching, cardContent, cardIsFetching} = this.props; 
         if (isFetching || cardIsFetching) {
             return <Loading/>
 
@@ -65,7 +64,6 @@ class FirstSection extends Component {
 }
  
 const mapStateToProps = (state) => {
-    console.log("THIS IS STATAAATE", state)
     const {content, isFetching, error} = state.howItWorksTopPage 
     const {cardContent, cardIsFetching, cardError} = state.howItWorksTopCard
     
@@ -81,12 +79,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {getContent})(FirstSection);  
-
-
-
-
-// TO DO : 
-// CREATE TWO REDUCERES BoardMembersTOPPAGE REDUCER , AND HOWITWORKS TOP PAGE REDUCER 
-// IMPLEMENT THEM TO THIER PERSPECTIVE HOME PAGES (BOARD HOME PAGE , HOW IT WORKS HOME PAGE) 
-// AND PUT THEIR KEYS , THEN DO CONSTRUCTIVE DENOTATION   ex... content.image, content.text blah blah
-

@@ -1,6 +1,4 @@
 import React, {Component} from "react";
-import { connect } from "react-redux";
-import {getContent} from "./../../../actions"
 import DonateSection from "./sections/DonateSection";
 import OurDonorSection from "./sections/OurDonorSection";
 import JoinSection from "./sections/JoinSection";
@@ -11,7 +9,6 @@ class causesHomePage extends Component {
 
 
     render () {
-        const { content, isFetching, error} = this.props;
 
         return (
             <div>

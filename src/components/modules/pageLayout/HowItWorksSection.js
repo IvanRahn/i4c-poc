@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {OrdList, Card, InternalLink, Loading, SectionWithWave} from "..";
+import {OrdList, Card, Loading, SectionWithWave} from "..";
 import { connect } from 'react-redux';
 import {getContent} from '../../../actions';
 

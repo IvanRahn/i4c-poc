@@ -1,6 +1,6 @@
 import Link from "./Link";
 import styled from "styled-components";
-import {darkGreen, brightGreen} from "./../BrandStyle";
+import {darkGreen} from "./../BrandStyle";
 
 const LinkWrapper = styled(Link) `
 width: auto;

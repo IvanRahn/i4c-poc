@@ -17,7 +17,7 @@ class FirstSection extends Component {
     }
 
     render () {
-        const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
+        const { content, isFetching, error, cardContent, cardIsFetching} = this.props;
         if (isFetching || cardIsFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
