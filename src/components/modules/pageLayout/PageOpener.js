@@ -48,7 +48,7 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, breadcrumbs, children, link, marginTop, information, padding  } = this.props;  
+        const { color, image, breadcrumbs, children, link, marginTop, information, padding, mobilePadding  } = this.props;  
         return (
             <ErrorBoundary>
             <SectionWrapper 
@@ -56,12 +56,13 @@ class PageOpener extends Component {
             color={color} 
             height= "auto" 
             padding={padding}
+            mobilePadding={mobilePadding}
             >
                 <Section height="100%">
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 
                         </Breadcrumb>    
-                    <ImageContainer src= {image} alt="Cherring man" />
+                    <ImageContainer src= {image} alt="" />
                     {/* first received child is a vertical list */}
                     {children[0]}
                 </Section>

@@ -50,8 +50,8 @@ class BrandOpener extends Component {
             <>
             <SectionWrapper align_start color={color} height= "auto" padding="0">
                 <SectionLeft height="100%"> 
-                    <ImageContainer src= {image1} alt="Brand" />
-                    <ImageContainer src= {image2} alt="Brand" />
+                    <ImageContainer src= {image1} alt="" />
+                    <ImageContainer src= {image2} alt="" />
                     {/* first received child is a vertical list */}
                 </SectionLeft>
                 <SectionRight>

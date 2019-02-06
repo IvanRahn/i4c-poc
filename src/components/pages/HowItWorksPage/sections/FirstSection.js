@@ -11,6 +11,8 @@ import {brightGreen} from "../../../modules/BrandStyle";
 
 class FirstSection extends Component {
     componentDidMount() {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
         const {content} = this.props;
         if(!content){
         this.props.getContent("howitworkshpfirstsection")
@@ -37,6 +39,7 @@ class FirstSection extends Component {
                 <> 
                     <PageOpener 
                     padding = "0"
+                    mobilePadding="0"
                     information={information} 
                     image={content[0].image.secure_url}
                     breadcrumbs={[{to: "/", text: "OUR APPOROACH"}]}

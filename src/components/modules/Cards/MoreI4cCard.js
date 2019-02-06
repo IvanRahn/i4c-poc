@@ -8,7 +8,10 @@ overflow: hidden;
 width: 300px;
 background-color: white;
 border-radius: 10px;
-    width: 100%;
+width: 360px;
+h3 {
+    text-align: left;
+}
 
 @media only screen and (min-width: 500px) {
     overflow: hidden;
@@ -22,8 +25,8 @@ padding: 2px 16px;
 `
 
 const ImageContainer = styled.img`
-height: 120px; 
-width: 300px; 
+height: 220px; 
+width: 100%; 
 @media only screen and (min-width: 500px) {
     height: 220px; 
     width: 100%; 
@@ -38,7 +41,7 @@ class MoreI4cCard extends Component {
         return(
             <LinkWrapper>
                 <CardWrapper>
-                    <ImageContainer src= {CardImage} />
+                    <ImageContainer src= {CardImage} alt="" />
                     <DivContainer>
                         <h3>{CardHeading}</h3>
                         <p>{CardText}</p>

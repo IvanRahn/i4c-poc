@@ -47,28 +47,25 @@ class BoardMembers extends Component {
         }       
              
             return ( 
-            <>
-                        <SectionWrapper key={member._id} height="auto">                        
+                <>
+                <SectionWrapper key={member._id} height="auto">                        
 
-            {member.map((member) => {
+                    {member.map((member) => {
                 
-                    return (
-                            <SmallHorizontalCard 
-                            key={member._id}
-                            CardName = {member.title}
-                            CardHeading = {member.content.heading} 
-                            CardText= {member.content.text}
-                            CardImage={member.image ? member.image.secure_url : null} 
-                            /> 
-                            )
-                            
-                        })}
-                        </SectionWrapper>
-
-            </> 
+                        return (
+                                <SmallHorizontalCard 
+                                key={member._id}
+                                CardName = {member.title}
+                                CardHeading = {member.content.heading} 
+                                CardText= {member.content.text}
+                                CardImage={member.image ? member.image.secure_url : null} 
+                                /> 
+                                )
+                                
+                            })}
+                </SectionWrapper>
+                </> 
             )
-                
-                
     } 
 }
 

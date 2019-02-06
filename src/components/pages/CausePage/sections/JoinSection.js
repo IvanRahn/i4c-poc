@@ -4,6 +4,14 @@ import { SectionWrapper, InternalLink, Loading } from "../../../modules";
 import { getContent } from "../../../../actions";
 import { connect } from "react-redux";
 
+const SectionWrapperJoin = styled(SectionWrapper) `
+@media only screen and (min-width: 960px) and(max-width: 1025px) {
+div:first-child {
+  padding-left: 88px;
+  align-items: flex-end;
+}
+}
+`
 const Section = styled.div`
   width: ${props => props.width || "100%"};
   align-items: center;
@@ -14,8 +22,17 @@ const Section = styled.div`
     flex-direction: ${props => props.direction || "row"};
     justify-content: center;
   }
-
   @media (min-width: 1025px) {
+  h1, h2 {
+    text-align: left;
+    align-self: flex-start;
+  }
+  h1 {
+    width: 260px;
+  }
+    a {
+    align-self: flex-start;
+  }
     width: 50%;
     display: flex;
     flex-direction: ${props => props.direction || "row"};
@@ -54,8 +71,13 @@ class JoinSection extends Component {
             }
 
     return (
-      <SectionWrapper color="green" height="auto" padding="28px 16px 64px 16px">
-        <Section justify="flex-end">
+      <SectionWrapperJoin 
+      align="flex-start" 
+      color="green" height="auto" 
+      padding="28px 16px 28px 16px"
+      mobilePadding="24px;"
+      >
+        <Section >
           <Svg>
             <path
               d="M30.5,24.1c0.1-2.8-2.2-9.8-2.2-9.8c0.7,0.1,5.2,6.8,4.7,9.6l0,0c4.3-1,7.3-5.1,6.7-9.5l-0.1-0.6
@@ -76,7 +98,7 @@ class JoinSection extends Component {
           <h2>{content[0].subheading}</h2>
           <InternalLink text="Join our cause" color="white" to="join" section="Cause page join section" />
         </Section>
-      </SectionWrapper>
+      </SectionWrapperJoin>
     );
   }
 }

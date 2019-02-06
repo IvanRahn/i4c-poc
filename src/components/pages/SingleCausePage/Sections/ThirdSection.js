@@ -10,7 +10,11 @@ margin-bottom: -22px;
 const ThirdSection = ({cause}) => {
 return (
     <ErrorBoundary>
-    <SectionWrapper height="100vh" padding="120px 0 0 "justify="flex-end" color="green">
+    <SectionWrapper 
+    height="100vh" 
+    padding="120px 0 0"
+    mobilePadding="120px 0 0"
+    justify="flex-end" color="green">
 
         <HeroArticleCard big white padding="300px 0 0"
         CardImage={image}

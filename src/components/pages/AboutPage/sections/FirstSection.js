@@ -22,7 +22,7 @@ class FirstSection extends Component {
     }
 
     render () {
-        const { content, isFetching, error, cardContent, cardIsFetching} = this.props;
+        const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
         if (isFetching || cardIsFetching) {
             return (<Loading/>)
             } else if (error || cardError || !content || !content[0]){
@@ -36,6 +36,7 @@ class FirstSection extends Component {
             <>
                 <PageOpener
                 padding="0 0 72px"
+                mobilePadding="0"
                 information= {information}
                 link= {link}
                 image={content[0].image ? content[0].image.secure_url: null}

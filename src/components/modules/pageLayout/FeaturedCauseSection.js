@@ -26,7 +26,10 @@ padding: 24px;
 
 class FeacturedCauseSection extends Component {
     componentDidMount () {
+        const {causes, getContent} = this.props;
+        if (!causes) {
         this.props.getContent("causes");
+        }
     }
     render() {
         const {color, causes, causesIsFetching, causesError, cardCount, tree} = this.props

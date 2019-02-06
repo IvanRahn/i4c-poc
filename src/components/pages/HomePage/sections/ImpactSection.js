@@ -33,6 +33,8 @@ const Div = styled.div `
 
 class ImpactSection extends Component {
     componentDidMount() {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
         const {impact} = this.props;
         if(!impact){
         this.props.getContent("impactsection")
@@ -52,10 +54,9 @@ class ImpactSection extends Component {
             <>
             
             <ImpactSectionWrapper padding="0" height="calc(100vh - 90px)" aria-live="polite" color={color}>
-            <Div>
-                <h1>{impact[0].heading}</h1>
-                <p>{impact[0].subtext}</p>
-                
+                <Div>
+                    <h1>{impact[0].heading}</h1>
+                    <p>{impact[0].subtext}</p>
                 </Div>
                 <ScrollButton target="HowItWorks" text="LEARN MORE" />
             </ImpactSectionWrapper>

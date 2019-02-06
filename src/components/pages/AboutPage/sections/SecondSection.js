@@ -24,8 +24,9 @@ class SecondSection extends Component {
         return (
             <>
                 <PageOpener
-                marginTop="0"
                 padding="0"
+                mobilePadding="0"
+                marginTop="0"
                 image={content[0].image.secure_url}
                 information={information}
                 >

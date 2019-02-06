@@ -6,6 +6,8 @@ import {Loading, PageOpener} from "./../../modules"
 
 class BoardDutySection extends Component {
     componentDidMount() {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
         const {promise} = this.props;
         if (!promise) {
 
@@ -29,6 +31,7 @@ class BoardDutySection extends Component {
 
         return ( 
             <PageOpener
+            mobilPadding="0"
             padding="0"
             information= {information}
             image={promise[0].image.secure_url}

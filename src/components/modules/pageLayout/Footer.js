@@ -129,9 +129,10 @@ class Footer extends Component {
                         <UnorderedListStyling>
                             {causes.map(cause => {
                                 return (
-<li key={cause._id}> <InternalLink text={cause.title} to={`cause/${cause.slug}`} /> </li> 
+<li key={cause._id}> <InternalLink text={cause.title} to={`/cause/${cause.slug}`} /> </li> 
                                 )
                             })}
+
                         </UnorderedListStyling>
                 </div>
                 

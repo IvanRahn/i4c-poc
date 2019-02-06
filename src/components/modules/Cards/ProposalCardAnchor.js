@@ -11,8 +11,6 @@ background-color: ${brightGreen};
     padding: 24px;
     border-radius: 16px;
     width: auto;
-@media only screen and (min-width: 500px) {
-}
 `
 const DivContainer = styled.div`
     color: white;
@@ -35,7 +33,6 @@ class FeaturedCauseCard extends Component {
 
         return(
             
-                <LinkWrapper color to={to}>
                     <CardWrapper>
                         <Icon big
                         src={CardImage || image} />
@@ -45,7 +42,6 @@ class FeaturedCauseCard extends Component {
                         </DivContainer>
                             {children}
                     </CardWrapper>
-                </LinkWrapper>
 
         )
     }

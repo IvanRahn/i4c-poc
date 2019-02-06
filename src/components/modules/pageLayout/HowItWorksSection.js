@@ -15,7 +15,10 @@ margin-bottom: 88px;
 `
 class HowItWorksSection extends Component {
     componentDidMount() {
-        this.props.getContent("how-it-works/donate")
+        const {steps, getContent} = this.props;
+        if(!steps) {
+        getContent("how-it-works/donate")
+        }
     }
     render() {
 
