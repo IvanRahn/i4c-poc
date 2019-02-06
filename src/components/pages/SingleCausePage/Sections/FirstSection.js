@@ -5,8 +5,7 @@ import {PageOpener, CardSection, ErrorBoundary} from "../../../modules";
 class FirstSection extends Component {
     state=({cause: null})
     componentDidMount() {
-        const body = document.querySelector("body");
-        body.scrollTo(0, 0);
+      
         this.setState({cause: this.props.cause})
     }
     componentDidUpdate () {

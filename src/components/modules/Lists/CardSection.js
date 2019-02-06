@@ -21,13 +21,13 @@ class CardSection extends Component {
             return (
                 <>
                <Div>
-                    {content.map((content) => {
+                    {content.map((content, i) => {
                     return (
                         <ImpactStatsCard 
                         value = {content.value}
                         text={content.text}
                         image={content.image}
-                         key={content.text}/>
+                         key={content.image ? content.image.secure_url : i}/>
                     )
                     }) }
 </Div>

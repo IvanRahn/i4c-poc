@@ -43,7 +43,7 @@ class HTMLContent extends Component {
         <Div 
           margin={this.props.margin}
           marginMobile={this.props.marginMobile}
-          onClick={this.props.notClickable || this.contentClickHandler}
+          onClick={this.props.notClickable ? (() => {return}) : this.contentClickHandler}
           dangerouslySetInnerHTML={{__html: this.props.content}} 
         />
       );
