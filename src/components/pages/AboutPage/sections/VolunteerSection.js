@@ -22,7 +22,7 @@ grid-template-columns: 100%;
 grid-template-columns: 50% 50%;
 }
 @media only screen and (min-width: 960px) {
-grid-template-columns: repeat(4, 21%);
+grid-template-columns: repeat(4, 25%);
 } 
 `
 class VolunteerSection extends Component {

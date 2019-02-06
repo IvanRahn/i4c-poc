@@ -5,7 +5,7 @@ import {LinkWrapper} from './../';
 
 const CardWrapper = styled.div`
 overflow: hidden;
-/* width: 300px; */
+width: 300px;
 background-color: white;
 border-radius: 10px;
     width: 100%;
