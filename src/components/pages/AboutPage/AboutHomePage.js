@@ -26,4 +26,4 @@ const AboutHomePage = (props) =>  {
 
 
 
-export default withTracker(withRouter(AboutHomePage));
+export default withTracker(AboutHomePage);

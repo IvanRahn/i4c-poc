@@ -7,6 +7,9 @@ const Div = styled.div`
     padding: 0 24px;
     margin-bottom: 40px;
     max-width: 500px;
+    h2 {
+        text-align: left;
+    }
     @media only screen and (min-width: 500px) {
         width: ${props => props.width || "50%"};
     }
@@ -28,7 +31,7 @@ const SecondSection = ({cause}) => {
             <Hr/>
         <SectionWrapper height="auto" justify="space-around" padding="52px 0 0">
             <Div width="40%"> 
-                <h3>Test Heading</h3>
+                <h2>Test Heading</h2>
                 <p>always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment " </p>
             </Div>
             <Div width="60%">

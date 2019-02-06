@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
 
 
-const H = styled.h1`
+const H = styled.h4`
     width:100%;
     text-align: left;
     margin-bottom: 88px;

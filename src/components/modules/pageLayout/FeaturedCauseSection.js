@@ -28,7 +28,7 @@ class FeacturedCauseSection extends Component {
     componentDidMount () {
         const {causes, getContent} = this.props;
         if (!causes) {
-        this.props.getContent("causes");
+        getContent("causes");
         }
     }
     render() {

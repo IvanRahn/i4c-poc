@@ -4,8 +4,22 @@ import styled from "styled-components";
 import LogoFull from "./../../../img/I4C.png";
 import LogoSquare from "./../../../img/I4C_Square.png"; 
 import {brightGreen} from "./../BrandStyle"
-
-const Nav = styled.nav`
+const Wrapper = styled.nav`
+display: flex;
+justify-content:center;
+position: fixed;
+width: 100%;
+z-index: 1;
+top: 0;
+background: white;
+border-bottom: 2px solid grey;
+@media only screen and (min-width: 900px) {
+height: 112px;
+}
+`
+const Nav = styled.div`
+max-width: 1200px;
+margin: 0 auto;
 width: 100%;
 height: 60px;
 display: flex;
@@ -13,7 +27,6 @@ flex-direction: row-reverse;
 align-items: center;
 justify-content: space-around;
 padding: 8px;
-border-bottom: 2px solid grey;
 box-shadow: 0px 1px #888818;
 position: absolute;
 background-color: white;
@@ -59,13 +72,17 @@ const NavUl = styled.ul `
     background-color: white;
     justify-content: space-around;
     /* width: 100%; */
-
+    a {
+        margin: 0 24px;
+    }
     @media only screen and (max-width: 899px) {
         left: -200px;
     }
     @media only screen and (min-width: 900px) {
         /* transition: all 0s ease-in-out; */
-        height: 100px;
+    align-items: flex-end;
+
+        height: 60px;
         position: relative;
         top: 0px;
         flex-direction: row;
@@ -74,6 +91,7 @@ const NavUl = styled.ul `
             :nth-last-child(2) {
             margin-left: 50px;
             display: flex;
+           
         }
         }
 }
@@ -109,9 +127,8 @@ margin-left: 10%;
 }
  @media only screen and (min-width: 900px) {
     background-image: url(${LogoFull});
-    width: 240px;
+    width: 200px;
     height: 80px;
-    margin-left: 64px;
  }
 `
 const TabletMenu = styled.div`
@@ -134,6 +151,7 @@ const TabletMenu = styled.div`
        display: none;
    }
 `
+
 class NavBar extends Component {
     state = {width: 0}
     componentDidMount() {
@@ -176,7 +194,8 @@ class NavBar extends Component {
     
     render() {
         return(
-        <Nav aria-live="polite">
+            <Wrapper>
+        <Nav >
         <TabletMenu>
         <LoginLink 
             text="LOGIN" 
@@ -217,6 +236,7 @@ class NavBar extends Component {
                 </NavUl>
                 
         </Nav>
+        </Wrapper>
         )
     }
 }

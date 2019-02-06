@@ -5,7 +5,7 @@ import Background from "./../../../img/placeholder_background_wave.png"
 const Img = styled.img `
     width: 100%;
     margin: auto auto 0;
-    position: absolute;
+    /* position: absolute; */
     bottom: calc(100% + 8px);
     margin-bottom: -8px;
     height: 32.4px;
@@ -20,6 +20,7 @@ const Img = styled.img `
 const SectionWithWave = ({height, id, color, children, justify, align, padding, mobilePadding}) => {
         return (     
             <>
+            <Img src={Background} alt =""/>
             <SectionWrapper 
             height={height}
             id={id}
@@ -29,7 +30,6 @@ const SectionWithWave = ({height, id, color, children, justify, align, padding, 
             padding={padding}
             mobilePadding={mobilePadding}
             >
-            <Img src={Background} alt =""/>
 
                 {children}
 

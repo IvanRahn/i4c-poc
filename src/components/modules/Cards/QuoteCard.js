@@ -18,12 +18,16 @@ const Quote = styled.div`
     width: 576px;
     }
     h3 {
+    text-align: left;
+
         padding-bottom: 12px;
     ::before, ::after {
         content: '"';
     }
     }
     h4 {
+    text-align: left;
+
         ::before {
             content: "- ";
         }

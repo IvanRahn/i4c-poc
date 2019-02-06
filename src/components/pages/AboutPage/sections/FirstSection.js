@@ -29,7 +29,7 @@ class FirstSection extends Component {
                 return <div>error</div>
             }
 
-            const information = [{heading: `<h1>${content[0].contentTop.heading}</h1>`, text: content[0].contentTop.text}, {heading: `<h3>${content[0].contentBottom.heading}</h3>`, text: content[0].contentBottom.text}];
+            const information = [{heading: `<h1>${content[0].contentTop.heading}</h1>`, text: content[0].contentTop.text}, {heading: `<h2>${content[0].contentBottom.heading}</h2>`, text: content[0].contentBottom.text}];
 
             const link =[{linkText: "DOWNLOAD PDF", linkColor: brightGreen, linkLocation: null, linkSection: "About page first section" }]
         return (

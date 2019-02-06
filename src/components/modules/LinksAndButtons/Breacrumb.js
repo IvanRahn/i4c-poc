@@ -18,7 +18,7 @@ a {
 background-color: ${darkGreen};
 border: 1px solid ${darkGreen};
 
-    padding: 4px 8px 4px 0;
+    padding: 8px;
     color: white;
     :hover, :focus {
         cursor: pointer;

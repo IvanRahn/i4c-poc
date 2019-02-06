@@ -50,4 +50,4 @@ const mapStateToProps = (state) => {
 
 export default connect(mapStateToProps, {
     getContent
-})(withRouter(withTracker(CausePage)));
+})(withTracker(CausePage));
