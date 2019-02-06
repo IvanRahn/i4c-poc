@@ -8,6 +8,8 @@ import { connect } from 'react-redux';
 class FirstSection extends Component {
 
     componentDidMount () {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
         const {content} = this.props;
         if(!content){
         this.props.getContent("causes/causeTopPage");    

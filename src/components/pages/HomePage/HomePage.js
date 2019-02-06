@@ -7,7 +7,9 @@ const FeaturedCauseSection = lazy(() => import('./../../modules/pageLayout/Featu
 const TeamSection= lazy(() => import('./sections/TeamSection')) ;
 
 
-const HomePage = () => {
+const HomePage = (props) => {
+
+
         return (
             <>      
                     <ImpactSection />

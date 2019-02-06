@@ -6,6 +6,8 @@ import {Loading, PageOpener} from "./../../modules"
 
 class BoardDutySection extends Component {
     componentDidMount() {
+        const body = document.querySelector("body");
+        body.scrollTo(0, 0)
         const {promise} = this.props;
         if (!promise) {
 

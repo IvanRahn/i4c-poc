@@ -12,14 +12,14 @@ import { withRouter } from 'react-router-dom';
 const AboutHomePage = (props) =>  {
         
         return (
-            <div>
-                <FirstSection />
+            <>
+            <FirstSection />
                 <SecondSection />
                 <BrandSection />
                 <VolunteerSection />
                 <FourthSection />
                 <LastSection />
-            </div>
+            </>
         );
     }
 
