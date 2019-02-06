@@ -35,14 +35,11 @@ const SecondSection = ({cause}) => {
                 <ProposalCardAnchor
             key={cause._id}
             to={`cause/${cause.slug}`}
-            CardHeading={cause.cardContent.heading} 
-            CardText="<p>always pass 3 children, 1st and 2nd are the same vertical list (for mobile and desktop layout they go in different places, 3rd one is horizontal list), if there's no vertical or horizontal list on the page pass an empty fragment<p>
-            <ul>
-                <li>fasfasdf</li>
-                <li>fasfasdf</li>
-                <li>fasfasdf</li>
-                <li>fasfasdf</li>
-            </ul> " 
+            CardHeading={cause.middleSection.heading} 
+            CardText={cause.middleSection.text} 
+            CardImage={
+              cause.middleSection.cardIcon ?  cause.middleSection.cardIcon.secure_url : null
+            }
             >
             
             <InternalLink text="asdfasDF" color="white"/>

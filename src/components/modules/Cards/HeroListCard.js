@@ -17,15 +17,17 @@ flex-direction: column;
 }
 h2 {
     margin: 24px 0;
+    text-align: left;
+
     ::before {
         content: counter(my-awesome-counter);
         border: 4px solid #FCFCFC;
         border-radius: 100%;
         width: 48px;
         display: block;
-        text-align: center;
         padding: 8px 0;
         margin-bottom: 16px;
+        text-align: center;
         @media only screen and (min-width:960px){
             padding: 4px 0;
             margin-right: 24px;

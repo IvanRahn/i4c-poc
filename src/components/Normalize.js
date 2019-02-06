@@ -138,7 +138,7 @@ p {
   line-height: 24px;
   margin: 0 0 16px;
   @media only screen and (min-width: 960px) {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 24px;
     line-height: 32px;
   }
