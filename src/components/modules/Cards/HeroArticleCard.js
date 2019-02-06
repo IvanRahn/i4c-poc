@@ -48,7 +48,7 @@ const HorizontalCard = ({className, CardHeading, CardText, CardImage, CardName, 
     
         return(
             <CardWrapper white={white} className={className}>
-                    <ImageContainer big={big} src= {CardImage} />
+                    <ImageContainer big={big} src= {CardImage} alt="" />
                 <DivContainer white={white}>
                     <h3>{CardName}</h3>
                     <h4>{CardHeading}  </h4>

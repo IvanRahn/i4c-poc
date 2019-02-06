@@ -63,7 +63,7 @@ class VolunteerCard extends Component {
 
         return(
                 <CardWrapper display={this.props.display}>
-                    <ImageContainer src= {CardImage} />
+                    <ImageContainer src= {CardImage} alt="" />
                         <h2>{CardHeading}</h2>
                         <HTMLContent 
                         margin="0 0 0 82px" 

@@ -38,7 +38,7 @@ class MoreI4cCard extends Component {
         return(
             <LinkWrapper>
                 <CardWrapper>
-                    <ImageContainer src= {CardImage} />
+                    <ImageContainer src= {CardImage} alt="" />
                     <DivContainer>
                         <h3>{CardHeading}</h3>
                         <p>{CardText}</p>

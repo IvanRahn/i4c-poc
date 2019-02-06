@@ -70,7 +70,7 @@ class TeamSection extends Component {
                 padding="52px 0 72px"
                 mobilePadding="0 24px 48px"
                 >
-                            {teamSection[0].media ? <VideoContainer src={teamSection[0].media} /> : <ImageContainer src={teamSection[0].image.secure_url} /> }
+                            {teamSection[0].media ? <VideoContainer src={teamSection[0].media} /> : <ImageContainer src={teamSection[0].image.secure_url} alt=""/> }
                     <Section>
                             <H2>{teamSection[0].heading}</H2>
                             <HTMLContent 
