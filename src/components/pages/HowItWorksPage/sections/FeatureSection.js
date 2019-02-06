@@ -35,7 +35,6 @@ class FeatureSection extends Component {
 }
  
 const mapStateToProps = (state) => {
-    console.log("this one", state)
     const {featurecause, featurecauseIsFetching, featurecauseError} = state.howItWorksFeatureCause
     return {
         featurecause, 

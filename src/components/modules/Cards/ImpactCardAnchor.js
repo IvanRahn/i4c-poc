@@ -12,7 +12,6 @@ border-radius: 8px;
 @media only screen and (min-width: 500px) {
     display: flex;
     flex-direction: ${props => props.column ? "column" : "row-reverse"};
-    /* border-radius: 16px; */
     width: 400px;
 }
 `
@@ -32,11 +31,6 @@ const DivContainer = styled.div`
     }
 `
 
-
-const ImageContainer = styled.img`
-height: 100px; 
-max-width: 100px;
-`
 class FeaturedCauseCard extends Component {
     
     render(){

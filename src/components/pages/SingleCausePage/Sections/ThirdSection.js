@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {SectionWrapper, HeroArticleCard, SmallHorizontalCard, TreeSVG, ErrorBoundary } from "./../../../modules"
+import {SectionWrapper, HeroArticleCard, TreeSVG, ErrorBoundary } from "./../../../modules"
 import image from "./../../../../img/placeholder_circle_profile_520x520.jpg";
 
 const SVG = styled(TreeSVG)`
