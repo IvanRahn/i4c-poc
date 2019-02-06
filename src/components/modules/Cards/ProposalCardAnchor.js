@@ -1,8 +1,7 @@
 import React, {Component} from "react";
 import styled from "styled-components";
-import {HTMLContent, LinkWrapper, Icon} from ".."
+import {HTMLContent, Icon} from ".."
 import {brightGreen} from "../BrandStyle"
-import image from "../../../img/cartoon.jpg"
 
 const CardWrapper = styled.div`
 overflow: hidden;
@@ -29,13 +28,13 @@ class FeaturedCauseCard extends Component {
     
     render(){
 
-        const {CardHeading, CardText, CardImage, to, children} = this.props;
+        const {CardHeading, CardText, CardImage, children} = this.props;
 
         return(
             
                     <CardWrapper>
                         <Icon big
-                        src={CardImage || image} />
+                        src={CardImage || null} />
                         <DivContainer>
                             <h4>{CardHeading}</h4>
                             <HTMLContent content={CardText}/>

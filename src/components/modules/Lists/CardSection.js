@@ -17,7 +17,6 @@ const Div = styled.div `
 class CardSection extends Component {
     render() { 
             const { content} = this.props
-			console.log('TCL: CardSection -> render -> content', content)
             return (
                 <>
                <Div>

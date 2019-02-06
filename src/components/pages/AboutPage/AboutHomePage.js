@@ -6,7 +6,6 @@ import LastSection from './sections/LastSection';
 import BrandSection from './sections/BrandSection'
 import VolunteerSection from './sections/VolunteerSection';
 import withTracker from '../../google_analytics/withTracker';
-import { withRouter } from 'react-router-dom';
 
 
 const AboutHomePage = (props) =>  {

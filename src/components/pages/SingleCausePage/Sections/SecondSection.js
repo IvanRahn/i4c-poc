@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionWrapper, InternalLink, ProposalCardAnchor, QuoteCard, ErrorBoundary} from '../../../modules';
+import {SectionWrapper, ProposalCardAnchor, QuoteCard, ErrorBoundary} from '../../../modules';
 import  styled  from 'styled-components';
 import {brandGrey} from "./../../../modules/BrandStyle"
 const Div = styled.div`
