@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import {InternalLink, SectionWrapper, CenteredContent} from './../../modules';
+import {CenteredContent} from './../../modules';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions";
 import {Loading} from "./../../modules";
