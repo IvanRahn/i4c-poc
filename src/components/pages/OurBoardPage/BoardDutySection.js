@@ -15,7 +15,6 @@ class BoardDutySection extends Component {
     
     render() { 
         const {promise, promiseError, promiseIsFetching} = this.props;
-        console.log(promise) 
         if (promiseIsFetching) {
             return <Loading/>
 

@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {CenteredContent} from '../../../modules';
+import {CenteredContent, brightGreen} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "../../../modules"
@@ -24,7 +24,7 @@ class FourthSection extends Component {
 
         return (
             <>
-                <CenteredContent secondHeading={content[0].contentBottom.heading} linkText="LEARN HOW IT WORKS" linkColor="green" linkLocation="how-it-works" linkSection="About page last section"/>
+                <CenteredContent secondHeading={content[0].contentBottom.heading} linkText="LEARN HOW IT WORKS" linkColor={brightGreen} linkLocation="how-it-works" linkSection="About page last section"/>
             </>
         )
     } 
