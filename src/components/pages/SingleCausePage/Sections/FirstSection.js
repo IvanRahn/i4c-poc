@@ -9,6 +9,7 @@ const FirstSection = ({cause}) => {
         <ErrorBoundary>
         <PageOpener 
         padding="0 0 52px"
+        mobilePadding="0"
            image={cause.topSection.image.secure_url}
            information={information}
            breadcrumbs={[

@@ -28,8 +28,9 @@ width: ${props => props.width || "100%"};
 const Wrapper = styled.div`
 text-align: left;
 padding: 48px 24px;
-h2{
+h2, h3{
     margin-top: 60px;
+    text-align: left;
 }
 
 h3{
@@ -47,7 +48,7 @@ margin-top: 30px;
 class PageOpener extends Component {
 
     render () {
-        const { color, image, breadcrumbs, children, link, marginTop, information, padding  } = this.props;  
+        const { color, image, breadcrumbs, children, link, marginTop, information, padding, mobilePadding  } = this.props;  
         return (
             <ErrorBoundary>
             <SectionWrapper 
@@ -55,6 +56,7 @@ class PageOpener extends Component {
             color={color} 
             height= "auto" 
             padding={padding}
+            mobilePadding={mobilePadding}
             >
                 <Section height="100%">
                         <Breadcrumb mobile>
@@ -83,7 +85,12 @@ class PageOpener extends Component {
                         {link ? link.map((link) => {
                         return(
                             <LinkContainer key={link.linkText}>
-                                <InternalLink text={link.linkText} color={link.linkColor} to={link.linkLocation} section={link.linkSection}  />
+                                <InternalLink 
+                                text={link.linkText} 
+                                color={link.linkColor} 
+                                to={link.linkLocation} 
+                                section={link.linkSection}
+                                />
                             </LinkContainer>
                         )
                         } ) : null}

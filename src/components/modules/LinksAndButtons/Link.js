@@ -6,12 +6,12 @@ import { ErrorBoundary } from "..";
 
 export default withRouter(({className, section, text, location, children, to}) => {
     const analytics = () => {
+
         ReactGA.event({
             category: 'ButtonLink',
             action: `Section: ${section}, Button: ${text}, Page: ${location.pathname}`,
           });
-          const body = document.querySelector("body");
-    body.scrollTo(0)
+         
     }
     return (
         <ErrorBoundary>

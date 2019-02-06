@@ -2,12 +2,14 @@ import React from "react";
 import styled from "styled-components";
 import logo from "./../../../img/I4C.png"
 const Section = styled.section`
+    display: flex;
+    flex-direction: column;
     box-shadow: inset 0 1px 3px -2px rgba(0, 0, 0, 0.8),
                 inset 0 -1px 3px -10px rgba(255, 255, 255, 0.8);
+    padding: 24px;
     width: 100%;
-    padding: 24px 24px 24px auto;
-    @media only screen and (min-width: 960px) {
-
+    @media only screen and (min-width: 768px) {
+    padding: 24px 88px;
     }
     div {
         width: 100%;
@@ -16,9 +18,9 @@ const Section = styled.section`
         font-size: 13px;
     }
     @media only screen and (min-width: 500px) {
-        display: flex;
+        
         flex-direction: row-reverse;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
     }
 `

@@ -5,10 +5,13 @@ import {LinkWrapper} from './../';
 
 const CardWrapper = styled.div`
 overflow: hidden;
-/* width: 300px; */
+width: 300px;
 background-color: white;
 border-radius: 10px;
-    width: 100%;
+width: 360px;
+h3 {
+    text-align: left;
+}
 
 @media only screen and (min-width: 500px) {
     overflow: hidden;

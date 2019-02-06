@@ -27,6 +27,7 @@ class FirstSection extends Component {
         return (
             <PageOpener
             padding="0 0 72px"
+            mobilePadding="0 0 72px"
             information= {information}
             image={content[0].image.secure_url}  
             breadcrumbs={[{to: "cause", text: "CAUSES WE CARE"}]}

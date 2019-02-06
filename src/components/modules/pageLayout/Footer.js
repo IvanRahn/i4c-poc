@@ -93,35 +93,35 @@ class Footer extends Component {
                             <li> <InternalLink 
                             text= "About" 
                             width="fit-content"
-                            href="#"/> </li> 
+                            to="/about"/> </li> 
                             <li> <InternalLink 
                             width="fit-content"
                             text= "How It Works" 
-                            href="#"/> </li> 
+                            to="/how-it-works"/> </li> 
                              <li> <InternalLink 
                             width="fit-content"
                             text= "Security" 
-                            href="#"/> </li>
+                            to="#"/> </li>
                              <li> <InternalLink 
                             width="fit-content"
                             text= "Privacy" 
-                            href="#"/> </li>
+                            to="#"/> </li>
                              <li> <InternalLink 
                             width="fit-content"
                             text= "Terms And Conditions" 
-                            href="#"/> </li>  
+                            to="#"/> </li>  
                              <li> <InternalLink 
                             width="fit-content"
                             text= "FAQ" 
-                            href="#"/> </li>  
+                            to="#"/> </li>  
                              <li> <InternalLink 
                             width="fit-content"
                             text= "help@i4c.org" 
-                            href="#"/> </li> 
+                            to="#"/> </li> 
                              <li> <InternalLink 
                             width="fit-content"
                             text= "1300123456" 
-                            href="#"/> </li> 
+                            to="#"/> </li> 
                         </UnorderedListStyling>
                         </div>
                 <div>
@@ -139,15 +139,15 @@ class Footer extends Component {
                 <div>
                     <h6>SOCIAL</h6>
                         <UnorderedListStyling>
-                            <li> <InternalLink text= "Facebook" href="#"/> </li> 
-                            <li> <InternalLink text= "Twitter" href="#"/> </li> 
-                            <li> <InternalLink text= "LinkdIn" href="#"/> </li> 
-                            <li> <InternalLink text= "Volunteer Opportunities" href="#"/> </li> 
+                            <li> <InternalLink text= "Facebook" to="#"/> </li> 
+                            <li> <InternalLink text= "Twitter" to="#"/> </li> 
+                            <li> <InternalLink text= "LinkdIn" to="#"/> </li> 
+                            <li> <InternalLink text= "Volunteer Opportunities" to="#"/> </li> 
                             
                         </UnorderedListStyling>
                 </div>
 
-                                <InternalLink text = "JOIN US" color= {brightGreen} href="#"/>
+                                <InternalLink text = "JOIN US" color= {brightGreen} to="#"/>
             
             </FooterStyling>
             <Disclaimer/>
