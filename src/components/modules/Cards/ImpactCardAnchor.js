@@ -19,10 +19,7 @@ const DivContainer = styled.div`
     color: white;
     font-size: 24px;
     min-width: 120px;
-    p {
-        line-height: 1.5;
-        font-size: 16px;
-    }
+  
     h3 {
         margin-bottom: 16px;
         text-align: left;
