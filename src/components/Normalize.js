@@ -14,16 +14,18 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 html {
-  line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
 }
 html,body
 {
     width: 100%;
     height: 100%;
-    margin: 0px;
-    padding: 0px;
+    margin: 0;
+    padding: 0;
     overflow-x: hidden; 
+    color: #3c4153;
+    /* max-width: 1200px; */
+    /* margin: 0 auto */
 }
 
 /* Sections
@@ -34,26 +36,26 @@ html,body
  */
 
 body {
-  margin: 0;
-  scroll-behavior: smooth;
   font-family: Helvetica;
+  letter-spacing: 0.25px;
 }
 
 
 
 main {
+  scroll-behavior: smooth;
+
   display: block;
+  min-height: 100vh;
   margin-top: 60px;
   position: relative;
   transition: 1s;
   left: 0;
-  @media only screen and (min-width: 500px) {
+  @media only screen and (min-width: 900px) {
     margin-top: 110px;
   }
   section:first-child {
-    
     @media only screen and (min-width: 500px) {
-    height: calc(100vh - 110px);
     
   }
   }
@@ -65,31 +67,82 @@ small {
   font-size: 13px;
 }
 
-
+h1, h2, h3, h4, h5, h6 {
+  margin-block-start:0;
+  margin-block-end:0;
+  margin-bottom: 16px;
+  text-align: left;
+  @media only screen and (min-width: 960px) {
+  text-align: center;
+    margin-bottom: 24px;
+  }
+}
 
 h1 {
   font-size: 32px;
-  @media only screen and (min-width: 500px) {
-    font-size: 48px
+  font-weight: bold;
+  line-height: 40px;;
+  @media only screen and (min-width: 960px) {
+    font-size: 48px;
+    font-weight: bold;
+    line-height: 56px;
+  }
+}
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 32px;
+  @media only screen and (min-width: 960px) {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 40px;
   }
 }
 h3 {
   font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: 0px;
-  margin: 0;
+  font-weight: lighter;
+  line-height: 32px;
+  @media only screen and (min-width: 960px) {
+    font-size: 32px;
+    font-weight: lighter;
+    line-height: 40px;
+  }
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 28px;
+  @media only screen and (min-width: 960px) {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 32px;
+  }
+}
+h5 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 24px;
+  @media only screen and (min-width: 960px) {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 30px;
+  }
+}
+h6 {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 16px;
 }
 p {
-  font-size: 18px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 1.33;
-  letter-spacing: 0px;
-  margin: 0;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0 0 16px;
+  @media only screen and (min-width: 960px) {
+    font-size: 18px;
+    margin-bottom: 24px;
+    line-height: 32px;
+  }
 }
 
 /* Grouping content
@@ -100,11 +153,6 @@ p {
  * 2. Show the overflow in Edge and IE.
  */
 
-hr {
-  box-sizing: content-box; /* 1 */
-  height: 0; /* 1 */
-  overflow: visible; /* 2 */
-}
 
 
 
@@ -117,7 +165,6 @@ pre {
 
 a {
   text-decoration: none;
-  
 }
 
 

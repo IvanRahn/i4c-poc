@@ -1,18 +1,9 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import {InternalLink, SectionWrapper} from './../../modules';
+import {CenteredContent} from './../../modules';
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions";
 import {Loading} from "./../../modules";
-
-const Section = styled.div `
-height: 50%;
-width: ${props => props.width || "100%"};
-text-align: center;
-@media (min-width: 768px){
-    width: 50%;
-}
-`
+import {brightGreen} from "../../modules/BrandStyle";
 
 
 class FindOutMore extends Component {
@@ -29,17 +20,14 @@ class FindOutMore extends Component {
             return <div>error</div>
         }     
 
-            return ( 
-                <SectionWrapper>
-                    <Section width="100%">
-                        <h2>{findout[0].content.heading}</h2>
-                        <InternalLink 
-                        text={findout[0].content.link.text} 
-                        to={findout[0].url} 
-                        />
-                    </Section> 
-                </SectionWrapper>
-                
+            return (
+                <CenteredContent
+                secondHeading={findout[0].content.heading} 
+                linkText="FIND OUT MORE" 
+                linkColor={brightGreen} 
+                linkLocation="about" 
+                linkSection="Out board page find out more section"
+                />
             )
                 
     } 

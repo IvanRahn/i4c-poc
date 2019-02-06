@@ -3,15 +3,44 @@ import styled from 'styled-components';
 import {SectionWrapper, MoreI4cCard} from "../../../modules";
 import {connect} from "react-redux";
 import {Loading} from "./../../../modules"
-
+import {getContent} from '../../../../actions';
 
 const H = styled.h1`
     color: white;
     width:100%;
     text-align: center;
+    grid-column: 1;
+    @media only screen and (min-width: 500px) {
+        grid-column: 1/3;
+    };
+    @media only screen and (min-width: 960px) {
+        grid-column: 1/4;
+    }
 `
+const GridWrapper = styled(SectionWrapper)`
+display: grid;
+grid-column-gap: 24px;
+grid-row-gap: 24px;
+grid-template-columns: auto;
+@media only screen and (min-width: 500px){
+    grid-template-columns: auto auto;
+}
+@media only screen and (min-width: 960px) {
+    grid-template-columns: auto auto auto;
+} 
+a {
+    grid-column: auto;
+}
 
+
+`
 class MoreI4cSection extends Component {
+    componentDidMount() {
+        const {causes} = this.props;
+        if(!causes){
+        this.props.getContent("impactsection")
+        }
+    }
     render() {
         const {color, causes, causesError, causesIsFetching} = this.props;
 		
@@ -20,10 +49,9 @@ class MoreI4cSection extends Component {
         } else if (causesError || !causes || !causes[0]) {
             return <div>Error</div>
         }
-        console.log('TCL: MoreI4cSection -> render -> causes', causes)
         return (
             <>
-            <SectionWrapper height="auto" color={color}>
+            <GridWrapper height="auto" color={color}>
                 <H>More from I4C</H>
                 {causes.map(cause => {
                     return (
@@ -35,7 +63,7 @@ class MoreI4cSection extends Component {
                     )
                 })}
                     
-            </SectionWrapper>
+            </GridWrapper>
             </>
         )
     }
@@ -48,4 +76,4 @@ const mapStateToProps = (state) => {
         causesError
     }
 }
-export default connect(mapStateToProps)(MoreI4cSection);
+export default connect(mapStateToProps, {getContent})(MoreI4cSection);

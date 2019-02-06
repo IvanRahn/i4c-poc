@@ -1,16 +1,30 @@
 import React, {Component} from 'react';
-import PageOpener from '../../modules/pageLayout/PageOpener';
+import {FeaturedCauseSection, HowItWorksSection} from './../../modules'; 
+import {darkGreen} from "./../../modules/BrandStyle"
+import FirstSection from './sections/FirstSection';
+import FeatureSection from './sections/FeatureSection';
+import JoinSection from './sections/JoinSection';
 
 
-class test extends Component {
-    state = {  }
+class HowItWorksHomePage extends Component {
+   
     render() { 
-        return ( 
-            <>
-            <PageOpener/> 
-            </>
-         );
+      
+        
+            return ( 
+                <> 
+                    <FirstSection /> 
+                    <HowItWorksSection cardCount={6} color={darkGreen}/>
+                    <FeaturedCauseSection cardCount={3}>
+                    <FeatureSection/>
+                    </FeaturedCauseSection>
+                    <JoinSection />                     
+                </>
+            );
     }
 }
  
-export default test;
+
+
+export default HowItWorksHomePage;
+

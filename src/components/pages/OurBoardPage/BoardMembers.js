@@ -1,17 +1,33 @@
 import React, {Component} from 'react';
 import styled from 'styled-components';
-import {HorizontalCard, SectionWrapper} from './../../modules/'; 
+import {HeroArticleCard, SectionWrapper} from './../../modules/'; 
 import {connect} from "react-redux"; 
 import {getContent} from "./../../../actions"
 import {Loading} from "./../../modules"
 
 
-const SmallHorizontalCard = styled(HorizontalCard)`
+const SmallHorizontalCard = styled(HeroArticleCard)`
 img {
     border-radius: 50%;
     height: 250px;
-    width: 250px;
+    width: 250px; 
+} 
+@media (max-width: 768px){
+    img {
+        height: 150px; 
+        width: 150px; 
+        margin: 0 126px 0 0;
+    }
+} 
+
+div {
+    
+    
+    @media (min-width: 768px){
+        padding: 0;
+    } 
 }
+
 `
 
 
@@ -23,7 +39,6 @@ class BoardMembers extends Component {
     
     render() { 
         const {member, memberError, memberIsFetching} = this.props; 
-        console.log(member)
         if (memberIsFetching) {
             return <Loading/>
 

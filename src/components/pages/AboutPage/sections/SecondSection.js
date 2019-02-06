@@ -1,77 +1,37 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import {SectionWrapper, InternalLink} from '../../../modules';
-import image from '../../../../img/handshake.jpg';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
 import {Loading} from "./../../../modules"
-
-
-const ImageContainer = styled.img`
-height: 480px; 
-width: auto; 
-`
-const BrandContainer = styled.div`
-
-`
-
-const Section = styled.div `
-width: ${props => props.width || "100%"};
-text-align: center;
-height: 100%;
-@media (min-width: 768px){
-    width: 50%;
-}
-`
-const Wrapper = styled.div`
-text-align: left;
-padding-right: 180px;
-`
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
-`
-
+import PageOpener from "../../../modules/pageLayout/PageOpener";
 
 class SecondSection extends Component {
     componentDidMount () {
-        this.props.getContent("about/second-section");    
+        const {content} = this.props;
+        if(!content){
+        this.props.getContent("about/second-section"); 
+        }   
     }
 
     render () {
-        const { color, content, isFetching, error} = this.props;        
-		console.log('TCL: SecondSection -> render -> content', content)
-        // console.log(content)
+        const { content, isFetching, error} = this.props;        
         if (isFetching) {
             return (<Loading/>)
             } else if (error || !content || !content[0]){
                 return <div>error</div>
             }
-        
+            
+            const information = [{heading: `<h3>${content[0].contentTop.heading}</h3>`, text: content[0].contentTop.text}, {heading: `<h2>${content[0].contentMiddle.heading}</h2>`, text: content[0].contentMiddle.text}];
         return (
-            <SectionWrapper color={color} height="auto">
-                <Section>
-                    <ImageContainer src= {content[0].image? content[0].image.secure_url: image} />
-                    <BrandContainer>
-                        <img src={content[0].contentBottom.image_logos.image_logo1.secure_url}  alt=""/>
-                        <img src={content[0].contentBottom.image_logos.image_logo2.secure_url} alt=""/>
-                    </BrandContainer>
-                </Section>
-
-                <Section>
-                    <Wrapper>
-                        
-                        <h2>{content[0].contentTop.heading}</h2> 
-                        <P margin="50px">{content[0].contentTop.text}</P>
-                        <h2>{content[0].contentMiddle.heading}</h2>
-                        <P margin="50px">{content[0].contentMiddle.text}.</P>
-                        <h2>{content[0].contentBottom.heading}</h2>
-                        <P margin="30px">{content[0].contentBottom.text}</P>
-                        <InternalLink text="SHOUT OUT" />
-                        <InternalLink text="SHOUT OUT" />
-                        
-                    </Wrapper>               
-                </Section>
-            </SectionWrapper>
+            <>
+                <PageOpener
+                marginTop="0"
+                padding="0"
+                image={content[0].image.secure_url}
+                information={information}
+                >
+                    <></>
+                </PageOpener>
+            </>
         )
     } 
 }

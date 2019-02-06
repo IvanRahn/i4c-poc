@@ -1,95 +1,59 @@
 import React, {Component} from 'react';
-import styled from 'styled-components';
-import {SectionWrapper, Breadcrumb, Loading, Link} from '../../../modules';
+import PageOpener from '../../../modules/pageLayout/PageOpener';
+import {Loading, HorizontalCardSection} from '../../../modules';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
-import image from "./../../../../img/placeholder_circle_profile_520x520.jpg"
-const ImageContainer = styled.img`
-width: 100%;
-height: auto; 
-position: relative;
-top: 0;
-
-@media (min-width: 500px){
-    width: 670px;
-    height: 500px; 
-    position: relative;
-    top: 0;
-}
- 
-`
-
-const Section = styled.div `
-width: ${props => props.width || "100%"};
-@media (min-width: 768px){
-    width: 50%;
-    height: ${props => props.height || "auto"};
-}
-`
-const Wrapper = styled.div`
-text-align: left;
-/* padding-right: 180px; */
-padding: 48px;
-margin-top: 200px;
-`
-const P = styled.p`
-margin-bottom: ${props => props.margin || "0px"};
-
-`
-
-
-
 
 
 class FirstSection extends Component {
 
     componentDidMount () {
-        this.props.getContent("about/first-section");    
+        const {content} = this.props;
+        if(!content){
+        this.props.getContent("causes/causeTopPage");    
+    }
+    this.props.getContent("causes/homepage-card");    
     }
 
     render () {
-        const { color, content, isFetching, error} = this.props;        
-        if (isFetching) {
+        const { content, isFetching, error, cardContent, cardIsFetching, cardError} = this.props;
+		
+        if (isFetching || cardIsFetching) {
             return (<Loading/>)
-            } else if (error || !content || !content[0]){
+            } else if (error || cardError || !content || !content[0]){
                 return <div>error</div>
             }
-        
+            const information = [{heading: `<h1>${content[0].heading}</h1>`, text: content[0].text}];
         return (
-            
-            <SectionWrapper color={color} height= "auto" padding="0">
-                <Section>
-                    <Breadcrumb mobile> 
-                        <Link to="/" text="Causes" />
-                        <Link to="/" text="Homepage" />
-                    </Breadcrumb>
+            <PageOpener
+            padding="0 0 72px"
+            information= {information}
+            image={content[0].image.secure_url}  
+            breadcrumbs={[{to: "cause", text: "CAUSES WE CARE"}]}
+            >
+                <></>
+                <HorizontalCardSection content={cardContent}/>
+                <></>
 
-                    <ImageContainer src= {image} alt="Cherring man" />
-                </Section>
-
-                <Section>
-                    <Wrapper>
-                    <Breadcrumb> 
-                        <Link to="/" text="Causes" />
-                        <Link to="/" text="Homepage" />
-                    </Breadcrumb>
-                        <h1>We invest cause of blah</h1> 
-                        <P margin="70px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</P>
-                    </Wrapper>               
-                </Section>
-            </SectionWrapper>
+            </PageOpener>
         )
     } 
 }
 
 const mapStateToProps = (state) => {
-    const {content, isFetching, error} = state.aboutFirst
+    const {content, isFetching, error} = state.causeHomePageFirstSection
+    const {cardContent, cardIsFetching, cardError} = state.causeHomeCard
+
     return {
         content,
         isFetching,
+        cardContent,
+        cardIsFetching,
+        cardError,
         error,
     }
 }
+
 
 export default connect(mapStateToProps, {
     getContent

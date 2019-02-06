@@ -7,25 +7,32 @@ import {Loading} from "./../../../modules"
 
 
 const VideoContainer = styled.iframe`
-margin: -128px auto 0 auto;
-width: 100%;
+width: 100%; 
 height: auto;
+margin-bottom: 24px;
+@media only screen and (min-width: 768px) {
+    width: 40%;
+    margin: -300px auto 0 auto; 
 
-@media only screen and (min-width: 500px){
-
-width: 360px; 
-/* height: 250px; */
-margin: -300px auto 0 auto; 
+}
+@media only screen and (min-width: 960px) {
+width: 360px;
+margin: -360px auto 0 auto; 
 }
 
 `
 const ImageContainer = styled.img`
 width: 100%; 
 height: auto;
-margin: -128px auto 0 auto;
-@media only screen and (min-width: 500px){
+margin-bottom: 24px;
+@media only screen and (min-width: 768px) {
+    width: 40%;
+    margin: -300px auto 0 auto; 
+
+}
+@media only screen and (min-width: 960px) {
 width: 360px;
-margin: -300px auto 0 auto; 
+margin: -360px auto 0 auto; 
 }
 
 `
@@ -34,16 +41,21 @@ const Section = styled.div `
 width: 100%;
 margin-right: 2em;
 text-align: left;
-@media only screen and (min-width: 500px) {
+@media only screen and (min-width: 768px) {
     width: 50%;
 
 }
 `
+const H2 = styled.h2 `
 
+`
 
 class TeamSection extends Component {
     componentDidMount() {
+        const {teamSection} = this.props
+        if (!teamSection) {
         this.props.getContent("teamSection")
+        }
     }
     render() { 
         const {teamSection, teamSectionError, teamSectionIsFetching} = this.props;
@@ -53,15 +65,22 @@ class TeamSection extends Component {
             return <div>error</div>
         }
         return (  
-                <SectionWrapper height="auto">
+                <SectionWrapper 
+                height="auto"
+                padding="52px 0 72px"
+                mobilePadding="0 24px 48px"
+                >
                             {teamSection[0].media ? <VideoContainer src={teamSection[0].media} /> : <ImageContainer src={teamSection[0].image.secure_url} /> }
-                            
-
                     <Section>
-                            <h2>{teamSection[0].heading}</h2>
-                            <HTMLContent content={teamSection[0].text}/>
-                            <InternalLink text="Vetted by our \n Board of Trustees" />
-                        
+                            <H2>{teamSection[0].heading}</H2>
+                            <HTMLContent 
+                            margin="0 0 48px"
+                            marginMobile="0 0 48px"
+                            content={teamSection[0].text}/>
+                            <InternalLink 
+                            textLeft 
+                            width="auto" 
+                            text="Vetted by our Board of Trustees" />
                     </Section>
                     
                 </SectionWrapper>
