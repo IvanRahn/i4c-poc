@@ -25,8 +25,8 @@ padding: 2px 16px;
 `
 
 const ImageContainer = styled.img`
-height: 120px; 
-width: 300px; 
+height: 220px; 
+width: 100%; 
 @media only screen and (min-width: 500px) {
     height: 220px; 
     width: 100%; 
