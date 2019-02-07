@@ -3,11 +3,8 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import {NavBar, ErrorBoundary, Loading} from "./modules"
 import HomePage from "./pages/HomePage/HomePage";
 import GlobalStyle from "./Normalize";
-<<<<<<< HEAD
 import GA from "./google_analytics/withTracker"
 // const Redirect = lazy(() => import("./Redirect"));
-=======
->>>>>>> 8462982e1e5d1a097c5f4ee8d0b1b93932ea143b
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/SingleCausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
