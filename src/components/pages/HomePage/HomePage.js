@@ -31,4 +31,4 @@ const HomePage = (props) => {
     }
 
 
-export default withRouter(HomePage);
+export default HomePage;

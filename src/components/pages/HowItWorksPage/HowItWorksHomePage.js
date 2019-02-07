@@ -27,5 +27,5 @@ class HowItWorksHomePage extends Component {
  
 
 
-export default withTracker(HowItWorksHomePage);
+export default HowItWorksHomePage;
 

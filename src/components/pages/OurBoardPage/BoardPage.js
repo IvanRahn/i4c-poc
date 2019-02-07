@@ -3,7 +3,7 @@ import BoardDutySection from "./BoardDutySection";
 import BoardMembers from "./BoardMembers";
 import FindOutMore from "./FindOutMore";
 import withTracker from '../../google_analytics/withTracker';
-
+import { withRouter } from 'react-router-dom';
 
 class BoardPage extends Component {
     render() {
@@ -18,4 +18,4 @@ class BoardPage extends Component {
 }
 
 
-export default withTracker(BoardPage); 
+export default BoardPage; 

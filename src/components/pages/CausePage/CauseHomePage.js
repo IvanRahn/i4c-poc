@@ -25,4 +25,4 @@ class causesHomePage extends Component {
 
 
 
-export default withTracker(causesHomePage);
+export default causesHomePage;

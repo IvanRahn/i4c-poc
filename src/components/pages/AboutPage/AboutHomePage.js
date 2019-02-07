@@ -26,4 +26,4 @@ const AboutHomePage = (props) =>  {
 
 
 
-export default withTracker(AboutHomePage);
+export default AboutHomePage;

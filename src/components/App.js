@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import {NavBar, ErrorBoundary, Loading} from "./modules"
 import HomePage from "./pages/HomePage/HomePage";
 import GlobalStyle from "./Normalize";
-import withTracker from "./google_analytics/withTracker"
+import GA from "./google_analytics/withTracker"
 // const Redirect = lazy(() => import("./Redirect"));
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/SingleCausePage/CausePage"))
@@ -23,10 +23,12 @@ class App extends Component {
       <ErrorBoundary>
           <GlobalStyle />
 
-            <BrowserRouter>
+            <BrowserRouter >
             <>
               <NavBar />
               <main id="main">
+              { GA.init() && <GA.RouteTracker /> }
+
                 <Suspense fallback={<Loading/>}>
               <Switch  >
                 <Route exact path="/" render={props => <HomePage {...props} />} />
@@ -50,10 +52,10 @@ class App extends Component {
   }
 
 }
-import("react-ga").then(ReactGA => {
-  ReactGA.initialize('UA-132415809-3')
-  ReactGA.pageview(window.location.pathname + window.location.search);
-});
+// import("react-ga").then(ReactGA => {
+//   ReactGA.initialize('UA-132415809-3')
+//   ReactGA.pageview(window.location.pathname + window.location.search);
+// });
 
 
 export default App;
