@@ -62,7 +62,7 @@ class PageOpener extends Component {
                         <Breadcrumb mobile>
                             {breadcrumbs ? breadcrumbs.map(breadcrumb => <Link key={breadcrumb.text} to={breadcrumb.to} text={breadcrumb.text} />) : null} 
                         </Breadcrumb>    
-                    <ImageContainer src= {image} alt="Cherring man" />
+                    <ImageContainer src= {image} alt="" />
                     {/* first received child is a vertical list */}
                     {children[0]}
                 </Section>

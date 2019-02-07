@@ -17,17 +17,16 @@ const Div = styled.div `
 class CardSection extends Component {
     render() { 
             const { content} = this.props
-			console.log('TCL: CardSection -> render -> content', content)
             return (
                 <>
                <Div>
-                    {content.map((content) => {
+                    {content.map((content, i) => {
                     return (
                         <ImpactStatsCard 
                         value = {content.value}
                         text={content.text}
                         image={content.image}
-                         key={content.image.public_id}/>
+                         key={content.image ? content.image.secure_url : i}/>
                     )
                     }) }
 </Div>

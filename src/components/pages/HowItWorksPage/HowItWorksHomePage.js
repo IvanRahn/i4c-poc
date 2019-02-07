@@ -5,7 +5,6 @@ import FirstSection from './sections/FirstSection';
 import FeatureSection from './sections/FeatureSection';
 import JoinSection from './sections/JoinSection';
 import withTracker from "./../../google_analytics/withTracker"
-import { withRouter } from 'react-router-dom';
 
 class HowItWorksHomePage extends Component {
    

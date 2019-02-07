@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import PageOpener from '../../../modules/pageLayout/PageOpener';
 import { getContent } from '../../../../actions';
 import { connect } from 'react-redux';
-import {Loading, HorizontalCardSection, ImpactCard} from "./../../../modules"
+import {Loading, ImpactCard} from "./../../../modules"
 import {brightGreen} from "../../../modules/BrandStyle";
 
 

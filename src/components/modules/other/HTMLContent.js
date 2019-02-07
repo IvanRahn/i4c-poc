@@ -5,11 +5,9 @@ import ReactGA from "react-ga";
 
 const Div = styled.div `
    a {
-    border-bottom: 3px solid inherit;
     display: inline;
     color: ${props => props.color || "inherit"};
-    text-align: center;
-    text-decoration: none;	
+    border-bottom: 3px solid ${props => props.color || null};
     font-size: 1em;
     :hover {
         color: blue;
@@ -26,7 +24,8 @@ class HTMLContent extends Component {
       const {location} = this.props;
       const {history} = this.props
       if(!targetLink) return;
-      if (targetLink.href.match(/localhost/)) {
+      if (targetLink.href.match(`${process.env.REACT_APP_LINK}`)) {
+        console.log('TCL: HTMLContent -> contentClickHandler -> process.env.REACT_APP_LINK', process.env.REACT_APP_LINK)
         e.preventDefault();
         history.push(e.target.getAttribute("href"))
       } 
@@ -35,6 +34,7 @@ class HTMLContent extends Component {
         category: 'ButtonLink',
         action: `Section: "CMS content", Button: ${text}, Page: ${location.pathname}`,
       });
+      return
     };
     
     render() {
@@ -43,7 +43,7 @@ class HTMLContent extends Component {
         <Div 
           margin={this.props.margin}
           marginMobile={this.props.marginMobile}
-          onClick={this.props.notClickable || this.contentClickHandler}
+          onClick={this.props.notClickable ? (() => {return}) : this.contentClickHandler}
           dangerouslySetInnerHTML={{__html: this.props.content}} 
         />
       );

@@ -1,5 +1,5 @@
 import React from 'react';
-import {SectionWrapper, InternalLink, ProposalCardAnchor, QuoteCard, ErrorBoundary} from '../../../modules';
+import {SectionWrapper, ProposalCardAnchor, QuoteCard, ErrorBoundary} from '../../../modules';
 import  styled  from 'styled-components';
 import {brandGrey} from "./../../../modules/BrandStyle"
 const Div = styled.div`
@@ -21,6 +21,19 @@ const Hr = styled.hr`
     @media only screen and (min-width: 500px) {
         display: block;
         margin-top: 52px;
+    }
+`
+const Download = styled.a`
+  border-bottom: 3px solid white;
+    display: inline-block;
+    color: white;
+    text-decoration: none;	
+    width: fit-content;
+    margin: 12px 8px 16px;
+    padding-bottom: 8px;
+    font-size: 16px;
+    :hover, :focus {
+        color: blue;
     }
 `
 
@@ -45,7 +58,10 @@ const SecondSection = ({cause}) => {
             }
             >
             
-            <InternalLink text="asdfasDF" color="white"/>
+            <Download href={cause.middleSection.cardFile ? cause.middleSection.cardFile.secure_url : null}>
+             
+            DOWNLOAD PDF
+            </Download>
             </ProposalCardAnchor></Div>
             <QuoteCard
             quote="I'm a very motivational quote

@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import ImpactSection from './sections/ImpactSection';
-import withTracker from '../../google_analytics/withTracker';
 import { withRouter } from 'react-router-dom';
 import {darkGreen} from "./../../modules/BrandStyle"
 const HowItWorksSection = lazy(() => import('./../../modules/pageLayout/HowItWorksSection')) ;

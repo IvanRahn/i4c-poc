@@ -6,7 +6,7 @@ const Quote = styled.div`
     border-radius: 8px;
     padding: 24px;
     margin: 0 24px;
-    z-index: 1;
+    /* z-index: 1; */
     max-width: 100%;
     background-color: ${brandWhite};
     bottom: 0;
