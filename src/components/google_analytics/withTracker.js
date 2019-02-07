@@ -50,7 +50,6 @@ const RouteTracker = () =>
   <Route component={GoogleAnalytics} />
 
 const init = (options = {}) => {
-  const env = window._env_ || {}
   const isGAEnabled = !!'UA-132415809-3'
 
   if (isGAEnabled) {

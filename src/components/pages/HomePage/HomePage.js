@@ -1,6 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import ImpactSection from './sections/ImpactSection';
-import { withRouter } from 'react-router-dom';
 import {darkGreen} from "./../../modules/BrandStyle"
 const HowItWorksSection = lazy(() => import('./../../modules/pageLayout/HowItWorksSection')) ;
 const FeaturedCauseSection = lazy(() => import('./../../modules/pageLayout/FeaturedCauseSection')) ;

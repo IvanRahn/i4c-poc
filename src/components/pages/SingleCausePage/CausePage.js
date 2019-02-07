@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import getContent from '../../../actions/keystoneActions';
-import withTracker from '../../google_analytics/withTracker';
 import { Loading, ErrorBoundary} from "../../modules";
 import FirstSection from './Sections/FirstSection';
 import SecondSection from './Sections/SecondSection';

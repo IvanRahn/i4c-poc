@@ -4,7 +4,6 @@ import {NavBar, ErrorBoundary, Loading} from "./modules"
 import HomePage from "./pages/HomePage/HomePage";
 import GlobalStyle from "./Normalize";
 import GA from "./google_analytics/withTracker"
-// const Redirect = lazy(() => import("./Redirect"));
 const CauseHomePage = lazy(() => import("./pages/CausePage/CauseHomePage"))
 const CausePage = lazy(() => import("./pages/SingleCausePage/CausePage"))
 const BoardPage = lazy(() => import("./pages/OurBoardPage/BoardPage"))
