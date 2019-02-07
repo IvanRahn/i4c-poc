@@ -6,6 +6,14 @@ Create a website with a CMS capabilities for the client, the acceptance criteria
 
 React, CircleCI, AWS, HTML/CSS, Keystone(Node / Express / Mongo)
 
+# Details of Project Management & Planning process including
+
+## Project plan & timeline
+The project was was broken down into user stories, we used trello to keep track of these stories. The timeline was broken down using the “point poker” system that assigns a point to each user story which would give us an idea on how long we should spend on each story.
+
+## Client communications
+Client communication was done mainly through slack and meetings that we have organised.
+
 # Instructions to install
 
 Clone the repo and run npm install, then npm start.
