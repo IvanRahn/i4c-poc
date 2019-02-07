@@ -26,7 +26,7 @@ class App extends Component {
             <>
               <NavBar />
               <main id="main">
-              { GA.init() && <GA.RouteTracker /> }
+               <GA.RouteTracker /> 
 
                 <Suspense fallback={<Loading/>}>
               <Switch  >
@@ -51,10 +51,10 @@ class App extends Component {
   }
 
 }
-// import("react-ga").then(ReactGA => {
-//   ReactGA.initialize('UA-132415809-3')
-//   ReactGA.pageview(window.location.pathname + window.location.search);
-// });
+import("react-ga").then(ReactGA => {
+  ReactGA.initialize('UA-132415809-3')
+  ReactGA.pageview(window.location.pathname + window.location.search);
+});
 
 
 export default App;

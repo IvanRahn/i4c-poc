@@ -50,17 +50,13 @@ const RouteTracker = () =>
   <Route component={GoogleAnalytics} />
 
 const init = (options = {}) => {
-  const isGAEnabled = !!'UA-132415809-3'
-
-  if (isGAEnabled) {
     ReactGA.initialize(
       'UA-132415809-3', {
         ...options
       }
     )
-  }
 
-  return isGAEnabled
+  return true
 }
 
 export default {
