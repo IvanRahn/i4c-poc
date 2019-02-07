@@ -80,7 +80,9 @@ class TeamSection extends Component {
                             <InternalLink 
                             textLeft 
                             width="auto" 
-                            text="Vetted by our Board of Trustees" />
+                            text="Vetted by our Board of Trustees" 
+                            to="/board-page"
+                            />
                     </Section>
                     
                 </SectionWrapper>

@@ -1,38 +1,66 @@
-/**
- * From ReactGA Community Wiki Page https://github.com/react-ga/react-ga/wiki/React-Router-v4-withTracker
- */
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import ReactGA from 'react-ga'
+import { Route } from 'react-router-dom'
 
-import React, { Component } from 'react';
-import ReactGA from 'react-ga';
+class GoogleAnalytics extends Component {
+  componentDidMount () {
+    this.logPageChange(
+      this.props.location.pathname,
+      this.props.location.search
+    )
+  }
 
-export default function withTracker(WrappedComponent, options = {}) {
-  const trackPage = (page) => {
+  componentDidUpdate ({ location: prevLocation }) {
+    const { location: { pathname, search } } = this.props
+    const isDifferentPathname = pathname !== prevLocation.pathname
+    const isDifferentSearch = search !== prevLocation.search
+
+    if (isDifferentPathname || isDifferentSearch) {
+      this.logPageChange(pathname, search)
+    
+    }
+  }
+
+  logPageChange (pathname, search = '') {
+    const page = pathname + search
+    const { location } = window
     ReactGA.set({
       page,
-      ...options
-    });
-    ReactGA.pageview(page);
-  };
+      location: `${location.origin}${page}`,
+      ...this.props.options
+    })
+    ReactGA.pageview(page)
+  }
 
-  const HOC = class extends Component {
-    componentDidMount() {
-      const page = this.props.location.pathname;
-      trackPage(page);
-    }
+  render () {
+    return null
+  }
+}
 
-    componentDidUpdate(prevProps) {
-      const currentPage = this.props.location.pathname;
-      const prevPage = prevProps.location.pathname;
+GoogleAnalytics.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+    search: PropTypes.string
+  }).isRequired,
+  options: PropTypes.object
+}
 
-      if (currentPage !== prevPage) {
-        trackPage(currentPage);
+const RouteTracker = () =>
+  <Route component={GoogleAnalytics} />
+
+const init = (options = {}) => {
+    ReactGA.initialize(
+      'UA-132415809-3', {
+        ...options
       }
-    }
+    )
 
-    render() {
-      return <WrappedComponent {...this.props} />;
-    }
-  };
+  return true
+}
 
-  return HOC;
+export default {
+  GoogleAnalytics,
+  RouteTracker,
+  init
 }

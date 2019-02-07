@@ -4,7 +4,6 @@ import {darkGreen} from "./../../modules/BrandStyle"
 import FirstSection from './sections/FirstSection';
 import FeatureSection from './sections/FeatureSection';
 import JoinSection from './sections/JoinSection';
-import withTracker from "./../../google_analytics/withTracker"
 
 class HowItWorksHomePage extends Component {
    
@@ -26,5 +25,5 @@ class HowItWorksHomePage extends Component {
  
 
 
-export default withTracker(HowItWorksHomePage);
+export default HowItWorksHomePage;
 
