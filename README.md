@@ -1,7 +1,3 @@
-# Problem definition / purpose
-
-Create a website with a CMS capabilities for the client, the acceptance criterias included optimization, accessibility, adherence to visual designs.
-
 # Tech Stack
 
 React, CircleCI, AWS, HTML/CSS, Keystone(Node / Express / Mongo)
