@@ -25,6 +25,7 @@ const ImageContainer = styled.img`
 width: 100%; 
 height: auto;
 margin-bottom: 24px;
+margin-top: -50px;
 @media only screen and (min-width: 768px) {
     width: 40%;
     margin: -300px auto 0 auto; 

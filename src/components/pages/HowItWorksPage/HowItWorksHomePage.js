@@ -14,9 +14,7 @@ class HowItWorksHomePage extends Component {
                 <> 
                     <FirstSection /> 
                     <HowItWorksSection cardCount={6} color={darkGreen}/>
-                    <FeaturedCauseSection cardCount={2}>
-                    <FeatureSection/>
-                    </FeaturedCauseSection>
+                    <FeatureSection cardCount={2}/>
                     <JoinSection />                     
                 </>
             );

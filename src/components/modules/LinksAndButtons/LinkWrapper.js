@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {darkGreen} from "./../BrandStyle";
 
 const LinkWrapper = styled(Link) `
-width: auto;
+/* width: auto;
 margin: 24px 0;
 :hover, :focus {
     > div {
@@ -14,7 +14,7 @@ margin: 24px 0;
 @media only screen and (min-width: 500px) {
     margin: 8px 20px;
     border-radius: 16px;
-}
+} */
 `
 
 export default LinkWrapper

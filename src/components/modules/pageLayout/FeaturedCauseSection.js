@@ -8,6 +8,7 @@ const H = styled.h1`
     width:100%;
     margin-bottom: 40px;
     text-align: left;
+    grid-column: 1/13;
     @media only screen and (min-width: 500px) {
     text-align: center;
         
@@ -21,8 +22,24 @@ const Div = styled.div`
 width: 100%;
 text-align: center; 
 padding: 24px;
+grid-column: span 12;
 `
+const GridWrapper = styled(SectionWrapper)`
+display: grid;
+grid-template-columns: repeat(12, 1fr);
+grid-template-areas: ". content .";
+grid-column-gap: 16px;
 
+`
+const CardList = styled.div `
+grid-column: span 12;
+display: flex;
+flex-direction: column;
+@media only screen and (min-width: 760px) {
+    grid-column: 2/12;
+    flex-direction: row;
+}
+`
 
 class FeacturedCauseSection extends Component {
     componentDidMount () {
@@ -40,7 +57,7 @@ class FeacturedCauseSection extends Component {
         }
         return (
             <>
-            <SectionWrapper 
+            <GridWrapper 
             color={color} 
             height="auto"
             padding="72px 24px"
@@ -48,6 +65,7 @@ class FeacturedCauseSection extends Component {
             >
                 <H>Featured Causes</H>
                 {this.props.children}
+                <CardList>
                 {causes.filter(cause => cause.featuredAsCard).map((cause, i) => {
                     
                     if (i < cardCount) {
@@ -66,10 +84,11 @@ class FeacturedCauseSection extends Component {
                     }
                     return null
                 })}
+                </CardList>
                 <Div>
                 <InternalLink width="auto" to="/cause" text="view every cause we care about" color="grey"/>
                 </Div>
-            </SectionWrapper>
+            </GridWrapper>
                 {tree ? <TreeSVG color="green"/> : null}
             
             </>

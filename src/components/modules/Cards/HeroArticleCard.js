@@ -4,6 +4,7 @@ import {HTMLContent} from ".."
 import {brandBlack, brandWhite} from "./../BrandStyle"
 
 const CardWrapper = styled.div`
+grid-column: span 12;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -12,10 +13,13 @@ margin: 36px 0 24px;
 
 color: ${props => props.white ? brandWhite : brandBlack};
 @media only screen and (min-width: 500px) {
-    display: flex;
-    flex-direction: row;
+     grid-column: 1/6;
+    flex-direction: column;;
     align-items: flex-start;
     justify-content: space-around;
+ }
+ @media only screen and (min-width: 960px) {
+     grid-column: span 12;
  }
 `
 const DivContainer = styled.div`
