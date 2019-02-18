@@ -7,10 +7,16 @@ React, CircleCI, AWS, HTML/CSS, Keystone(Node / Express / Mongo)
 Clone the repo and run npm install, then npm start.
 
 # Link to Github
+React App:
 https://github.com/IvanRahn/i4c-poc
-(https://github.com/IvanRahn/i4c-poc-cms)
+
+CMS:
+https://github.com/IvanRahn/i4c-poc-cms
 
 # URL
-(http://i4c-web-poc.s3-website-ap-southeast-2.amazonaws.com)
-(https://i4c-cms.herokuapp.com)
+React App:
+http://i4c-web-poc.s3-website-ap-southeast-2.amazonaws.com
+
+CMS:
+https://i4c-cms.herokuapp.com
 
